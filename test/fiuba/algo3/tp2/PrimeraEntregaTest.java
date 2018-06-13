@@ -1,0 +1,68 @@
+package fiuba.algo3.tp2;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class PrimeraEntregaTest {
+
+	@Test
+	public void testColocarUnaCartaDeMonstruoEnPosicionDeAtaque() {
+		int estrellas = 3;
+		double puntosDeAtaque = 1000;
+		double puntosDeDefensa = 500;
+		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoAtaque(), estrellas, puntosDeAtaque, puntosDeDefensa);
+		
+		assertTrue(monstruo.estaEnModoAtaque());
+	}
+	
+	@Test
+	public void testColocarUnaCartaDeMonstruoEnPosicionDeDefensa() {
+		int estrellas = 3;
+		double puntosDeAtaque = 1000;
+		double puntosDeDefensa = 500;
+		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoDefensa(), estrellas, puntosDeAtaque, puntosDeDefensa);
+		
+		assertFalse(monstruo.estaEnModoAtaque());
+	}
+	
+	
+	@Test
+	public void testColocarUnaCartaMagicaBocaAbajo() {
+		Magica magica = new Magica(new BocaAbajo(),new Efecto());
+		assertTrue(magica.estaBocaAbajo());
+		
+	}
+	
+	@Test
+	public void testColocarUnaCartaTrampaBocaAbajo() {
+		Trampa trampa = new Trampa(new BocaAbajo(),new Efecto());
+		assertTrue(trampa.estaBocaAbajo());
+	}
+	
+	@Test
+	public void testMandarUnaCartaAlCementerio() {
+		Carta carta = new Monstruo(new BocaArriba(),new ModoDefensa(), 4, 1500, 2000);
+		Cementerio cementerio = new Cementerio();
+		cementerio.agregarCarta(carta);
+		
+		assertTrue(cementerio.contieneCarta(carta));	
+	}
+	
+	@Test
+	public void asd() {
+		CampoDeBatalla campoDeBatalla = new CampoDeBatalla();
+		Jugador jugadorAtacante = new Jugador();
+		Jugador jugadorAtacado = new Jugador();
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 300);
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 200);
+		
+		
+		campoDeBatalla.atacar(jugadorAtacante,jugadorAtacado,monstruoAtacante,monstruoAtacado);
+				
+	}
+	
+	
+}

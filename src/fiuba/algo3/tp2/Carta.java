@@ -21,5 +21,5 @@ public abstract class Carta {
 	public boolean estaMuerta() {
 		return this.estado.estaMuerta();
 	}
-	//pruebas git
+	//pruebas gitHub
 }

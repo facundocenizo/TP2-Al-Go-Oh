@@ -119,6 +119,10 @@ public class PrimeraEntregaTest {
 		Efecto efectoAgujeroNegro = new EfectoAgujeroNegro(campo);
 		Magica cartaAgujeroNegro = new Magica(new BocaArriba(),efectoAgujeroNegro);
 		cartaAgujeroNegro.aplicarEfecto();
+		campo.barrerZonaDeMonstruos();
+		
+		assertEquals(0,campo.cantidadDeMonstruosActivos());
+		
 		
 	}
 

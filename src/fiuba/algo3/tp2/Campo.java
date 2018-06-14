@@ -7,10 +7,14 @@ public class Campo {
 	
 	private LinkedList<Monstruo> zonaDeMonstruosDeJugador1;
 	private LinkedList<Monstruo> zonaDeMonstruosDeJugador2;
+	private Cementerio cementerioDeJugador1;
+	private Cementerio cementerioDeJugador2;
 	
 	public Campo() {
 		zonaDeMonstruosDeJugador1 = new LinkedList<Monstruo>();
 		zonaDeMonstruosDeJugador2 = new LinkedList<Monstruo>();
+		cementerioDeJugador1 = new Cementerio();
+		cementerioDeJugador2 = new Cementerio();
 	}
 	
 	public void recibirMonstruoDeJugador1(Monstruo cartaMonstruo) {
@@ -27,11 +31,20 @@ public class Campo {
 		
 		for (Monstruo monstruo: this.zonaDeMonstruosDeJugador1)  {
 			monstruo.morir();
+			
 		}
 		for (Monstruo monstruo: this.zonaDeMonstruosDeJugador2)  {
 			monstruo.morir();
 		}
-		
+	}
+	
+	public void barrerZonaDeMonstruos() {
+		cementerioDeJugador1.limpiarZonaDeMonstruosMuertos(this.zonaDeMonstruosDeJugador1);
+		cementerioDeJugador2.limpiarZonaDeMonstruosMuertos(this.zonaDeMonstruosDeJugador2);
+	}
+	
+	public int cantidadDeMonstruosActivos() {
+		return (this.zonaDeMonstruosDeJugador1.size()) + (this.zonaDeMonstruosDeJugador2.size());
 	}
 
 }

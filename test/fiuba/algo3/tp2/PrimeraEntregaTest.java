@@ -93,6 +93,47 @@ public class PrimeraEntregaTest {
 		
 	}
 	
+
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueAmbosMuerenPorqueTienenIgualPuntosAtaque() {
+		
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 200);
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertTrue(monstruoAtacante.estaMuerta());
+		assertTrue(monstruoAtacado.estaMuerta());
+		
+	}
+	
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueYModoDefensaMuereElQueEstaEnDefensaPorqueTieneMenosPuntosDeDefensaQuePuntosDeAtaque() {
+		
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(), 2, 400, 300);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertTrue(monstruoAtacado.estaMuerta());
+		assertFalse(monstruoAtacante.estaMuerta());
+	}
+	
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueYModoDefensaMuereElAtacanteYaQueTieneMenosPuntosAtaqueQuePuntosDeDefensaDelAtacado() {
+		
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(), 2, 300, 600);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertFalse(monstruoAtacado.estaMuerta());
+		assertTrue(monstruoAtacante.estaMuerta());
+		
+	}
+	
+	
+	
 	
 	
 	

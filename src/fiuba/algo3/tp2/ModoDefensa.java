@@ -24,6 +24,7 @@ public class ModoDefensa implements Modo {
 		
 		if(diferencia < 0 ) 
 			monstruo.morir();
+		
 		return diferencia;
 	}
 
@@ -31,7 +32,7 @@ public class ModoDefensa implements Modo {
 
 	@Override
 	public int atacar(Monstruo monstruoAtacado, Monstruo monstruo) {
-		// TODO Auto-generated method stub
+		//lanzar excepcion
 		return 0;
 	}
 }

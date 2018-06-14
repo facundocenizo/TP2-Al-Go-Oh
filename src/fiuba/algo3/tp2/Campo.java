@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class Campo {
 	
+	
 	private LinkedList<Monstruo> zonaDeMonstruosDeJugador1;
 	private LinkedList<Monstruo> zonaDeMonstruosDeJugador2;
 	

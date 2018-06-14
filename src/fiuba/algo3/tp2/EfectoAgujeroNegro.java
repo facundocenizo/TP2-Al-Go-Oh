@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class EfectoAgujeroNegro implements Efecto {
 	
+	
 	private LinkedList<Monstruo> monstruosDelJugador1;
 	private LinkedList<Monstruo> monstruosDelJugador2;
 	

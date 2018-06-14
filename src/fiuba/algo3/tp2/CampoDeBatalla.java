@@ -1,8 +1,6 @@
 package fiuba.algo3.tp2;
 
 public class CampoDeBatalla {
-	
-	// campo
 
 	public void atacar(Jugador jugadorAtacante, Jugador jugadorAtacado, Monstruo monstruoAtacante,
 			Monstruo monstruoAtacado) {

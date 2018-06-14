@@ -7,6 +7,4 @@ public class BocaAbajo implements Posicion {
 		return true;
 	}
 	
-	
-	//vamos que se puedeeee
 }

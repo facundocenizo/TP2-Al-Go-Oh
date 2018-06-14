@@ -14,8 +14,10 @@ public class Campo {
 	}
 	
 	public void recibirMonstruoDeJugador1(Monstruo cartaMonstruo) {
+		
 		zonaDeMonstruosDeJugador1.add(cartaMonstruo);
 	}
+	
 	
 	public void recibirMonstruoDeJugador2(Monstruo cartaMonstruo) {
 		zonaDeMonstruosDeJugador2.add(cartaMonstruo);

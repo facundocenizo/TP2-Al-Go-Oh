@@ -6,6 +6,7 @@ public class Monstruo extends Carta{
 	private int estrellas;
 	private int puntosDeAtaque;
 	private int puntosDeDefensa;
+	private Nivel nivel;
 	
 	public Monstruo(Posicion posicion, Modo modo, int estrellas, int puntosDeAtaque, int puntosDeDefensa) {
 		super(posicion);
@@ -15,6 +16,12 @@ public class Monstruo extends Carta{
 		this.puntosDeAtaque = puntosDeAtaque;
 		this.puntosDeDefensa = puntosDeDefensa;
 		
+		if(estrellas < 5)
+			this.nivel = new Debil();
+		if(estrellas > 6)
+			this.nivel = new Poderoso();
+		if(estrellas == 5 || estrellas == 6)
+			this.nivel = new Normal();
     }
 
 	public boolean estaEnModoAtaque() {
@@ -23,7 +30,6 @@ public class Monstruo extends Carta{
 
 	@Override
 	public void aplicarEfecto() {
-		// TODO Auto-generated method stub
 		
 	}
 

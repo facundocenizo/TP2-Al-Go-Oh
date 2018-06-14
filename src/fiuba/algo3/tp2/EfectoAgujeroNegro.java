@@ -1,7 +1,5 @@
 package fiuba.algo3.tp2;
 
-import java.util.LinkedList;
-
 public class EfectoAgujeroNegro implements Efecto {
 	
 	private Campo campo;

@@ -4,4 +4,5 @@ public interface Efecto {
 	
 	public void aplicarEfecto();
 
+
 }

@@ -19,9 +19,9 @@ public class ModoAtaque implements Modo {
 	@Override
 	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo) {
 		int diferencia = this.puntosDeAtaque - puntosDeAtaque;
-		if(diferencia <= 0 ) {
+		if(diferencia <= 0 )
 			monstruo.morir();
-		}
+		
 		return diferencia;
 		
 	}
@@ -29,11 +29,9 @@ public class ModoAtaque implements Modo {
 	@Override
 	public int atacar(Monstruo monstruoAtacado, Monstruo monstruo) {
 		int diferencia = monstruoAtacado.recibirAtaque(this.puntosDeAtaque);
-		if(diferencia >= 0 ) {
+		if(diferencia >= 0 ) 
 			monstruo.morir();
-			System.out.println("por aca pasa, pero monstruo nunca actualiza su estado.");
-			System.out.println("chequear como cambiar el estado, habria que pasar en vez de éstado, la carta por param");
-		}
+		
 		return diferencia;
 	}
 

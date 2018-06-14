@@ -68,22 +68,37 @@ public class PrimeraEntregaTest {
 		campoDeBatalla.atacar(jugadorAtacante,jugadorAtacado,monstruoAtacante,monstruoAtacado);
 				
 	}
-	
+
 	@Test
 	public void AtacarDosMonstruosEnModoAtaqueElPrimeroMuerePorqueTieneMenosPuntosAtaque() {
 		
-		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
-		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
 		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertTrue(monstruoAtacado.estaMuerta());
+		assertFalse(monstruoAtacante.estaMuerta());
+		
+		
+		
+	}
+
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueElSegundoMuerePorqueTieneMenosPuntosAtaque() {
+		
+		
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 200);
 		
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		assertTrue(monstruoAtacante.estaMuerta());
 		assertFalse(monstruoAtacado.estaMuerta());
 		
-				
 	}
 	
+
 	@Test
 	public void DejarMonstruosActivosEnEstadoMuertoParaAgarrarConElCementerio() {
 		Campo campo = new Campo();
@@ -118,6 +133,50 @@ public class PrimeraEntregaTest {
 		cartaAgujeroNegro.aplicarEfecto();
 		
 	}
+
+
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueAmbosMuerenPorqueTienenIgualPuntosAtaque() {
+		
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 200);
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertTrue(monstruoAtacante.estaMuerta());
+		assertTrue(monstruoAtacado.estaMuerta());
+		
+	}
+	
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueYModoDefensaMuereElQueEstaEnDefensaPorqueTieneMenosPuntosDeDefensaQuePuntosDeAtaque() {
+		
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(), 2, 400, 300);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertTrue(monstruoAtacado.estaMuerta());
+		assertFalse(monstruoAtacante.estaMuerta());
+	}
+	
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueYModoDefensaMuereElAtacanteYaQueTieneMenosPuntosAtaqueQuePuntosDeDefensaDelAtacado() {
+		
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(), 2, 300, 600);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertFalse(monstruoAtacado.estaMuerta());
+		assertTrue(monstruoAtacante.estaMuerta());
+		//agregarSupuesto monstruo que ataca con 500 de Pts de ataque Muere al atacar a monstruo en defensa con 600putos de defensa.
+		
+		
+	}
+	
+	
+	
 	
 	
 	

@@ -10,8 +10,10 @@ public class EfectoAgujeroNegro implements Efecto {
 	
 
 	public EfectoAgujeroNegro(LinkedList<Monstruo> monstruosDeJugador1, LinkedList<Monstruo> monstruosDeJugador2) {
+		
 		this.monstruosDelJugador1 = monstruosDeJugador1;
 		this.monstruosDelJugador2 = monstruosDeJugador2;
+		
 	}
 
 	@Override

@@ -4,26 +4,17 @@ import java.util.LinkedList;
 
 public class EfectoAgujeroNegro implements Efecto {
 	
-	
-	private LinkedList<Monstruo> monstruosDelJugador1;
-	private LinkedList<Monstruo> monstruosDelJugador2;
-	
+	private Campo campo;
 
-	public EfectoAgujeroNegro(LinkedList<Monstruo> monstruosDeJugador1, LinkedList<Monstruo> monstruosDeJugador2) {
+	public EfectoAgujeroNegro(Campo campo) {
 		
-		this.monstruosDelJugador1 = monstruosDeJugador1;
-		this.monstruosDelJugador2 = monstruosDeJugador2;
-		
+		this.campo = campo;
 	}
 
 	@Override
 	public void aplicarEfecto() {
-		for (Monstruo monstruo: monstruosDelJugador1)  {
-			monstruo.morir();
-		}
-		for (Monstruo monstruo: monstruosDelJugador2)  {
-			monstruo.morir();
-		}
+		
+		campo.matarATodosLosMonstruos();
 	
 		
 	}

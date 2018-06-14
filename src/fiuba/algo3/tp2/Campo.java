@@ -21,4 +21,15 @@ public class Campo {
 		zonaDeMonstruosDeJugador2.add(cartaMonstruo);
 	}
 
+	public void matarATodosLosMonstruos() {
+		
+		for (Monstruo monstruo: this.zonaDeMonstruosDeJugador1)  {
+			monstruo.morir();
+		}
+		for (Monstruo monstruo: this.zonaDeMonstruosDeJugador2)  {
+			monstruo.morir();
+		}
+		
+	}
+
 }

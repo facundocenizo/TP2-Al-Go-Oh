@@ -14,6 +14,7 @@ public class Monstruo extends Carta{
 		this.estrellas = estrellas;
 		this.puntosDeAtaque = puntosDeAtaque;
 		this.puntosDeDefensa = puntosDeDefensa;
+		
     }
 
 	public boolean estaEnModoAtaque() {

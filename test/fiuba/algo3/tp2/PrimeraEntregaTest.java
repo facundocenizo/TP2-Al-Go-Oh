@@ -11,8 +11,8 @@ public class PrimeraEntregaTest {
 	@Test
 	public void testColocarUnaCartaDeMonstruoEnPosicionDeAtaque() {
 		int estrellas = 3;
-		double puntosDeAtaque = 1000;
-		double puntosDeDefensa = 500;
+		int puntosDeAtaque = 1000;
+		int puntosDeDefensa = 500;
 		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoAtaque(), estrellas, puntosDeAtaque, puntosDeDefensa);
 		
 		assertTrue(monstruo.estaEnModoAtaque());
@@ -21,8 +21,8 @@ public class PrimeraEntregaTest {
 	@Test
 	public void testColocarUnaCartaDeMonstruoEnPosicionDeDefensa() {
 		int estrellas = 3;
-		double puntosDeAtaque = 1000;
-		double puntosDeDefensa = 500;
+		int puntosDeAtaque = 1000;
+		int puntosDeDefensa = 500;
 		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoDefensa(), estrellas, puntosDeAtaque, puntosDeDefensa);
 		
 		assertFalse(monstruo.estaEnModoAtaque());
@@ -53,6 +53,7 @@ public class PrimeraEntregaTest {
 	
 	@Test
 	public void asd() {
+		//esto no hace nada
 		CampoDeBatalla campoDeBatalla = new CampoDeBatalla();
 		Jugador jugadorAtacante = new Jugador();
 		Jugador jugadorAtacado = new Jugador();
@@ -63,6 +64,24 @@ public class PrimeraEntregaTest {
 		campoDeBatalla.atacar(jugadorAtacante,jugadorAtacado,monstruoAtacante,monstruoAtacado);
 				
 	}
+	
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueElPrimeroMuerePorqueTieneMenosPuntosAtaque() {
+		
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		
+		
+		monstruoAtacante.atacar(monstruoAtacado);
+
+		System.out.println(monstruoAtacante.estaMuerta());
+		System.out.println(monstruoAtacante.estaMuerta());
+		
+		assertTrue(monstruoAtacante.estaMuerta());
+				
+	}
+	
+	
 	
 	
 }

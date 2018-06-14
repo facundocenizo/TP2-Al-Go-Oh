@@ -7,7 +7,7 @@ public class Monstruo extends Carta{
 	private int puntosDeAtaque;
 	private int puntosDeDefensa;
 	
-	public Monstruo(Posicion posicion,Modo modo, int estrellas, int puntosDeAtaque, int puntosDeDefensa) {
+	public Monstruo(Posicion posicion, Modo modo, int estrellas, int puntosDeAtaque, int puntosDeDefensa) {
 		super(posicion);
 		this.modo = modo;
 		this.modo.cargarPuntos(puntosDeAtaque,puntosDeDefensa);
@@ -27,7 +27,11 @@ public class Monstruo extends Carta{
 	}
 
 	public int atacar(Monstruo monstruoAtacado) {
-		return this.modo.atacar(monstruoAtacado);
+		return this.modo.atacar(monstruoAtacado, this.estado);
+	}
+
+	public int recibirAtaque(int puntosDeAtaque) {
+		return this.modo.recibirAtaque(puntosDeAtaque, this.estado);
 	}
 
 

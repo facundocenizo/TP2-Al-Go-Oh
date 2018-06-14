@@ -10,10 +10,7 @@ public class ModoDefensa implements Modo {
 		return false;
 	}
 
-	@Override
-	public int atacar(Monstruo monstruoAtacado) {
-		return 0;
-	}
+	
 
 	@Override
 	public void cargarPuntos(int puntosDeAtaque, int puntosDeDefensa) {
@@ -22,8 +19,19 @@ public class ModoDefensa implements Modo {
 	}
 
 	@Override
-	public int calcularDanio(int puntosDeAtaqueRecibidos) {
-		return 
+	public int recibirAtaque(int puntosDeAtaque, Estado estado) {
+		int diferencia = this.puntosDeDefensa - puntosDeAtaque;
+		
+		if(diferencia < 0 ) 
+			estado = new Muerto();
+		return diferencia;
 	}
 
+
+
+	@Override
+	public int atacar(Monstruo monstruoAtacado, Estado estado) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

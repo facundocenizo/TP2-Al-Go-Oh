@@ -3,10 +3,12 @@ package fiuba.algo3.tp2;
 public abstract class Carta {
 	
 	protected Posicion posicion;
+	protected Estado estado;
 	
 	
 	public Carta(Posicion nuevaPosicion) {
 		this.posicion = nuevaPosicion;
+		this.estado = new Vivo();
 	}
 	
 	public abstract void aplicarEfecto();
@@ -15,6 +17,9 @@ public abstract class Carta {
 		return this.posicion.estaBocaAbajo();
 	}
 	
+	public boolean estaMuerta() {
+		return this.estado.estaMuerta();
+	}
 	
 
 }

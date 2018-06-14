@@ -17,21 +17,20 @@ public class ModoAtaque implements Modo {
 	}
 
 	@Override
-	public int recibirAtaque(int puntosDeAtaque, Estado estado) {
+	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo) {
 		int diferencia = this.puntosDeAtaque - puntosDeAtaque;
 		if(diferencia <= 0 ) {
-			estado = new Muerto();
+			monstruo.morir();
 		}
 		return diferencia;
 		
 	}
 
 	@Override
-	public int atacar(Monstruo monstruoAtacado, Estado estado) {
+	public int atacar(Monstruo monstruoAtacado, Monstruo monstruo) {
 		int diferencia = monstruoAtacado.recibirAtaque(this.puntosDeAtaque);
 		if(diferencia >= 0 ) {
-			estado = new Muerto();
-
+			monstruo.morir();
 			System.out.println("por aca pasa, pero monstruo nunca actualiza su estado.");
 			System.out.println("chequear como cambiar el estado, habria que pasar en vez de éstado, la carta por param");
 		}

@@ -19,18 +19,18 @@ public class ModoDefensa implements Modo {
 	}
 
 	@Override
-	public int recibirAtaque(int puntosDeAtaque, Estado estado) {
+	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo) {
 		int diferencia = this.puntosDeDefensa - puntosDeAtaque;
 		
 		if(diferencia < 0 ) 
-			estado = new Muerto();
+			monstruo.morir();
 		return diferencia;
 	}
 
 
 
 	@Override
-	public int atacar(Monstruo monstruoAtacado, Estado estado) {
+	public int atacar(Monstruo monstruoAtacado, Monstruo monstruo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

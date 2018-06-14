@@ -20,4 +20,9 @@ public abstract class Carta {
 	public boolean estaMuerta() {
 		return this.estado.estaMuerta();
 	}
+	
+	public void morir() {
+		this.estado = new Muerto();
+	}
+	
 }

@@ -73,9 +73,6 @@ public class PrimeraEntregaTest {
 		
 		
 		monstruoAtacante.atacar(monstruoAtacado);
-
-		System.out.println(monstruoAtacante.estaMuerta());
-		System.out.println(monstruoAtacante.estaMuerta());
 		
 		assertTrue(monstruoAtacante.estaMuerta());
 				

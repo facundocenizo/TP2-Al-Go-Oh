@@ -27,11 +27,11 @@ public class Monstruo extends Carta{
 	}
 
 	public int atacar(Monstruo monstruoAtacado) {
-		return this.modo.atacar(monstruoAtacado, this.estado);
+		return this.modo.atacar(monstruoAtacado, this);
 	}
 
 	public int recibirAtaque(int puntosDeAtaque) {
-		return this.modo.recibirAtaque(puntosDeAtaque, this.estado);
+		return this.modo.recibirAtaque(puntosDeAtaque, this);
 	}
 
 

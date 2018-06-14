@@ -4,8 +4,10 @@ public interface Modo {
 	
 	public boolean estaEnModoAtaque();
 	public void cargarPuntos(int puntosDeAtaque, int puntosDeDefensa);
-	public int atacar(Monstruo monstruoAtacado, Estado estado);
-	public int recibirAtaque(int puntosDeAtaque, Estado estado);
+	
+	public int atacar(Monstruo monstruoAtacado, Monstruo mounstruo);
+	
+	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo);
 		
 	
 

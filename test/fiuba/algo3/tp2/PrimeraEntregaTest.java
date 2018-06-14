@@ -131,15 +131,39 @@ public class PrimeraEntregaTest {
 		assertFalse(monstruoAtacado.estaMuerta());
 		assertTrue(monstruoAtacante.estaMuerta());
 		//agregarSupuesto monstruo que ataca con 500 de Pts de ataque Muere al atacar a monstruo en defensa con 600putos de defensa.
+	
+	}
+
+	@Test
+	public void SeRequiereSacrificioParaPonerUnMonstruoDeCincoOSeisEstrellas() {
 		
+		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 600);
+		Monstruo monstruoPoderoso = new Monstruo(new BocaArriba(),new ModoAtaque(), 5, 300, 600);
+		
+		Campo = new Campo();
+		campo.recibirMonstruoDeJugador1(monstruo);
+		campo.recibirMonstruoDeJugador1(monstruoPoderoso); //estafuncion debe chequear las estrellas del monstruo  y sacrificar 1 mons del campo
+		
+		assertTrue(monstruo.estaMuerta());
 		
 	}
 	
-	
-	
-	
-	
-	
+
+	@Test
+	public void SeRequiereDosSacrificiosParaPonerUnMonstruoDeSieteOMasEstrellas() {
+
+		Monstruo monstruoUno = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 600);
+		Monstruo monstruoDos = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 600);
+		Monstruo monstruoPoderoso = new Monstruo(new BocaArriba(),new ModoAtaque(), 5, 300, 600);
+		
+		Campo = new Campo();
+		campo.recibirMonstruoDeJugador1(monstruo);
+		campo.recibirMonstruoDeJugador1(monstruoPoderoso); //estafuncion debe chequear las estrellas del monstruo y sacrificar 2 mons del campo
+		
+		assertTrue(monstruoUno.estaMuerta());
+		assertTrue(monstruoDos.estaMuerta());
+		
+	}
 	
 	
 	

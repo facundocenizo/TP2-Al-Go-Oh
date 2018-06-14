@@ -15,5 +15,5 @@ public class Magica extends Carta{
 		// TODO Auto-generated method stub
 		
 	}
-
+	// es magico (como diria cenizo q dice listorti)
 }

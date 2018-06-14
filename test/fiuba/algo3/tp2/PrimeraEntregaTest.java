@@ -64,21 +64,38 @@ public class PrimeraEntregaTest {
 		campoDeBatalla.atacar(jugadorAtacante,jugadorAtacado,monstruoAtacante,monstruoAtacado);
 				
 	}
-	
+
 	@Test
 	public void AtacarDosMonstruosEnModoAtaqueElPrimeroMuerePorqueTieneMenosPuntosAtaque() {
 		
-		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
-		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
 		
+		monstruoAtacante.atacar(monstruoAtacado);
+		
+		assertTrue(monstruoAtacado.estaMuerta());
+		assertFalse(monstruoAtacante.estaMuerta());
+		
+		
+		
+	}
+
+	@Test
+	public void AtacarDosMonstruosEnModoAtaqueElSegundoMuerePorqueTieneMenosPuntosAtaque() {
+		
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 200);
 		
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		assertTrue(monstruoAtacante.estaMuerta());
 		assertFalse(monstruoAtacado.estaMuerta());
 		
-				
 	}
+	
+	
+	
+	
 	
 	
 	

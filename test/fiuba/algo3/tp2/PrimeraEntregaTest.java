@@ -129,6 +129,8 @@ public class PrimeraEntregaTest {
 		
 		assertFalse(monstruoAtacado.estaMuerta());
 		assertTrue(monstruoAtacante.estaMuerta());
+		//agregarSupuesto monstruo que ataca con 500 de Pts de ataque Muere al atacar a monstruo en defensa con 600putos de defensa.
+		
 		
 	}
 	

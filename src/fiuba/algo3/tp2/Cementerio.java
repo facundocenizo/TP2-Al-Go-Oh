@@ -21,13 +21,7 @@ public class Cementerio {
 		return cartasMuertas.contains(carta);
 	}
 
-	public void limpiarZonaDeMonstruosMuertos(LinkedList<Monstruo> zonaDeMonstruosDeJugador) {
-		//for (Monstruo unMonstruo: zonaDeMonstruosDeJugador) {
-		//	if (unMonstruo.estaMuerta()) {
-		//		cartasMuertas.add(unMonstruo);
-		//		//zonaDeMonstruosDeJugador.remove(unMonstruo);
-		//	}
-		//}
+	public void limpiarZonaDeMonstruosMuertos(LinkedList<Monstruo> zonaDeMonstruosDeJugador) { //este metodo va a servir para todos los cambios de turnos.
 		for(Iterator<Monstruo> iter = zonaDeMonstruosDeJugador.iterator(); iter.hasNext();) {
 		    Monstruo unMonstruo = iter.next();
 		    if (unMonstruo.estaMuerta()) {

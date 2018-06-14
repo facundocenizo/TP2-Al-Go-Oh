@@ -14,7 +14,7 @@ public class EfectoAgujeroNegro implements Efecto {
 	@Override
 	public void aplicarEfecto() {
 		
-		campo.matarATodosLosMonstruos();
+		this.campo.matarATodosLosMonstruos();
 	
 		
 	}

@@ -140,7 +140,7 @@ public class PrimeraEntregaTest {
 		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 600);
 		Monstruo monstruoPoderoso = new Monstruo(new BocaArriba(),new ModoAtaque(), 5, 300, 600);
 		
-		Campo = new Campo();
+		Campo campo = new Campo();
 		campo.recibirMonstruoDeJugador1(monstruo);
 		campo.recibirMonstruoDeJugador1(monstruoPoderoso); //estafuncion debe chequear las estrellas del monstruo  y sacrificar 1 mons del campo
 		
@@ -156,8 +156,9 @@ public class PrimeraEntregaTest {
 		Monstruo monstruoDos = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 600);
 		Monstruo monstruoPoderoso = new Monstruo(new BocaArriba(),new ModoAtaque(), 5, 300, 600);
 		
-		Campo = new Campo();
-		campo.recibirMonstruoDeJugador1(monstruo);
+		Campo campo = new Campo();
+		campo.recibirMonstruoDeJugador1(monstruoUno);
+		campo.recibirMonstruoDeJugador1(monstruoDos);
 		campo.recibirMonstruoDeJugador1(monstruoPoderoso); //estafuncion debe chequear las estrellas del monstruo y sacrificar 2 mons del campo
 		
 		assertTrue(monstruoUno.estaMuerta());

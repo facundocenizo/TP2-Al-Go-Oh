@@ -75,6 +75,8 @@ public class PrimeraEntregaTest {
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		assertTrue(monstruoAtacante.estaMuerta());
+		assertFalse(monstruoAtacado.estaMuerta());
+		
 				
 	}
 	

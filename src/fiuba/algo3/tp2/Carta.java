@@ -22,4 +22,5 @@ public abstract class Carta {
 		return this.estado.estaMuerta();
 	}
 	//pruebas gitHub
+	//sigo haciendo pruebas pablo.
 }

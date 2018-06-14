@@ -12,7 +12,7 @@ public class Magica extends Carta{
 
 	@Override
 	public void aplicarEfecto() {
-		// TODO Auto-generated method stub
+		efecto.aplicarEfecto();
 		
 	}
 }

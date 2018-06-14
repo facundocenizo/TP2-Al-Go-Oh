@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.LinkedList;
+
 import org.junit.Test;
 
 public class PrimeraEntregaTest {
@@ -31,14 +33,16 @@ public class PrimeraEntregaTest {
 	
 	@Test
 	public void testColocarUnaCartaMagicaBocaAbajo() {
-		Magica magica = new Magica(new BocaAbajo(),new Efecto());
+		Efecto sinEfecto = new SinEfecto();
+		Magica magica = new Magica(new BocaAbajo(),sinEfecto);
 		assertTrue(magica.estaBocaAbajo());
 		
 	}
 	
 	@Test
 	public void testColocarUnaCartaTrampaBocaAbajo() {
-		Trampa trampa = new Trampa(new BocaAbajo(),new Efecto());
+		Efecto sinEfecto = new SinEfecto();
+		Trampa trampa = new Trampa(new BocaAbajo(),sinEfecto);
 		assertTrue(trampa.estaBocaAbajo());
 	}
 	
@@ -79,6 +83,43 @@ public class PrimeraEntregaTest {
 		
 				
 	}
+	
+	@Test
+	public void DejarMonstruosActivosEnEstadoMuertoParaAgarrarConElCementerio() {
+		Campo campo = new Campo();
+		Monstruo monstruo1 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruo2 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		Monstruo monstruo3 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruo4 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		Monstruo monstruo5 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		LinkedList<Monstruo> monstruosDeJugador1 = new LinkedList<Monstruo>();
+		monstruosDeJugador1.add(monstruo1);
+		monstruosDeJugador1.add(monstruo2);
+		monstruosDeJugador1.add(monstruo3);
+		monstruosDeJugador1.add(monstruo4);
+		monstruosDeJugador1.add(monstruo5);
+		
+		Monstruo monstruo6 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruo7 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		Monstruo monstruo8 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+		Monstruo monstruo9 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 200);
+		Monstruo monstruo10 = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
+
+		LinkedList<Monstruo> monstruosDeJugador2 = new LinkedList<Monstruo>();
+		monstruosDeJugador2.add(monstruo6);
+		monstruosDeJugador2.add(monstruo7);
+		monstruosDeJugador2.add(monstruo8);
+		monstruosDeJugador2.add(monstruo9);
+		monstruosDeJugador2.add(monstruo10);
+		
+		
+		Efecto efectoAgujeroNegro = new EfectoAgujeroNegro(monstruosDeJugador1,monstruosDeJugador2);
+		Magica cartaAgujeroNegro = new Magica(new BocaArriba(),efectoAgujeroNegro);
+		cartaAgujeroNegro.aplicarEfecto();
+		
+	}
+	
+	
 	
 	
 	

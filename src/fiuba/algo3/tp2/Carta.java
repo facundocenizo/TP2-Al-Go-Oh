@@ -5,8 +5,6 @@ public abstract class Carta {
 	protected Posicion posicion;
 	protected Estado estado;
 	
-	// ADASDAS
-	
 	public Carta(Posicion nuevaPosicion) {
 		this.posicion = nuevaPosicion;
 		this.estado = new Vivo();
@@ -22,6 +20,4 @@ public abstract class Carta {
 	public boolean estaMuerta() {
 		return this.estado.estaMuerta();
 	}
-	//pruebas gitHub
-	//sigo haciendo pruebas pablo.
 }

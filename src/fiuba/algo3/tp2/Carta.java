@@ -9,6 +9,7 @@ public abstract class Carta {
 	public Carta(Posicion nuevaPosicion) {
 		this.posicion = nuevaPosicion;
 		this.estado = new Vivo();
+		
 	}
 	
 	public abstract void aplicarEfecto();
@@ -20,5 +21,5 @@ public abstract class Carta {
 	public boolean estaMuerta() {
 		return this.estado.estaMuerta();
 	}
-
+	//pruebas git
 }

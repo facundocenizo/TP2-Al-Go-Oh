@@ -18,6 +18,12 @@ public class EfectoAgujeroNegro implements Efecto {
 
 	@Override
 	public void aplicarEfecto() {
+		for (Monstruo monstruo: monstruosDelJugador1)  {
+			monstruo.morir();
+		}
+		for (Monstruo monstruo: monstruosDelJugador2)  {
+			monstruo.morir();
+		}
 	
 		
 	}

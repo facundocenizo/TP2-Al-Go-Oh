@@ -5,6 +5,7 @@ public abstract class Carta {
 	protected Posicion posicion;
 	protected Estado estado;
 	
+	///-.-.-.-.-.-..-
 	
 	public Carta(Posicion nuevaPosicion) {
 		this.posicion = nuevaPosicion;

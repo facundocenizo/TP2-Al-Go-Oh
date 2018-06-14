@@ -4,10 +4,12 @@ public abstract class Carta {
 	
 	protected Posicion posicion;
 	protected Estado estado;
+	protected Efecto efecto;
 	
-	public Carta(Posicion nuevaPosicion) {
+	public Carta(Posicion nuevaPosicion ,Efecto efecto) {
 		this.posicion = nuevaPosicion;
 		this.estado = new Vivo();
+		this.efecto = efecto;
 		
 	}
 	

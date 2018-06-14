@@ -9,18 +9,18 @@ public class Monstruo extends Carta{
 	private Nivel nivel;
 	
 	public Monstruo(Posicion posicion, Modo modo, int estrellas, int puntosDeAtaque, int puntosDeDefensa) {
-		super(posicion);
+		super(posicion, new SinEfecto());
 		this.modo = modo;
 		this.modo.cargarPuntos(puntosDeAtaque,puntosDeDefensa);
 		this.estrellas = estrellas;
 		this.puntosDeAtaque = puntosDeAtaque;
 		this.puntosDeDefensa = puntosDeDefensa;
 		
-		if(estrellas < 5)
+		if(this.estrellas < 5)
 			this.nivel = new Debil();
-		if(estrellas > 6)
+		if(this.estrellas > 6)
 			this.nivel = new Poderoso();
-		if(estrellas == 5 || estrellas == 6)
+		if(this.estrellas == 5 || estrellas == 6)
 			this.nivel = new Normal();
     }
 

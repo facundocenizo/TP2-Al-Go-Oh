@@ -3,10 +3,14 @@ package fiuba.algo3.tp2;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.LinkedList;
 
 import org.junit.Test;
+
+import fiuba.algo3.tp2.Campo;
+import fiuba.algo3.tp2.Cementerio;
 
 public class PrimeraEntregaTest {
 
@@ -54,20 +58,6 @@ public class PrimeraEntregaTest {
 		
 		assertTrue(cementerio.contieneCarta(carta));	
 	}
-	
-	@Test
-	public void asd() {
-		//esto no hace nada
-		CampoDeBatalla campoDeBatalla = new CampoDeBatalla();
-		Jugador jugadorAtacante = new Jugador();
-		Jugador jugadorAtacado = new Jugador();
-		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 500, 300);
-		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 200);
-		
-		
-		campoDeBatalla.atacar(jugadorAtacante,jugadorAtacado,monstruoAtacante,monstruoAtacado);
-				
-	}
 
 	@Test
 	public void AtacarDosMonstruosEnModoAtaqueElPrimeroMuerePorqueTieneMenosPuntosAtaque() {
@@ -79,8 +69,6 @@ public class PrimeraEntregaTest {
 		
 		assertTrue(monstruoAtacado.estaMuerta());
 		assertFalse(monstruoAtacante.estaMuerta());
-		
-		
 		
 	}
 
@@ -202,6 +190,20 @@ public class PrimeraEntregaTest {
 		
 		assertTrue(monstruoUno.estaMuerta());
 		assertTrue(monstruoDos.estaMuerta());
+		
+	}
+	
+
+	@Test
+	public void MonstruoEnModoDeDefensaNoPuedeAtacar() {
+		
+		Monstruo monstruoDefensa = new Monstruo(new BocaArriba(),new ModoDefensa(), 2, 300, 600);
+		Monstruo monstruoAtaque = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 600);
+		
+		assertThrows(MonstruoEnModoDefensaNoPuedeAtacarException.class,
+                ()->{
+                	monstruoDefensa.atacar(monstruoAtaque);
+                });
 		
 	}
 	

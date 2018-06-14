@@ -32,7 +32,6 @@ public class ModoDefensa implements Modo {
 
 	@Override
 	public int atacar(Monstruo monstruoAtacado, Monstruo monstruo) {
-		//lanzar excepcion
-		return 0;
+		throw new MonstruoEnModoDefensaNoPuedeAtacarException();
 	}
 }

@@ -6,5 +6,7 @@ public class BocaAbajo implements Posicion {
 	public boolean estaBocaAbajo() {
 		return true;
 	}
-
+	
+	
+	//vamos que se puedeeee
 }

@@ -83,6 +83,7 @@ public class PrimeraEntregaTest {
 	@Test
 	public void AtacarDosMonstruosEnModoAtaqueElSegundoMuerePorqueTieneMenosPuntosAtaque() {
 		
+		
 		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 400, 300);
 		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), 2, 300, 200);
 		
@@ -133,6 +134,7 @@ public class PrimeraEntregaTest {
 		
 		
 	}
+	
 	
 	
 	

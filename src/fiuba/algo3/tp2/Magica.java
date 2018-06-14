@@ -16,5 +16,5 @@ public class Magica extends Carta{
 		
 	}
 	// es magico (como diria cenizo q dice listorti)
-	// 
+	// asd
 }

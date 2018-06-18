@@ -18,7 +18,6 @@ public class Campo {
 	}
 	
 	public void recibirMonstruoDeJugador1(Monstruo cartaMonstruo) {
-		
 		zonaDeMonstruosDeJugador1.add(cartaMonstruo);
 	}
 	

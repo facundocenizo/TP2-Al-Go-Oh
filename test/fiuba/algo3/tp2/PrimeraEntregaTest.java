@@ -5,12 +5,16 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.util.LinkedList;
-
 import org.junit.Test;
 
-import fiuba.algo3.tp2.Campo;
 import fiuba.algo3.tp2.Cementerio;
+import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
+import fiuba.algo3.tp2.atributosCarta.BocaArriba;
+import fiuba.algo3.tp2.atributosCarta.Efecto;
+import fiuba.algo3.tp2.atributosMonstruo.ModoAtaque;
+import fiuba.algo3.tp2.atributosMonstruo.ModoDefensa;
+import fiuba.algo3.tp2.cartasMagicas.EfectoAgujeroNegro;
+import fiuba.algo3.tp2.excepciones.MonstruoEnModoDefensaNoPuedeAtacarException;
 
 public class PrimeraEntregaTest {
 
@@ -46,7 +50,7 @@ public class PrimeraEntregaTest {
 	@Test
 	public void testColocarUnaCartaTrampaBocaAbajo() {
 		Efecto sinEfecto = new SinEfecto();
-		Trampa trampa = new Trampa(new BocaAbajo(),sinEfecto);
+		Trampa trampa = new Trampa(sinEfecto);
 		assertTrue(trampa.estaBocaAbajo());
 	}
 	

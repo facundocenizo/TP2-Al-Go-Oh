@@ -1,16 +1,18 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
+import fiuba.algo3.tp2.atributosCarta.Efecto;
+
 public class Trampa extends Carta{
 	
-
-	public Trampa(Posicion posicion, Efecto efecto) {
-		super(posicion, efecto);
+	public Trampa(Efecto efecto) {
+		super(new BocaAbajo(), efecto);
 	}
 
 	@Override
 	public void aplicarEfecto() {
-		// TODO Auto-generated method stub
-		
+		efecto.aplicarEfecto();
+		morir();
 	}
 
 }

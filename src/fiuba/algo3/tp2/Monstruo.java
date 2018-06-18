@@ -1,5 +1,12 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.atributosCarta.Posicion;
+import fiuba.algo3.tp2.atributosMonstruo.Debil;
+import fiuba.algo3.tp2.atributosMonstruo.Modo;
+import fiuba.algo3.tp2.atributosMonstruo.Nivel;
+import fiuba.algo3.tp2.atributosMonstruo.Normal;
+import fiuba.algo3.tp2.atributosMonstruo.Poderoso;
+
 public class Monstruo extends Carta{
 	
 	private Modo modo;

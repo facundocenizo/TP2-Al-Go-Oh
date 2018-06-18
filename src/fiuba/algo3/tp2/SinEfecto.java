@@ -1,12 +1,13 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.atributosCarta.Efecto;
+
 public class SinEfecto implements Efecto {
 	
 
 	@Override
 	public void aplicarEfecto() {
-		// TODO Auto-generated method stub
-
+		// No hay efecto que aplicar
 	}
 
 }

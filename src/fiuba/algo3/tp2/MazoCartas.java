@@ -15,5 +15,7 @@ public class MazoCartas {
 		mazo.add(FabricaCartaMonstruo.MAGOOSCURO.crear());
 		mazo.add(FabricaCartaMonstruo.MAGOOSCURO.crear());
 		
+		
+		//mezclar las cartas con un random o shuffle
 	}
 }

@@ -26,8 +26,9 @@ public class ModoDefensa implements Modo {
 		int diferencia = this.puntosDeDefensa - puntosDeAtaque;
 		if(diferencia < 0 ) {
 			monstruo.morir();
+			return diferencia;
 		}
-		return diferencia-101;
+		return diferencia*-1; // Se le multiplica por -1 para que siempre devuelva algo negativo
 	}
 
 

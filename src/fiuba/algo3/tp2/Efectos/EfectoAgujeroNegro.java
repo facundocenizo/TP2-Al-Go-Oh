@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.cartasMagicas;
+package fiuba.algo3.tp2.Efectos;
 
 import fiuba.algo3.tp2.Campo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
@@ -12,6 +12,7 @@ public class EfectoAgujeroNegro implements Efecto {
 		this.campo = campo;
 	}
 
+	
 	@Override
 	public void aplicarEfecto() {
 		
@@ -19,5 +20,12 @@ public class EfectoAgujeroNegro implements Efecto {
 	
 		
 	}
+	
+	
+	
+	public EfectoAgujeroNegro() {
+		// TODO Auto-generated constructor stub
+	}
+
 
 }

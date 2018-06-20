@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.Efectos;
 
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 

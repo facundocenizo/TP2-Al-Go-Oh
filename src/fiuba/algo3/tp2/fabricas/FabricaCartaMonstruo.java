@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.fabricas;
 
 import fiuba.algo3.tp2.Monstruo;
+import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.Efectos.EfectoInsectoComeHombres;
 import fiuba.algo3.tp2.Efectos.EfectoJinzoSiete;
 import fiuba.algo3.tp2.Efectos.EfectoNulo;
@@ -101,7 +102,69 @@ public enum FabricaCartaMonstruo {
 			
 			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
 		}
+	},
+	CABEZAEXODIA{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 1000;
+			int puntosDeDefensa = 1000;
+			Efecto efecto = new EfectoExodia();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
+	},
+	BRAZODERECHO{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 200;
+			int puntosDeDefensa = 300;
+			Efecto efecto = new EfectoExodia();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
+	},
+	BRAZOIZQUIERDO{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 200;
+			int puntosDeDefensa = 300;
+			Efecto efecto = new EfectoExodia();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
+	},
+	PIERNADERECHA{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 200;
+			int puntosDeDefensa = 300;
+			Efecto efecto = new EfectoExodia();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
+	},
+	PIERNAIZQUIERDA{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 200;
+			int puntosDeDefensa = 300;
+			Efecto efecto = new EfectoExodia();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
 	};
+	
+	
 	
 	
 	public abstract Monstruo crear();

@@ -77,8 +77,6 @@ public class MazoCartas {
 		mazo.add(FabricaCartaCampo.WASTELAND.crear());
 		mazo.add(FabricaCartaCampo.WASTELAND.crear());
 		//6  de campo
-		
-		//mezclar las cartas con un random o shuffle
 	}
 	
 	public Carta sacarCarta() {

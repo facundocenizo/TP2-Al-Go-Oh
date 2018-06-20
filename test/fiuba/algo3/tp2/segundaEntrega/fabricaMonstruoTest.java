@@ -17,7 +17,7 @@ public class fabricaMonstruoTest {
 	
 	@Test
 	public void testCrearCartaMonstruoDebilConFactory() {
-		Monstruo Dragon = FabricaCartaMonstruo.DROGON.crear();
+		Monstruo Dragon = FabricaCartaMonstruo.DRAGON.crear();
 
 		assertTrue(Dragon.estaEnModoAtaque());
 		assertTrue(Dragon.estaBocaAbajo());
@@ -42,7 +42,7 @@ public class fabricaMonstruoTest {
 
 	@Test
 	public void testCrearCartaMonstruoPoderosoConFactory() {
-		Monstruo dragonDefinitivo = FabricaCartaMonstruo.DROGONDEFINITIVO.crear();
+		Monstruo dragonDefinitivo = FabricaCartaMonstruo.DRAGONDEFINITIVO.crear();
 
 		assertTrue(dragonDefinitivo.estaEnModoAtaque());
 		assertTrue(dragonDefinitivo.estaBocaAbajo());

@@ -18,7 +18,7 @@ import fiuba.algo3.tp2.atributosMonstruo.Poderoso;
 
 public enum FabricaCartaMonstruo {
 
-	DROGON{
+	DRAGON{
 		public Monstruo crear(){
 			Posicion posicion = new BocaAbajo();
 			Modo modo = new ModoAtaque();
@@ -42,7 +42,7 @@ public enum FabricaCartaMonstruo {
 			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
 		}
 	},
-	DROGONDEFINITIVO{
+	DRAGONDEFINITIVO{
 		public Monstruo crear(){
 			Posicion posicion = new BocaAbajo();
 			Modo modo = new ModoAtaque();

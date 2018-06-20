@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.factories.FabricaCartaMonstruo;
+import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
 public class SegundaEntregaTest {
 	

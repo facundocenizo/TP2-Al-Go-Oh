@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.factories;
+package fiuba.algo3.tp2.fabricas;
 
 import fiuba.algo3.tp2.Trampa;
 import fiuba.algo3.tp2.Efectos.EfectoCilindroMagico;

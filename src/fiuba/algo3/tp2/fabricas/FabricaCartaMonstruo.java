@@ -1,6 +1,8 @@
-package fiuba.algo3.tp2.factories;
+package fiuba.algo3.tp2.fabricas;
 
 import fiuba.algo3.tp2.Monstruo;
+import fiuba.algo3.tp2.Efectos.EfectoInsectoComeHombres;
+import fiuba.algo3.tp2.Efectos.EfectoJinzoSiete;
 import fiuba.algo3.tp2.Efectos.EfectoNulo;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
@@ -47,6 +49,55 @@ public enum FabricaCartaMonstruo {
 			int puntosDeAtaque = 4500;
 			int puntosDeDefensa = 3800;
 			Efecto efecto = new EfectoNulo();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
+	},
+
+	HUEVOMONSTRUOSO{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 600;
+			int puntosDeDefensa = 900;
+			Efecto efecto = new EfectoNulo();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
+	},
+	INSECTOCOMEHOMBRES{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 450;
+			int puntosDeDefensa = 600;
+			Efecto efecto = new EfectoInsectoComeHombres();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
+	},
+	DRAGONBLANCO{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 3000;
+			int puntosDeDefensa = 2500;
+			Efecto efecto = new EfectoNulo();
+			
+			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+		}
+	},
+	JINZOSIETE{
+		public Monstruo crear(){
+			Posicion posicion = new BocaAbajo();
+			Modo modo = new ModoAtaque();
+			Nivel nivel = new Debil();
+			int puntosDeAtaque = 500;
+			int puntosDeDefensa = 400;
+			Efecto efecto = new EfectoJinzoSiete();
 			
 			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
 		}

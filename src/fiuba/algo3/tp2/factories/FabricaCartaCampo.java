@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2.factories;
 
 import fiuba.algo3.tp2.CartaCampo;
-import fiuba.algo3.tp2.Efectos.EfectoReinforcements;
 import fiuba.algo3.tp2.Efectos.EfectoSogen;
 import fiuba.algo3.tp2.Efectos.EfectoWasteland;
 import fiuba.algo3.tp2.atributosCarta.Efecto;

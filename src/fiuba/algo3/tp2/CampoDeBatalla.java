@@ -11,6 +11,10 @@ public class CampoDeBatalla {
 		return instanciaCampoDeBatalla;
 	}
 	
+	
+	
+	
+	
 
 	
 	

@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.primeraEntrega;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -7,7 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
+import fiuba.algo3.tp2.Campo;
+import fiuba.algo3.tp2.Carta;
 import fiuba.algo3.tp2.Cementerio;
+import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.Magica;
+import fiuba.algo3.tp2.Monstruo;
+import fiuba.algo3.tp2.Trampa;
 import fiuba.algo3.tp2.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.tp2.Efectos.EfectoNulo;
 import fiuba.algo3.tp2.Efectos.SinEfecto;

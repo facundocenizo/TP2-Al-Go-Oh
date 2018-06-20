@@ -11,7 +11,7 @@ import fiuba.algo3.tp2.atributosMonstruo.Normal;
 import fiuba.algo3.tp2.atributosMonstruo.Poderoso;
 
 
-public enum FabricaMonstruos {
+public enum FabricaCartaMonstruo {
 
 	DROGON{
 		public Monstruo crear(){

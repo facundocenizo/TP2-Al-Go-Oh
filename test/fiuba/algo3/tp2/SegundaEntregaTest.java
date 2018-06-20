@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.factories.FabricaMonstruos;
+import fiuba.algo3.tp2.factories.FabricaCartaMonstruo;
 
 public class SegundaEntregaTest {
 	
@@ -16,7 +16,7 @@ public class SegundaEntregaTest {
 	
 	@Test
 	public void testCrearCartaMonstruoDebilConFactory() {
-		Monstruo Dragon = FabricaMonstruos.DROGON.crear();
+		Monstruo Dragon = FabricaCartaMonstruo.DROGON.crear();
 
 		assertTrue(Dragon.estaEnModoAtaque());
 		assertTrue(Dragon.estaBocaAbajo());
@@ -27,7 +27,7 @@ public class SegundaEntregaTest {
 	}
 	@Test
 	public void testCrearCartaMonstruoNormalConFactory() {
-		Monstruo magoOscuro = FabricaMonstruos.MAGOOSCURO.crear();
+		Monstruo magoOscuro = FabricaCartaMonstruo.MAGOOSCURO.crear();
 
 		assertTrue(magoOscuro.estaEnModoAtaque());
 		assertTrue(magoOscuro.estaBocaAbajo());
@@ -41,7 +41,7 @@ public class SegundaEntregaTest {
 
 	@Test
 	public void testCrearCartaMonstruoPoderosoConFactory() {
-		Monstruo dragonDefinitivo = FabricaMonstruos.DROGONDEFINITIVO.crear();
+		Monstruo dragonDefinitivo = FabricaCartaMonstruo.DROGONDEFINITIVO.crear();
 
 		assertTrue(dragonDefinitivo.estaEnModoAtaque());
 		assertTrue(dragonDefinitivo.estaBocaAbajo());

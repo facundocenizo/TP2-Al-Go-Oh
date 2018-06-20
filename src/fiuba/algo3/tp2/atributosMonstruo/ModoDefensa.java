@@ -23,10 +23,10 @@ public class ModoDefensa implements Modo {
 
 	@Override
 	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo) {
-		int diferencia = Math.abs(this.puntosDeDefensa - puntosDeAtaque);
-		if(diferencia < 0 ) 
+		int diferencia = this.puntosDeDefensa - puntosDeAtaque;
+		if(diferencia < 0 ) {
 			monstruo.morir();
-			monstruo.notificar(diferencia);	
+		}
 		return diferencia;
 	}
 

@@ -18,10 +18,11 @@ public class ModoAtaque implements Modo {
 
 	@Override
 	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo) {
-		int diferencia = Math.abs(this.puntosDeAtaque - puntosDeAtaque);
-		if(diferencia <= 0 )
+		int diferencia = this.puntosDeAtaque - puntosDeAtaque;
+		if (diferencia <= 0 ) {
 			monstruo.morir();
-			monstruo.notificar(diferencia);	
+			monstruo.notificar(Math.abs(diferencia));
+		}
 		return diferencia;
 		
 	}
@@ -29,9 +30,10 @@ public class ModoAtaque implements Modo {
 	@Override
 	public int atacar(Monstruo monstruoAtacado, Monstruo monstruo) {
 		int diferencia = monstruoAtacado.recibirAtaque(this.puntosDeAtaque);
-		if(diferencia >= 0 ) 
+		if(diferencia >= 0 ) {
 			monstruo.morir();
-			monstruo.notificar(diferencia);		
+			monstruo.notificar(Math.abs(diferencia));
+		}
 		return diferencia;
 	}
 

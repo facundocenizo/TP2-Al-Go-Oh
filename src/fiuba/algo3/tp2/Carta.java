@@ -42,5 +42,10 @@ public abstract class Carta implements SujetoCartaObservable {
 	public void morir() {
 		this.estado = new Muerto();
 	}
+
+	public void voltearCarta() {
+		this.posicion = this.posicion.voltear();
+		
+	}
 	
 }

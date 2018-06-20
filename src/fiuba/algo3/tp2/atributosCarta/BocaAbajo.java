@@ -6,5 +6,10 @@ public class BocaAbajo implements Posicion {
 	public boolean estaBocaAbajo() {
 		return true;
 	}
+
+	@Override
+	public Posicion voltear() {
+		return new BocaArriba();
+	}
 	
 }

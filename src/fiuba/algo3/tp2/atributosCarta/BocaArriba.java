@@ -7,4 +7,9 @@ public class BocaArriba implements Posicion {
 		return false;
 	}
 
+	@Override
+	public Posicion voltear() {
+		return new BocaAbajo();
+	}
+
 }

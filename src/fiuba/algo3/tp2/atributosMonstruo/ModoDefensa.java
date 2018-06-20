@@ -27,7 +27,7 @@ public class ModoDefensa implements Modo {
 		if(diferencia < 0 ) {
 			monstruo.morir();
 		}
-		return diferencia;
+		return diferencia-101;
 	}
 
 

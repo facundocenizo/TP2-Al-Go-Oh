@@ -36,6 +36,17 @@ public class Monstruo extends Carta{
 		return this.modo.recibirAtaque(puntosDeAtaque, this);
 	}
 
+	public boolean esDebil() {
+		return nivel.esDebil();
+	}
+	public boolean esNormal() {
+		return nivel.esNormal();
+	}
+	public boolean esPoderoso() {
+		return nivel.esPoderoso();
+	}
+	
+
 
 
 	

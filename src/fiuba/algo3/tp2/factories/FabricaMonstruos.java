@@ -8,6 +8,7 @@ import fiuba.algo3.tp2.atributosMonstruo.Modo;
 import fiuba.algo3.tp2.atributosMonstruo.ModoAtaque;
 import fiuba.algo3.tp2.atributosMonstruo.Nivel;
 import fiuba.algo3.tp2.atributosMonstruo.Normal;
+import fiuba.algo3.tp2.atributosMonstruo.Poderoso;
 
 
 public enum FabricaMonstruos {
@@ -38,7 +39,7 @@ public enum FabricaMonstruos {
 		public Monstruo crear(){
 			Posicion posicion = new BocaAbajo();
 			Modo modo = new ModoAtaque();
-			Nivel nivel = new Normal();
+			Nivel nivel = new Poderoso();
 			int puntosDeAtaque = 4500;
 			int puntosDeDefensa = 3800;
 

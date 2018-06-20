@@ -66,11 +66,22 @@ public class PrimeraEntregaTest {
 
 	@Test
 	public void AtacarDosMonstruosEnModoAtaqueElPrimeroMuerePorqueTieneMenosPuntosAtaque() {
-		
+		Jugador jugador1 = new Jugador();	
+		Jugador jugador2 = new Jugador();	
 		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new EfectoNulo());
 		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new EfectoNulo());
 		
+		monstruoAtacante.añadirObservador(jugador1);
+		monstruoAtacado.añadirObservador(jugador2);
 		monstruoAtacante.atacar(monstruoAtacado);
+		
+		// El jugador1 pierde 100 puntos de vida, el jugador2 queda con 8000
+		int puntosVidaJugador1 = 8000 - (500 - 400);
+		int puntosVidaJugador2 = 8000;
+		
+		System.out.println(jugador2.vida());
+		assertEquals(puntosVidaJugador1, jugador1.vida());
+		assertEquals(puntosVidaJugador2, jugador2.vida());
 		
 		assertTrue(monstruoAtacado.estaMuerta());
 		assertFalse(monstruoAtacante.estaMuerta());
@@ -134,9 +145,13 @@ public class PrimeraEntregaTest {
 
 	@Test
 	public void AtacarDosMonstruosEnModoAtaqueAmbosMuerenPorqueTienenIgualPuntosAtaque() {
-		
+		Jugador jugador1 = new Jugador();	
+		Jugador jugador2 = new Jugador();	
 		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new EfectoNulo());
 		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 200, new EfectoNulo());
+		
+		monstruoAtacante.añadirObservador(jugador1);
+		monstruoAtacado.añadirObservador(jugador2);
 		
 		monstruoAtacante.atacar(monstruoAtacado);
 		

@@ -207,14 +207,12 @@ public class PrimeraEntregaTest {
 		
 		// Ningun jugador pierde vida
 		int vida = 8000;
-		
-		System.out.println(jugador2.vida());
+	
 		assertEquals(vida, jugador1.vida());
 		assertEquals(vida, jugador2.vida());			
 		
 		assertFalse(monstruoAtacado.estaMuerta());
-		assertTrue(monstruoAtacante.estaMuerta());
-		//agregarSupuesto monstruo que ataca con 500 de Pts de ataque Muere al atacar a monstruo en defensa con 600putos de defensa.
+		assertFalse(monstruoAtacante.estaMuerta());
 	}
 
 	@Test

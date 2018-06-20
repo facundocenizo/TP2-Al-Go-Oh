@@ -30,7 +30,6 @@ public class ModoAtaque implements Modo {
 	@Override
 	public int atacar(Monstruo monstruoAtacado, Monstruo monstruo) {
 		int diferencia = monstruoAtacado.recibirAtaque(this.puntosDeAtaque);
-		System.out.println(diferencia);
 		if(diferencia >= 0 ) {
 			monstruo.morir();
 			monstruo.notificar(Math.abs(diferencia));

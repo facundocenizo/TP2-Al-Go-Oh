@@ -16,39 +16,39 @@ public class SegundaEntregaTest {
 	
 	@Test
 	public void testCrearCartaMonstruoDebilConFactory() {
-		Monstruo Drogon = FabricaMonstruos.DROGON.crear();
+		Monstruo Dragon = FabricaMonstruos.DROGON.crear();
 
-		assertTrue(Drogon.estaEnModoAtaque());
-		assertTrue(Drogon.estaBocaAbajo());
+		assertTrue(Dragon.estaEnModoAtaque());
+		assertTrue(Dragon.estaBocaAbajo());
 		
-		assertTrue(Drogon.esDebil());
-		assertFalse(Drogon.esNormal());
-		assertFalse(Drogon.esPoderoso());
+		assertTrue(Dragon.esDebil());
+		assertFalse(Dragon.esNormal());
+		assertFalse(Dragon.esPoderoso());
 	}
 	@Test
 	public void testCrearCartaMonstruoNormalConFactory() {
-		Monstruo Drogon = FabricaMonstruos.MAGOOSCURO.crear();
+		Monstruo magoOscuro = FabricaMonstruos.MAGOOSCURO.crear();
 
-		assertTrue(Drogon.estaEnModoAtaque());
-		assertTrue(Drogon.estaBocaAbajo());
+		assertTrue(magoOscuro.estaEnModoAtaque());
+		assertTrue(magoOscuro.estaBocaAbajo());
 		
 
-		assertFalse(Drogon.esDebil());
-		assertTrue(Drogon.esNormal());
-		assertFalse(Drogon.esPoderoso());
+		assertFalse(magoOscuro.esDebil());
+		assertTrue(magoOscuro.esNormal());
+		assertFalse(magoOscuro.esPoderoso());
 		
 	}
 
 	@Test
 	public void testCrearCartaMonstruoPoderosoConFactory() {
-		Monstruo Drogon = FabricaMonstruos.DROGONDEFINITIVO.crear();
+		Monstruo dragonDefinitivo = FabricaMonstruos.DROGONDEFINITIVO.crear();
 
-		assertTrue(Drogon.estaEnModoAtaque());
-		assertTrue(Drogon.estaBocaAbajo());
+		assertTrue(dragonDefinitivo.estaEnModoAtaque());
+		assertTrue(dragonDefinitivo.estaBocaAbajo());
 		
-		assertFalse(Drogon.esDebil());
-		assertFalse(Drogon.esNormal());
-		assertTrue(Drogon.esPoderoso());
+		assertFalse(dragonDefinitivo.esDebil());
+		assertFalse(dragonDefinitivo.esNormal());
+		assertTrue(dragonDefinitivo.esPoderoso());
 	}
 
 }

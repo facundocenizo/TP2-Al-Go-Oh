@@ -27,7 +27,7 @@ public class ModoDefensa implements Modo {
 		
 		if(diferencia < 0 ) 
 			monstruo.morir();
-		
+			monstruo.notificar(diferencia);	
 		return diferencia;
 	}
 

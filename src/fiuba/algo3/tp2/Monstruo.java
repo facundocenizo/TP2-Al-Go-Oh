@@ -40,8 +40,8 @@ public class Monstruo extends Carta{
 		
 	}
 
-	public int atacar(Monstruo monstruoAtacado) {
-		return this.modo.atacar(monstruoAtacado, this);
+	public void atacar(Monstruo monstruoAtacado) {
+		this.modo.atacar(monstruoAtacado, this);
 	}
 
 	public int recibirAtaque(int puntosDeAtaque) {

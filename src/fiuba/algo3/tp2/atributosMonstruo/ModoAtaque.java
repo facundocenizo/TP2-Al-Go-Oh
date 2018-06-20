@@ -15,14 +15,13 @@ public class ModoAtaque implements Modo {
 	public void cargarPuntos(int puntosDeAtaque, int puntosDeDefensa) {
 		this.puntosDeAtaque = puntosDeAtaque;
 	}
-	
 
 	@Override
 	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo) {
 		int diferencia = this.puntosDeAtaque - puntosDeAtaque;
 		if(diferencia <= 0 )
 			monstruo.morir();
-		
+			monstruo.notificar(diferencia);	
 		return diferencia;
 		
 	}
@@ -32,7 +31,7 @@ public class ModoAtaque implements Modo {
 		int diferencia = monstruoAtacado.recibirAtaque(this.puntosDeAtaque);
 		if(diferencia >= 0 ) 
 			monstruo.morir();
-		
+			monstruo.notificar(diferencia);		
 		return diferencia;
 	}
 

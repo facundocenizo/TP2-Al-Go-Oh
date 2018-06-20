@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.Efectos;
 
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 
-public class EfetoFisura implements Efecto {
+public class EfectoNulo implements Efecto {
 
 	@Override
 	public void aplicarEfecto() {

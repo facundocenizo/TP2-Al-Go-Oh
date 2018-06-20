@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
 import fiuba.algo3.tp2.atributosMonstruo.Modo;
 import fiuba.algo3.tp2.atributosMonstruo.Nivel;
@@ -10,8 +11,8 @@ public class Monstruo extends Carta{
 	private int puntosDeDefensa;
 	private Nivel nivel;
 	
-	public Monstruo(Posicion posicion, Modo modo, Nivel nivel, int puntosDeAtaque, int puntosDeDefensa) {
-		super(posicion, new SinEfecto());
+	public Monstruo(Posicion posicion, Modo modo, Nivel nivel, int puntosDeAtaque, int puntosDeDefensa, Efecto efecto) {
+		super(posicion, efecto);
 		this.modo = modo;
 		this.modo.cargarPuntos(puntosDeAtaque,puntosDeDefensa);
 		this.puntosDeAtaque = puntosDeAtaque;

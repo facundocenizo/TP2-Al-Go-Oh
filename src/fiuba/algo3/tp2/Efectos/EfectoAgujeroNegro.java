@@ -1,13 +1,13 @@
 package fiuba.algo3.tp2.Efectos;
 
-import fiuba.algo3.tp2.Campo;
+import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 
 public class EfectoAgujeroNegro implements Efecto {
 	
-	private Campo campo;
+	private CampoDeBatalla campo;
 
-	public EfectoAgujeroNegro(Campo campo) {
+	public EfectoAgujeroNegro(CampoDeBatalla campo) {
 		
 		this.campo = campo;
 	}

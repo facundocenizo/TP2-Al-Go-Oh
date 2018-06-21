@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.Campo;
+import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.Carta;
 import fiuba.algo3.tp2.Cementerio;
 import fiuba.algo3.tp2.Jugador;
@@ -125,7 +125,7 @@ public class PrimeraEntregaTest {
 		Monstruo monstruo4 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new EfectoNulo());
 		Monstruo monstruo5 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new EfectoNulo());
 		
-		Campo campo = new Campo();
+		CampoDeBatalla campo = CampoDeBatalla.getInstance();
 		campo.recibirMonstruoDeJugador1(monstruo1);
 		campo.recibirMonstruoDeJugador1(monstruo2);
 		campo.recibirMonstruoDeJugador1(monstruo3);
@@ -227,7 +227,7 @@ public class PrimeraEntregaTest {
 		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 600, new EfectoNulo());
 		Monstruo monstruoPoderoso = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 600, new EfectoNulo());
 		
-		Campo campo = new Campo();
+		CampoDeBatalla campo = CampoDeBatalla.getInstance();
 		campo.recibirMonstruoDeJugador1(monstruo);
 		campo.recibirMonstruoDeJugador1(monstruoPoderoso); //estafuncion debe chequear las estrellas del monstruo  y sacrificar 1 mons del campo
 		
@@ -243,7 +243,7 @@ public class PrimeraEntregaTest {
 		Monstruo monstruoDos = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 600, new EfectoNulo());
 		Monstruo monstruoPoderoso = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 600, new EfectoNulo());
 		
-		Campo campo = new Campo();
+		CampoDeBatalla campo = CampoDeBatalla.getInstance();
 		campo.recibirMonstruoDeJugador1(monstruoUno);
 		campo.recibirMonstruoDeJugador1(monstruoDos);
 		campo.recibirMonstruoDeJugador1(monstruoPoderoso); //estafuncion debe chequear las estrellas del monstruo y sacrificar 2 mons del campo

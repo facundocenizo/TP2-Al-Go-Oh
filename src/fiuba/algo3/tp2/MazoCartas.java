@@ -2,6 +2,7 @@ package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
 
+import fiuba.algo3.tp2.excepciones.MazoVacioException;
 import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
@@ -71,22 +72,28 @@ public class MazoCartas {
 
 		mazo.add(FabricaCartaCampo.SOGEN.crear());
 		mazo.add(FabricaCartaCampo.SOGEN.crear());
-		mazo.add(FabricaCartaCampo.SOGEN.crear());
 
 		mazo.add(FabricaCartaCampo.WASTELAND.crear());
 		mazo.add(FabricaCartaCampo.WASTELAND.crear());
-		mazo.add(FabricaCartaCampo.WASTELAND.crear());
-		//6  de campo
+		//4  de campo
+		
+		//Total = 40 cartas
 	}
 	
 	public Carta sacarCarta() {
+		
+		if (mazo.size()==0) {
+			throw new MazoVacioException();
+		}
 
 		Random rand = new Random();
 		int numeroCartasEnElMazo = mazo.size();
 		int numeroRandom = rand.nextInt(numeroCartasEnElMazo);
 		//numeroCartasEnElMazo es el maximo y 0 es el minimo
 		
-		return mazo.get(numeroRandom);
+		Carta cartaADevolverCarta = mazo.get(numeroRandom);
+		mazo.remove(numeroRandom);
+		return cartaADevolverCarta;
 	}
 	
 }

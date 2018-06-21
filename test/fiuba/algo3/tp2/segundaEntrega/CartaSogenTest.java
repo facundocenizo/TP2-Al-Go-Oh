@@ -8,7 +8,7 @@ import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
-public class cartaSogenTest {
+public class CartaSogenTest {
 
 	@Test
 	public void testCartaSogenAumenta500PuntosDefensaMonstruosPropiosY200PuntosAtaqueMonstruosOponente() {

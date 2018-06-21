@@ -12,7 +12,7 @@ import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
 
-public class cartaWastelandTest {
+public class CartaWastelandTest {
 		
 		@Test
 		public void testCartaWastelandAumenta200PuntosAtaqueMonstruosPropiosY300PuntosDefensaMonstruosOponente() {

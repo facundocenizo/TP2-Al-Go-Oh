@@ -14,7 +14,7 @@ import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaTrampa;
 
-public class cartaReinforcementsTest {
+public class CartaReinforcementsTest {
 
 	@Test
 	public void testCartaEfectoReinforcements() {

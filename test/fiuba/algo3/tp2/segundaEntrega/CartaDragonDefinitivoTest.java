@@ -8,7 +8,7 @@ import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
-public class cartaDragonDefinitivoTest {
+public class CartaDragonDefinitivoTest {
 
 		@Test
 		public void SeRequiereDosSacrificiosParaPonerUnMonstruoDeSieteOMasEstrellas() {

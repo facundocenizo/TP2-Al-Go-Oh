@@ -10,7 +10,7 @@ import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
-public class cartaInsectoComeHombresTest {
+public class CartaInsectoComeHombresTest {
 	
 	@Test
 	public void testMonstruoInsectoComeHombresDestruyeLaCartaQueLoVolteaAlSerAtacado() {

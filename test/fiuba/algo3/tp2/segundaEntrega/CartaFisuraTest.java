@@ -8,7 +8,7 @@ import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
-public class cartaFisuraTest {
+public class CartaFisuraTest {
 
 	@Test
 	public void activarFisuraDestruyeElMonstruoConMenorPuntosDeAtaqueDelOponente() {

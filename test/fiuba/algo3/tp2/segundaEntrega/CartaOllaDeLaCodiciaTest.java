@@ -7,7 +7,7 @@ import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Magica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 
-public class cartaOllaDeLaCodiciaTest {
+public class CartaOllaDeLaCodiciaTest {
 
 	@Test
 	public void activarOllaDeLaCodiciaAgregaDosCartasALaManoDelJugador() {

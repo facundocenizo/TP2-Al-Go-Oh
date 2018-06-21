@@ -67,4 +67,9 @@ public class Jugador implements Observador {
 		this.ladoDelCampo.activarMagicaEnCampo(magica);
 	}
 
+	public void jugarTurno() {
+		// TODO Apéndice de método generado automáticamente
+		
+	}
+
 }

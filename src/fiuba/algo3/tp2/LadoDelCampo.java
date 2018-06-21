@@ -8,6 +8,7 @@ import fiuba.algo3.tp2.excepciones.ZonaMonstruosLlenaException;
 
 public class LadoDelCampo {
 	
+	private Jugador jugador;
 	private LadoDelCampo otroLado;
 	private Cementerio cementerio;
 	private MazoCartas mazoCartas;
@@ -15,7 +16,8 @@ public class LadoDelCampo {
 	private List<Trampa> cartasTrampa;
 	private List<Magica> cartasMagicas;
 	
-	public LadoDelCampo(LadoDelCampo otroLado) {
+	public LadoDelCampo(Jugador jugador, LadoDelCampo otroLado) {
+		this.jugador = jugador;
 		this.otroLado = otroLado;
 		this.cementerio = new Cementerio();
 		this.mazoCartas = new MazoCartas();
@@ -63,7 +65,37 @@ public class LadoDelCampo {
 			}
 		}
 	}
+
+	public List<Monstruo> verMonstruosRivales() {
+		return this.otroLado.verMonstruos();
+	}
+
+	public List<Monstruo> verMonstruos() {
+		return zonaMonstruos;
+	}
 	
+	public void activarTrampa(Monstruo atacante, Monstruo atacado) {
+		if (cartasTrampa.size()!=0) {
+			Trampa trampa = cartasTrampa.remove(0);
+			trampa.aplicarEfecto();
+		}
+	}
+
+	public void activarMagicaDeMano(Magica magica) {
+		magica.aplicarEfecto();
+	}
+
+	public void activarMagicaEnCampo(Magica magica) {
+		this.cartasMagicas.remove(magica);
+		magica.aplicarEfecto();
+	}
 	
+	public void atacarPuntosDelRival(int puntos) {
+		this.otroLado.sufrirDanioAJugador(puntos);
+	}
+
+	public void sufrirDanioAJugador(int puntos) {
+		this.jugador.sufrirDanio(puntos);
+	}
 
 }

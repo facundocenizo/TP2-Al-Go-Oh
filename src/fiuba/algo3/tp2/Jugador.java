@@ -7,12 +7,14 @@ public class Jugador implements Observador {
 	
 	private int vida;
 	private List<Carta> cartasEnMano;
+	private LadoDelCampo ladoDelCampo;
 	private Turno turno;
 	
-	public Jugador() {
+	public Jugador(LadoDelCampo lado) {
 		this.vida = 8000;
 		this.cartasEnMano = new ArrayList<Carta>();
-		this.turno = new TurnoActivo();
+		this.ladoDelCampo = lado;
+		//this.turno = new TurnoActivo();
 	}
 	
 	public int vida() {
@@ -34,6 +36,35 @@ public class Jugador implements Observador {
 	
 	public void voltearCarta(Carta unaCarta) {
 		unaCarta.voltearCarta();
+	}
+	
+	public List<Monstruo> verMonstruosRivales() {
+		return this.ladoDelCampo.verMonstruosRivales();
+	}
+	
+	public void morir() {
+		//implementar
+	}
+	
+	public void colocarCarta(Monstruo monstruo) {
+		this.ladoDelCampo.colocarMonstruo(monstruo);
+	}
+	
+	public void colocarCarta(Magica magica) {
+		this.ladoDelCampo.colocarMagica(magica);
+	}
+	
+	public void colocarCarta(Trampa trampa) {
+		this.ladoDelCampo.colocarTrampa(trampa);
+	}
+	
+	public void activarMagicaDeMano(Magica magica) {
+		this.ladoDelCampo.activarMagicaDeMano(magica);
+		this.cartasEnMano.remove(magica);
+	}
+	
+	public void activarMagicaEnCampo(Magica magica) {
+		this.ladoDelCampo.activarMagicaEnCampo(magica);
 	}
 
 }

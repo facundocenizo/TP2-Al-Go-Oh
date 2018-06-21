@@ -8,7 +8,7 @@ import org.junit.Test;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
-public class fabricaMonstruoTest {
+public class FabricaMonstruoTest {
 	
 	@Test
 	public void testCartaWastelandAumenta200PuntosAtaqueMonstruosPropiosY300PuntosDefensaMonstruosOponente() {

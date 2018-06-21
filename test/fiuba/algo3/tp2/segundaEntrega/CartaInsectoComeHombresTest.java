@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
@@ -17,8 +18,8 @@ public class CartaInsectoComeHombresTest {
 		
 		CampoDeBatalla campo = CampoDeBatalla.getInstance();
 
-		Jugador jugador1 = new Jugador(); //hacerlo activo
-		Jugador jugador2 = new Jugador(); //hacerlo inactivo
+		Jugador jugador1 = new Jugador(null)); //hacerlo activo
+		Jugador jugador2 = new Jugador(null); //hacerlo inactivo
 		
 		Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
 		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();

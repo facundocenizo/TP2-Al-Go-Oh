@@ -41,7 +41,6 @@ public class PrimeraEntregaTest {
 		int puntosDeAtaque = 1000;
 		int puntosDeDefensa = 500;
 		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoDefensa(), new Debil(), puntosDeAtaque, puntosDeDefensa, new EfectoNulo());
-		
 		assertFalse(monstruo.estaEnModoAtaque());
 	}
 	

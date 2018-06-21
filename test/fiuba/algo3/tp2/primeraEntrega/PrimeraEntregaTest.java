@@ -44,7 +44,6 @@ public class PrimeraEntregaTest {
 		assertFalse(monstruo.estaEnModoAtaque());
 	}
 	
-	
 	@Test
 	public void testColocarUnaCartaMagicaBocaAbajo() {
 		Efecto sinEfecto = new SinEfecto();

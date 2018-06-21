@@ -1,35 +1,39 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
-public class cartaJinzoSieteTest {
+public class cartaInsectoComeHombresTest {
 	
 	@Test
-	public void testMonstruoJinzoSieteAtacaDirectamenteALosPuntosDeVidaIgnorandoMonstruosDelOponente() {
+	public void testMonstruoInsectoComeHombresDestruyeLaCartaQueLoVolteaAlSerAtacado() {
 		
 		CampoDeBatalla campo = CampoDeBatalla.getInstance();
 
 		Jugador jugador1 = new Jugador(); //hacerlo activo
 		Jugador jugador2 = new Jugador(); //hacerlo inactivo
 		
-		Monstruo jinzo = FabricaCartaMonstruo.JINZOSIETE.crear();
+		Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
 		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
 		
-		//campo.recibirMonstruoDeJugador1(jinzo);
+		//AGREGAR A RECIBIR MONSTRUO QUE RECIBA LA POSICION Y EL MODO PARA MONSTRUOS (boca abajo y posicion defensa)
+		//campo.recibirMonstruoDeJugador1(insectoComeHombres);
 		//campo.recibirMonstruoDeJugador2(huevo);
 		
-		//jugador1.atacar(jinzo, huevo); -> esto falla por algun motivo
 		
-		int vidaEsperada = 8000 - 500;
-		//assertEquals(vidaEsperada, jugador2.vida());
+		//jugador1.atacar(huevo, insectoComeHombres); -> esto falla por algun motivo
+		
+
+		//assertTrue(huevo.estaMuerta());
 	
 		
 	}	
+
 }

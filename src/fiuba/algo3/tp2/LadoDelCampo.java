@@ -16,14 +16,20 @@ public class LadoDelCampo {
 	private List<Trampa> cartasTrampa;
 	private List<Magica> cartasMagicas;
 	
-	public LadoDelCampo(Jugador jugador, LadoDelCampo otroLado) {
-		this.jugador = jugador;
-		this.otroLado = otroLado;
+	public LadoDelCampo() {
 		this.cementerio = new Cementerio();
 		this.mazoCartas = new MazoCartas();
 		this.zonaMonstruos = new ArrayList<Monstruo>();
 		this.cartasTrampa = new ArrayList<Trampa>();
 		this.cartasMagicas = new ArrayList<Magica>();
+	}
+	
+	public void setJugador(Jugador jugador) {
+		this.jugador = jugador;
+	}
+	
+	public void setOtroLado(LadoDelCampo otroLado) {
+		this.otroLado = otroLado;
 	}
 	
 	public Carta sacarCarta() {

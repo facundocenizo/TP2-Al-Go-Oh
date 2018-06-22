@@ -22,7 +22,7 @@ public abstract class Carta implements SujetoCartaObservable {
 	public abstract void aplicarEfecto();
 	
 	@Override
-	public void añadirObservador(Observador observador) {
+	public void aniadirObservador(Observador observador) {
 		this.observador = observador;
 	}
 	

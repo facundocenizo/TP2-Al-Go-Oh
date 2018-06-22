@@ -10,11 +10,14 @@ public class Jugador implements Observador {
 	private LadoDelCampo ladoDelCampo;
 	private Turno turno;
 	
-	public Jugador(LadoDelCampo lado) {
+	public Jugador() {
 		this.vida = 8000;
 		this.cartasEnMano = new ArrayList<Carta>();
-		this.ladoDelCampo = lado;
 		//this.turno = new TurnoActivo();
+	}
+	
+	public void setLado(LadoDelCampo lado) {
+		this.ladoDelCampo = lado;
 	}
 	
 	public int vida() {

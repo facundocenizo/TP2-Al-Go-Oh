@@ -75,8 +75,8 @@ public class PrimeraEntregaTest {
 		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new EfectoNulo());
 		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new EfectoNulo());
 		
-		monstruoAtacado.añadirObservador(jugador1);
-		monstruoAtacante.añadirObservador(jugador2);
+		monstruoAtacado.aniadirObservador(jugador1);
+		monstruoAtacante.aniadirObservador(jugador2);
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		// El jugador1 pierde 100 puntos de vida, el jugador2 queda con 8000
@@ -98,8 +98,8 @@ public class PrimeraEntregaTest {
 		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new EfectoNulo());
 		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 200, new EfectoNulo());
 		
-		monstruoAtacado.añadirObservador(jugador1);
-		monstruoAtacante.añadirObservador(jugador2);
+		monstruoAtacado.aniadirObservador(jugador1);
+		monstruoAtacante.aniadirObservador(jugador2);
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		// El jugador1 queda con 8000, el jugador2 se le resta 100 puntos de vida
@@ -162,8 +162,8 @@ public class PrimeraEntregaTest {
 		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new EfectoNulo());
 		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 200, new EfectoNulo());
 		
-		monstruoAtacado.añadirObservador(jugador1);
-		monstruoAtacante.añadirObservador(jugador2);
+		monstruoAtacado.aniadirObservador(jugador1);
+		monstruoAtacante.aniadirObservador(jugador2);
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		// Ningun jugador pierde vida
@@ -184,8 +184,8 @@ public class PrimeraEntregaTest {
 		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(), new Debil(), 400, 300, new EfectoNulo());
 		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new EfectoNulo());
 		
-		monstruoAtacado.añadirObservador(jugador1);
-		monstruoAtacante.añadirObservador(jugador2);
+		monstruoAtacado.aniadirObservador(jugador1);
+		monstruoAtacante.aniadirObservador(jugador2);
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		// Ningun jugador pierde vida
@@ -205,8 +205,8 @@ public class PrimeraEntregaTest {
 		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(), new Debil(), 300, 600, new EfectoNulo());
 		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new EfectoNulo());
 		
-		monstruoAtacado.añadirObservador(jugador1);
-		monstruoAtacante.añadirObservador(jugador2);
+		monstruoAtacado.aniadirObservador(jugador1);
+		monstruoAtacante.aniadirObservador(jugador2);
 		monstruoAtacante.atacar(monstruoAtacado);
 		
 		// Ningun jugador pierde vida

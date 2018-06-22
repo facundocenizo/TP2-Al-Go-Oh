@@ -43,6 +43,13 @@ public class CampoDeBatalla {
 	
 	
 	public void recibirMonstruoDeJugador2(Monstruo cartaMonstruo) {
+		if (cartaMonstruo.esNormal()) {
+			zonaDeMonstruosDeJugador2.get(0).morir();
+		}
+		if (cartaMonstruo.esPoderoso()) {
+			zonaDeMonstruosDeJugador2.get(0).morir();
+			zonaDeMonstruosDeJugador2.get(1).morir();
+		}
 		zonaDeMonstruosDeJugador2.add(cartaMonstruo);
 	}
 

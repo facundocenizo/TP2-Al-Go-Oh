@@ -18,8 +18,8 @@ public class CartaInsectoComeHombresTest {
 		
 		CampoDeBatalla campo = CampoDeBatalla.getInstance();
 
-		Jugador jugador1 = new Jugador(null)); //hacerlo activo
-		Jugador jugador2 = new Jugador(null); //hacerlo inactivo
+		Jugador jugador1 = new Jugador(); //hacerlo activo
+		Jugador jugador2 = new Jugador(); //hacerlo inactivo
 		
 		Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
 		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();

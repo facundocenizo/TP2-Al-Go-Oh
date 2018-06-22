@@ -74,5 +74,9 @@ public class Jugador implements Observador {
 		// TODO Apéndice de método generado automáticamente
 		
 	}
+	
+	public void tomarCartaDelMazo() {
+		this.cartasEnMano.add(this.ladoDelCampo.sacarCarta());
+	}
 
 }

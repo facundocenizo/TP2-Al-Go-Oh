@@ -83,17 +83,17 @@ public class LadoDelCampo {
 	public void activarTrampa(Monstruo atacante, Monstruo atacado) {
 		if (cartasTrampa.size()!=0) {
 			Trampa trampa = cartasTrampa.remove(0);
-			trampa.aplicarEfecto();
+			trampa.aplicarEfecto(this, this.otroLado);
 		}
 	}
 
 	public void activarMagicaDeMano(Magica magica) {
-		magica.aplicarEfecto();
+		magica.aplicarEfecto(this, this.otroLado);
 	}
 
 	public void activarMagicaEnCampo(Magica magica) {
 		this.cartasMagicas.remove(magica);
-		magica.aplicarEfecto();
+		magica.aplicarEfecto(this, this.otroLado);
 	}
 	
 	public void atacarPuntosDelRival(int puntos) {

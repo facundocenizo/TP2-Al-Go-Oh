@@ -4,7 +4,7 @@ import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.Efectos.EfectoInsectoComeHombres;
 import fiuba.algo3.tp2.Efectos.EfectoJinzoSiete;
-import fiuba.algo3.tp2.Efectos.EfectoNulo;
+import fiuba.algo3.tp2.Efectos.SinEfecto;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
@@ -25,7 +25,7 @@ public enum FabricaCartaMonstruo {
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 400;
 			int puntosDeDefensa = 300;
-			Efecto efecto = new EfectoNulo();
+			Efecto efecto = new SinEfecto();
 			
 			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
 		}
@@ -37,7 +37,7 @@ public enum FabricaCartaMonstruo {
 			Nivel nivel = new Normal();
 			int puntosDeAtaque = 2500;
 			int puntosDeDefensa = 2100;
-			Efecto efecto = new EfectoNulo();
+			Efecto efecto = new SinEfecto();
 
 			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
 		}
@@ -49,7 +49,7 @@ public enum FabricaCartaMonstruo {
 			Nivel nivel = new Poderoso();
 			int puntosDeAtaque = 4500;
 			int puntosDeDefensa = 3800;
-			Efecto efecto = new EfectoNulo();
+			Efecto efecto = new SinEfecto();
 			
 			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
 		}
@@ -62,7 +62,7 @@ public enum FabricaCartaMonstruo {
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 600;
 			int puntosDeDefensa = 900;
-			Efecto efecto = new EfectoNulo();
+			Efecto efecto = new SinEfecto();
 			
 			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
 		}
@@ -86,7 +86,7 @@ public enum FabricaCartaMonstruo {
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 3000;
 			int puntosDeDefensa = 2500;
-			Efecto efecto = new EfectoNulo();
+			Efecto efecto = new SinEfecto();
 			
 			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
 		}

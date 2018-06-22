@@ -11,9 +11,9 @@ public class CartaCampo extends Carta {
 	}
 
 	@Override
-	public void aplicarEfecto() {
-		// TODO Auto-generated method stub
-
+	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
+		// TODO Apéndice de método generado automáticamente
+		
 	}
 
 }

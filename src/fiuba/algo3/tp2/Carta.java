@@ -6,7 +6,7 @@ import fiuba.algo3.tp2.atributosCarta.Muerto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
 import fiuba.algo3.tp2.atributosCarta.Vivo;
 
-public abstract class Carta implements SujetoCartaObservable {
+public abstract class Carta implements SujetoCartaObservable,Efecto{
 	
 	protected Posicion posicion;
 	protected Estado estado;
@@ -18,8 +18,6 @@ public abstract class Carta implements SujetoCartaObservable {
 		this.estado = new Vivo();
 		this.efecto = efecto;
 	}
-	
-	public abstract void aplicarEfecto();
 	
 	@Override
 	public void aniadirObservador(Observador observador) {

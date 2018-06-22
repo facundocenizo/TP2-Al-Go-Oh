@@ -11,7 +11,8 @@ public class CampoDeBatalla {
 	private LinkedList<Monstruo> zonaDeMonstruosDeJugador2;
 	private Cementerio cementerioDeJugador1;
 	private Cementerio cementerioDeJugador2;
-	
+	private LadoDelCampo ladoj1; //inicializar en constructor
+	private LadoDelCampo ladoj2;
 	
 	
 

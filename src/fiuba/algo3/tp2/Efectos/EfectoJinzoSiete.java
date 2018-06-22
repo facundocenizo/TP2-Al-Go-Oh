@@ -1,13 +1,15 @@
 package fiuba.algo3.tp2.Efectos;
 
+import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 
 public class EfectoJinzoSiete implements Efecto {
 
 	@Override
-	public void aplicarEfecto() {
-		// TODO Auto-generated method stub
-
+	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
+		// TODO Apéndice de método generado automáticamente
+		
 	}
+	
 
 }

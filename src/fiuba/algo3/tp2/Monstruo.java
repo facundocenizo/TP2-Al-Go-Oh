@@ -19,15 +19,12 @@ public class Monstruo extends Carta{
 		this.puntosDeDefensa = puntosDeDefensa;
 		this.nivel = nivel;
     }
+	
 
 	public boolean estaEnModoAtaque() {
 		return modo.estaEnModoAtaque();
 	}
 
-	@Override
-	public void aplicarEfecto() {
-		
-	}
 
 	public void atacar(Monstruo monstruoAtacado) {
 		this.modo.atacar(monstruoAtacado, this);
@@ -45,6 +42,12 @@ public class Monstruo extends Carta{
 	}
 	public boolean esPoderoso() {
 		return nivel.esPoderoso();
+	}
+
+
+	@Override
+	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
+		this.efecto.aplicarEfecto(propio, rival);
 	}
 	
 

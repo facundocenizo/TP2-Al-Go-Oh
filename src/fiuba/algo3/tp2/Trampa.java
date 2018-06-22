@@ -10,8 +10,8 @@ public class Trampa extends Carta{
 	}
 
 	@Override
-	public void aplicarEfecto() {
-		efecto.aplicarEfecto();
+	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
+		efecto.aplicarEfecto(propio, rival);
 		morir();
 	}
 

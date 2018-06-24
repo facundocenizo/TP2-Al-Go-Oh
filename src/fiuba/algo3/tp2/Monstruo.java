@@ -43,6 +43,10 @@ public class Monstruo extends Carta{
 	public boolean esPoderoso() {
 		return nivel.esPoderoso();
 	}
+	
+	public int darPuntosDeAtaque() {
+		return this.puntosDeAtaque;
+	}
 
 
 	@Override

@@ -38,7 +38,6 @@ public class CartaFisuraTest {
 		Monstruo huevoMonstruoso = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
 		Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
 		
-		
 		jugador2.colocarCarta(huevoMonstruoso);
 		jugador2.colocarCarta(insectoComeHombres);
 	
@@ -52,6 +51,8 @@ public class CartaFisuraTest {
 		
 		assertTrue(jugador1.verMonstruosRivales().contains(huevoMonstruoso));
 		assertFalse(jugador1.verMonstruosRivales().contains(insectoComeHombres));
+		
+		
 		
 	}
 }

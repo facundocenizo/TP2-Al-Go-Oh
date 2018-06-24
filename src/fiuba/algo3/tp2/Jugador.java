@@ -1,12 +1,13 @@
 package fiuba.algo3.tp2;
 
+
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Jugador implements Observador {
 	
 	private int vida;
-	private List<Carta> cartasEnMano;
+	private ArrayList<Carta> cartasEnMano;
 	private LadoDelCampo ladoDelCampo;
 	private Turno turno;
 	
@@ -41,7 +42,7 @@ public class Jugador implements Observador {
 		unaCarta.voltearCarta();
 	}
 	
-	public List<Monstruo> verMonstruosRivales() {
+	public ArrayList<Monstruo> verMonstruosRivales() {
 		return this.ladoDelCampo.verMonstruosRivales();
 	}
 	

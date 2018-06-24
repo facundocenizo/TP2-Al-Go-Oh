@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import fiuba.algo3.tp2.excepciones.ZonaDeTrampaYMagicasLlenaException;
 import fiuba.algo3.tp2.excepciones.ZonaMonstruosLlenaException;
@@ -12,9 +11,9 @@ public class LadoDelCampo {
 	private LadoDelCampo otroLado;
 	private Cementerio cementerio;
 	private MazoCartas mazoCartas;
-	private List<Monstruo> zonaMonstruos;
-	private List<Trampa> cartasTrampa;
-	private List<Magica> cartasMagicas;
+	private ArrayList<Monstruo> zonaMonstruos;
+	private ArrayList<Trampa> cartasTrampa;
+	private ArrayList<Magica> cartasMagicas;
 	
 	public LadoDelCampo() {
 		this.cementerio = new Cementerio();
@@ -72,11 +71,11 @@ public class LadoDelCampo {
 		}
 	}
 
-	public List<Monstruo> verMonstruosRivales() {
+	public ArrayList<Monstruo> verMonstruosRivales() {
 		return this.otroLado.verMonstruos();
 	}
 
-	public List<Monstruo> verMonstruos() {
+	public ArrayList<Monstruo> verMonstruos() {
 		return zonaMonstruos;
 	}
 	

@@ -13,8 +13,7 @@ public class EfectoCilindroMagico implements Efecto {
 
 	@Override
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
+		atacante.notificar(atacante.darPuntosDeAtaque());
 	}
 
 

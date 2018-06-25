@@ -17,8 +17,7 @@ public class Trampa extends Carta{
 
 	@Override
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
+		efecto.aplicarEfecto(atacante, atacado);		
 	}
 
 }

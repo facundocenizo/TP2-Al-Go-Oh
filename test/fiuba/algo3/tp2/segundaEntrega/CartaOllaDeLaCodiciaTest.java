@@ -15,7 +15,6 @@ import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
 public class CartaOllaDeLaCodiciaTest {
-
 	@Test
 	public void activarOllaDeLaCodiciaAgregaDosCartasALaManoDelJugador() {
 

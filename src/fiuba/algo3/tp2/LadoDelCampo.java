@@ -59,7 +59,10 @@ public class LadoDelCampo {
 	public void matarATodosLosMonstruos() {
 		for (Monstruo monstruo: zonaMonstruos) {
 			monstruo.morir();
+			cementerio.agregarCarta(monstruo);
 		}
+		zonaMonstruos = new ArrayList<Monstruo>();
+		
 	}
 	
 	public void llevarMonstruosMuertosAlCementerio() {
@@ -104,12 +107,13 @@ public class LadoDelCampo {
 	}
 	
 	public void sacarMonstruo(Monstruo unMonstruo) {
-
 		unMonstruo.morir();
 		zonaMonstruos.remove(unMonstruo);
 		this.llevarMonstruosMuertosAlCementerio();
-		
 	}
 	
+	public void darCartaAJugador() {
+		jugador.tomarCartaDelMazo();
+	}
 
 }

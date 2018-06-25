@@ -1,11 +1,10 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import fiuba.algo3.tp2.CampoDeBatalla;
+import org.junit.Test;
+
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Magica;
@@ -13,10 +12,10 @@ import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
-public class CartaFisuraTest {
+public class cartaAgujeroNegroTest {
 
 	@Test
-	public void activarFisuraDestruyeElMonstruoConMenorPuntosDeAtaqueDelOponente() {
+	public void activarAgujeroNegroDestruyeTodosLosMonstruosDelCampo() {
 		
 		Jugador jugador1 = new Jugador();
 		Jugador jugador2 = new Jugador();
@@ -33,24 +32,23 @@ public class CartaFisuraTest {
 		jugador2.setLado(lado2);
 		
 
-		Magica fisura = FabricaCartaMagica.FISURA.crear();
+		Magica agujeroNegro = FabricaCartaMagica.AGUJERONEGRO.crear();
 		
 		Monstruo huevoMonstruoso = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
 		Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
 		
-		jugador2.colocarCarta(huevoMonstruoso);
+		jugador1.colocarCarta(huevoMonstruoso);
 		jugador2.colocarCarta(insectoComeHombres);
-	
-		assertTrue(jugador1.verMonstruosRivales().contains(huevoMonstruoso));
+
+		
 		assertTrue(jugador1.verMonstruosRivales().contains(insectoComeHombres));
-			
-		jugador1.colocarCarta(fisura);
-		jugador1.activarMagicaEnCampo(fisura);
+		assertTrue(jugador2.verMonstruosRivales().contains(huevoMonstruoso));
 		
-		assertTrue(jugador1.verMonstruosRivales().contains(huevoMonstruoso));
-		assertFalse(jugador1.verMonstruosRivales().contains(insectoComeHombres));
+		jugador1.colocarCarta(agujeroNegro);
+		jugador1.activarMagicaEnCampo(agujeroNegro);
 		
+		assertTrue(jugador1.verMonstruosRivales().isEmpty());
+		assertTrue(jugador2.verMonstruosRivales().isEmpty());
 		
-		
-	}
+	}	
 }

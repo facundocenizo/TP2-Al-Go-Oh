@@ -79,5 +79,9 @@ public class Jugador implements Observador {
 	public void tomarCartaDelMazo() {
 		this.cartasEnMano.add(this.ladoDelCampo.sacarCarta());
 	}
+	
+	public int darCantidadCartasEnLaMano() {
+		return this.cartasEnMano.size();
+	}
 
 }

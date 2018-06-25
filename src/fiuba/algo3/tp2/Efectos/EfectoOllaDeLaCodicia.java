@@ -7,7 +7,9 @@ public class EfectoOllaDeLaCodicia implements Efecto {
 
 	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
-		//implementar
+		
+		propio.darCartaAJugador();
+		propio.darCartaAJugador();		
 	}
 
 	

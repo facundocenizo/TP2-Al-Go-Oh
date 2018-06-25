@@ -103,11 +103,11 @@ public class LadoDelCampo {
 		this.jugador.sufrirDanio(puntos);
 	}
 	
-	public void sacarMonstruo(int posicionEnELCampo) {
-		
-		Monstruo monstruo = zonaMonstruos.get(0);
-		monstruo.morir();
-		this.llevarMonstruosMuertosAlCementerio();
+	public void sacarMonstruo(Monstruo unMonstruo) {
+
+		unMonstruo.morir();
+		cementerio.agregarCarta(unMonstruo);
+		zonaMonstruos.remove(unMonstruo);
 		
 	}
 	

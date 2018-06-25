@@ -12,17 +12,16 @@ public class EfectoFisura implements Efecto {
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
 		
 		ArrayList<Monstruo> listaMonstruos = rival.verMonstruos();
-		int posicionEnELCampo = 0;
+		Monstruo monstruoMasDebil = null;
 		int puntosMasBajos = 9999999;
 		
 		for(Monstruo monstruo : listaMonstruos) {
 			if(puntosMasBajos < monstruo.darPuntosDeAtaque()) {
+				monstruoMasDebil = monstruo;			
 				puntosMasBajos = monstruo.darPuntosDeAtaque();
 			}
-			posicionEnELCampo++;
 		}
-		
-		rival.sacarMonstruo(posicionEnELCampo);
+		rival.sacarMonstruo(monstruoMasDebil);
 		
 	}
 

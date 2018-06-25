@@ -15,7 +15,7 @@ public class ModoAtaque implements Modo {
 	public void cargarPuntos(int puntosDeAtaque, int puntosDeDefensa) {
 		this.puntosDeAtaque = puntosDeAtaque;
 	}
-
+	
 	@Override
 	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo) {
 		int diferencia = this.puntosDeAtaque - puntosDeAtaque;

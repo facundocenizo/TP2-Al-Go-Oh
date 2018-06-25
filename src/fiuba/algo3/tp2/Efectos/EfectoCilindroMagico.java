@@ -7,8 +7,7 @@ public class EfectoCilindroMagico implements Efecto {
 
 	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
-		//implementar
-		
+				
 	}
 
 

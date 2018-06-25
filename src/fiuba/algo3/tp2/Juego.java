@@ -23,6 +23,8 @@ public class Juego {
 		
 		ManejadorTurnos manejadorTurnos = new ManejadorTurnos(jugador1,jugador2);
 		manejadorTurnos.jugar();
+		
+		
 			
 		
 		

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -36,20 +37,19 @@ public class ContenedorBienvenida extends VBox
 	        
 	        Image imagen = new Image("file:" + 
 	            "src/fiuba/algo3/tp2/vista/imagenes/" +
-	            "imagenInicio3.jpg");
+	            "imagenInicio.jpg");
 	        BackgroundImage imagenDeFondo =
 	            new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT,
 	            BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 	            BackgroundSize.DEFAULT);
 	        this.setBackground(new Background(imagenDeFondo));
 	        
-	        Label etiqueta = new Label();
-	        etiqueta.setFont(Font.font("Tahoma", FontWeight.BOLD, 80));
-	        etiqueta.setPadding(new Insets(40, 0, 0, 0));
-
-	        etiqueta.setText("Al-Go-Oh!");
-	        etiqueta.setTextFill(Color.web("#0000ff"));
-
+	        ImageView logo = new ImageView("file:" + 
+		            "src/fiuba/algo3/tp2/vista/imagenes/" +
+		            "logo.png");
+	        logo.setFitHeight(150);
+	        logo.setFitWidth(400);
+	        
 	        Button botonEntrar = new Button();
 	        botonEntrar.setText("Jugar!");
 	        botonEntrar.setMinSize(200, 120);
@@ -94,7 +94,7 @@ public class ContenedorBienvenida extends VBox
 	        BotonReproducirHandler botonReproducirHandler = new BotonReproducirHandler(musica,this);
 	        botonReproducir.setOnAction(botonReproducirHandler);
 	        
-	        this.getChildren().addAll(etiqueta,botonEntrar, botonSilenciar,botonReproducir, botonSalir);
+	        this.getChildren().addAll(logo, botonEntrar, botonSilenciar,botonReproducir, botonSalir);
 	        this.setPadding(new Insets(30));
 	        this.setSpacing(20);
 	}

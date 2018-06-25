@@ -50,10 +50,7 @@ public class BotonAceptarEventHandler implements EventHandler<ActionEvent>{
     @Override
     public void handle(ActionEvent actionEvent) {
     	
-    	Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/imagenJugadorDos.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-        contenedorJugadores.setBackground(new Background(imagenDeFondo));
-        
+    	
     	
     	if (texto.getText().trim().equals("")){
             etiqueta.setText("Debe ingresar un texto");
@@ -68,6 +65,10 @@ public class BotonAceptarEventHandler implements EventHandler<ActionEvent>{
 	    	audioIncorrecto.play();
     	}
     	else {
+    		Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/imagenJugadorDos.jpg");
+            BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+            contenedorJugadores.setBackground(new Background(imagenDeFondo));
+            
         	nombresJugadores.add(texto.getText());
         	AudioClip audioBoton = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/boton2.mp3");
 			audioBoton.play();
@@ -83,7 +84,8 @@ public class BotonAceptarEventHandler implements EventHandler<ActionEvent>{
 			texto.setFocusTraversable(false);
 			texto.setPromptText("Ingrese su nombre");
 			etiqueta.setText("");
-			jugador.setText("Jugador Dos");	
+			jugador.setText("Jugador Dos");
+	        jugador.setFill(Color.BLACK);
 			}
     }
 }

@@ -7,9 +7,9 @@ public class ManejadorTurnos {
 	
 	private List<Jugador> jugadores;
 
-	public ManejadorTurnos(Jugador j1, Jugador j2) {
-		this.jugadores.add(j1);
-		this.jugadores.add(j2);
+	public ManejadorTurnos(Jugador jugador1, Jugador jugador2) {
+		this.jugadores.add(jugador1);
+		this.jugadores.add(jugador2);
 	}
 	
 	public void jugar() {
@@ -19,6 +19,9 @@ public class ManejadorTurnos {
 	}
 
 	private void siguienteTurno(Jugador jugadorAnterior) {
+		
+		
+		
 		if (jugadores.get(0)==jugadorAnterior) {
 			jugadores.get(1).jugarTurno();
 			siguienteTurno(jugadores.get(1));

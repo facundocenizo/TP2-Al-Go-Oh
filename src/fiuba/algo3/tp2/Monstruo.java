@@ -61,7 +61,7 @@ public class Monstruo extends Carta{
 
 	public void aumentarPuntosDeAtaque(int aumentoDePruebas) {
 		this.puntosDeAtaque += aumentoDePruebas;
-		
+		modo.aumentarPuntosDeAtaque(aumentoDePruebas);
 	}
 
 	public void aumentarPuntosDeDefensa(int aumentoDeDefensa) {

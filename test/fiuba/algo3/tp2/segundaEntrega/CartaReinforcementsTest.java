@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -8,6 +9,7 @@ import org.junit.Test;
 import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.CartaCampo;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.Trampa;
 import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
@@ -19,28 +21,33 @@ public class CartaReinforcementsTest {
 	@Test
 	public void testCartaEfectoReinforcements() {
 		
-		CampoDeBatalla campo = CampoDeBatalla.getInstance();
-		Jugador jugador1 = new Jugador();
-		Jugador jugador2 = new Jugador();
+		Jugador jugador = new Jugador();
+		Jugador jugadorEnemigo = new Jugador();
+		LadoDelCampo lado = new LadoDelCampo();
+		LadoDelCampo ladoEnemigo = new LadoDelCampo();
+		lado.setOtroLado(ladoEnemigo);
+		ladoEnemigo.setOtroLado(lado);
+		lado.setJugador(jugador);
+		ladoEnemigo.setJugador(jugadorEnemigo);
+		jugador.setLado(lado);
+		jugadorEnemigo.setLado(ladoEnemigo);
 		
-		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
-		Monstruo cabeza = FabricaCartaMonstruo.CABEZAEXODIA.crear();
-		
-		campo.recibirMonstruoDeJugador1(huevo);
-		campo.recibirMonstruoDeJugador2(cabeza);
-		
-		Trampa cilindroMagico = FabricaCartaTrampa.CILINDROMAGICO.crear();
-		//campo.recibirCartaTrampaDeJugador1(cilindroMagico);
-		
-		//jugador2.atacar(cabeza,huevo); -> esto falla por algun motivo
-		
-		
-		//assertFalse(huevo.estaMuerta());
-		//assertTrue(cabeza.estaMuerta());
-		
-		int vidaEsperada = 8000 - 100;
-		//assertEquals(vidaEsperada, jugador2.vida());
-		
-		
+		Monstruo atacante = FabricaCartaMonstruo.CABEZAEXODIA.crear();
+        Monstruo atacado = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+        Trampa reinforcements = FabricaCartaTrampa.REINFORCEMENTS.crear();
+        
+        atacado.aniadirObservador(jugador);
+        reinforcements.aniadirObservador(jugador);
+        atacante.aniadirObservador(jugadorEnemigo);
+        jugador.colocarCarta(atacado);
+        jugador.colocarCarta(reinforcements);
+        jugadorEnemigo.colocarCarta(atacante);
+        jugadorEnemigo.atacar(atacante, atacado);
+ 
+        // El monstruo atacado gana 500 puntos de ataque por lo que se le resta 100 puntos de vida
+        // al jugador enemigo
+        int vidaEsperada = 8000-100;
+
+        assertEquals(vidaEsperada, jugadorEnemigo.vida());
 	}
 }

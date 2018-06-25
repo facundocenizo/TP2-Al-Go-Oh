@@ -35,4 +35,10 @@ public class ModoDefensa implements Modo {
 	public int atacar(Monstruo monstruoAtacado, Monstruo monstruo) {
 		throw new MonstruoEnModoDefensaNoPuedeAtacarException();
 	}
+
+	@Override
+	public void aumentarPuntosDeAtaque(int aumentoDePruebas) {
+		// TODO Auto-generated method stub
+		
+	}
 }

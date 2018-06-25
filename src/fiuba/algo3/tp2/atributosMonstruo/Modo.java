@@ -11,6 +11,8 @@ public interface Modo {
 	public int atacar(Monstruo monstruoAtacado, Monstruo mounstruo);
 	
 	public int recibirAtaque(int puntosDeAtaque, Monstruo monstruo);
+
+	public void aumentarPuntosDeAtaque(int aumentoDePruebas);
 		
 
 }

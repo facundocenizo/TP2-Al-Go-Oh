@@ -37,4 +37,10 @@ public class ModoAtaque implements Modo {
 		return diferencia;
 	}
 
+	@Override
+	public void aumentarPuntosDeAtaque(int aumentoDePruebas) {
+		this.puntosDeAtaque += aumentoDePruebas;
+		
+	}
+
 }

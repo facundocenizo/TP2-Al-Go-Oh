@@ -12,7 +12,8 @@ public class CartaCampo extends Carta {
 
 	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
-		// TODO Apéndice de método generado automáticamente
+		efecto.aplicarEfecto(propio, rival);
+		morir();
 		
 	}
 

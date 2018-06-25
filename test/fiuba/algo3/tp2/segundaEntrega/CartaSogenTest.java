@@ -1,9 +1,13 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.CartaCampo;
+import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
@@ -13,33 +17,38 @@ public class CartaSogenTest {
 	@Test
 	public void testCartaSogenAumenta500PuntosDefensaMonstruosPropiosY200PuntosAtaqueMonstruosOponente() {
 		
-		CampoDeBatalla campo = CampoDeBatalla.getInstance();
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
 		
-		Monstruo huevo1 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
-		Monstruo huevo2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		LadoDelCampo lado1 = new LadoDelCampo();
+		LadoDelCampo lado2 = new LadoDelCampo();
+		lado1.setOtroLado(lado2);
+		lado2.setOtroLado(lado1);
 		
-		campo.recibirMonstruoDeJugador1(huevo1);
-		campo.recibirMonstruoDeJugador2(huevo2);
+		lado1.setJugador(jugador1);
+		lado2.setJugador(jugador2);
+		
+		jugador1.setLado(lado1);
+		jugador2.setLado(lado2);
+		
+		Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo dragonComun = FabricaCartaMonstruo.DRAGON.crear();
+		
+		jugador1.colocarCarta(dragonBlanco);
+		jugador2.colocarCarta(dragonComun);
+
 		
 		CartaCampo sogen = FabricaCartaCampo.SOGEN.crear();
-		//campo.recibirCartaCampoDeJugador1(sogen);
+		jugador1.colocarCarta(sogen);
+		jugador1.activarCartaCampo();
 		
-		int posicionMonstruoEnZonaMonstruos = 0;
-		//Monstruo huevoJugador1 = campo.darMonstruoDeJugador1( posicionMonstruoEnZonaMonstruos );
-		//Monstruo huevoJugador2 = campo.darMonstruoDeJugador2( posicionMonstruoEnZonaMonstruos );
+		int puntosDeAtaqueDelDragonComun = 400;
+		int puntosDeDefensaDelDragonBlanco = 2500;
 		
+		assertEquals(puntosDeAtaqueDelDragonComun + 200,jugador1.verMonstruosRivales().get(0).darPuntosDeAtaque());
+		assertEquals(puntosDeDefensaDelDragonBlanco + 500,jugador2.verMonstruosRivales().get(0).darPuntosDeDefensa());
+		 
+	
 		
-		int puntosDeAtaqueBaseHuevo = 600;
-		int puntosDeDefensaBaseHuevo = 900;
-
-		int puntosDeAtaqueEsperados = 800;
-		int puntosDeDefensaEsperados = 1400;
-		
-		//assertEquals(huevoJugador1.puntosDeAtaque, puntosDeAtaqueBaseHuevo );
-		//assertEquals(huevoJugador1.puntosDeDefensa, puntosDeDefensaEsperados );
-
-		//assertEquals(huevoJugador2.puntosDeAtaque, puntosDeAtaqueEsperados);
-		//assertEquals(huevoJugador2.puntosDeDefensa, puntosDeDefensaBaseHuevo);
-
 	}
 }

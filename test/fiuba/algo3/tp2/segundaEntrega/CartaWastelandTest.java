@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -35,20 +36,22 @@ public class CartaWastelandTest {
 			jugador1.setLado(lado1);
 			jugador2.setLado(lado2);
 			
-			Monstruo huevoMonstruoso = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
-			Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
 			Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
 			Monstruo dragonComun = FabricaCartaMonstruo.DRAGON.crear();
 			
 			jugador1.colocarCarta(dragonBlanco);
-			jugador1.colocarCarta(dragonComun);
-			jugador2.colocarCarta(huevoMonstruoso);
-			jugador2.colocarCarta(insectoComeHombres);
+			jugador2.colocarCarta(dragonComun);
+
 			
 			CartaCampo wasteland = FabricaCartaCampo.WASTELAND.crear();
 			jugador1.colocarCarta(wasteland);
 			jugador1.activarCartaCampo();
 			
+			int puntosDeDefensaDelDragonComun = 300;
+			int puntosDeAtaqueDelDragonBlanco = 3000;
+			
+			assertEquals(puntosDeDefensaDelDragonComun + 300,jugador1.verMonstruosRivales().get(0).darPuntosDeDefensa());
+			assertEquals(puntosDeAtaqueDelDragonBlanco + 200,jugador2.verMonstruosRivales().get(0).darPuntosDeAtaque());
 			 
 			
 		}

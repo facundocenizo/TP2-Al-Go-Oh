@@ -47,11 +47,26 @@ public class Monstruo extends Carta{
 	public int darPuntosDeAtaque() {
 		return this.puntosDeAtaque;
 	}
+	
+	public int darPuntosDeDefensa() {
+		return this.puntosDeDefensa;
+	}
 
 
 	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
 		this.efecto.aplicarEfecto(propio, rival);
+	}
+
+
+	public void aumentarPuntosDeAtaque(int aumentoDePruebas) {
+		this.puntosDeAtaque += aumentoDePruebas;
+		
+	}
+
+	public void aumentarPuntosDeDefensa(int aumentoDeDefensa) {
+		this.puntosDeDefensa += aumentoDeDefensa;
+		
 	}
 	
 

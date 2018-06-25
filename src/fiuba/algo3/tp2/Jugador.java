@@ -62,6 +62,10 @@ public class Jugador implements Observador {
 		this.ladoDelCampo.colocarTrampa(trampa);
 	}
 	
+	public void colocarCarta(CartaCampo cartaCampo) {
+		this.ladoDelCampo.colocarTrampa(cartaCampo);
+	}
+	
 	public void activarMagicaDeMano(Magica magica) {
 		this.ladoDelCampo.activarMagicaDeMano(magica);
 		this.cartasEnMano.remove(magica);
@@ -78,6 +82,11 @@ public class Jugador implements Observador {
 	
 	public void tomarCartaDelMazo() {
 		this.cartasEnMano.add(this.ladoDelCampo.sacarCarta());
+	}
+
+	public void activarCartaCampo() {
+		this.ladoDelCampo.activarCartaEnCampo();
+		
 	}
 
 }

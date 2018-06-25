@@ -7,8 +7,12 @@ import org.junit.Test;
 
 import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.CartaCampo;
+import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.LadoDelCampo;
+import fiuba.algo3.tp2.Magica;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
+import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
 
@@ -17,35 +21,37 @@ public class CartaWastelandTest {
 		@Test
 		public void testCartaWastelandAumenta200PuntosAtaqueMonstruosPropiosY300PuntosDefensaMonstruosOponente() {
 			
-			CampoDeBatalla campo = CampoDeBatalla.getInstance();
+			Jugador jugador1 = new Jugador();
+			Jugador jugador2 = new Jugador();
 			
-			Monstruo huevo1 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
-			Monstruo huevo2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+			LadoDelCampo lado1 = new LadoDelCampo();
+			LadoDelCampo lado2 = new LadoDelCampo();
+			lado1.setOtroLado(lado2);
+			lado2.setOtroLado(lado1);
 			
-			campo.recibirMonstruoDeJugador1(huevo1);
-			campo.recibirMonstruoDeJugador2(huevo2);
+			lado1.setJugador(jugador1);
+			lado2.setJugador(jugador2);
+			
+			jugador1.setLado(lado1);
+			jugador2.setLado(lado2);
+			
+			Monstruo huevoMonstruoso = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+			Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
+			Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+			Monstruo dragonComun = FabricaCartaMonstruo.DRAGON.crear();
+			
+			jugador1.colocarCarta(dragonBlanco);
+			jugador1.colocarCarta(dragonComun);
+			jugador2.colocarCarta(huevoMonstruoso);
+			jugador2.colocarCarta(insectoComeHombres);
 			
 			CartaCampo wasteland = FabricaCartaCampo.WASTELAND.crear();
-			//campo.recibirCartaCampoDeJugador1(wasteland);
+			jugador1.colocarCarta(wasteland);
+			jugador1.activarCartaCampo();
 			
-			int posicionMonstruoEnZonaMonstruos = 0;
-			//Monstruo huevoJugador1 = campo.darMonstruoDeJugador1( posicionMonstruoEnZonaMonstruos );
-			//Monstruo huevoJugador2 = campo.darMonstruoDeJugador2( posicionMonstruoEnZonaMonstruos );
-			
-
-			int puntosDeAtaqueBaseHuevo = 600;
-			int puntosDeDefensaBaseHuevo = 900;
-			
-			int puntosDeAtaqueEsperados = 800;
-			int puntosDeDefensaEsperados = 1200;
-			
-			//assertEquals(huevoJugador1.puntosDeAtaque, puntosDeAtaqueEsperados );
-			//assertEquals(huevoJugador1.puntosDeDefensa, puntosDeAtaqueBaseHuevo );
-
-			//assertEquals(huevoJugador2.puntosDeAtaque, puntosDeAtaqueBaseHuevo);
-			//assertEquals(huevoJugador2.puntosDeDefensa, puntosDeDefensaEsperados);
-
 		}
+			
+		
 		
 		
 		

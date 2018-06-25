@@ -2,6 +2,8 @@ package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
 
+import fiuba.algo3.tp2.excepciones.ZonaDeCampoLlenaException;
+import fiuba.algo3.tp2.excepciones.ZonaDeCampoVaciaException;
 import fiuba.algo3.tp2.excepciones.ZonaDeTrampaYMagicasLlenaException;
 import fiuba.algo3.tp2.excepciones.ZonaMonstruosLlenaException;
 
@@ -14,6 +16,7 @@ public class LadoDelCampo {
 	private ArrayList<Monstruo> zonaMonstruos;
 	private ArrayList<Trampa> cartasTrampa;
 	private ArrayList<Magica> cartasMagicas;
+	private ArrayList<CartaCampo> cartaDeCampo;
 	
 	public LadoDelCampo() {
 		this.cementerio = new Cementerio();
@@ -21,6 +24,7 @@ public class LadoDelCampo {
 		this.zonaMonstruos = new ArrayList<Monstruo>();
 		this.cartasTrampa = new ArrayList<Trampa>();
 		this.cartasMagicas = new ArrayList<Magica>();
+		this.cartaDeCampo = new ArrayList<CartaCampo>();
 	}
 	
 	public void setJugador(Jugador jugador) {
@@ -108,6 +112,21 @@ public class LadoDelCampo {
 		unMonstruo.morir();
 		cementerio.agregarCarta(unMonstruo);
 		zonaMonstruos.remove(unMonstruo);
+		
+	}
+
+	public void colocarTrampa(CartaCampo cartaCampo) {
+		if (this.cartaDeCampo.size() == 1) {
+			throw new ZonaDeCampoLlenaException();
+		}
+		this.cartaDeCampo.add(cartaCampo);
+	}
+
+	public void activarCartaEnCampo() {
+		if (this.cartaDeCampo.size() == 0) {
+			throw new ZonaDeCampoVaciaException();
+		}
+		this.cartaDeCampo.get(0).aplicarEfecto(this,this.otroLado);
 		
 	}
 	

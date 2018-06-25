@@ -23,6 +23,8 @@ public class LadoDelCampo {
 		this.cartasMagicas = new ArrayList<Magica>();
 	}
 	
+	
+	
 	public void setJugador(Jugador jugador) {
 		this.jugador = jugador;
 	}
@@ -108,6 +110,11 @@ public class LadoDelCampo {
 		unMonstruo.morir();
 		zonaMonstruos.remove(unMonstruo);
 		this.llevarMonstruosMuertosAlCementerio();
+		
+	}
+
+	public void atacar(Monstruo atacante, Monstruo atacado) {
+		// TODO Auto-generated method stub
 		
 	}
 	

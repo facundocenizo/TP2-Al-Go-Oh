@@ -43,14 +43,12 @@ public class CartaFisuraTest {
 	
 		assertTrue(jugador1.verMonstruosRivales().contains(huevoMonstruoso));
 		assertTrue(jugador1.verMonstruosRivales().contains(insectoComeHombres));
-		
-		jugador1.verMonstruosRivales();		
+			
 		jugador1.colocarCarta(fisura);
 		jugador1.activarMagicaEnCampo(fisura);
-		jugador1.verMonstruosRivales();
 		
-		//assertTrue(jugador1.verMonstruosRivales().contains(huevoMonstruoso));
-		//assertFalse(jugador1.verMonstruosRivales().contains(insectoComeHombres));
+		assertTrue(jugador1.verMonstruosRivales().contains(huevoMonstruoso));
+		assertFalse(jugador1.verMonstruosRivales().contains(insectoComeHombres));
 		
 		
 		

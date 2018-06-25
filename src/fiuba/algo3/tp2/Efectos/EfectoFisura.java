@@ -16,7 +16,7 @@ public class EfectoFisura implements Efecto {
 		int puntosMasBajos = 9999999;
 		
 		for(Monstruo monstruo : listaMonstruos) {
-			if(puntosMasBajos < monstruo.darPuntosDeAtaque()) {
+			if(puntosMasBajos > monstruo.darPuntosDeAtaque()) {
 				monstruoMasDebil = monstruo;			
 				puntosMasBajos = monstruo.darPuntosDeAtaque();
 			}

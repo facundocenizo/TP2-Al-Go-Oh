@@ -27,6 +27,8 @@ public class LadoDelCampo {
 		this.cartaDeCampo = new ArrayList<CartaCampo>();
 	}
 	
+	
+	
 	public void setJugador(Jugador jugador) {
 		this.jugador = jugador;
 	}
@@ -63,7 +65,10 @@ public class LadoDelCampo {
 	public void matarATodosLosMonstruos() {
 		for (Monstruo monstruo: zonaMonstruos) {
 			monstruo.morir();
+			cementerio.agregarCarta(monstruo);
 		}
+		zonaMonstruos = new ArrayList<Monstruo>();
+		
 	}
 	
 	public void llevarMonstruosMuertosAlCementerio() {
@@ -95,8 +100,8 @@ public class LadoDelCampo {
 	}
 
 	public void activarMagicaEnCampo(Magica magica) {
-		this.cartasMagicas.remove(magica);
 		magica.aplicarEfecto(this, this.otroLado);
+		this.cartasMagicas.remove(magica);
 	}
 	
 	public void atacarPuntosDelRival(int puntos) {
@@ -108,10 +113,13 @@ public class LadoDelCampo {
 	}
 	
 	public void sacarMonstruo(Monstruo unMonstruo) {
-
 		unMonstruo.morir();
-		cementerio.agregarCarta(unMonstruo);
 		zonaMonstruos.remove(unMonstruo);
+		this.llevarMonstruosMuertosAlCementerio();
+	}
+
+	public void atacar(Monstruo atacante, Monstruo atacado) {
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -130,5 +138,9 @@ public class LadoDelCampo {
 		
 	}
 	
+	public void darCartaAJugador() {
+		jugador.tomarCartaDelMazo();
+	}
 
+	
 }

@@ -13,8 +13,6 @@ public class ModoDefensa implements Modo {
 		return false;
 	}
 
-	
-
 	@Override
 	public void cargarPuntos(int puntosDeAtaque, int puntosDeDefensa) {
 		this.puntosDeDefensa = puntosDeDefensa;

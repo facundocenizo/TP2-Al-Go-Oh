@@ -1,24 +1,21 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Magica;
 import fiuba.algo3.tp2.Monstruo;
-import fiuba.algo3.tp2.Trampa;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
-import fiuba.algo3.tp2.fabricas.FabricaCartaTrampa;
 
-public class CartaCilindroMagicoTest {
+public class cartaAgujeroNegroTest {
+
 	@Test
-	public void testCilindroMagicoSeActivaAlAtacarUnMonstruoDelLadoDondeEstaUbicada() {
+	public void activarAgujeroNegroDestruyeTodosLosMonstruosDelCampo() {
 		
 		Jugador jugador1 = new Jugador();
 		Jugador jugador2 = new Jugador();
@@ -35,18 +32,23 @@ public class CartaCilindroMagicoTest {
 		jugador2.setLado(lado2);
 		
 
-		Monstruo huevo1 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
-        Monstruo huevo2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
-
-        Trampa cilindroMagico = FabricaCartaTrampa.CILINDROMAGICO.crear();
-        
-        jugador1.colocarCarta(huevoMonstruoso);
-        jugador2.colocarCarta(huevoMonstruoso);
-        jugador1.colocarCarta(cilindroMagico);
-        jugador2.atacar(huevoMonstruoso1, huevoMonstruoso2);
+		Magica agujeroNegro = FabricaCartaMagica.AGUJERONEGRO.crear();
 		
-		assertTrue(jugador1.verMonstruosRivales().contains(huevoMonstruoso));
+		Monstruo huevoMonstruoso = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
+		
+		jugador1.colocarCarta(huevoMonstruoso);
+		jugador2.colocarCarta(insectoComeHombres);
+
+		
 		assertTrue(jugador1.verMonstruosRivales().contains(insectoComeHombres));
-				
+		assertTrue(jugador2.verMonstruosRivales().contains(huevoMonstruoso));
+		
+		jugador1.colocarCarta(agujeroNegro);
+		jugador1.activarMagicaEnCampo(agujeroNegro);
+		
+		assertTrue(jugador1.verMonstruosRivales().isEmpty());
+		assertTrue(jugador2.verMonstruosRivales().isEmpty());
+		
 	}	
 }

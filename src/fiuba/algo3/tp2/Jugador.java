@@ -35,7 +35,7 @@ public class Jugador implements Observador {
 	}
 	
 	public void atacar(Monstruo atacante, Monstruo atacado) {
-		this.turno.atacar(atacante, atacado);
+		this.ladoDelCampo.atacar(atacante, atacado);
 	}
 	
 	public void voltearCarta(Carta unaCarta) {
@@ -82,6 +82,10 @@ public class Jugador implements Observador {
 	
 	public void tomarCartaDelMazo() {
 		this.cartasEnMano.add(this.ladoDelCampo.sacarCarta());
+	}
+	
+	public int darCantidadCartasEnLaMano() {
+		return this.cartasEnMano.size();
 	}
 
 	public void activarCartaCampo() {

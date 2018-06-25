@@ -49,6 +49,8 @@ public class CartaWastelandTest {
 			jugador1.colocarCarta(wasteland);
 			jugador1.activarCartaCampo();
 			
+			 
+			
 		}
 			
 		

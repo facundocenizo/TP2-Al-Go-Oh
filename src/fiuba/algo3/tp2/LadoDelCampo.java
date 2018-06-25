@@ -91,8 +91,8 @@ public class LadoDelCampo {
 	}
 
 	public void activarMagicaEnCampo(Magica magica) {
-		this.cartasMagicas.remove(magica);
 		magica.aplicarEfecto(this, this.otroLado);
+		this.cartasMagicas.remove(magica);
 	}
 	
 	public void atacarPuntosDelRival(int puntos) {
@@ -106,8 +106,8 @@ public class LadoDelCampo {
 	public void sacarMonstruo(Monstruo unMonstruo) {
 
 		unMonstruo.morir();
-		cementerio.agregarCarta(unMonstruo);
 		zonaMonstruos.remove(unMonstruo);
+		this.llevarMonstruosMuertosAlCementerio();
 		
 	}
 	

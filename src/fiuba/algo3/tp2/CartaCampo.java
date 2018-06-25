@@ -17,4 +17,10 @@ public class CartaCampo extends Carta {
 		
 	}
 
+	@Override
+	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

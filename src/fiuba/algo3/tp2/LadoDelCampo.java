@@ -17,6 +17,7 @@ public class LadoDelCampo {
 	private ArrayList<Trampa> cartasTrampa;
 	private ArrayList<Magica> cartasMagicas;
 	private ArrayList<CartaCampo> cartaDeCampo;
+	private Atacable atacable;
 	
 	public LadoDelCampo() {
 		this.cementerio = new Cementerio();
@@ -25,6 +26,7 @@ public class LadoDelCampo {
 		this.cartasTrampa = new ArrayList<Trampa>();
 		this.cartasMagicas = new ArrayList<Magica>();
 		this.cartaDeCampo = new ArrayList<CartaCampo>();
+		this.atacable = new AtaqueNormal();
 	}
 	
 	
@@ -88,10 +90,10 @@ public class LadoDelCampo {
 		return zonaMonstruos;
 	}
 	
-	public void activarTrampa(Monstruo atacante, Monstruo atacado) {
+	public void activarTrampa() {
 		if (cartasTrampa.size()!=0) {
 			Trampa trampa = cartasTrampa.remove(0);
-			trampa.aplicarEfecto(this, this.otroLado);
+			this.atacable = new AtaqueConTrampa(trampa);
 		}
 	}
 
@@ -119,9 +121,15 @@ public class LadoDelCampo {
 	}
 
 	public void atacar(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
+		this.otroLado.recibirAtaque(atacante, atacado);
 	}
+
+	private void recibirAtaque(Monstruo atacante, Monstruo atacado) {
+		this.activarTrampa();
+		this.atacable.recibirAtaque(atacante, atacado);
+	}
+
+
 
 	public void colocarTrampa(CartaCampo cartaCampo) {
 		if (this.cartaDeCampo.size() == 1) {

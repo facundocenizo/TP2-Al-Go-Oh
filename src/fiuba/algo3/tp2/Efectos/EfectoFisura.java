@@ -25,6 +25,12 @@ public class EfectoFisura implements Efecto {
 		
 	}
 
+	@Override
+	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 }

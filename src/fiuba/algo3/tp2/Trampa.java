@@ -15,4 +15,10 @@ public class Trampa extends Carta{
 		morir();
 	}
 
+	@Override
+	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

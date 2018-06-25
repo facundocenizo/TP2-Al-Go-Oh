@@ -68,6 +68,13 @@ public class Monstruo extends Carta{
 		this.puntosDeDefensa += aumentoDeDefensa;
 		
 	}
+
+
+	@Override
+	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 

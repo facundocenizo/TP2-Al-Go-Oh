@@ -20,4 +20,10 @@ public class Magica extends Carta{
 		campo.matarATodosLosMonstruos();
 	}
 
+	@Override
+	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

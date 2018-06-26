@@ -123,12 +123,13 @@ public class LadoDelCampo {
 	public void atacar(Monstruo atacante, Monstruo atacado) {
 		if (atacado==null) {
 			this.otroLado.sufrirDanioAJugador(atacante.darPuntosDeAtaque());
+			return;
 		}
+		atacante.aplicarEfecto(atacante, atacado);
 		this.otroLado.recibirAtaque(atacante, atacado);
 	}
 
 	private void recibirAtaque(Monstruo atacante, Monstruo atacado) {
-		atacante.aplicarEfecto(atacante, atacado);
 		atacado.aplicarEfecto(atacante, atacado);
 		this.activarTrampa();
 		this.atacable.recibirAtaque(atacante, atacado);

@@ -10,11 +10,13 @@ public class Jugador implements Observador {
 	private ArrayList<Carta> cartasEnMano;
 	private LadoDelCampo ladoDelCampo;
 	private Turno turno;
+	private boolean ganador;
 	
 	public Jugador() {
 		this.vida = 8000;
 		this.cartasEnMano = new ArrayList<Carta>();
 		//this.turno = new TurnoActivo();
+		this.ganador = false;
 	}
 	
 	public void setLado(LadoDelCampo lado) {
@@ -82,8 +84,21 @@ public class Jugador implements Observador {
 	
 	public void tomarCartaDelMazo() {
 		this.cartasEnMano.add(this.ladoDelCampo.sacarCarta());
+		chequearExodiaCompleto();
 	}
 	
+	private void chequearExodiaCompleto() {
+		int partesExodia = 0;
+		for (Carta carta : cartasEnMano) {
+			if (carta.esParteExodia()) {
+				partesExodia++;
+			}
+		}
+		if (partesExodia==5) {
+			this.ganador = true;
+		}
+	}
+
 	public int darCantidadCartasEnLaMano() {
 		return this.cartasEnMano.size();
 	}

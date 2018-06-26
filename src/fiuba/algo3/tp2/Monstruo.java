@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
 import fiuba.algo3.tp2.atributosMonstruo.Modo;
@@ -74,6 +75,11 @@ public class Monstruo extends Carta{
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	
+	public boolean esParteExodia() {
+		return this.efecto==(new EfectoExodia());
 	}
 	
 

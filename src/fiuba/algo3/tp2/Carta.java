@@ -45,5 +45,9 @@ public abstract class Carta implements SujetoCartaObservable,Efecto{
 		this.posicion = this.posicion.voltear();
 		
 	}
+
+	public boolean esParteExodia() {
+		return false;
+	}
 	
 }

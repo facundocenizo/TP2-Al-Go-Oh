@@ -20,7 +20,9 @@ public class ManejadorTurnos {
 
 	private void siguienteTurno(Jugador jugadorAnterior) {
 		
-		
+		if (hayGanador()) {
+			return;
+		}
 		
 		if (jugadores.get(0)==jugadorAnterior) {
 			jugadores.get(1).jugarTurno();
@@ -28,6 +30,15 @@ public class ManejadorTurnos {
 		}
 		jugadores.get(0).jugarTurno();
 		siguienteTurno(jugadores.get(0));
+	}
+
+	private boolean hayGanador() {
+        for (Jugador jugador : jugadores) {
+			if (jugador.haGanado()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

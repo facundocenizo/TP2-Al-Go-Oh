@@ -108,4 +108,8 @@ public class Jugador implements Observador {
 		
 	}
 
+	public boolean haGanado() {
+		return this.ganador;
+	}
+
 }

@@ -28,6 +28,7 @@ import javafx.scene.media.AudioClip;
 	       
 	        
 	        
+	        
 	        ContenedorPrincipal contenedorPrincipal = 
 	        		new ContenedorPrincipal(stage, null, juego, barraMenu);
 	        Scene escenaJuego = 

@@ -1,9 +1,27 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.Juego;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ContenedorPrincipal extends BorderPane
@@ -20,20 +38,131 @@ public class ContenedorPrincipal extends BorderPane
         this.stage = stage;
         this.barraMenu = barraMenu;
         this.siguienteEscena = siguienteEscena;
+        
+
+        Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoGris.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        this.setBackground(new Background(imagenDeFondo));
+        
+      
     }
 
     public void inicializar()
     {
-        setMenu();
-    
+        //inicializarContenedorIzquierda();
+        //inicializarContenedorDerecha();
+    	
+    	//detalles jugador de arriba (vida, alguna imagen)
+        inicializarContenedorSuperior();
+        
+        //detalles de jugador de abajo 
+        inicializarContenedorInferior();
+        
+        inicializarContenedorCentral();
+        
+
     }
 
 
-    private void setMenu()
-    {
-        this.setTop(barraMenu);
-    }
+    private void inicializarContenedorCentral() {
 
+    	
+    	HBox contenedorZonaMagicaTrampas1 = new HBox(new Label("zona1"));
+    	
+    	
+    	HBox contenedorZonaMonstruos1 = new HBox(new Label("zona2"));
+    	
+    	
+    	HBox contenedorZonaMonstruos2 = new HBox(new Label("zona3"));
+    	
+    	
+    	HBox contenedorZonaMagicaTrampas2 = new HBox(new Label("zona4"));
+    	
+    	
+    	VBox tablero = new VBox(contenedorZonaMagicaTrampas1,contenedorZonaMonstruos1,
+    								contenedorZonaMonstruos2,contenedorZonaMagicaTrampas2);
+    	tablero.setSpacing(100);
+    	
+        this.setCenter(tablero);
+		
+	}
+
+
+/*	private void inicializarContenedorDerecha() {
+    	VBox vbox = new VBox();
+    	vbox.getChildren().addAll(new Label("derecha"));//aca agregar mas cosas
+    	
+    	this.setRight(vbox);
+	}
+
+	private void inicializarContenedorIzquierda() {
+    	VBox vbox = new VBox();
+    	vbox.getChildren().addAll(new Label("izquierda"));//aca agregar mas cosas
+    	
+    	this.setLeft(vbox);
+	}
+*/
+	private void inicializarContenedorInferior() {
+    	HBox hbox = new HBox();
+    	
+    	ImageView imagenJugadorUno = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/" +
+	            "imagenJugadorUno.jpg");
+    	imagenJugadorUno.setFitHeight(100);
+    	imagenJugadorUno.setFitWidth(250);
+    	
+    	
+    	Text vida = new Text("VIDA");  //jugador1.vida
+    	vida.setFill(Color.LIMEGREEN);
+    	vida.setFont(Font.font("Tahoma", FontWeight.BOLD, 82));
+        	
+    	Text monstruoSeleccionado = new Text("Carta Seleccionada: ");
+    	monstruoSeleccionado.setFill(Color.BROWN);
+    	monstruoSeleccionado.setFont(Font.font("Tahoma", FontWeight.BOLD, 32));
+    	
+    	//ImageView cartaActiva = new ImageView("file:" + 
+	    //        "src/fiuba/algo3/tp2/vista/imagenes/" +
+	    //       "cartaActiva.jpg");
+    	//imagenJugadorUno.setFitHeight(100);
+    	//imagenJugadorUno.setFitWidth(250);
+    	
+    	hbox.setSpacing(70);
+		hbox.getChildren().addAll(imagenJugadorUno, vida, monstruoSeleccionado);//aca agregar mas cosas
+		
+		this.setBottom(hbox);
+	}
+
+	private void inicializarContenedorSuperior() {
+		HBox hbox = new HBox();
+    	ImageView imagenJugadorDos = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/" +
+	            "imagenJugadorDos.jpg");
+    	imagenJugadorDos.setFitHeight(100);
+    	imagenJugadorDos.setFitWidth(250);
+    	
+    	Text vida = new Text("VIDA");  //jugador2.vida
+    	vida.setFill(Color.LIMEGREEN);
+    	vida.setFont(Font.font("Tahoma", FontWeight.BOLD, 82));
+        	
+    	Text monstruoSeleccionado = new Text("Carta Seleccionada: ");
+    	monstruoSeleccionado.setFill(Color.BROWN);
+    	monstruoSeleccionado.setFont(Font.font("Tahoma", FontWeight.BOLD, 32));
+    	
+    	//ImageView cartaActiva = new ImageView("file:" + 
+	    //        "src/fiuba/algo3/tp2/vista/imagenes/" +
+	    //       "cartaActiva.jpg");
+    	//imagenJugadorUno.setFitHeight(100);
+    	//imagenJugadorUno.setFitWidth(250);
+    	
+    	hbox.setSpacing(70);
+		hbox.getChildren().addAll(imagenJugadorDos, vida, monstruoSeleccionado);//aca agregar mas cosas
+		
+		VBox vbox = new VBox();
+		vbox.getChildren().addAll(this.barraMenu, hbox);//aca agregar mas cosas
+		
+		this.setTop(vbox);
+	}
+	
 
     public BarraDeMenu getBarraDeMenu()
     {

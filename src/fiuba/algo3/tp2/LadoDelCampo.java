@@ -128,6 +128,7 @@ public class LadoDelCampo {
 		atacante.aniadirObservador(this.jugador);
 		atacado.aniadirObservador(otroLado.getJugador());
 		atacante.aplicarEfecto(atacante, atacado);
+		atacante.aplicarEfecto(this, this.otroLado);
 		this.otroLado.recibirAtaque(atacante, atacado);
 	}
 

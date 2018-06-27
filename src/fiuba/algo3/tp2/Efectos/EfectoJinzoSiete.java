@@ -5,10 +5,12 @@ import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 
 public class EfectoJinzoSiete implements Efecto {
+	
+	private int puntosDelEfectoGinzo = 500;
 
 	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
-		// TODO Apéndice de método generado automáticamente
+		rival.sufrirDanioAJugador(puntosDelEfectoGinzo);
 		
 	}
 

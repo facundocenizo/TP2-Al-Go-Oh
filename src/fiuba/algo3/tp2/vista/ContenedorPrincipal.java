@@ -4,7 +4,6 @@ import fiuba.algo3.tp2.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -169,9 +168,9 @@ public class ContenedorPrincipal extends BorderPane
 
 		private void inicializarContenedorDerecha() {
 		VBox vbox = new VBox();
-    	ImageView mazo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/bocaAbajo.jpg");
+    	ImageView mazo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/mazo.jpg");
     	ImageView cementerio = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cementerio.png");
-    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cartaCampo.png");
+    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cartaCampo.jpg");
     	
     	vbox.getChildren().addAll(cartaCampo, cementerio, mazo);//aca agregar mas cosas
     		
@@ -184,9 +183,9 @@ public class ContenedorPrincipal extends BorderPane
 
 	private void inicializarContenedorIzquierda() {
 		VBox vbox = new VBox();
-    	ImageView mazo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/bocaAbajo.jpg");
+    	ImageView mazo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/mazo.jpg");
     	ImageView cementerio = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cementerio.png");
-    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cartaCampo.png");
+    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cartaCampo.jpg");
     	
     	vbox.getChildren().addAll(mazo, cementerio, cartaCampo);//aca agregar mas cosas
 

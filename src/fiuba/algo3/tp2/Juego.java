@@ -1,13 +1,21 @@
 package fiuba.algo3.tp2;
 
 public class Juego {
-	private boolean hayGanador;
-    
+    private Jugador jugador1;
+    private Jugador jugador2;
 	public Juego() {
-		this.hayGanador = false;
+			
+		inicializarJugadores(this.jugador1,this.jugador2);
+		String nombreGanador = empezarJuego(this.jugador1,this.jugador2);
 		
-		Jugador jugador1 = new Jugador();
-		Jugador jugador2 = new Jugador();
+		System.out.println("Ha ganado: " + nombreGanador);
+		
+	}
+	
+	private void inicializarJugadores(Jugador jugador1, Jugador jugador2) {
+		
+		jugador1 = new Jugador();
+		jugador2 = new Jugador();
 		
 		LadoDelCampo lado1 = new LadoDelCampo();
 		LadoDelCampo lado2 = new LadoDelCampo();
@@ -20,17 +28,11 @@ public class Juego {
 		jugador1.setLado(lado1);
 		jugador2.setLado(lado2);
 		
-		
-		ManejadorTurnos manejadorTurnos = new ManejadorTurnos(jugador1,jugador2);
-		manejadorTurnos.jugar();
-		
-		
-			
-		
-		
 	}
 	
-	
-	
+	private String empezarJuego(Jugador jugador1, Jugador jugador2){
+		ManejadorTurnos manejadorTurnos = new ManejadorTurnos(this.jugador1,this.jugador2);
+		return manejadorTurnos.jugar();
+	}
 	
 }

@@ -12,10 +12,16 @@ public class ManejadorTurnos {
 		this.jugadores.add(jugador2);
 	}
 	
-	public void jugar() {
+	public String jugar() {
 		Jugador jugadorQueEmpieza = jugadores.get(new Random().nextInt(2));
+		
+		//ciclo?
+		
 		jugadorQueEmpieza.jugarTurno();
 		siguienteTurno(jugadorQueEmpieza);
+		//fin ciclo?
+		
+		return jugadorQueEmpieza.darNombre();
 	}
 
 	private void siguienteTurno(Jugador jugadorAnterior) {

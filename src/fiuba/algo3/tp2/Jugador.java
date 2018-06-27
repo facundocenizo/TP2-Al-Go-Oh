@@ -7,10 +7,12 @@ import java.util.ArrayList;
 public class Jugador implements Observador {
 	
 	private int vida;
+	private String nombre;
 	private ArrayList<Carta> cartasEnMano;
 	private LadoDelCampo ladoDelCampo;
 	private Turno turno;
 	private boolean ganador;
+	
 	
 	public Jugador() {
 		this.vida = 8000;
@@ -110,6 +112,14 @@ public class Jugador implements Observador {
 
 	public boolean haGanado() {
 		return this.ganador;
+	}
+	
+	public void setNombre(String unNombre) {
+		this.nombre = unNombre;
+	}
+
+	public String darNombre() {
+		return this.nombre;
 	}
 
 }

@@ -14,7 +14,7 @@ import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 public class CartaJinzoSieteTest {
 	
 	@Test
-	public void testMonstruoJinzoSieteAtacaDirectamenteALosPuntosDeVidaIgnorandoMonstruosDelOponente() {
+	public void test01MonstruoJinzoSieteAtacaDirectamenteALosPuntosDeVidaDelOponente() {
 		
 		Jugador jugador1 = new Jugador();
 		Jugador jugador2 = new Jugador();
@@ -48,4 +48,75 @@ public class CartaJinzoSieteTest {
 		assertEquals(vidaDelJugadorEsperada,jugador1.vida());
 		
 	}	
+	
+	@Test
+	public void test02MonstruoJinzoSieteAtacaDirectamenteALosPuntosDeVidaDelOponente() {
+		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		
+		LadoDelCampo lado1 = new LadoDelCampo();
+		LadoDelCampo lado2 = new LadoDelCampo();
+		
+		lado1.setOtroLado(lado2);
+		lado2.setOtroLado(lado1);
+		
+		lado1.setJugador(jugador1);
+		lado2.setJugador(jugador2);
+		
+		jugador1.setLado(lado1);
+		jugador2.setLado(lado2);
+		
+		Monstruo jinzo = FabricaCartaMonstruo.JINZOSIETE.crear();
+		Monstruo dragonComun = FabricaCartaMonstruo.DRAGON.crear();
+		
+		jugador1.colocarCarta(jinzo);
+		jugador2.colocarCarta(dragonComun);
+		
+		jugador2.atacar(dragonComun,jinzo);
+		
+		int puntosDeAtaqueDelDragon = 400;
+		int puntosDeAtaqueDelGinzo = 500;
+		
+		int vidaDelJugadorEsperada = 8000 - (puntosDeAtaqueDelGinzo - puntosDeAtaqueDelDragon);
+		
+		assertEquals(vidaDelJugadorEsperada,jugador2.vida());
+	}
+	
+	
+	@Test
+	public void test03MonstruoJinzoSieteAtacaDirectamenteALosPuntosDeVidaDelOponente() {
+		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		
+		LadoDelCampo lado1 = new LadoDelCampo();
+		LadoDelCampo lado2 = new LadoDelCampo();
+		
+		lado1.setOtroLado(lado2);
+		lado2.setOtroLado(lado1);
+		
+		lado1.setJugador(jugador1);
+		lado2.setJugador(jugador2);
+		
+		jugador1.setLado(lado1);
+		jugador2.setLado(lado2);
+		
+		Monstruo jinzo = FabricaCartaMonstruo.JINZOSIETE.crear();
+		Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		
+		jugador1.colocarCarta(jinzo);
+		jugador2.colocarCarta(dragonBlanco);
+		
+		jugador2.atacar(jinzo,dragonBlanco);
+		
+		int puntosDelEfectoGinzo = 500;
+		
+		int vidaDelJugadorEsperada = 8000 - puntosDelEfectoGinzo;
+		
+		assertEquals(vidaDelJugadorEsperada,jugador1.vida());
+		
+	}
+	
+	
 }

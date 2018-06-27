@@ -162,6 +162,7 @@ public class LadoDelCampo {
 	
 	public void darCartaAJugador() {
 		jugador.tomarCartaDelMazo();
+		
 	}
 
 	

@@ -40,7 +40,7 @@ public class ContenedorPrincipal extends BorderPane
         this.siguienteEscena = siguienteEscena;
         
 
-        Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoGris.jpg");
+        Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
         
@@ -116,18 +116,22 @@ public class ContenedorPrincipal extends BorderPane
     	vida.setFill(Color.LIMEGREEN);
     	vida.setFont(Font.font("Tahoma", FontWeight.BOLD, 82));
         	
-    	Text monstruoSeleccionado = new Text("Carta Seleccionada: ");
-    	monstruoSeleccionado.setFill(Color.BROWN);
-    	monstruoSeleccionado.setFont(Font.font("Tahoma", FontWeight.BOLD, 32));
+    	Text cartaSeleccionada = new Text("Carta Seleccionada: ");
+    	cartaSeleccionada.setFill(Color.BROWN);
+    	cartaSeleccionada.setFont(Font.font("Tahoma", FontWeight.BOLD, 32));
     	
-    	//ImageView cartaActiva = new ImageView("file:" + 
-	    //        "src/fiuba/algo3/tp2/vista/imagenes/" +
-	    //       "cartaActiva.jpg");
-    	//imagenJugadorUno.setFitHeight(100);
-    	//imagenJugadorUno.setFitWidth(250);
+    	ImageView imagenCarta = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
+	           "bocaAbajo.png");
+    	imagenCarta.setFitHeight(100);
+    	imagenCarta.setFitWidth(65);
+    	
+    	Text descripcionCarta = new Text("Descripcion de la carta: ");
+    	descripcionCarta.setFill(Color.WHITE);
+    	descripcionCarta.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
     	
     	hbox.setSpacing(70);
-		hbox.getChildren().addAll(imagenJugadorUno, vida, monstruoSeleccionado);//aca agregar mas cosas
+		hbox.getChildren().addAll(imagenJugadorUno, vida, cartaSeleccionada, imagenCarta, descripcionCarta);//aca agregar mas cosas
 		
 		this.setBottom(hbox);
 	}
@@ -144,18 +148,23 @@ public class ContenedorPrincipal extends BorderPane
     	vida.setFill(Color.LIMEGREEN);
     	vida.setFont(Font.font("Tahoma", FontWeight.BOLD, 82));
         	
-    	Text monstruoSeleccionado = new Text("Carta Seleccionada: ");
-    	monstruoSeleccionado.setFill(Color.BROWN);
-    	monstruoSeleccionado.setFont(Font.font("Tahoma", FontWeight.BOLD, 32));
+    	Text cartaSeleccionada = new Text("Carta Seleccionada: ");
+    	cartaSeleccionada.setFill(Color.BROWN);
+    	cartaSeleccionada.setFont(Font.font("Tahoma", FontWeight.BOLD, 32));
     	
-    	//ImageView cartaActiva = new ImageView("file:" + 
-	    //        "src/fiuba/algo3/tp2/vista/imagenes/" +
-	    //       "cartaActiva.jpg");
-    	//imagenJugadorUno.setFitHeight(100);
-    	//imagenJugadorUno.setFitWidth(250);
+    	ImageView imagenCarta = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
+	           "bocaAbajo.png");
+    	imagenCarta.setFitHeight(100);
+    	imagenCarta.setFitWidth(65);
+    	
+    	Text descripcionCarta = new Text("Descripcion de la carta: ");
+    	descripcionCarta.setFill(Color.WHITE);
+    	descripcionCarta.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
+    	
     	
     	hbox.setSpacing(70);
-		hbox.getChildren().addAll(imagenJugadorDos, vida, monstruoSeleccionado);//aca agregar mas cosas
+		hbox.getChildren().addAll(imagenJugadorDos, vida, cartaSeleccionada, imagenCarta, descripcionCarta);//aca agregar mas cosas
 		
 		VBox vbox = new VBox();
 		vbox.getChildren().addAll(this.barraMenu, hbox);//aca agregar mas cosas

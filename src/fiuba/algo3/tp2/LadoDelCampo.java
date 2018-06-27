@@ -125,9 +125,17 @@ public class LadoDelCampo {
 			this.otroLado.sufrirDanioAJugador(atacante.darPuntosDeAtaque());
 			return;
 		}
+		atacante.aniadirObservador(this.jugador);
+		atacado.aniadirObservador(otroLado.getJugador());
 		atacante.aplicarEfecto(atacante, atacado);
 		this.otroLado.recibirAtaque(atacante, atacado);
 	}
+
+	private Observador getJugador() {
+		return this.jugador;
+	}
+
+
 
 	private void recibirAtaque(Monstruo atacante, Monstruo atacado) {
 		atacado.aplicarEfecto(atacante, atacado);

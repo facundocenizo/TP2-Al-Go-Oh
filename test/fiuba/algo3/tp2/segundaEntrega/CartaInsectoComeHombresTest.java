@@ -16,24 +16,30 @@ public class CartaInsectoComeHombresTest {
 	@Test
 	public void testMonstruoInsectoComeHombresDestruyeLaCartaQueLoVolteaAlSerAtacado() {
 		
-		CampoDeBatalla campo = CampoDeBatalla.getInstance();
-
-		Jugador jugador1 = new Jugador(); //hacerlo activo
-		Jugador jugador2 = new Jugador(); //hacerlo inactivo
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		
+		LadoDelCampo lado1 = new LadoDelCampo();
+		LadoDelCampo lado2 = new LadoDelCampo();
+		
+		lado1.setOtroLado(lado2);
+		lado2.setOtroLado(lado1);
+		
+		lado1.setJugador(jugador1);
+		lado2.setJugador(jugador2);
+		
+		jugador1.setLado(lado1);
+		jugador2.setLado(lado2);
 		
 		Monstruo insectoComeHombres = FabricaCartaMonstruo.INSECTOCOMEHOMBRES.crear();
-		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo dragonComun = FabricaCartaMonstruo.DRAGON.crear();
 		
-		//AGREGAR A RECIBIR MONSTRUO QUE RECIBA LA POSICION Y EL MODO PARA MONSTRUOS (boca abajo y posicion defensa)
-		//campo.recibirMonstruoDeJugador1(insectoComeHombres);
-		//campo.recibirMonstruoDeJugador2(huevo);
+		jugador1.colocarCarta(insectoComeHombres);
+		jugador2.colocarCarta(dragonComun);
 		
-		
-		//jugador1.atacar(huevo, insectoComeHombres); -> esto falla por algun motivo
-		
+		jugador2.atacar(dragonComun,insectoComeHombres);
 
-		//assertTrue(huevo.estaMuerta());
-	
+		assertTrue(jugador1.verMonstruosRivales().get(0).estaMuerta());
 		
 	}	
 

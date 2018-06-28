@@ -23,5 +23,5 @@ public class CartaCampo extends Carta {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

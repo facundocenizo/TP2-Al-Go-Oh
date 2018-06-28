@@ -21,5 +21,5 @@ public class Magica extends Carta{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

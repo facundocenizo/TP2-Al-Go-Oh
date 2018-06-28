@@ -143,7 +143,7 @@ public class Jugador implements Observador {
 
 	public void agregarCartaALaMano(Monstruo monstruo) {
 		this.cartasEnMano.add(monstruo);
-		
+		chequearExodiaCompleto();
 	}
 
 	public void terminarTurno() {

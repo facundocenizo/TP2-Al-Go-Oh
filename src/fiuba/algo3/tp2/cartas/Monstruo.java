@@ -85,7 +85,7 @@ public class Monstruo extends Carta{
 	
 	
 	public boolean esParteExodia() {
-		return this.efecto==(new EfectoExodia());
+		return (this.efecto instanceof EfectoExodia);
 	}
 
 

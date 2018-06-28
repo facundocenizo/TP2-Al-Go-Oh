@@ -11,14 +11,16 @@ public class Monstruo extends Carta{
 	private int puntosDeAtaque;
 	private int puntosDeDefensa;
 	private Nivel nivel;
+	private EfectoDefensa efectoDefensa;
 	
-	public Monstruo(Posicion posicion, Modo modo, Nivel nivel, int puntosDeAtaque, int puntosDeDefensa, Efecto efecto) {
+	public Monstruo(Posicion posicion, Modo modo, Nivel nivel, int puntosDeAtaque, int puntosDeDefensa, Efecto efecto, EfectoDefensa efectoDefensa) {
 		super(posicion, efecto);
 		this.modo = modo;
 		this.modo.cargarPuntos(puntosDeAtaque,puntosDeDefensa);
 		this.puntosDeAtaque = puntosDeAtaque;
 		this.puntosDeDefensa = puntosDeDefensa;
 		this.nivel = nivel;
+		this.efectoDefensa = efectoDefensa;
     }
 	
 
@@ -80,6 +82,16 @@ public class Monstruo extends Carta{
 	
 	public boolean esParteExodia() {
 		return this.efecto==(new EfectoExodia());
+	}
+
+
+	public boolean tieneEfectoDefensa() {
+		return efectoDefensa.tieneEfectoDefensa();
+	}
+
+
+	public void aplicarEfectoDefensa(Monstruo atacante, Monstruo atacado) {
+		this.efectoDefensa.aplicarEfecto(atacante, atacado);
 	}
 	
 

@@ -10,7 +10,7 @@ import fiuba.algo3.tp2.atributosMonstruo.Modo;
 public class HuevoMonstruoso extends Monstruo{
 
 	public HuevoMonstruoso(Posicion posicion, Modo modo, Efecto efecto) {
-		super(posicion, modo, new Debil(), 600, 900, new SinEfecto());
+		super(posicion, modo, new Debil(), 600, 900, new SinEfecto(), new SinEfecto());
 	}
 
 }

@@ -26,7 +26,7 @@ public class LadoDelCampo {
 		this.cartasTrampa = new ArrayList<Trampa>();
 		this.cartasMagicas = new ArrayList<Magica>();
 		this.cartaDeCampo = new ArrayList<CartaCampo>();
-		this.atacable = new AtaqueNormal();
+		this.atacable = new DefensaNormal();
 	}
 	
 	
@@ -93,7 +93,7 @@ public class LadoDelCampo {
 	public void activarTrampa() {
 		if (cartasTrampa.size()!=0) {
 			Trampa trampa = cartasTrampa.remove(0);
-			this.atacable = new AtaqueConTrampa(trampa);
+			this.atacable = new DefensaConTrampa(trampa);
 		}
 	}
 
@@ -136,15 +136,17 @@ public class LadoDelCampo {
 		return this.jugador;
 	}
 
-
-
+	private void activarEfecto(Monstruo monstruo) {
+		if (monstruo.tieneEfectoDefensa()) {
+			this.atacable = new DefensaConEfecto(monstruo);
+		}
+	}
+	
 	private void recibirAtaque(Monstruo atacante, Monstruo atacado) {
-		atacado.aplicarEfecto(atacante, atacado);
+		this.activarEfecto(atacado);
 		this.activarTrampa();
 		this.atacable.recibirAtaque(atacante, atacado);
 	}
-
-
 
 	public void colocarTrampa(CartaCampo cartaCampo) {
 		if (this.cartaDeCampo.size() == 1) {

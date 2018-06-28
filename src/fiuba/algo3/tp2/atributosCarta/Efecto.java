@@ -7,7 +7,6 @@ public interface Efecto {
 	
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival);
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado);
-	
 
 
 }

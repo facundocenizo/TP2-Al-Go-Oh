@@ -1,10 +1,10 @@
 package fiuba.algo3.tp2;
 
-public class AtaqueConTrampa implements Atacable {
+public class DefensaConTrampa implements Atacable {
 
 	private Trampa trampa;
 
-	public AtaqueConTrampa(Trampa trampa) {
+	public DefensaConTrampa(Trampa trampa) {
 		this.trampa = trampa;
 	}
 	

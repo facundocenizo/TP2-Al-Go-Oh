@@ -1,10 +1,11 @@
 package fiuba.algo3.tp2.Efectos;
 
+import fiuba.algo3.tp2.EfectoDefensa;
 import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 
-public class EfectoInsectoComeHombres implements Efecto {
+public class EfectoInsectoComeHombres implements Efecto, EfectoDefensa {
 	
 	private boolean aplicado = false;
 
@@ -20,6 +21,11 @@ public class EfectoInsectoComeHombres implements Efecto {
 			atacante.morir();
 			this.aplicado = true;
 		}
+	}
+
+	@Override
+	public boolean tieneEfectoDefensa() {
+		return true;
 	}
 
 

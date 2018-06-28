@@ -100,14 +100,13 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("insecto");
-			cartaMonstruo.setDescripcion("ATK: 450\r\n" + 
-					"DEF: 600.\r\n"
-					+ "Efecto: destruye un\r\n" + 
-					"monstruo en el campo.\r\n" + 
-					"Este efecto únicamente\r\n" + 
-					"puede activarse cuando\r\n" + 
-					"esta carta pasa de estar\r\n" + 
-					"boca abajo a boca arriba.");
+			cartaMonstruo.setDescripcion("ATK: 450 DEF: 600\r\n"
+					+ "Efecto: destruye un monstruo\r\n" + 
+					"en el campo. Este efecto\r\n" + 
+					"unicamente puede activarse \r\n" + 
+					"cuando esta carta pasa de \r\n" + 
+					"estar boca abajo a boca arriba.\r\n" + 
+					"");
 			return cartaMonstruo;
 		}
 	},
@@ -164,7 +163,7 @@ public enum FabricaCartaMonstruo {
 					"DEF: 1000.\r\n" +
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
-					"automáticamente se gana\r\n" + 
+					"automaticamente se gana\r\n" + 
 					"la partida.");
 			return cartaMonstruo;
 		}
@@ -185,7 +184,7 @@ public enum FabricaCartaMonstruo {
 					"DEF: 300.\r\n" +
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
-					"automáticamente se gana\r\n" + 
+					"automaticamente se gana\r\n" + 
 					"la partida.");
 			return cartaMonstruo;
 		}
@@ -206,7 +205,7 @@ public enum FabricaCartaMonstruo {
 					"DEF: 300.\r\n" +
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
-					"automáticamente se gana\r\n" + 
+					"automaticamente se gana\r\n" + 
 					"la partida.");
 			return cartaMonstruo;
 		}
@@ -227,7 +226,7 @@ public enum FabricaCartaMonstruo {
 					"DEF: 300.\r\n" +
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
-					"automáticamente se gana\r\n" + 
+					"automaticamente se gana\r\n" + 
 					"la partida.");
 			return cartaMonstruo;
 		}
@@ -248,7 +247,7 @@ public enum FabricaCartaMonstruo {
 					"DEF: 300.\r\n" +
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
-					"automáticamente se gana\r\n" + 
+					"automaticamente se gana\r\n" + 
 					"la partida.");
 			return cartaMonstruo;
 		}

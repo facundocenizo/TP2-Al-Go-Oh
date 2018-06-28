@@ -16,7 +16,7 @@ public enum FabricaCartaTrampa {
 			cartaTrampa.setNombre("cilindroMagico");
 			cartaTrampa.setDescripcion("efecto: niega el ataque del\r\n" + 
 					"monstruo atacante, e\r\n" + 
-					"inflige el mismo daño\r\n" + 
+					"inflige el mismo danio\r\n" + 
 					"directamente a los puntos\r\n" + 
 					"de vida del oponente");
 			return cartaTrampa;

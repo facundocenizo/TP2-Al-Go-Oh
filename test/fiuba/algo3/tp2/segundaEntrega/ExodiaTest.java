@@ -2,7 +2,6 @@ package fiuba.algo3.tp2.segundaEntrega;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.Magica;
 import fiuba.algo3.tp2.MazoCartas;

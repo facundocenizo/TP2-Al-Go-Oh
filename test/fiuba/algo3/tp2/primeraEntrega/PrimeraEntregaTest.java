@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.Carta;
 import fiuba.algo3.tp2.Cementerio;
 import fiuba.algo3.tp2.Jugador;

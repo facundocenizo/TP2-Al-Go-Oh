@@ -16,6 +16,8 @@ public enum FabricaCartaMagica {
 			Efecto efecto = new EfectoAgujeroNegro();
 			Magica cartaMagica = new Magica(posicion, efecto);
 			cartaMagica.setNombre("agujero");
+			cartaMagica.setDescripcion("efecto: destruye todos los\r\n" + 
+					"monstruos del campo.");
 			return cartaMagica;
 		}
 	},
@@ -26,6 +28,11 @@ public enum FabricaCartaMagica {
 			Efecto efecto = new EfectoFisura();
 			Magica cartaMagica = new Magica(posicion, efecto);
 			cartaMagica.setNombre("fisura");
+			cartaMagica.setDescripcion("efecto: destruye el\r\n" + 
+					"monstruo boca arriba con\r\n" + 
+					"menor ataque en el campo\r\n" + 
+					"del oponente (si hay\r\n" + 
+					"empate elige al azar).");
 			return cartaMagica;
 		}
 	},
@@ -35,6 +42,8 @@ public enum FabricaCartaMagica {
 			Efecto efecto = new EfectoOllaDeLaCodicia();
 			Magica cartaMagica = new Magica(posicion, efecto);
 			cartaMagica.setNombre("olla");
+			cartaMagica.setDescripcion("efecto: toma 2 cartas del\r\n" + 
+					"mazo");
 			return cartaMagica;
 		}
 	};

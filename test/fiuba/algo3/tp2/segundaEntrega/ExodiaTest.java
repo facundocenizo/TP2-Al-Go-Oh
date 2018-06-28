@@ -33,8 +33,10 @@ public class ExodiaTest {
 		jugador.agregarCartaALaMano(piernaIzquierda);
 		jugador.agregarCartaALaMano(piernaDerecha);
 		
-		juego.terminarTurno();
-		//assert
+		//assertTrue(jugador.haGanado());
+		
+		
+		
 	
 	}
 	

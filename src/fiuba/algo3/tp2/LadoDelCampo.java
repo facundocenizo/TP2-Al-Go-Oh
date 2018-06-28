@@ -185,5 +185,34 @@ public class LadoDelCampo {
 		
 	}
 
+
+
+	public void terminarTurno() {
+		for (Carta carta : this.zonaMonstruos) {
+			if(carta.estaMuerta())
+				this.cementerio.agregarCarta(carta);
+		}
+		for (Carta carta : this.cartasMagicas) {
+			if(carta.estaMuerta())
+				this.cementerio.agregarCarta(carta);
+		}
+		for (Carta carta : this.cartasTrampa) {
+			if(carta.estaMuerta())
+				this.cementerio.agregarCarta(carta);
+		}
+		for (Carta carta : this.cartaDeCampo) {
+			if(carta.estaMuerta())
+				this.cementerio.agregarCarta(carta);
+		}
+		if (this.mazoCartas.estaVacio()) {
+			this.otroLado.hasGanado();
+		}
+		
+	}
+
+	public void hasGanado() {
+		this.jugador.hasGanado();
+	}
+
 	
 }

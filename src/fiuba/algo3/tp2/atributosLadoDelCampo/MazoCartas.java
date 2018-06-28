@@ -96,5 +96,9 @@ public class MazoCartas {
 		mazo.remove(numeroRandom);
 		return cartaADevolverCarta;
 	}
+
+	public boolean estaVacio() {
+		return mazo.isEmpty();
+	}
 	
 }

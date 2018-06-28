@@ -147,8 +147,11 @@ public class Jugador implements Observador {
 	}
 
 	public void terminarTurno() {
-		this.ladoDelCampo.llevarMonstruosMuertosAlCementerio();
-		
+		this.ladoDelCampo.terminarTurno();
+	}
+
+	public void hasGanado() {
+		this.ganador = true;
 	}
 
 }

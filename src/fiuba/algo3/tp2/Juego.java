@@ -12,7 +12,7 @@ public class Juego {
     	this.inicializarJugadores();
     	this.posicion = new Random().nextInt(2);
     	this.siguienteTurno();
-    	
+    	 
 	}
     
     private void inicializarJugadores() {
@@ -51,10 +51,10 @@ public class Juego {
 		return jugadores.get(1);
 	}
 
-	public void terminarTurno() {		
+	public Jugador terminarTurno() {		
 		for(Jugador jugador : jugadores)
 			jugador.terminarTurno();
-		
+		return this.siguienteTurno();
 	}
     
 	

@@ -2,21 +2,24 @@ package fiuba.algo3.tp2.segundaEntrega;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.atributosLadoDelCampo.MazoCartas;
+import fiuba.algo3.tp2.Juego;
+import fiuba.algo3.tp2.Jugador;
 
 public class MazoTest {
 
 	@Test
 	public void FinalizaElJuegoCuandoSeAcabanLasCartasDelMazo() {
 
-		//Juego juego = new Juego();
+		Juego juego = new Juego();
+		Jugador jugador = juego.siguienteTurno();
+
+		//for(int i= 0; i<38 ; i++)
+			jugador.tomarCartaDelMazo();
 		
-		MazoCartas mazo = new MazoCartas();
-		for (int i = 0; i < 40; i++)
-			mazo.sacarCarta();
-		//mazo.sacarCarta(); -> esta la q cambia el booleano de juego.hayGanador()
+		juego.terminarTurno();
+		//assert
 		
-		//assertTrue(juego.hayGanador());
+		
 	
 	}
 }

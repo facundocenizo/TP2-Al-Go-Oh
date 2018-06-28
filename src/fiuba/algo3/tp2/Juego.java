@@ -6,8 +6,6 @@ import java.util.Random;
 public class Juego {
     private ArrayList<Jugador> jugadores;
     int posicion;
-    Jugador jugadorActivo;
-    Jugador jugadorInactivo;
     
     public Juego() {
     	this.jugadores = new ArrayList<Jugador>();
@@ -40,27 +38,23 @@ public class Juego {
 		
     }
     
-    public void siguienteTurno() {    	
-
+    public Jugador siguienteTurno() {    	
     	this.posicion = (this.posicion + 1) % this.jugadores.size();
-    	this.jugadorActivo = jugadores.get(this.posicion);
-    	this.posicion = (this.posicion + 1) % this.jugadores.size();
-    	this.jugadorInactivo = jugadores.get(this.posicion);
-    	
+    	return jugadores.get(this.posicion);
     }
     
-    public Jugador getJugadorActivo() {
-    	return this.jugadorActivo;
-    }
-    public Jugador getJugadorInactivo() {
-    	return this.jugadorInactivo;
-    }
 
     public Jugador getJugadorInferior() {
 		return jugadores.get(0);
 	}
     public Jugador getJugadorSuperior() {
 		return jugadores.get(1);
+	}
+
+	public void terminarTurno() {		
+		for(Jugador jugador : jugadores)
+			jugador.terminarTurno();
+		
 	}
     
 	

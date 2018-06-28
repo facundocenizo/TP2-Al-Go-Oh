@@ -141,4 +141,14 @@ public class Jugador implements Observador {
 		return this.cartaActiva;
 	}
 
+	public void agregarCartaALaMano(Monstruo monstruo) {
+		this.cartasEnMano.add(monstruo);
+		
+	}
+
+	public void terminarTurno() {
+		this.ladoDelCampo.llevarMonstruosMuertosAlCementerio();
+		
+	}
+
 }

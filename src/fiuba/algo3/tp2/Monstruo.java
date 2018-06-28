@@ -1,5 +1,7 @@
 package fiuba.algo3.tp2;
 
+import java.util.ArrayList;
+
 import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
@@ -92,6 +94,12 @@ public class Monstruo extends Carta{
 
 	public void aplicarEfectoDefensa(Monstruo atacante, Monstruo atacado) {
 		this.efectoDefensa.aplicarEfecto(atacante, atacado);
+	}
+
+
+	public void manejarNivel(ArrayList<Monstruo> zonaMonstruos) {
+		this.nivel.manejarSacrificiosPorEsteMonstruo(zonaMonstruos);
+		
 	}
 	
 

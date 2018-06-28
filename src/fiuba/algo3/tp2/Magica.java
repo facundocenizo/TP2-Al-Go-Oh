@@ -14,11 +14,6 @@ public class Magica extends Carta{
 		morir();
 	}
 
-	
-	//este metodo debe borrarse. solo esta para pasar las pruebas de la primer entrega
-	public void aplicarEfecto(CampoDeBatalla campo) {
-		campo.matarATodosLosMonstruos();
-	}
 
 	@Override
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {

@@ -11,6 +11,7 @@ import fiuba.algo3.tp2.CampoDeBatalla;
 import fiuba.algo3.tp2.Carta;
 import fiuba.algo3.tp2.Cementerio;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Magica;
 import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.Trampa;
@@ -25,6 +26,8 @@ import fiuba.algo3.tp2.atributosMonstruo.ModoDefensa;
 import fiuba.algo3.tp2.atributosMonstruo.Normal;
 import fiuba.algo3.tp2.atributosMonstruo.Poderoso;
 import fiuba.algo3.tp2.excepciones.MonstruoEnModoDefensaNoPuedeAtacarException;
+import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
+import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
 public class PrimeraEntregaTest {
 
@@ -118,39 +121,65 @@ public class PrimeraEntregaTest {
 
 	@Test
 	public void DejarMonstruosActivosEnEstadoMuertoParaAgarrarConElCementerio() {
-		Monstruo monstruo1 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-		Monstruo monstruo2 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
-		Monstruo monstruo3 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-		Monstruo monstruo4 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
-		Monstruo monstruo5 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
 		
-		CampoDeBatalla campo = CampoDeBatalla.getInstance();
-		campo.recibirMonstruoDeJugador1(monstruo1);
-		campo.recibirMonstruoDeJugador1(monstruo2);
-		campo.recibirMonstruoDeJugador1(monstruo3);
-		campo.recibirMonstruoDeJugador1(monstruo4);
-		campo.recibirMonstruoDeJugador1(monstruo5);
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		
+		LadoDelCampo lado1 = new LadoDelCampo();
+		LadoDelCampo lado2 = new LadoDelCampo();
+		lado1.setOtroLado(lado2);
+		lado2.setOtroLado(lado1);
+		
+		lado1.setJugador(jugador1);
+		lado2.setJugador(jugador2);
+		
+		jugador1.setLado(lado1);
+		jugador2.setLado(lado2);
+		
+		Monstruo dragon1DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo dragon2DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo dragon3DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo dragon4DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo dragon5DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		
+		jugador1.colocarCarta(dragon1DeJugador1);
+		jugador1.colocarCarta(dragon2DeJugador1);
+		jugador1.colocarCarta(dragon3DeJugador1);
+		jugador1.colocarCarta(dragon4DeJugador1);
+		jugador1.colocarCarta(dragon5DeJugador1);
 		
 		
-		Monstruo monstruo6 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-		Monstruo monstruo7 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
-		Monstruo monstruo8 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-		Monstruo monstruo9 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
-		Monstruo monstruo10 = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-
-		campo.recibirMonstruoDeJugador2(monstruo6);
-		campo.recibirMonstruoDeJugador2(monstruo7);
-		campo.recibirMonstruoDeJugador2(monstruo8);
-		campo.recibirMonstruoDeJugador2(monstruo9);
-		campo.recibirMonstruoDeJugador2(monstruo10);
+		Monstruo huevo1DeJugador2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo huevo2DeJugador2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo huevo3DeJugador2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo huevo4DeJugador2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo huevo5DeJugador2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		
+		jugador2.colocarCarta(huevo1DeJugador2);
+		jugador2.colocarCarta(huevo2DeJugador2);
+		jugador2.colocarCarta(huevo3DeJugador2);
+		jugador2.colocarCarta(huevo4DeJugador2);
+		jugador2.colocarCarta(huevo5DeJugador2);
+		
+		Magica agujeroNegro = FabricaCartaMagica.AGUJERONEGRO.crear();
+		
+		jugador2.activarMagicaEnCampo(agujeroNegro);
 		
 		
-		Efecto efectoAgujeroNegro = new EfectoAgujeroNegro();
-		Magica cartaAgujeroNegro = new Magica(new BocaArriba(),efectoAgujeroNegro);
-		cartaAgujeroNegro.aplicarEfecto(campo);
-		campo.barrerZonaDeMonstruos();
+		assertTrue(huevo1DeJugador2.estaMuerta());
+		assertTrue(huevo2DeJugador2.estaMuerta());
+		assertTrue(huevo3DeJugador2.estaMuerta());
+		assertTrue(huevo4DeJugador2.estaMuerta());
+		assertTrue(huevo5DeJugador2.estaMuerta());
 		
-		assertEquals(0,campo.cantidadDeMonstruosActivos());
+		
+		assertTrue(dragon1DeJugador1.estaMuerta());
+		assertTrue(dragon2DeJugador1.estaMuerta());
+		assertTrue(dragon3DeJugador1.estaMuerta());
+		assertTrue(dragon4DeJugador1.estaMuerta());
+		assertTrue(dragon5DeJugador1.estaMuerta());
+		
+		
 		
 		
 	}
@@ -223,32 +252,62 @@ public class PrimeraEntregaTest {
 	@Test
 	public void SeRequiereSacrificioParaPonerUnMonstruoDeCincoOSeisEstrellas() {
 		
-		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoPoderoso = new Monstruo(new BocaArriba(),new ModoAtaque(), new Normal(), 300, 600, new SinEfecto(), new SinEfecto());
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
 		
-		CampoDeBatalla campo = CampoDeBatalla.getInstance();
-		campo.recibirMonstruoDeJugador1(monstruo);
-		campo.recibirMonstruoDeJugador1(monstruoPoderoso); //estafuncion debe chequear las estrellas del monstruo  y sacrificar 1 mons del campo
+		LadoDelCampo lado1 = new LadoDelCampo();
+		LadoDelCampo lado2 = new LadoDelCampo();
+		lado1.setOtroLado(lado2);
+		lado2.setOtroLado(lado1);
 		
-		assertTrue(monstruo.estaMuerta());
+		lado1.setJugador(jugador1);
+		lado2.setJugador(jugador2);
+		
+		jugador1.setLado(lado1);
+		jugador2.setLado(lado2);
+		
+		Monstruo dragon = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		
+		Monstruo magoOscuro = FabricaCartaMonstruo.MAGOOSCURO.crear();
+		
+		jugador1.colocarCarta(dragon);
+		jugador1.colocarCarta(magoOscuro);
+		
+		
+		assertTrue(dragon.estaMuerta());
 		
 	}
 	
 
 	@Test
 	public void SeRequiereDosSacrificiosParaPonerUnMonstruoDeSieteOMasEstrellas() {
-
-		Monstruo monstruoUno = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoDos = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoPoderoso = new Monstruo(new BocaArriba(),new ModoAtaque(), new Poderoso(), 300, 600, new SinEfecto(), new SinEfecto());
 		
-		CampoDeBatalla campo = CampoDeBatalla.getInstance();
-		campo.recibirMonstruoDeJugador1(monstruoUno);
-		campo.recibirMonstruoDeJugador1(monstruoDos);
-		campo.recibirMonstruoDeJugador1(monstruoPoderoso); //estafuncion debe chequear las estrellas del monstruo y sacrificar 2 mons del campo
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
 		
-		assertTrue(monstruoUno.estaMuerta());
-		assertTrue(monstruoDos.estaMuerta());
+		LadoDelCampo lado1 = new LadoDelCampo();
+		LadoDelCampo lado2 = new LadoDelCampo();
+		lado1.setOtroLado(lado2);
+		lado2.setOtroLado(lado1);
+		
+		lado1.setJugador(jugador1);
+		lado2.setJugador(jugador2);
+		
+		jugador1.setLado(lado1);
+		jugador2.setLado(lado2);
+		
+		Monstruo dragon1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo dragon2 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		
+		Monstruo dragonDefinitivo = FabricaCartaMonstruo.DRAGONDEFINITIVO.crear();
+		
+		jugador1.colocarCarta(dragon1);
+		jugador1.colocarCarta(dragon2);
+		jugador1.colocarCarta(dragonDefinitivo);
+		
+		
+		assertTrue(dragon1.estaMuerta());
+		assertTrue(dragon2.estaMuerta());
 		
 	}
 	

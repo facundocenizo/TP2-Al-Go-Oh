@@ -1,5 +1,9 @@
 package fiuba.algo3.tp2.atributosMonstruo;
 
+import java.util.ArrayList;
+
+import fiuba.algo3.tp2.Monstruo;
+
 public class Debil implements Nivel {
 
 	@Override
@@ -15,6 +19,12 @@ public class Debil implements Nivel {
 	@Override
 	public boolean esPoderoso() {
 		return false;
+	}
+
+	@Override
+	public void manejarSacrificiosPorEsteMonstruo(ArrayList<Monstruo> zonaMonstruos) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -47,9 +47,14 @@ public class LadoDelCampo {
 		if (zonaMonstruos.size()>4) {
 			throw new ZonaMonstruosLlenaException();
 		}
+		this.verificarSacrificios(monstruo);
 		zonaMonstruos.add(monstruo);
 	}
-	
+
+	private void verificarSacrificios(Monstruo monstruo) {
+		monstruo.manejarNivel(this.zonaMonstruos); //
+	}
+
 	public void colocarTrampa(Trampa trampa) {
 		if (cartasTrampa.size()+cartasMagicas.size()>4) {
 			throw new ZonaDeTrampaYMagicasLlenaException();

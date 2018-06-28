@@ -10,14 +10,12 @@ public class Jugador implements Observador {
 	private String nombre;
 	private ArrayList<Carta> cartasEnMano;
 	private LadoDelCampo ladoDelCampo;
-	private Turno turno;
 	private boolean ganador;
 	
 	
 	public Jugador() {
 		this.vida = 8000;
 		this.cartasEnMano = new ArrayList<Carta>();
-		//this.turno = new TurnoActivo();
 		this.ganador = false;
 	}
 	
@@ -50,10 +48,6 @@ public class Jugador implements Observador {
 		return this.ladoDelCampo.verMonstruosRivales();
 	}
 	
-	public void morir() {
-		//implementar
-	}
-	
 	public void colocarCarta(Monstruo monstruo) {
 		this.ladoDelCampo.colocarMonstruo(monstruo);
 	}
@@ -77,11 +71,6 @@ public class Jugador implements Observador {
 	
 	public void activarMagicaEnCampo(Magica magica) {
 		this.ladoDelCampo.activarMagicaEnCampo(magica);
-	}
-
-	public void jugarTurno() {
-		// TODO Apéndice de método generado automáticamente
-		
 	}
 	
 	public void tomarCartaDelMazo() {

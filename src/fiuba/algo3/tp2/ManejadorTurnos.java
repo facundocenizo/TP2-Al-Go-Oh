@@ -17,7 +17,7 @@ public class ManejadorTurnos {
 		
 		//ciclo?
 		
-		jugadorQueEmpieza.jugarTurno();
+		// jugadorQueEmpieza.jugarTurno();
 		siguienteTurno(jugadorQueEmpieza);
 		//fin ciclo?
 		
@@ -31,10 +31,10 @@ public class ManejadorTurnos {
 		}
 		
 		if (jugadores.get(0)==jugadorAnterior) {
-			jugadores.get(1).jugarTurno();
+		//	jugadores.get(1).jugarTurno();
 			siguienteTurno(jugadores.get(1));
 		}
-		jugadores.get(0).jugarTurno();
+		// jugadores.get(0).jugarTurno();
 		siguienteTurno(jugadores.get(0));
 	}
 

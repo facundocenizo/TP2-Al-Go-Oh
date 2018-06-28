@@ -12,14 +12,18 @@ public enum FabricaCartaTrampa {
 		public Trampa crear(){
 			
 			Efecto efecto = new EfectoCilindroMagico();
-			return new Trampa(efecto);
+			Trampa cartaTrampa = new Trampa(efecto);
+			cartaTrampa.setNombre("cilindroMagico");
+			return cartaTrampa;
 		}
 	},
 	REINFORCEMENTS{
 		public Trampa crear(){
 			
 			Efecto efecto = new EfectoReinforcements();
-			return new Trampa(efecto);
+			Trampa cartaTrampa = new Trampa(efecto);
+			cartaTrampa.setNombre("reinforcements");
+			return cartaTrampa;
 		}
 	};
 

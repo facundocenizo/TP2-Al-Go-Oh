@@ -19,6 +19,13 @@ public class Jugador implements Observador {
 		this.ganador = false;
 	}
 	
+	public void agregarCartasALaMano() {
+		tomarCartaDelMazo();
+		tomarCartaDelMazo();
+		tomarCartaDelMazo();
+		tomarCartaDelMazo();
+	}
+
 	public void setLado(LadoDelCampo lado) {
 		this.ladoDelCampo = lado;
 	}
@@ -109,6 +116,14 @@ public class Jugador implements Observador {
 
 	public String darNombre() {
 		return this.nombre;
+	}
+	
+	public ArrayList<Carta> darCartasDeLaMano() {
+		return this.cartasEnMano;
+	}
+
+	public int darVida() {
+		return this.vida;
 	}
 
 }

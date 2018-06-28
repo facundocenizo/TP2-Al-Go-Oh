@@ -12,14 +12,18 @@ public enum FabricaCartaCampo {
 		public CartaCampo crear(){
 			
 			Efecto efecto = new EfectoWasteland();
-			return new CartaCampo(efecto);
+			CartaCampo cartaCampo = new CartaCampo(efecto);
+			cartaCampo.setNombre("wasteland");
+			return cartaCampo;
 		}
 	},
 	SOGEN{
 		public CartaCampo crear(){
 			
 			Efecto efecto = new EfectoSogen();
-			return new CartaCampo(efecto);
+			CartaCampo cartaCampo = new CartaCampo(efecto);
+			cartaCampo.setNombre("sogen");
+			return cartaCampo;
 		}
 	};
 	

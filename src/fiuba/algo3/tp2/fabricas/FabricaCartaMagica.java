@@ -14,7 +14,9 @@ public enum FabricaCartaMagica {
 		public Magica crear(){
 			Posicion posicion = new BocaAbajo();
 			Efecto efecto = new EfectoAgujeroNegro();
-			return new Magica(posicion, efecto);
+			Magica cartaMagica = new Magica(posicion, efecto);
+			cartaMagica.setNombre("agujero");
+			return cartaMagica;
 		}
 	},
 	
@@ -22,17 +24,20 @@ public enum FabricaCartaMagica {
 		public Magica crear(){
 			Posicion posicion = new BocaAbajo();
 			Efecto efecto = new EfectoFisura();
-			return new Magica(posicion, efecto);
+			Magica cartaMagica = new Magica(posicion, efecto);
+			cartaMagica.setNombre("fisura");
+			return cartaMagica;
 		}
 	},
 	OLLADELACODICIA{
 		public Magica crear(){
 			Posicion posicion = new BocaAbajo();
 			Efecto efecto = new EfectoOllaDeLaCodicia();
-			return new Magica(posicion, efecto);
+			Magica cartaMagica = new Magica(posicion, efecto);
+			cartaMagica.setNombre("olla");
+			return cartaMagica;
 		}
-	}
-	;
+	};
 	
 	
 

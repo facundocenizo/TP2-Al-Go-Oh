@@ -240,9 +240,16 @@ public class ContenedorPrincipal extends BorderPane
     	salud.setSpacing(-15);
     	
        
-    	Text descripcionCarta = new Text("Descripcion de la carta: ");
-    	descripcionCarta.setFill(Color.WHITE);
-    	descripcionCarta.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
+    	VBox descripcionCarta = new VBox();
+    	Text texto1 = new Text("Descripcion de la carta: ");
+    	texto1.setFill(Color.WHITE);
+    	texto1.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
+    	
+    	Text texto2 = new Text("Descripcion de la carta... ");
+    	texto2.setFill(Color.WHITE);
+    	texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
+    	
+    	descripcionCarta.getChildren().addAll(texto1,texto2);
     	
     	hbox.setSpacing(70);
 //    	hbox.getChildren().addAll(imagenJugadorUno, vida, cartaSeleccionada, imagenCarta, descripcionCarta);//aca agregar mas cosas
@@ -288,10 +295,16 @@ public class ContenedorPrincipal extends BorderPane
     	salud.getChildren().addAll(vida, nombreJugador);
     	salud.setSpacing(-15);
     	
-    	Text descripcionCarta = new Text("Descripcion de la carta: ");
-    	descripcionCarta.setFill(Color.WHITE);
-    	descripcionCarta.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
+    	VBox descripcionCarta = new VBox();
+    	Text texto1 = new Text("Descripcion de la carta: ");
+    	texto1.setFill(Color.WHITE);
+    	texto1.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
     	
+    	Text texto2 = new Text("Descripcion de la carta... ");
+    	texto2.setFill(Color.WHITE);
+    	texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
+    	
+    	descripcionCarta.getChildren().addAll(texto1,texto2);
     	
     	hbox.setSpacing(70);
 		hbox.getChildren().addAll(imagenJugadorDos, salud, descripcionCarta, cartasDeLaManoSuperior);//aca agregar mas cosas

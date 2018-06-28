@@ -13,6 +13,7 @@ public abstract class Carta implements SujetoCartaObservable,Efecto{
 	protected Efecto efecto;
 	protected Observador observador;
 	public String nombre;
+	public String descripcion;
 	
 	public Carta(Posicion nuevaPosicion, Efecto efecto) {
 		this.posicion = nuevaPosicion;
@@ -56,6 +57,13 @@ public abstract class Carta implements SujetoCartaObservable,Efecto{
 	
 	public String getNombre() {
 		return this.nombre;
+	}
+	public void setDescripcion(String unaDescripcion) {
+		this.descripcion = unaDescripcion;
+	}
+	
+	public String getDescripcion() {
+		return this.descripcion;
 	}
 	
 }

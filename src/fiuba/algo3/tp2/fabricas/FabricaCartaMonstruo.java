@@ -31,6 +31,8 @@ public enum FabricaCartaMonstruo {
 			
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("dragon");
+			cartaMonstruo.setDescripcion("ATK: 400\r\n" + 
+					"DEF: 300.\r\n");
 			return cartaMonstruo;
 		}
 	},
@@ -46,6 +48,8 @@ public enum FabricaCartaMonstruo {
 			
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("magoOscuro");
+			cartaMonstruo.setDescripcion("ATK: 2500\r\n" + 
+					"DEF: 2100.\r\n");
 			return cartaMonstruo;
 		}
 	},
@@ -61,6 +65,8 @@ public enum FabricaCartaMonstruo {
 		
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("dragonDefinitivo");
+			cartaMonstruo.setDescripcion("ATK: 4500\r\n" + 
+					"DEF: 3800.\r\n");
 			return cartaMonstruo;
 		}
 	},
@@ -77,6 +83,8 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("huevo");
+			cartaMonstruo.setDescripcion("ATK: 600\r\n" + 
+					"DEF: 900.\r\n");
 			return cartaMonstruo;
 		}
 	},
@@ -92,6 +100,14 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("insecto");
+			cartaMonstruo.setDescripcion("ATK: 450\r\n" + 
+					"DEF: 600.\r\n"
+					+ "Efecto: destruye un\r\n" + 
+					"monstruo en el campo.\r\n" + 
+					"Este efecto únicamente\r\n" + 
+					"puede activarse cuando\r\n" + 
+					"esta carta pasa de estar\r\n" + 
+					"boca abajo a boca arriba.");
 			return cartaMonstruo;
 		}
 	},
@@ -107,6 +123,8 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("dragonBlanco");
+			cartaMonstruo.setDescripcion("ATK: 3000\r\n" + 
+					"DEF: 2500.\r\n");
 			return cartaMonstruo;
 		}
 	},
@@ -122,6 +140,11 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("jinzo7");
+			cartaMonstruo.setDescripcion("ATK: 500\r\n" + 
+					"DEF: 400.\r\n"
+					+ "Efecto: puede atacar\r\n" + 
+					"directamente a los puntos\r\n" + 
+					"de vida del oponente");
 			return cartaMonstruo;
 		}
 	},
@@ -137,6 +160,12 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("cabezaExodia");
+			cartaMonstruo.setDescripcion("ATK: 1000\r\n" + 
+					"DEF: 1000.\r\n" +
+					"Efecto: al tener las 5\r\n" + 
+					"partes juntas en la mano\r\n" + 
+					"automáticamente se gana\r\n" + 
+					"la partida.");
 			return cartaMonstruo;
 		}
 	},
@@ -152,6 +181,12 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("brazoDerecho");
+			cartaMonstruo.setDescripcion("ATK: 200\r\n" + 
+					"DEF: 300.\r\n" +
+					"Efecto: al tener las 5\r\n" + 
+					"partes juntas en la mano\r\n" + 
+					"automáticamente se gana\r\n" + 
+					"la partida.");
 			return cartaMonstruo;
 		}
 	},
@@ -167,6 +202,12 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("brazoIzquierdo");
+			cartaMonstruo.setDescripcion("ATK: 200\r\n" + 
+					"DEF: 300.\r\n" +
+					"Efecto: al tener las 5\r\n" + 
+					"partes juntas en la mano\r\n" + 
+					"automáticamente se gana\r\n" + 
+					"la partida.");
 			return cartaMonstruo;
 		}
 	},
@@ -182,6 +223,12 @@ public enum FabricaCartaMonstruo {
 			
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("piernaDerecha");
+			cartaMonstruo.setDescripcion("ATK: 200\r\n" + 
+					"DEF: 300.\r\n" +
+					"Efecto: al tener las 5\r\n" + 
+					"partes juntas en la mano\r\n" + 
+					"automáticamente se gana\r\n" + 
+					"la partida.");
 			return cartaMonstruo;
 		}
 	},
@@ -197,6 +244,12 @@ public enum FabricaCartaMonstruo {
 			
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("piernaIzquierda");
+			cartaMonstruo.setDescripcion("ATK: 200\r\n" + 
+					"DEF: 300.\r\n" +
+					"Efecto: al tener las 5\r\n" + 
+					"partes juntas en la mano\r\n" + 
+					"automáticamente se gana\r\n" + 
+					"la partida.");
 			return cartaMonstruo;
 		}
 	};

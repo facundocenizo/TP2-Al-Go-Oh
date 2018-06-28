@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.atributosMonstruo;
 
 import java.util.ArrayList;
 
-import fiuba.algo3.tp2.Monstruo;
+import cartas.Monstruo;
 
 public class Debil implements Nivel {
 

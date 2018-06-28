@@ -1,9 +1,8 @@
 package fiuba.algo3.tp2.vista;
 
+import cartas.Carta;
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreCarta;
-import fiuba.algo3.tp2.Carta;
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

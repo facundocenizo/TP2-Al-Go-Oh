@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.fabricas;
 
-import fiuba.algo3.tp2.Magica;
+import cartas.Magica;
 import fiuba.algo3.tp2.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.tp2.Efectos.EfectoOllaDeLaCodicia;
 import fiuba.algo3.tp2.Efectos.EfectoFisura;

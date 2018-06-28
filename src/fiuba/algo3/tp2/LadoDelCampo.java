@@ -2,6 +2,18 @@ package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
 
+import atributosLadoDelCampo.Atacable;
+import atributosLadoDelCampo.Cementerio;
+import atributosLadoDelCampo.DefensaConEfecto;
+import atributosLadoDelCampo.DefensaConTrampa;
+import atributosLadoDelCampo.DefensaNormal;
+import atributosLadoDelCampo.MazoCartas;
+import cartas.Carta;
+import cartas.CartaCampo;
+import cartas.Magica;
+import cartas.Monstruo;
+import cartas.Trampa;
+import fiuba.algo3.tp2.atributosCarta.Observador;
 import fiuba.algo3.tp2.excepciones.ZonaDeCampoLlenaException;
 import fiuba.algo3.tp2.excepciones.ZonaDeCampoVaciaException;
 import fiuba.algo3.tp2.excepciones.ZonaDeTrampaYMagicasLlenaException;

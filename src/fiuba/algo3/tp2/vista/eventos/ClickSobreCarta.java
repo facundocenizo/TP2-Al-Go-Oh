@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.vista.eventos;
 
-import fiuba.algo3.tp2.Carta;
+import cartas.Carta;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;

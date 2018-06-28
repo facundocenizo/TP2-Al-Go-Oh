@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.Carta;
-import fiuba.algo3.tp2.Cementerio;
+import atributosLadoDelCampo.Cementerio;
+import cartas.Carta;
+import cartas.Magica;
+import cartas.Monstruo;
+import cartas.Trampa;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
-import fiuba.algo3.tp2.Magica;
-import fiuba.algo3.tp2.Monstruo;
-import fiuba.algo3.tp2.Trampa;
 import fiuba.algo3.tp2.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.tp2.Efectos.SinEfecto;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;

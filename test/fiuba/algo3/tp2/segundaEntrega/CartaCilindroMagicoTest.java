@@ -4,10 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import cartas.Monstruo;
+import cartas.Trampa;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
-import fiuba.algo3.tp2.Monstruo;
-import fiuba.algo3.tp2.Trampa;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaTrampa;
 

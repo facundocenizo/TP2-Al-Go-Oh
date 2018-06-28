@@ -1,7 +1,9 @@
-package fiuba.algo3.tp2;
+package cartas;
 
 import java.util.ArrayList;
 
+import fiuba.algo3.tp2.LadoDelCampo;
+import fiuba.algo3.tp2.Efectos.EfectoDefensa;
 import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;

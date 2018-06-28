@@ -1,4 +1,6 @@
-package fiuba.algo3.tp2;
+package atributosLadoDelCampo;
+
+import cartas.Monstruo;
 
 public class DefensaNormal implements Atacable {
 

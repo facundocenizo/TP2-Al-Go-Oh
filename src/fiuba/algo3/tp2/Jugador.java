@@ -4,6 +4,13 @@ package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
 
+import cartas.Carta;
+import cartas.CartaCampo;
+import cartas.Magica;
+import cartas.Monstruo;
+import cartas.Trampa;
+import fiuba.algo3.tp2.atributosCarta.Observador;
+
 public class Jugador implements Observador {
 	
 	private int vida;

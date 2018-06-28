@@ -1,9 +1,11 @@
-package fiuba.algo3.tp2;
+package cartas;
 
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Estado;
 import fiuba.algo3.tp2.atributosCarta.Muerto;
+import fiuba.algo3.tp2.atributosCarta.Observador;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
+import fiuba.algo3.tp2.atributosCarta.SujetoCartaObservable;
 import fiuba.algo3.tp2.atributosCarta.Vivo;
 
 public abstract class Carta implements SujetoCartaObservable,Efecto{

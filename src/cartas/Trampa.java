@@ -1,24 +1,24 @@
-package fiuba.algo3.tp2;
+package cartas;
 
+import fiuba.algo3.tp2.LadoDelCampo;
+import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
-import fiuba.algo3.tp2.atributosCarta.Posicion;
 
-public class Magica extends Carta{
+public class Trampa extends Carta{
 	
-	public Magica(Posicion posicion, Efecto efecto) {
-		super(posicion, efecto);
+	public Trampa(Efecto efecto) {
+		super(new BocaAbajo(), efecto);
 	}
 
+	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
 		efecto.aplicarEfecto(propio, rival);
 		morir();
 	}
 
-
 	@Override
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
+		efecto.aplicarEfecto(atacante, atacado);		
 	}
 
 }

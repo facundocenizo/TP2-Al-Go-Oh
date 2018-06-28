@@ -2,12 +2,13 @@ package fiuba.algo3.tp2.segundaEntrega;
 
 import org.junit.Test;
 
+import cartas.Monstruo;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
-import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
 public class CartaJinzoSieteTest {

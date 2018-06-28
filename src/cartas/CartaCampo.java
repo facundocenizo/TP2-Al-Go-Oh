@@ -1,5 +1,6 @@
-package fiuba.algo3.tp2;
+package cartas;
 
+import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.atributosCarta.BocaArriba;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 

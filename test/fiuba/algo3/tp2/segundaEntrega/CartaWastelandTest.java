@@ -6,12 +6,11 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-
-import fiuba.algo3.tp2.CartaCampo;
+import cartas.CartaCampo;
+import cartas.Magica;
+import cartas.Monstruo;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
-import fiuba.algo3.tp2.Magica;
-import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;

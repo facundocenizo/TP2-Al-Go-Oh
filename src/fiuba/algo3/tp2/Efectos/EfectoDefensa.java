@@ -1,4 +1,7 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.Efectos;
+
+import cartas.Monstruo;
+import fiuba.algo3.tp2.LadoDelCampo;
 
 public interface EfectoDefensa {
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival);

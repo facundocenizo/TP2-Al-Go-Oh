@@ -1,4 +1,7 @@
-package fiuba.algo3.tp2;
+package atributosLadoDelCampo;
+
+import cartas.Monstruo;
+import cartas.Trampa;
 
 public class DefensaConTrampa implements Atacable {
 

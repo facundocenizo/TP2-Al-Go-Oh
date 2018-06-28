@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.atributosMonstruo;
 
-import fiuba.algo3.tp2.Monstruo;
+import cartas.Monstruo;
 
 public class ModoAtaque implements Modo {
 	

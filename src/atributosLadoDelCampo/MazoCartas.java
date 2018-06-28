@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2;
+package atributosLadoDelCampo;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,8 @@ import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaTrampa;
 
 import java.util.Random;
+
+import cartas.Carta;
 
 public class MazoCartas {
 

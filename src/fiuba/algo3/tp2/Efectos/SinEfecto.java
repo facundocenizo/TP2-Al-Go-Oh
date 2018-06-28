@@ -1,8 +1,7 @@
 package fiuba.algo3.tp2.Efectos;
 
-import fiuba.algo3.tp2.EfectoDefensa;
+import cartas.Monstruo;
 import fiuba.algo3.tp2.LadoDelCampo;
-import fiuba.algo3.tp2.Monstruo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 
 public class SinEfecto implements Efecto, EfectoDefensa {

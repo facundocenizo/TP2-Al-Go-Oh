@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2.fabricas;
 
-import fiuba.algo3.tp2.EfectoDefensa;
-import fiuba.algo3.tp2.Monstruo;
+import cartas.Monstruo;
+import fiuba.algo3.tp2.Efectos.EfectoDefensa;
 import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.Efectos.EfectoInsectoComeHombres;
 import fiuba.algo3.tp2.Efectos.EfectoJinzoSiete;

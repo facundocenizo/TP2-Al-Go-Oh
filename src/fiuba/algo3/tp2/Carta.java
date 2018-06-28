@@ -12,6 +12,7 @@ public abstract class Carta implements SujetoCartaObservable,Efecto{
 	protected Estado estado;
 	protected Efecto efecto;
 	protected Observador observador;
+	public String nombre;
 	
 	public Carta(Posicion nuevaPosicion, Efecto efecto) {
 		this.posicion = nuevaPosicion;
@@ -43,11 +44,18 @@ public abstract class Carta implements SujetoCartaObservable,Efecto{
 
 	public void voltearCarta() {
 		this.posicion = this.posicion.voltear();
-		
 	}
 
 	public boolean esParteExodia() {
 		return false;
+	}
+	
+	public void setNombre(String unNombre) {
+		this.nombre = unNombre;
+	}
+	
+	public String getNombre() {
+		return this.nombre;
 	}
 	
 }

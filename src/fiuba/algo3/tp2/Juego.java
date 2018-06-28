@@ -28,6 +28,9 @@ public class Juego {
 		jugador1.setLado(lado1);
 		jugador2.setLado(lado2);
 		
+		jugador1.agregarCartasALaMano();
+		jugador2.agregarCartasALaMano();
+		
 		this.jugadores.add(jugador1);
 		this.jugadores.add(jugador2);
     }

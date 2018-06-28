@@ -170,7 +170,7 @@ public class ContenedorPrincipal extends BorderPane
 		VBox vbox = new VBox();
     	ImageView mazo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/mazo.jpg");
     	ImageView cementerio = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cementerio.png");
-    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cartaCampo.jpg");
+    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cartaCampo.png");
     	
     	vbox.getChildren().addAll(cartaCampo, cementerio, mazo);//aca agregar mas cosas
     		
@@ -185,7 +185,7 @@ public class ContenedorPrincipal extends BorderPane
 		VBox vbox = new VBox();
     	ImageView mazo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/mazo.jpg");
     	ImageView cementerio = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cementerio.png");
-    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cartaCampo.jpg");
+    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/cartaCampo.png");
     	
     	vbox.getChildren().addAll(mazo, cementerio, cartaCampo);//aca agregar mas cosas
 
@@ -204,6 +204,19 @@ public class ContenedorPrincipal extends BorderPane
 	
 	
 	private void inicializarContenedorInferior() {
+		
+		HBox cartasDeLaMano = new HBox();
+		//for(Carta : cartas) {
+			ImageView imagenCartaMano = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/" +
+	            ""
+	            + ".jpg");
+		//}
+    	
+		
+		
+		
+		
     	HBox hbox = new HBox();
     	
     	ImageView imagenJugadorUno = new ImageView("file:" + 

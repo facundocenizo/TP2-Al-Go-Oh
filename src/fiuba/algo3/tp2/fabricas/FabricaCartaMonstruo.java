@@ -26,8 +26,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeAtaque = 400;
 			int puntosDeDefensa = 300;
 			Efecto efecto = new SinEfecto();
-			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("dragon");
+			return cartaMonstruo;
 		}
 	},
 	MAGOOSCURO{
@@ -38,8 +39,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeAtaque = 2500;
 			int puntosDeDefensa = 2100;
 			Efecto efecto = new SinEfecto();
-
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("magoOscuro");
+			return cartaMonstruo;
 		}
 	},
 	DRAGONDEFINITIVO{
@@ -50,8 +52,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeAtaque = 4500;
 			int puntosDeDefensa = 3800;
 			Efecto efecto = new SinEfecto();
-			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("dragonDefinitivo");
+			return cartaMonstruo;
 		}
 	},
 
@@ -64,7 +67,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 900;
 			Efecto efecto = new SinEfecto();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("huevo");
+			return cartaMonstruo;
 		}
 	},
 	INSECTOCOMEHOMBRES{
@@ -76,7 +81,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 600;
 			Efecto efecto = new EfectoInsectoComeHombres();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("insecto");
+			return cartaMonstruo;
 		}
 	},
 	DRAGONBLANCO{
@@ -88,7 +95,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 2500;
 			Efecto efecto = new SinEfecto();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("dragonBlanco");
+			return cartaMonstruo;
 		}
 	},
 	JINZOSIETE{
@@ -100,7 +109,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 400;
 			Efecto efecto = new EfectoJinzoSiete();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("jinzo7");
+			return cartaMonstruo;
 		}
 	},
 	CABEZAEXODIA{
@@ -112,7 +123,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 1000;
 			Efecto efecto = new EfectoExodia();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("cabezaExodia");
+			return cartaMonstruo;
 		}
 	},
 	BRAZODERECHO{
@@ -124,7 +137,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 300;
 			Efecto efecto = new EfectoExodia();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("brazoDerecho");
+			return cartaMonstruo;
 		}
 	},
 	BRAZOIZQUIERDO{
@@ -136,7 +151,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 300;
 			Efecto efecto = new EfectoExodia();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("brazoIzquierdo");
+			return cartaMonstruo;
 		}
 	},
 	PIERNADERECHA{
@@ -148,7 +165,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 300;
 			Efecto efecto = new EfectoExodia();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("piernaDerecha");
+			return cartaMonstruo;
 		}
 	},
 	PIERNAIZQUIERDA{
@@ -160,7 +179,9 @@ public enum FabricaCartaMonstruo {
 			int puntosDeDefensa = 300;
 			Efecto efecto = new EfectoExodia();
 			
-			return new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto);
+			cartaMonstruo.setNombre("piernaIzquierda");
+			return cartaMonstruo;
 		}
 	};
 	

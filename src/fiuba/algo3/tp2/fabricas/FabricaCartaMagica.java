@@ -15,7 +15,7 @@ public enum FabricaCartaMagica {
 			Posicion posicion = new BocaAbajo();
 			Efecto efecto = new EfectoAgujeroNegro();
 			Magica cartaMagica = new Magica(posicion, efecto);
-			cartaMagica.setNombre("agujeroNegro");
+			cartaMagica.setNombre("agujero");
 			return cartaMagica;
 		}
 	},

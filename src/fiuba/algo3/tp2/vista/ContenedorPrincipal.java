@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.Juego;
+import fiuba.algo3.tp2.Carta;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -68,7 +70,7 @@ public class ContenedorPrincipal extends BorderPane
     	
     	VBox tablero = new VBox(contenedorZonaMagicaTrampasSuperior,contenedorZonaMonstruosSuperior,
     							contenedorZonaMonstruosInferior,contenedorZonaMagicaTrampasInferior);
-    	tablero.setSpacing(20);
+    	tablero.setSpacing(10);
         this.setCenter(tablero);
 		
 	}
@@ -205,19 +207,18 @@ public class ContenedorPrincipal extends BorderPane
 	
 	private void inicializarContenedorInferior() {
 		
-		HBox cartasDeLaMano = new HBox();
-		//for(Carta : cartas) {
-			ImageView imagenCartaMano = new ImageView("file:" + 
-	            "src/fiuba/algo3/tp2/vista/imagenes/" +
-	            ""
+		HBox cartasDeLaManoInferior = new HBox();
+		for(Carta carta : juego.getJugadorInferior().darCartasDeLaMano()) {
+			ImageView carta1 = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/" +
+				carta.getNombre()
 	            + ".jpg");
-		//}
-    	
-		
-		
-		
+			cartasDeLaManoInferior.getChildren().add(carta1);
+    	}
+		cartasDeLaManoInferior.setAlignment(Pos.TOP_LEFT);
 		
     	HBox hbox = new HBox();
+    	
     	
     	ImageView imagenJugadorUno = new ImageView("file:" + 
 	            "src/fiuba/algo3/tp2/vista/imagenes/" +
@@ -225,33 +226,48 @@ public class ContenedorPrincipal extends BorderPane
     	imagenJugadorUno.setFitHeight(100);
     	imagenJugadorUno.setFitWidth(250);
     	
+    	VBox salud = new VBox();
     	
-    	Text vida = new Text("VIDA");  //jugador1.vida
+    	Text vida = new Text("" + juego.getJugadorInferior().darVida());  //jugador1.vida
     	vida.setFill(Color.LIMEGREEN);
     	vida.setFont(Font.font("Tahoma", FontWeight.BOLD, 82));
-        	
-    	Text cartaSeleccionada = new Text("Carta Seleccionada: ");
-    	cartaSeleccionada.setFill(Color.BROWN);
-    	cartaSeleccionada.setFont(Font.font("Tahoma", FontWeight.BOLD, 32));
+
+    	Text nombreJugador = new Text(""+ juego.getJugadorInferior().darNombre());
+    	nombreJugador.setFill(Color.WHITE);
+    	nombreJugador.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
     	
-    	ImageView imagenCarta = new ImageView("file:" + 
-	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
-	           "bocaAbajo.png");
-    	imagenCarta.setFitHeight(100);
-    	imagenCarta.setFitWidth(65);
+    	salud.getChildren().addAll(vida, nombreJugador);
+    	salud.setSpacing(-15);
     	
+       
     	Text descripcionCarta = new Text("Descripcion de la carta: ");
     	descripcionCarta.setFill(Color.WHITE);
     	descripcionCarta.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
     	
     	hbox.setSpacing(70);
 //    	hbox.getChildren().addAll(imagenJugadorUno, vida, cartaSeleccionada, imagenCarta, descripcionCarta);//aca agregar mas cosas
-    	hbox.getChildren().addAll(cartaSeleccionada, imagenCarta,descripcionCarta, vida, imagenJugadorUno);//aca agregar mas cosas
+    	hbox.getChildren().addAll(cartasDeLaManoInferior,descripcionCarta, salud, imagenJugadorUno);//aca agregar mas cosas
     	hbox.setAlignment(Pos.TOP_RIGHT);
 		this.setBottom(hbox);
 	}
 
 	private void inicializarContenedorSuperior() {
+		
+		
+		HBox cartasDeLaManoSuperior = new HBox();
+		for(Carta carta : juego.getJugadorSuperior().darCartasDeLaMano()) {
+			ImageView carta1 = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/" +
+				carta.getNombre()
+	            + ".jpg");
+			cartasDeLaManoSuperior.getChildren().add(carta1);
+
+    	}
+		cartasDeLaManoSuperior.setAlignment(Pos.CENTER);
+
+		
+		
+		
 		HBox hbox = new HBox();
     	ImageView imagenJugadorDos = new ImageView("file:" + 
 	            "src/fiuba/algo3/tp2/vista/imagenes/" +
@@ -259,19 +275,18 @@ public class ContenedorPrincipal extends BorderPane
     	imagenJugadorDos.setFitHeight(100);
     	imagenJugadorDos.setFitWidth(250);
     	
-    	Text vida = new Text("VIDA");  //jugador2.vida
+    	VBox salud = new VBox();
+    	
+    	Text vida = new Text("" + juego.getJugadorSuperior().darVida());  //jugador1.vida
     	vida.setFill(Color.LIMEGREEN);
     	vida.setFont(Font.font("Tahoma", FontWeight.BOLD, 82));
-        	
-    	Text cartaSeleccionada = new Text("Carta Seleccionada: ");
-    	cartaSeleccionada.setFill(Color.BROWN);
-    	cartaSeleccionada.setFont(Font.font("Tahoma", FontWeight.BOLD, 32));
+
+    	Text nombreJugador = new Text(""+ juego.getJugadorSuperior().darNombre());
+    	nombreJugador.setFill(Color.WHITE);
+    	nombreJugador.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
     	
-    	ImageView imagenCarta = new ImageView("file:" + 
-	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
-	           "bocaAbajo.png");
-    	imagenCarta.setFitHeight(100);
-    	imagenCarta.setFitWidth(65);
+    	salud.getChildren().addAll(vida, nombreJugador);
+    	salud.setSpacing(-15);
     	
     	Text descripcionCarta = new Text("Descripcion de la carta: ");
     	descripcionCarta.setFill(Color.WHITE);
@@ -279,7 +294,7 @@ public class ContenedorPrincipal extends BorderPane
     	
     	
     	hbox.setSpacing(70);
-		hbox.getChildren().addAll(imagenJugadorDos, vida, cartaSeleccionada, imagenCarta, descripcionCarta);//aca agregar mas cosas
+		hbox.getChildren().addAll(imagenJugadorDos, salud, descripcionCarta, cartasDeLaManoSuperior);//aca agregar mas cosas
 		
 		VBox vbox = new VBox();
 		vbox.getChildren().addAll(this.barraMenu, hbox);//aca agregar mas cosas

@@ -117,5 +117,13 @@ public class Jugador implements Observador {
 	public String darNombre() {
 		return this.nombre;
 	}
+	
+	public ArrayList<Carta> darCartasDeLaMano() {
+		return this.cartasEnMano;
+	}
+
+	public int darVida() {
+		return this.vida;
+	}
 
 }

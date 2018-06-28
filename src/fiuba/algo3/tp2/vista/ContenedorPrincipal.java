@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.Juego;
+import fiuba.algo3.tp2.vista.eventos.ClickSobreCarta;
 import fiuba.algo3.tp2.Carta;
 
 import javafx.geometry.Insets;
@@ -207,15 +208,7 @@ public class ContenedorPrincipal extends BorderPane
 	
 	private void inicializarContenedorInferior() {
 		
-		HBox cartasDeLaManoInferior = new HBox();
-		for(Carta carta : juego.getJugadorInferior().darCartasDeLaMano()) {
-			ImageView carta1 = new ImageView("file:" + 
-	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/" +
-				carta.getNombre()
-	            + ".jpg");
-			cartasDeLaManoInferior.getChildren().add(carta1);
-    	}
-		cartasDeLaManoInferior.setAlignment(Pos.TOP_LEFT);
+		
 		
     	HBox hbox = new HBox();
     	
@@ -245,12 +238,28 @@ public class ContenedorPrincipal extends BorderPane
     	texto1.setFill(Color.WHITE);
     	texto1.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
     	
-    	Text texto2 = new Text("Descripcion de la carta... ");
+    	Text texto2 = new Text("");
     	texto2.setFill(Color.WHITE);
-    	texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
+		texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
+		
+    	if(juego.getJugadorInferior().getCartaActiva() != null) {
+    		texto2 = new Text(juego.getJugadorInferior().getCartaActiva().getDescripcion());
+    	}
     	
+    	HBox cartasDeLaManoInferior = new HBox();
+		for(Carta carta : juego.getJugadorInferior().darCartasDeLaMano()) {
+			ImageView carta1 = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/" +
+				carta.getNombre()
+	            + ".jpg");
+			
+			carta1.setOnMouseClicked(new ClickSobreCarta(texto2, carta));
+			cartasDeLaManoInferior.getChildren().add(carta1);
+    	}
+		cartasDeLaManoInferior.setAlignment(Pos.TOP_LEFT);
+		
+
     	descripcionCarta.getChildren().addAll(texto1,texto2);
-    	
     	hbox.setSpacing(70);
 //    	hbox.getChildren().addAll(imagenJugadorUno, vida, cartaSeleccionada, imagenCarta, descripcionCarta);//aca agregar mas cosas
     	hbox.getChildren().addAll(cartasDeLaManoInferior,descripcionCarta, salud, imagenJugadorUno);//aca agregar mas cosas
@@ -261,16 +270,7 @@ public class ContenedorPrincipal extends BorderPane
 	private void inicializarContenedorSuperior() {
 		
 		
-		HBox cartasDeLaManoSuperior = new HBox();
-		for(Carta carta : juego.getJugadorSuperior().darCartasDeLaMano()) {
-			ImageView carta1 = new ImageView("file:" + 
-	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/" +
-				carta.getNombre()
-	            + ".jpg");
-			cartasDeLaManoSuperior.getChildren().add(carta1);
-
-    	}
-		cartasDeLaManoSuperior.setAlignment(Pos.CENTER);
+		
 
 		
 		
@@ -299,11 +299,29 @@ public class ContenedorPrincipal extends BorderPane
     	Text texto1 = new Text("Descripcion de la carta: ");
     	texto1.setFill(Color.WHITE);
     	texto1.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
+
+		Text texto2 = new Text("");
+		texto2.setFill(Color.WHITE);
+		texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
+    	if(juego.getJugadorSuperior().getCartaActiva() != null) {
+    		texto2 = new Text(juego.getJugadorSuperior().getCartaActiva().getDescripcion());
+    	}
     	
-    	Text texto2 = new Text("Descripcion de la carta... ");
-    	texto2.setFill(Color.WHITE);
-    	texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
     	
+    	
+    	HBox cartasDeLaManoSuperior = new HBox();
+		for(Carta carta : juego.getJugadorSuperior().darCartasDeLaMano()) {
+			ImageView carta1 = new ImageView("file:" + 
+	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/cartasReducidas/" +
+				carta.getNombre()
+	            + ".jpg");
+
+			carta1.setOnMouseClicked(new ClickSobreCarta(texto2, carta));
+			cartasDeLaManoSuperior.getChildren().add(carta1);
+
+    	}
+		cartasDeLaManoSuperior.setAlignment(Pos.CENTER);
+		
     	descripcionCarta.getChildren().addAll(texto1,texto2);
     	
     	hbox.setSpacing(70);
@@ -315,6 +333,5 @@ public class ContenedorPrincipal extends BorderPane
 		this.setTop(vbox);
 	}
 	
-   
 }
 

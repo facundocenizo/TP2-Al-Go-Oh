@@ -11,12 +11,14 @@ public class Jugador implements Observador {
 	private ArrayList<Carta> cartasEnMano;
 	private LadoDelCampo ladoDelCampo;
 	private boolean ganador;
+	public Carta cartaActiva;
 	
 	
 	public Jugador() {
 		this.vida = 8000;
 		this.cartasEnMano = new ArrayList<Carta>();
 		this.ganador = false;
+		Carta cartaActiva = null;
 	}
 	
 	public void agregarCartasALaMano() {
@@ -124,6 +126,12 @@ public class Jugador implements Observador {
 
 	public int darVida() {
 		return this.vida;
+	}
+	public void setCartaActiva(Carta unaCarta) {
+		this.cartaActiva = unaCarta;
+	}
+	public Carta getCartaActiva() {
+		return this.cartaActiva;
 	}
 
 }

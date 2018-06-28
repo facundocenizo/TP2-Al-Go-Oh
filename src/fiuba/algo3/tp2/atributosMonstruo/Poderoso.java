@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.atributosMonstruo;
 
 import java.util.ArrayList;
 
-import cartas.Monstruo;
+import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.excepciones.CartasMonstruosInsuficientesParaSacrificio;
 
 public class Poderoso implements Nivel {

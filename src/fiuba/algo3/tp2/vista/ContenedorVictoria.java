@@ -31,7 +31,7 @@ public class ContenedorVictoria extends VBox{
             this.setAlignment(Pos.CENTER);
             this.setSpacing(20);
             this.setPadding(new Insets(480, 50, 50, 50));
-           	Image imagen = new Image("file:src/fiuba/algo3/algoformers/vista/imagenes/imagenesVictoria.jpg");
+           	Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/imagenesVictoria.jpg");
             BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
             this.setBackground(new Background(imagenDeFondo));
 

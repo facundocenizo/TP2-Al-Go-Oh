@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2.atributosCarta;
 
-import cartas.Monstruo;
 import fiuba.algo3.tp2.LadoDelCampo;
+import fiuba.algo3.tp2.cartas.Monstruo;
 
 public interface Efecto {
 	

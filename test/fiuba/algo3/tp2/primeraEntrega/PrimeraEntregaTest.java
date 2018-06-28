@@ -7,11 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
-import atributosLadoDelCampo.Cementerio;
-import cartas.Carta;
-import cartas.Magica;
-import cartas.Monstruo;
-import cartas.Trampa;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Efectos.EfectoAgujeroNegro;
@@ -19,11 +14,16 @@ import fiuba.algo3.tp2.Efectos.SinEfecto;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.BocaArriba;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
+import fiuba.algo3.tp2.atributosLadoDelCampo.Cementerio;
 import fiuba.algo3.tp2.atributosMonstruo.Debil;
 import fiuba.algo3.tp2.atributosMonstruo.ModoAtaque;
 import fiuba.algo3.tp2.atributosMonstruo.ModoDefensa;
 import fiuba.algo3.tp2.atributosMonstruo.Normal;
 import fiuba.algo3.tp2.atributosMonstruo.Poderoso;
+import fiuba.algo3.tp2.cartas.Carta;
+import fiuba.algo3.tp2.cartas.Magica;
+import fiuba.algo3.tp2.cartas.Monstruo;
+import fiuba.algo3.tp2.cartas.Trampa;
 import fiuba.algo3.tp2.excepciones.MonstruoEnModoDefensaNoPuedeAtacarException;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;

@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.fabricas;
 
-import cartas.Monstruo;
 import fiuba.algo3.tp2.Efectos.EfectoDefensa;
 import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.Efectos.EfectoInsectoComeHombres;
@@ -15,6 +14,7 @@ import fiuba.algo3.tp2.atributosMonstruo.ModoAtaque;
 import fiuba.algo3.tp2.atributosMonstruo.Nivel;
 import fiuba.algo3.tp2.atributosMonstruo.Normal;
 import fiuba.algo3.tp2.atributosMonstruo.Poderoso;
+import fiuba.algo3.tp2.cartas.Monstruo;
 
 
 public enum FabricaCartaMonstruo {

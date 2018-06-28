@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.segundaEntrega;
 
 import org.junit.Test;
 
-import atributosLadoDelCampo.MazoCartas;
+import fiuba.algo3.tp2.atributosLadoDelCampo.MazoCartas;
 
 public class MazoTest {
 

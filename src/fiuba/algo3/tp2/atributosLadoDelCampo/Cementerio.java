@@ -1,11 +1,11 @@
-package atributosLadoDelCampo;
+package fiuba.algo3.tp2.atributosLadoDelCampo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import cartas.Carta;
-import cartas.Monstruo;
+import fiuba.algo3.tp2.cartas.Carta;
+import fiuba.algo3.tp2.cartas.Monstruo;
 
 public class Cementerio {
 	

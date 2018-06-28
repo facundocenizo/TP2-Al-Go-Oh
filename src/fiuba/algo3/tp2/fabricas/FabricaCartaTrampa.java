@@ -1,9 +1,9 @@
 package fiuba.algo3.tp2.fabricas;
 
-import cartas.Trampa;
 import fiuba.algo3.tp2.Efectos.EfectoCilindroMagico;
 import fiuba.algo3.tp2.Efectos.EfectoReinforcements;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
+import fiuba.algo3.tp2.cartas.Trampa;
 
 public enum FabricaCartaTrampa {
 

@@ -1,6 +1,6 @@
-package atributosLadoDelCampo;
+package fiuba.algo3.tp2.atributosLadoDelCampo;
 
-import cartas.Monstruo;
+import fiuba.algo3.tp2.cartas.Monstruo;
 
 public interface Atacable {
 

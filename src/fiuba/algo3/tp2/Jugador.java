@@ -4,12 +4,12 @@ package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
 
-import cartas.Carta;
-import cartas.CartaCampo;
-import cartas.Magica;
-import cartas.Monstruo;
-import cartas.Trampa;
 import fiuba.algo3.tp2.atributosCarta.Observador;
+import fiuba.algo3.tp2.cartas.Carta;
+import fiuba.algo3.tp2.cartas.CartaCampo;
+import fiuba.algo3.tp2.cartas.Magica;
+import fiuba.algo3.tp2.cartas.Monstruo;
+import fiuba.algo3.tp2.cartas.Trampa;
 
 public class Jugador implements Observador {
 	

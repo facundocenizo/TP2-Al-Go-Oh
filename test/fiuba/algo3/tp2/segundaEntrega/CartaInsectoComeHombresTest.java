@@ -5,9 +5,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import cartas.Monstruo;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
+import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 
 public class CartaInsectoComeHombresTest {

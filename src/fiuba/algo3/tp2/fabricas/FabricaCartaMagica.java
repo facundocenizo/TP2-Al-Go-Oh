@@ -1,12 +1,12 @@
 package fiuba.algo3.tp2.fabricas;
 
-import cartas.Magica;
 import fiuba.algo3.tp2.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.tp2.Efectos.EfectoOllaDeLaCodicia;
 import fiuba.algo3.tp2.Efectos.EfectoFisura;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
+import fiuba.algo3.tp2.cartas.Magica;
 
 public enum FabricaCartaMagica {
 

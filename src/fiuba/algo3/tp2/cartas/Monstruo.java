@@ -1,4 +1,4 @@
-package cartas;
+package fiuba.algo3.tp2.cartas;
 
 import java.util.ArrayList;
 

@@ -2,10 +2,10 @@ package fiuba.algo3.tp2.segundaEntrega;
 
 import org.junit.Test;
 
-import atributosLadoDelCampo.MazoCartas;
-import cartas.Magica;
-import cartas.Monstruo;
 import fiuba.algo3.tp2.Jugador;
+import fiuba.algo3.tp2.atributosLadoDelCampo.MazoCartas;
+import fiuba.algo3.tp2.cartas.Magica;
+import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 

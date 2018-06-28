@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.atributosMonstruo;
 
-import cartas.Monstruo;
+import fiuba.algo3.tp2.cartas.Monstruo;
 
 public interface Modo {
 	

@@ -33,6 +33,7 @@ public class Jugador implements Observador {
 		tomarCartaDelMazo();
 		tomarCartaDelMazo();
 		tomarCartaDelMazo();
+		tomarCartaDelMazo();
 	}
 
 	public void setLado(LadoDelCampo lado) {

@@ -37,7 +37,8 @@ public class ContenedorPrincipal extends BorderPane
         this.stage = stage;
         this.barraMenu = barraMenu;
         this.siguienteEscena = siguienteEscena;
-        
+
+    	this.scrollPane = new ScrollPane();
 
         Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
@@ -69,18 +70,30 @@ public class ContenedorPrincipal extends BorderPane
     	HBox contenedorZonaMagicaTrampasInferior = inicializarZonaMagicaTrampaInferior();
     	
     	
-    	VBox tablero = new VBox(contenedorZonaMagicaTrampasSuperior,contenedorZonaMonstruosSuperior,contenedorSeparador,
-    							contenedorZonaMonstruosInferior,contenedorZonaMagicaTrampasInferior);
-    	tablero.setSpacing(10);
-        this.setCenter(tablero);
-		
+    	
+    	
+    	VBox tablero = new VBox();
+    	
+    	tablero.setAlignment(Pos.CENTER);
+    	tablero.getChildren().addAll(contenedorZonaMagicaTrampasSuperior,contenedorZonaMonstruosSuperior,contenedorSeparador,
+				contenedorZonaMonstruosInferior,contenedorZonaMagicaTrampasInferior);
+    	
+        Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        tablero.setBackground(new Background(imagenDeFondo));
+        this.scrollPane.setBackground(new Background(imagenDeFondo));
+        
+        this.scrollPane.setContent(tablero);
+        this.scrollPane.setMaxWidth(815);
+        this.setCenter(scrollPane);
+    			
 	}
     
     private HBox inicializarContenedorSeparador() { //hacerlo de forma que sirva
     	HBox zona = new HBox();
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/logo.png");
-    	imagenCarta.setFitHeight(200);
-    	imagenCarta.setFitWidth(600);
+    	imagenCarta.setFitHeight(160);
+    	imagenCarta.setFitWidth(480);
     	zona.getChildren().addAll(imagenCarta);
     	zona.setSpacing(200);
     	zona.setAlignment(Pos.CENTER);

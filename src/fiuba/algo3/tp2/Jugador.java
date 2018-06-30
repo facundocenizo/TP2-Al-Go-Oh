@@ -68,18 +68,24 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	
 	public void colocarCarta(Monstruo monstruo) {
 		this.ladoDelCampo.colocarMonstruo(monstruo);
+		this.cartasEnMano.remove(monstruo);
+
 	}
 	
 	public void colocarCarta(Magica magica) {
 		this.ladoDelCampo.colocarMagica(magica);
+		this.cartasEnMano.remove(magica);
+		
 	}
 	
 	public void colocarCarta(Trampa trampa) {
 		this.ladoDelCampo.colocarTrampa(trampa);
+		this.cartasEnMano.remove(trampa);
 	}
 	
 	public void colocarCarta(CartaCampo cartaCampo) {
 		this.ladoDelCampo.colocarTrampa(cartaCampo);
+		this.cartasEnMano.remove(cartaCampo);
 	}
 	
 	public void activarMagicaDeMano(Magica magica) {
@@ -89,6 +95,7 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	
 	public void activarMagicaEnCampo(Magica magica) {
 		this.ladoDelCampo.activarMagicaEnCampo(magica);
+		
 	}
 	
 	public void tomarCartaDelMazo() {

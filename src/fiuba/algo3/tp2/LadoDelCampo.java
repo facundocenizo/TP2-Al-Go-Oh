@@ -56,7 +56,7 @@ public class LadoDelCampo {
 	}
 	
 	public void colocarMonstruo(Monstruo monstruo) {
-		if (zonaMonstruos.size()>4) {
+		if (zonaMonstruos.size()>5) {
 			throw new ZonaMonstruosLlenaException();
 		}
 		this.verificarSacrificios(monstruo);
@@ -68,14 +68,14 @@ public class LadoDelCampo {
 	}
 
 	public void colocarTrampa(Trampa trampa) {
-		if (cartasTrampa.size()+cartasMagicas.size()>4) {
+		if (cartasTrampa.size()+cartasMagicas.size()>5) {
 			throw new ZonaDeTrampaYMagicasLlenaException();
 		}
 		cartasTrampa.add(trampa);
 	}
 	
 	public void colocarMagica(Magica magica) {
-		if (cartasTrampa.size()+cartasMagicas.size()>4) {
+		if (cartasTrampa.size()+cartasMagicas.size()>5) {
 			throw new ZonaDeTrampaYMagicasLlenaException();
 		}
 		cartasMagicas.add(magica);
@@ -184,6 +184,7 @@ public class LadoDelCampo {
 		jugador.tomarCartaDelMazo();
 		
 	}
+
 
 
 

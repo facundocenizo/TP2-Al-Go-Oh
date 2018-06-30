@@ -20,7 +20,7 @@ import javafx.scene.media.AudioClip;
 	    	
 	    	AudioClip audioIntro = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/musicaInicio.mp3");
 	        audioIntro.setCycleCount(2);
-	        audioIntro.play();
+	        //audioIntro.play();
 	        BarraDeMenu barraMenu = new BarraDeMenu(stage, audioIntro);
 	    	
 	        Juego juego = new Juego();

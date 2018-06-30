@@ -102,10 +102,9 @@ public enum FabricaCartaMonstruo {
 			cartaMonstruo.setNombre("insecto");
 			cartaMonstruo.setDescripcion("ATK: 450 DEF: 600\r\n"
 					+ "Efecto: destruye un monstruo\r\n" + 
-					"en el campo. Este efecto\r\n" + 
-					"unicamente puede activarse \r\n" + 
-					"cuando esta carta pasa de \r\n" + 
-					"estar boca abajo a boca arriba.\r\n" + 
+					"en el campo. Unicamente puede\r\n" + 
+					"activarse cuando esta carta pasa\r\n" + 
+					"de estar boca abajo a boca arriba.\r\n" + 
 					"");
 			return cartaMonstruo;
 		}
@@ -159,8 +158,7 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("cabezaExodia");
-			cartaMonstruo.setDescripcion("ATK: 1000\r\n" + 
-					"DEF: 1000.\r\n" +
+			cartaMonstruo.setDescripcion("ATK: 1000 DEF: 1000.\r\n" +
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
 					"automaticamente se gana\r\n" + 
@@ -180,8 +178,7 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("brazoDerecho");
-			cartaMonstruo.setDescripcion("ATK: 200\r\n" + 
-					"DEF: 300.\r\n" +
+			cartaMonstruo.setDescripcion("ATK: 200 DEF: 300.\r\n" + 
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
 					"automaticamente se gana\r\n" + 
@@ -201,8 +198,7 @@ public enum FabricaCartaMonstruo {
 
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("brazoIzquierdo");
-			cartaMonstruo.setDescripcion("ATK: 200\r\n" + 
-					"DEF: 300.\r\n" +
+			cartaMonstruo.setDescripcion("ATK: 200 DEF: 300.\r\n" + 
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
 					"automaticamente se gana\r\n" + 
@@ -222,8 +218,7 @@ public enum FabricaCartaMonstruo {
 			
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("piernaDerecha");
-			cartaMonstruo.setDescripcion("ATK: 200\r\n" + 
-					"DEF: 300.\r\n" +
+			cartaMonstruo.setDescripcion("ATK: 200 DEF: 300.\r\n" + 
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
 					"automaticamente se gana\r\n" + 
@@ -243,8 +238,7 @@ public enum FabricaCartaMonstruo {
 			
 			Monstruo cartaMonstruo = new Monstruo(posicion, modo, nivel, puntosDeAtaque, puntosDeDefensa, efecto, efectoDefensa);
 			cartaMonstruo.setNombre("piernaIzquierda");
-			cartaMonstruo.setDescripcion("ATK: 200\r\n" + 
-					"DEF: 300.\r\n" +
+			cartaMonstruo.setDescripcion("ATK: 200 DEF: 300.\r\n" + 
 					"Efecto: al tener las 5\r\n" + 
 					"partes juntas en la mano\r\n" + 
 					"automaticamente se gana\r\n" + 

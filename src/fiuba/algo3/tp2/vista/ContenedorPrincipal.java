@@ -64,16 +64,28 @@ public class ContenedorPrincipal extends BorderPane
 
     	HBox contenedorZonaMagicaTrampasSuperior = inicializarZonaMagicaTrampaSuperior();
     	HBox contenedorZonaMonstruosSuperior = inicializarZonaMonstruosSuperior();
+    	HBox contenedorSeparador = inicializarContenedorSeparador();
     	HBox contenedorZonaMonstruosInferior = inicializarZonaMonstruosInferior();
     	HBox contenedorZonaMagicaTrampasInferior = inicializarZonaMagicaTrampaInferior();
     	
     	
-    	VBox tablero = new VBox(contenedorZonaMagicaTrampasSuperior,contenedorZonaMonstruosSuperior,
+    	VBox tablero = new VBox(contenedorZonaMagicaTrampasSuperior,contenedorZonaMonstruosSuperior,contenedorSeparador,
     							contenedorZonaMonstruosInferior,contenedorZonaMagicaTrampasInferior);
     	tablero.setSpacing(10);
         this.setCenter(tablero);
 		
 	}
+    
+    private HBox inicializarContenedorSeparador() { //hacerlo de forma que sirva
+    	HBox zona = new HBox();
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/logo.png");
+    	imagenCarta.setFitHeight(200);
+    	imagenCarta.setFitWidth(600);
+    	zona.getChildren().addAll(imagenCarta);
+    	zona.setSpacing(200);
+    	zona.setAlignment(Pos.CENTER);
+    	return zona;
+    }
 
 
     private HBox inicializarZonaMonstruosInferior() {
@@ -179,7 +191,7 @@ public class ContenedorPrincipal extends BorderPane
 
     	vbox.setSpacing(10);
     	vbox.setPadding(new Insets(70));
-    	vbox.setAlignment(Pos.CENTER_LEFT);
+    	vbox.setAlignment(Pos.BOTTOM_CENTER);
     	this.setRight(vbox);
 	}
 
@@ -193,7 +205,7 @@ public class ContenedorPrincipal extends BorderPane
 
     	vbox.setSpacing(10);
     	vbox.setPadding(new Insets(70));
-    	vbox.setAlignment(Pos.CENTER_RIGHT);
+    	vbox.setAlignment(Pos.BASELINE_CENTER);
     	this.setLeft(vbox);
 	}
 
@@ -225,7 +237,7 @@ public class ContenedorPrincipal extends BorderPane
     	vida.setFont(Font.font("Tahoma", FontWeight.BOLD, 82));
 
     	Text nombreJugador = new Text(""+ juego.getJugadorInferior().darNombre());
-    	nombreJugador.setFill(Color.WHITE);
+    	nombreJugador.setFill(Color.RED);
     	nombreJugador.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
     	
     	salud.getChildren().addAll(vida, nombreJugador);
@@ -234,11 +246,11 @@ public class ContenedorPrincipal extends BorderPane
        
     	VBox descripcionCarta = new VBox();
     	Text texto1 = new Text("Descripcion de la carta: ");
-    	texto1.setFill(Color.WHITE);
+    	texto1.setFill(Color.RED);
     	texto1.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
     	
     	Text texto2 = new Text("");
-    	texto2.setFill(Color.WHITE);
+    	texto2.setFill(Color.RED);
 		texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
 		
     	if(juego.getJugadorInferior().getCartaActiva() != null) {
@@ -288,7 +300,7 @@ public class ContenedorPrincipal extends BorderPane
     	vida.setFont(Font.font("Tahoma", FontWeight.BOLD, 82));
 
     	Text nombreJugador = new Text(""+ juego.getJugadorSuperior().darNombre());
-    	nombreJugador.setFill(Color.WHITE);
+    	nombreJugador.setFill(Color.RED);
     	nombreJugador.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
     	
     	salud.getChildren().addAll(vida, nombreJugador);
@@ -296,11 +308,11 @@ public class ContenedorPrincipal extends BorderPane
     	
     	VBox descripcionCarta = new VBox();
     	Text texto1 = new Text("Descripcion de la carta: ");
-    	texto1.setFill(Color.WHITE);
+    	texto1.setFill(Color.RED);
     	texto1.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
 
 		Text texto2 = new Text("");
-		texto2.setFill(Color.WHITE);
+		texto2.setFill(Color.RED);
 		texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
     	if(juego.getJugadorSuperior().getCartaActiva() != null) {
     		texto2 = new Text(juego.getJugadorSuperior().getCartaActiva().getDescripcion());

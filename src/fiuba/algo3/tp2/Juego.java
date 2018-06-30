@@ -1,23 +1,21 @@
 package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-public class Juego {
-    private ArrayList<Jugador> jugadores;
-    int posicion;
+public class Juego implements ObservadorDeJugador {
+    
+    private EstadoDeJuego estado;
     
     public Juego() {
-    	this.jugadores = new ArrayList<Jugador>();
-    	this.inicializarJugadores();
-    	this.posicion = new Random().nextInt(2);
-    	this.siguienteTurno();
-    	 
+    	this.estado = new EnJuego(this.inicializarJugadores());
 	}
     
-    private void inicializarJugadores() {
+    private ArrayList<Jugador> inicializarJugadores() {
     	Jugador jugador1 = new Jugador();
 		Jugador jugador2 = new Jugador();
+		
+		jugador1.aniadirObservador(this);
+		jugador2.aniadirObservador(this);
 		
 		LadoDelCampo lado1 = new LadoDelCampo();
 		LadoDelCampo lado2 = new LadoDelCampo();
@@ -33,28 +31,36 @@ public class Juego {
 		jugador1.agregarCartasALaMano();
 		jugador2.agregarCartasALaMano();
 		
-		this.jugadores.add(jugador1);
-		this.jugadores.add(jugador2);
+		ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+		jugadores.add(jugador1);
+		jugadores.add(jugador2);
 		
+		return jugadores;
+    }
+    
+    public boolean hayGanador() {
+    	return this.estado.hayGanador();
     }
     
     public Jugador siguienteTurno() {    	
-    	this.posicion = (this.posicion + 1) % this.jugadores.size();
-    	return jugadores.get(this.posicion);
+    	return this.estado.siguienteTurno();
     }
     
-
     public Jugador getJugadorInferior() {
-		return jugadores.get(0);
+		return this.estado.getJugadorInferior();
 	}
+    
     public Jugador getJugadorSuperior() {
-		return jugadores.get(1);
+		return this.estado.getJugadorSuperior();
 	}
 
 	public Jugador terminarTurno() {		
-		for(Jugador jugador : jugadores)
-			jugador.terminarTurno();
-		return this.siguienteTurno();
+		return this.estado.terminarTurno();
+	}
+
+	@Override
+	public void actualizar(Jugador jugador) {
+		this.estado = new PartidaTerminada(jugador);
 	}
     
 	

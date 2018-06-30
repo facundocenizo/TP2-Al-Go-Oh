@@ -11,14 +11,15 @@ import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
 
-public class Jugador implements Observador {
+public class Jugador implements Observador, SujetoJugadorObservable {
 	
 	private int vida;
 	private String nombre;
 	private ArrayList<Carta> cartasEnMano;
 	private LadoDelCampo ladoDelCampo;
 	private boolean ganador;
-	public Carta cartaActiva;
+	private Carta cartaActiva;
+	private ObservadorDeJugador observador;
 	
 	
 	public Jugador() {
@@ -103,6 +104,7 @@ public class Jugador implements Observador {
 		}
 		if (partesExodia==5) {
 			this.ganador = true;
+			this.notificar();
 		}
 	}
 
@@ -152,6 +154,19 @@ public class Jugador implements Observador {
 
 	public void hasGanado() {
 		this.ganador = true;
+		this.notificar();
+		
+	}
+
+	@Override
+	public void aniadirObservador(ObservadorDeJugador observador) {
+		this.observador = observador;
+	}
+
+	@Override
+	public void notificar() {
+		this.observador.actualizar(this);
+		
 	}
 
 }

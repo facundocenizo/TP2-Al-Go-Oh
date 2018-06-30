@@ -205,7 +205,7 @@ public class LadoDelCampo {
 			if(carta.estaMuerta())
 				this.cementerio.agregarCarta(carta);
 		}
-		if (this.mazoCartas.estaVacio()) {
+		if (this.mazoCartas.estaVacio() || this.jugador.darVida() <= 0) {
 			this.otroLado.hasGanado();
 		}
 		

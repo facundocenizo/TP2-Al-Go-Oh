@@ -262,12 +262,12 @@ public class ContenedorPrincipal extends BorderPane
     	texto1.setFill(Color.RED);
     	texto1.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
     	
-    	Text texto2 = new Text("");
-    	texto2.setFill(Color.RED);
-		texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
+    	Text textoDescripcion = new Text("");
+    	textoDescripcion.setFill(Color.RED);
+    	textoDescripcion.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
 		
     	if(juego.getJugadorInferior().getCartaActiva() != null) {
-    		texto2 = new Text(juego.getJugadorInferior().getCartaActiva().getDescripcion());
+    		textoDescripcion = new Text(juego.getJugadorInferior().getCartaActiva().getDescripcion());
     	}
     	
     	HBox cartasDeLaManoInferior = new HBox();
@@ -277,13 +277,13 @@ public class ContenedorPrincipal extends BorderPane
 				carta.getNombre()
 	            + ".jpg");
 			
-			carta1.setOnMouseClicked(new ClickSobreCarta(texto2, carta));
+			carta1.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta));
 			cartasDeLaManoInferior.getChildren().add(carta1);
     	}
 		cartasDeLaManoInferior.setAlignment(Pos.TOP_LEFT);
 		
 
-    	descripcionCarta.getChildren().addAll(texto1,texto2);
+    	descripcionCarta.getChildren().addAll(texto1,textoDescripcion);
     	hbox.setSpacing(70);
 //    	hbox.getChildren().addAll(imagenJugadorUno, vida, cartaSeleccionada, imagenCarta, descripcionCarta);//aca agregar mas cosas
     	hbox.getChildren().addAll(cartasDeLaManoInferior,descripcionCarta, salud, imagenJugadorUno);//aca agregar mas cosas
@@ -324,11 +324,11 @@ public class ContenedorPrincipal extends BorderPane
     	texto1.setFill(Color.RED);
     	texto1.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
 
-		Text texto2 = new Text("");
-		texto2.setFill(Color.RED);
-		texto2.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
+		Text textoDescripcion = new Text("");
+		textoDescripcion.setFill(Color.RED);
+		textoDescripcion.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
     	if(juego.getJugadorSuperior().getCartaActiva() != null) {
-    		texto2 = new Text(juego.getJugadorSuperior().getCartaActiva().getDescripcion());
+    		textoDescripcion = new Text(juego.getJugadorSuperior().getCartaActiva().getDescripcion());
     	}
     	
     	
@@ -340,13 +340,13 @@ public class ContenedorPrincipal extends BorderPane
 				carta.getNombre()
 	            + ".jpg");
 
-			carta1.setOnMouseClicked(new ClickSobreCarta(texto2, carta));
+			carta1.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta));
 			cartasDeLaManoSuperior.getChildren().add(carta1);
 
     	}
 		cartasDeLaManoSuperior.setAlignment(Pos.CENTER);
 		
-    	descripcionCarta.getChildren().addAll(texto1,texto2);
+    	descripcionCarta.getChildren().addAll(texto1,textoDescripcion);
     	
     	hbox.setSpacing(70);
 		hbox.getChildren().addAll(imagenJugadorDos, salud, descripcionCarta, cartasDeLaManoSuperior);//aca agregar mas cosas

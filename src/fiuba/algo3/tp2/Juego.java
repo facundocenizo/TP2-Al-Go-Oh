@@ -54,7 +54,7 @@ public class Juego implements ObservadorDeJugador {
 		return this.estado.getJugadorSuperior();
 	}
 
-	public Jugador terminarTurno() {		
+	public Jugador terminarTurno() {
 		return this.estado.terminarTurno();
 	}
 

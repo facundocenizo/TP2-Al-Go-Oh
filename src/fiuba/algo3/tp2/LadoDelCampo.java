@@ -42,8 +42,6 @@ public class LadoDelCampo {
 		this.atacable = new DefensaNormal();
 	}
 	
-	
-	
 	public void setJugador(Jugador jugador) {
 		this.jugador = jugador;
 	}
@@ -186,7 +184,7 @@ public class LadoDelCampo {
 		
 	}
 
-	public void terminarTurno() {		
+	public void terminarTurno() {
 		Iterator<Monstruo> iteradorMonstruo = this.zonaMonstruos.iterator();
         while (iteradorMonstruo.hasNext()) {
             Monstruo monstruo = iteradorMonstruo.next();
@@ -228,6 +226,7 @@ public class LadoDelCampo {
         }
         
 		if (this.mazoCartas.estaVacio() || this.jugador.darVida() <= 0) {
+			
 			this.otroLado.hasGanado();
 		}
 		

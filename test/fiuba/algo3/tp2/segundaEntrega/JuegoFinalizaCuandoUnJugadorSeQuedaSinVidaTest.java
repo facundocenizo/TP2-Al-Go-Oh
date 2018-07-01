@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -15,21 +16,23 @@ public class JuegoFinalizaCuandoUnJugadorSeQuedaSinVidaTest {
 	public void JuegoFinalizaCuandoUnJugadorSeQuedaSinVida() {
 		
 		Juego juego = new Juego();
+		Monstruo huevo1 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo huevo2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		
 		Jugador jugador1 = juego.siguienteTurno();
 		
-		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		jugador1.colocarCarta(huevo1);
+		jugador1.colocarCarta(huevo2);
+		jugador1.colocarCarta(dragonBlanco);
 		
-		
-		jugador1.colocarCarta(huevo);
-		
-		jugador1.atacar(huevo, null);
+		jugador1.atacar(dragonBlanco, null);
+		jugador1.atacar(dragonBlanco, null);
+		jugador1.atacar(dragonBlanco, null);
 		
 		Jugador jugador2 = juego.terminarTurno();
 		
-		// El monstruo huevo resta 600 puntos de vida al oponente ya que este no tiene ningun monstruo en el campo
-		int vidaEsperada = 7400;
-	
-		assertEquals(vidaEsperada, jugador2.darVida());
+		assertTrue(juego.hayGanador());
 	}
 	
 }

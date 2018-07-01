@@ -3,7 +3,7 @@ package fiuba.algo3.tp2.atributosMonstruo;
 import java.util.ArrayList;
 
 import fiuba.algo3.tp2.cartas.Monstruo;
-import fiuba.algo3.tp2.excepciones.CartasMonstruosInsuficientesParaSacrificio;
+import fiuba.algo3.tp2.excepciones.CartasMonstruosInsuficientesParaSacrificioException;
 
 public class Poderoso implements Nivel {
 
@@ -24,11 +24,17 @@ public class Poderoso implements Nivel {
 
 	@Override
 	public void manejarSacrificiosPorEsteMonstruo(ArrayList<Monstruo> zonaMonstruos) {
-		if (zonaMonstruos.size() < 2) {
-			throw new CartasMonstruosInsuficientesParaSacrificio();
+		ArrayList<Monstruo> monstruosASacrificar = new ArrayList<Monstruo>(); 
+		for(Monstruo monstruo : zonaMonstruos) {
+			if(monstruo.esDebil())
+				monstruosASacrificar.add(monstruo);
 		}
-		zonaMonstruos.get(0).morir();
-		zonaMonstruos.get(1).morir();
+		
+		if (monstruosASacrificar.size() < 2) {
+			throw new CartasMonstruosInsuficientesParaSacrificioException();
+		}
+		monstruosASacrificar.get(0).morir();
+		monstruosASacrificar.get(1).morir();
 	}
 
 }

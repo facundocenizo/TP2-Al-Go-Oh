@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import fiuba.algo3.tp2.atributosCarta.Observador;
 import fiuba.algo3.tp2.atributosLadoDelCampo.Atacable;
@@ -185,26 +186,47 @@ public class LadoDelCampo {
 		
 	}
 
-
-
-
-	public void terminarTurno() {
-		for (Carta carta : this.zonaMonstruos) {
-			if(carta.estaMuerta())
-				this.cementerio.agregarCarta(carta);
-		}
-		for (Carta carta : this.cartasMagicas) {
-			if(carta.estaMuerta())
-				this.cementerio.agregarCarta(carta);
-		}
-		for (Carta carta : this.cartasTrampa) {
-			if(carta.estaMuerta())
-				this.cementerio.agregarCarta(carta);
-		}
-		for (Carta carta : this.cartaDeCampo) {
-			if(carta.estaMuerta())
-				this.cementerio.agregarCarta(carta);
-		}
+	public void terminarTurno() {		
+		Iterator<Monstruo> iteradorMonstruo = this.zonaMonstruos.iterator();
+        while (iteradorMonstruo.hasNext()) {
+            Monstruo monstruo = iteradorMonstruo.next();
+            if (monstruo.estaMuerta()) {
+                this.cementerio.agregarCarta(monstruo);
+                iteradorMonstruo.remove();
+                
+            }
+        }
+		
+        Iterator<Magica> iteradorMagicas = this.cartasMagicas.iterator();
+        while (iteradorMagicas.hasNext()) {
+            Magica magica = iteradorMagicas.next();
+            if (magica.estaMuerta()) {
+                this.cementerio.agregarCarta(magica);
+                iteradorMagicas.remove();
+                
+            }
+        }
+        
+        Iterator<Trampa> iteradorTrampa = this.cartasTrampa.iterator();
+        while (iteradorTrampa.hasNext()) {
+            Trampa trampa = iteradorTrampa.next();
+            if (trampa.estaMuerta()) {
+                this.cementerio.agregarCarta(trampa);
+                iteradorTrampa.remove();
+                
+            }
+        }
+        
+        Iterator<CartaCampo> iteradorCartaCampo = this.cartaDeCampo.iterator();
+        while (iteradorCartaCampo.hasNext()) {
+        	CartaCampo cartaCampo = iteradorCartaCampo.next();
+            if (cartaCampo.estaMuerta()) {
+                this.cementerio.agregarCarta(cartaCampo);
+                iteradorCartaCampo.remove();
+                
+            }
+        }
+        
 		if (this.mazoCartas.estaVacio() || this.jugador.darVida() <= 0) {
 			this.otroLado.hasGanado();
 		}

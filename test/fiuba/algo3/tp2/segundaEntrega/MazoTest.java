@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -33,6 +34,8 @@ public class MazoTest {
 				}
 			}
 		}
+	
+		
 		//chequeamos que este jugador No gano, por lo tanto perdio
 		assertFalse(jugador.haGanado());
 
@@ -44,4 +47,20 @@ public class MazoTest {
 
 	
 	}
+	
+	@Test
+	public void finJuegoTest() {
+	
+		Juego juego = new Juego();
+		Jugador jugador1 = juego.siguienteTurno();
+		
+		ArrayList<Carta> cartas = jugador1.darCartasDeLaMano();
+		//recorrer cartas y buscar una del tipo monstruo (xq puede ser trampa magica etc)
+		// o sino le podemos asignar una carta asi:
+		//Monstruo huevoMonstruoso = FabricaCartaMonstruo.HUEVO.crear();
+		//jugador1.agregarCartaALaMano(huevoMonstruoso);
+		
+	}
+	
+	
 }

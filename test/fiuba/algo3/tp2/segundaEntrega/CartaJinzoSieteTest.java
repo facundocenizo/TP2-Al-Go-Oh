@@ -102,12 +102,12 @@ public class CartaJinzoSieteTest {
 		jugador2.setLado(lado2);
 		
 		Monstruo jinzo = FabricaCartaMonstruo.JINZOSIETE.crear();
-		Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
 		
 		jugador1.colocarCarta(jinzo);
-		jugador2.colocarCarta(dragonBlanco);
+		jugador2.colocarCarta(huevo);
 		
-		jugador2.atacar(jinzo,dragonBlanco);
+		jugador2.atacar(jinzo,huevo);
 		
 		int puntosDelEfectoGinzo = 500;
 		

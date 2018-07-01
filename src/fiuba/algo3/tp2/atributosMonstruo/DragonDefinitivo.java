@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.excepciones.CartasMonstruosInsuficientesParaSacrificioException;
+import fiuba.algo3.tp2.excepciones.NoHayTresDragonesBlancosParaInvocarDragonDefinitivoException;
 
-public class Normal implements Nivel {
+public class DragonDefinitivo implements Nivel {
 
 	@Override
 	public boolean esDebil() {
@@ -14,26 +15,31 @@ public class Normal implements Nivel {
 
 	@Override
 	public boolean esNormal() {
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean esPoderoso() {
-		return false;
+		return true;
 	}
+	
 
 	@Override
 	public void manejarSacrificiosPorEsteMonstruo(ArrayList<Monstruo> zonaMonstruos) {
 		ArrayList<Monstruo> monstruosASacrificar = new ArrayList<Monstruo>(); 
 		for(Monstruo monstruo : zonaMonstruos) {
-			if(monstruo.esDebil())
+			if(monstruo.getNombre().equals("dragonBlanco"))
 				monstruosASacrificar.add(monstruo);
 		}
 		
-		if (monstruosASacrificar.size() < 1) {
-			throw new CartasMonstruosInsuficientesParaSacrificioException();
+		if (monstruosASacrificar.size() < 3) {
+			throw new NoHayTresDragonesBlancosParaInvocarDragonDefinitivoException();
 		}
+				
 		monstruosASacrificar.get(0).morir();
+		monstruosASacrificar.get(1).morir();
+		monstruosASacrificar.get(2).morir();
 	}
+	
 
 }

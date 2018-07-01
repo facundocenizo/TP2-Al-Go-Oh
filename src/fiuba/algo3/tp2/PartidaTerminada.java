@@ -22,7 +22,7 @@ public class PartidaTerminada implements EstadoDeJuego {
 	@Override
 	public Jugador terminarTurno() {
 		// Deberia tirar excepcion de PartidaTerminadaExceptio
-		System.out.println("El juego terminó Scooby Doo Papa");
+		System.out.println("El juego termino Scooby Doo Papa");
 		return null;
 	}
 

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.cartas.Monstruo;
@@ -12,34 +13,55 @@ import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 public class CartaDragonDefinitivoTest {
 
 		@Test
-		public void SeRequiereDosSacrificiosParaPonerUnMonstruoDeSieteOMasEstrellas() {
+		public void SeRequiereSacrificarTresDragonesBlancosParaPonerUnDragonDefinitivo() {
 			
-			Jugador jugador1 = new Jugador();
-			Jugador jugador2 = new Jugador();
+			Juego juego = new Juego();
 			
-			LadoDelCampo lado1 = new LadoDelCampo();
-			LadoDelCampo lado2 = new LadoDelCampo();
-			lado1.setOtroLado(lado2);
-			lado2.setOtroLado(lado1);
-			
-			lado1.setJugador(jugador1);
-			lado2.setJugador(jugador2);
-			
-			jugador1.setLado(lado1);
-			jugador2.setLado(lado2);
-			
-			Monstruo dragon1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
-			Monstruo dragon2 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
-			
+			Monstruo huevo1 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+			Monstruo huevo2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+			Monstruo huevo3 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+			Monstruo huevo4 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+			Monstruo huevo5 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+			Monstruo huevo6 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+			Monstruo dragonBlanco1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+			Monstruo dragonBlanco2 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+			Monstruo dragonBlanco3 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+
 			Monstruo dragonDefinitivo = FabricaCartaMonstruo.DRAGONDEFINITIVO.crear();
 			
-			jugador1.colocarCarta(dragon1);
-			jugador1.colocarCarta(dragon2);
+			Jugador jugador1 = juego.siguienteTurno();
+
+			jugador1.colocarCarta(huevo1);
+			jugador1.colocarCarta(huevo2);
+			jugador1.colocarCarta(dragonBlanco1);
+			jugador1.terminarTurno();
+
+			assertTrue(huevo1.estaMuerta());
+			assertTrue(huevo2.estaMuerta());
+			
+			
+			jugador1.colocarCarta(huevo3);
+			jugador1.colocarCarta(huevo4);
+			jugador1.colocarCarta(dragonBlanco2);
+			jugador1.terminarTurno();
+
+			assertTrue(huevo3.estaMuerta());
+			assertTrue(huevo4.estaMuerta());	
+			
+			jugador1.colocarCarta(huevo5);
+			jugador1.colocarCarta(huevo6);
+			jugador1.colocarCarta(dragonBlanco3);
+			jugador1.terminarTurno();
+			
+			assertTrue(huevo5.estaMuerta());
+			assertTrue(huevo6.estaMuerta());
+			
 			jugador1.colocarCarta(dragonDefinitivo);
 			
+			assertTrue(dragonBlanco1.estaMuerta());
+			assertTrue(dragonBlanco2.estaMuerta());	
+			assertTrue(dragonBlanco3.estaMuerta());
 			
-			assertTrue(dragon1.estaMuerta());
-			assertTrue(dragon2.estaMuerta());			
 			
 		}
 	

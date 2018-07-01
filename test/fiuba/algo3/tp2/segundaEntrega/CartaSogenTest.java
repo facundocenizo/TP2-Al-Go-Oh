@@ -30,10 +30,10 @@ public class CartaSogenTest {
 		jugador1.setLado(lado1);
 		jugador2.setLado(lado2);
 		
-		Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
 		Monstruo dragonComun = FabricaCartaMonstruo.DRAGON.crear();
 		
-		jugador1.colocarCarta(dragonBlanco);
+		jugador1.colocarCarta(huevo);
 		jugador2.colocarCarta(dragonComun);
 
 		
@@ -42,10 +42,10 @@ public class CartaSogenTest {
 		jugador1.activarCartaCampo();
 		
 		int puntosDeAtaqueDelDragonComun = 400;
-		int puntosDeDefensaDelDragonBlanco = 2500;
+		int puntosDeDefensaDelhuevo = 900;
 		
 		assertEquals(puntosDeAtaqueDelDragonComun + 200,jugador1.verMonstruosRivales().get(0).darPuntosDeAtaque());
-		assertEquals(puntosDeDefensaDelDragonBlanco + 500,jugador2.verMonstruosRivales().get(0).darPuntosDeDefensa());
+		assertEquals(puntosDeDefensaDelhuevo + 500,jugador2.verMonstruosRivales().get(0).darPuntosDeDefensa());
 		 
 	
 		

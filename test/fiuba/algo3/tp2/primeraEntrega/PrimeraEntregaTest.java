@@ -135,17 +135,17 @@ public class PrimeraEntregaTest {
 		jugador1.setLado(lado1);
 		jugador2.setLado(lado2);
 		
-		Monstruo dragon1DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
-		Monstruo dragon2DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
-		Monstruo dragon3DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
-		Monstruo dragon4DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
-		Monstruo dragon5DeJugador1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo jinzo1DeJugador1 = FabricaCartaMonstruo.JINZOSIETE.crear();
+		Monstruo jinzo2DeJugador1 = FabricaCartaMonstruo.JINZOSIETE.crear();
+		Monstruo jinzo3DeJugador1 = FabricaCartaMonstruo.JINZOSIETE.crear();
+		Monstruo jinzo4DeJugador1 = FabricaCartaMonstruo.JINZOSIETE.crear();
+		Monstruo jinzo5DeJugador1 = FabricaCartaMonstruo.JINZOSIETE.crear();
 		
-		jugador1.colocarCarta(dragon1DeJugador1);
-		jugador1.colocarCarta(dragon2DeJugador1);
-		jugador1.colocarCarta(dragon3DeJugador1);
-		jugador1.colocarCarta(dragon4DeJugador1);
-		jugador1.colocarCarta(dragon5DeJugador1);
+		jugador1.colocarCarta(jinzo1DeJugador1);
+		jugador1.colocarCarta(jinzo2DeJugador1);
+		jugador1.colocarCarta(jinzo3DeJugador1);
+		jugador1.colocarCarta(jinzo4DeJugador1);
+		jugador1.colocarCarta(jinzo5DeJugador1);
 		
 		
 		Monstruo huevo1DeJugador2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
@@ -172,11 +172,11 @@ public class PrimeraEntregaTest {
 		assertTrue(huevo5DeJugador2.estaMuerta());
 		
 		
-		assertTrue(dragon1DeJugador1.estaMuerta());
-		assertTrue(dragon2DeJugador1.estaMuerta());
-		assertTrue(dragon3DeJugador1.estaMuerta());
-		assertTrue(dragon4DeJugador1.estaMuerta());
-		assertTrue(dragon5DeJugador1.estaMuerta());
+		assertTrue(jinzo1DeJugador1.estaMuerta());
+		assertTrue(jinzo2DeJugador1.estaMuerta());
+		assertTrue(jinzo3DeJugador1.estaMuerta());
+		assertTrue(jinzo4DeJugador1.estaMuerta());
+		assertTrue(jinzo5DeJugador1.estaMuerta());
 		
 		
 		
@@ -265,15 +265,15 @@ public class PrimeraEntregaTest {
 		jugador1.setLado(lado1);
 		jugador2.setLado(lado2);
 		
-		Monstruo dragon = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
 		
 		Monstruo magoOscuro = FabricaCartaMonstruo.MAGOOSCURO.crear();
 		
-		jugador1.colocarCarta(dragon);
+		jugador1.colocarCarta(huevo);
 		jugador1.colocarCarta(magoOscuro);
 		
 		
-		assertTrue(dragon.estaMuerta());
+		assertTrue(huevo.estaMuerta());
 		
 	}
 	
@@ -295,18 +295,18 @@ public class PrimeraEntregaTest {
 		jugador1.setLado(lado1);
 		jugador2.setLado(lado2);
 		
-		Monstruo dragon1 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
-		Monstruo dragon2 = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+		Monstruo huevo1 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+		Monstruo huevo2 = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
 		
-		Monstruo dragonDefinitivo = FabricaCartaMonstruo.DRAGONDEFINITIVO.crear();
+		Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
 		
-		jugador1.colocarCarta(dragon1);
-		jugador1.colocarCarta(dragon2);
-		jugador1.colocarCarta(dragonDefinitivo);
+		jugador1.colocarCarta(huevo1);
+		jugador1.colocarCarta(huevo2);
+		jugador1.colocarCarta(dragonBlanco);
 		
 		
-		assertTrue(dragon1.estaMuerta());
-		assertTrue(dragon2.estaMuerta());
+		assertTrue(huevo1.estaMuerta());
+		assertTrue(huevo2.estaMuerta());
 		
 	}
 	

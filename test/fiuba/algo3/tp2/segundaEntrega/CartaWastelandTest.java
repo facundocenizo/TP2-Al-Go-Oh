@@ -35,10 +35,10 @@ public class CartaWastelandTest {
 			jugador1.setLado(lado1);
 			jugador2.setLado(lado2);
 			
-			Monstruo dragonBlanco = FabricaCartaMonstruo.DRAGONBLANCO.crear();
+			Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
 			Monstruo dragonComun = FabricaCartaMonstruo.DRAGON.crear();
 			
-			jugador1.colocarCarta(dragonBlanco);
+			jugador1.colocarCarta(huevo);
 			jugador2.colocarCarta(dragonComun);
 
 			
@@ -47,10 +47,10 @@ public class CartaWastelandTest {
 			jugador1.activarCartaCampo();
 			
 			int puntosDeDefensaDelDragonComun = 300;
-			int puntosDeAtaqueDelDragonBlanco = 3000;
+			int puntosDeAtaqueDelhuevo = 600;
 			
 			assertEquals(puntosDeDefensaDelDragonComun + 300,jugador1.verMonstruosRivales().get(0).darPuntosDeDefensa());
-			assertEquals(puntosDeAtaqueDelDragonBlanco + 200,jugador2.verMonstruosRivales().get(0).darPuntosDeAtaque());
+			assertEquals(puntosDeAtaqueDelhuevo + 200,jugador2.verMonstruosRivales().get(0).darPuntosDeAtaque());
 			 
 			
 		}

@@ -9,6 +9,7 @@ import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
 import fiuba.algo3.tp2.atributosMonstruo.Debil;
+import fiuba.algo3.tp2.atributosMonstruo.DragonDefinitivo;
 import fiuba.algo3.tp2.atributosMonstruo.Modo;
 import fiuba.algo3.tp2.atributosMonstruo.ModoAtaque;
 import fiuba.algo3.tp2.atributosMonstruo.Nivel;
@@ -57,7 +58,7 @@ public enum FabricaCartaMonstruo {
 		public Monstruo crear(){
 			Posicion posicion = new BocaAbajo();
 			Modo modo = new ModoAtaque();
-			Nivel nivel = new Poderoso();
+			Nivel nivel = new DragonDefinitivo();
 			int puntosDeAtaque = 4500;
 			int puntosDeDefensa = 3800;
 			Efecto efecto = new SinEfecto();
@@ -113,7 +114,7 @@ public enum FabricaCartaMonstruo {
 		public Monstruo crear(){
 			Posicion posicion = new BocaAbajo();
 			Modo modo = new ModoAtaque();
-			Nivel nivel = new Debil();
+			Nivel nivel = new Poderoso();
 			int puntosDeAtaque = 3000;
 			int puntosDeDefensa = 2500;
 			Efecto efecto = new SinEfecto();

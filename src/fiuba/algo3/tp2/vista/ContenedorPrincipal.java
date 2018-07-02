@@ -6,7 +6,6 @@ import fiuba.algo3.tp2.vista.eventos.ClickSobreCarta;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -28,7 +27,6 @@ public class ContenedorPrincipal extends BorderPane
     BarraDeMenu barraMenu;
     Juego juego;
     Stage stage;
-    ScrollPane scrollPane;
     Scene siguienteEscena;
 
     public ContenedorPrincipal(Stage stage, Scene siguienteEscena, Juego juego, BarraDeMenu barraMenu)
@@ -37,8 +35,6 @@ public class ContenedorPrincipal extends BorderPane
         this.stage = stage;
         this.barraMenu = barraMenu;
         this.siguienteEscena = siguienteEscena;
-
-    	this.scrollPane = new ScrollPane();
 
         Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
@@ -81,10 +77,6 @@ public class ContenedorPrincipal extends BorderPane
         Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         tablero.setBackground(new Background(imagenDeFondo));
-        //this.scrollPane.setBackground(new Background(imagenDeFondo));
-        
-        this.scrollPane.setContent(this);
-        //this.scrollPane.setMaxWidth(815);
         this.setCenter(tablero);
     			
 	}

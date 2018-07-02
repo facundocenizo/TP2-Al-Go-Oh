@@ -81,19 +81,19 @@ public class ContenedorPrincipal extends BorderPane
         Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         tablero.setBackground(new Background(imagenDeFondo));
-        this.scrollPane.setBackground(new Background(imagenDeFondo));
+        //this.scrollPane.setBackground(new Background(imagenDeFondo));
         
-        this.scrollPane.setContent(tablero);
-        this.scrollPane.setMaxWidth(815);
-        this.setCenter(scrollPane);
+        this.scrollPane.setContent(this);
+        //this.scrollPane.setMaxWidth(815);
+        this.setCenter(tablero);
     			
 	}
     
     private HBox inicializarContenedorSeparador() { //hacerlo de forma que sirva
     	HBox zona = new HBox();
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/logo.png");
-    	imagenCarta.setFitHeight(160);
-    	imagenCarta.setFitWidth(480);
+    	imagenCarta.setFitHeight(40);
+    	imagenCarta.setFitWidth(120);
     	zona.getChildren().addAll(imagenCarta);
     	zona.setSpacing(200);
     	zona.setAlignment(Pos.CENTER);

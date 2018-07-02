@@ -28,14 +28,15 @@ public class ContenedorPrincipal extends BorderPane
     Juego juego;
     Stage stage;
     Scene siguienteEscena;
-
+    Consola consola;
     public ContenedorPrincipal(Stage stage, Scene siguienteEscena, Juego juego, BarraDeMenu barraMenu)
     {
         this.juego = juego;
         this.stage = stage;
         this.barraMenu = barraMenu;
         this.siguienteEscena = siguienteEscena;
-
+        this.consola = new Consola();
+        
         Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
@@ -186,18 +187,26 @@ public class ContenedorPrincipal extends BorderPane
     
 
 		private void inicializarContenedorDerecha() {
+			
+		HBox hbox = new HBox();
+			
 		VBox vbox = new VBox();
     	ImageView mazo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/mazo.jpg");
     	ImageView cementerio = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cementerio.png");
     	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartaCampo.png");
     	
     	vbox.getChildren().addAll(cartaCampo, cementerio, mazo);//aca agregar mas cosas
-    		
-
     	vbox.setSpacing(10);
     	vbox.setPadding(new Insets(70));
     	vbox.setAlignment(Pos.BOTTOM_CENTER);
-    	this.setRight(vbox);
+    	
+    	hbox.getChildren().addAll(vbox, consola);//aca agregar mas cosas
+    	hbox.setSpacing(-60);
+    	hbox.setAlignment(Pos.TOP_LEFT);
+    	
+    	
+    	
+    	this.setRight(hbox);
 	}
 
 	private void inicializarContenedorIzquierda() {
@@ -269,7 +278,7 @@ public class ContenedorPrincipal extends BorderPane
 				carta.getNombre()
 	            + ".jpg");
 			
-			carta1.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta));
+			carta1.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta, consola));
 			cartasDeLaManoInferior.getChildren().add(carta1);
     	}
 		cartasDeLaManoInferior.setAlignment(Pos.TOP_LEFT);
@@ -332,7 +341,7 @@ public class ContenedorPrincipal extends BorderPane
 				carta.getNombre()
 	            + ".jpg");
 
-			carta1.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta));
+			carta1.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta, consola));
 			cartasDeLaManoSuperior.getChildren().add(carta1);
 
     	}

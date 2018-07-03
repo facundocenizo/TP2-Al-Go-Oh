@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.cartas.Carta;
+import fiuba.algo3.tp2.cartas.CartaCampo;
 import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
@@ -158,8 +159,8 @@ public class ContenedorPrincipal extends BorderPane {
     	mazoCementerioYCampoJugadorActivo.setPadding(new Insets(70));
     	mazoCementerioYCampoJugadorActivo.setAlignment(Pos.BOTTOM_CENTER);
     	
-    	ContenedorPrincipal.mazoCementerioYCampoJugadorActivo = mazoCementerioYCampoJugadorActivo;
     	this.setRight(mazoCementerioYCampoJugadorActivo);
+    	ContenedorPrincipal.mazoCementerioYCampoJugadorActivo = mazoCementerioYCampoJugadorActivo;
 	}
 	
 	private ImageView espacioMazo() {
@@ -168,9 +169,16 @@ public class ContenedorPrincipal extends BorderPane {
     }
     
     private ImageView espacioCartaCampo() {
-    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCartaCampo.jpg");
-    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioCartaCampo(imagenCarta));
-    	return imagenCarta;
+    	ImageView imagenCartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCartaCampo.jpg");
+    	imagenCartaCampo.setOnMouseClicked(new ClickSobreEspacioCartaCampo(this.juego.getJugadorActivo(), imagenCartaCampo));	
+    	for (CartaCampo unaCartaCampo: juego.getJugadorActivo().getCartaCampo()) {
+			imagenCartaCampo = new ImageView("file:" + 
+		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
+		            unaCartaCampo.getNombre()
+		            + ".jpg");
+			imagenCartaCampo.setOnMouseClicked(new ClickSobreCartaCampo());
+    	}
+		return imagenCartaCampo;
     }
     
     private ImageView espacioCartaCementerio() {
@@ -238,7 +246,7 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	private ImageView espacioCartaMagicaTrampa() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMagicaTrampa.jpg");
-    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMagicaTrampa(imagenCarta));
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMagicaTrampa(juego.getJugadorActivo(), imagenCarta));
     	return imagenCarta;
     }
 

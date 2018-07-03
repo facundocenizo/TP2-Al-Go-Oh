@@ -24,7 +24,7 @@ public class ClickSobreEspacioMonstruo implements EventHandler<MouseEvent> {
 			Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/"+ContenedorPrincipal.cartaSeleccionada.getNombre()+".jpg");
 			imagenCarta.setImage(imagen);
 			
-			//aca agregarle un nuevo evento on mouse click
+			//aca agregarle un nuevo evento on mouse click ??
 			
 			this.jugador.colocarCarta((Monstruo) ContenedorPrincipal.cartaSeleccionada);
 			ContenedorPrincipal.cartaSeleccionada = null;

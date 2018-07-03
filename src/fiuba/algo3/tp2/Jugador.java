@@ -3,7 +3,7 @@ package fiuba.algo3.tp2;
 
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 import fiuba.algo3.tp2.atributosCarta.Observador;
 import fiuba.algo3.tp2.cartas.Carta;
@@ -11,6 +11,7 @@ import fiuba.algo3.tp2.cartas.CartaCampo;
 import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 
 public class Jugador implements Observador, SujetoJugadorObservable {
@@ -186,6 +187,10 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 
 	public ArrayList<Trampa> getTrampas() {
 		return this.ladoDelCampo.getTrampas();
+	}
+
+	public ArrayList<CartaCampo> getCartaCampo() {
+		return this.ladoDelCampo.getCartaCampo();
 	}
 
 }

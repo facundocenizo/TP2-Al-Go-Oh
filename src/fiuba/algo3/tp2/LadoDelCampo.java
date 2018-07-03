@@ -244,5 +244,9 @@ public class LadoDelCampo {
 		return this.cartasTrampa;
 	}
 
+	public ArrayList<CartaCampo> getCartaCampo() {
+		return this.cartaDeCampo;
+	}
+
 	
 }

@@ -22,7 +22,7 @@ public class ClickSobreEspacioMonstruo implements EventHandler<MouseEvent> {
 			
 			//aca agregarle un nuevo evento on mouse click
 		}
-		
+		ContenedorPrincipal.cartaSeleccionada = null;
 	}
 
 }

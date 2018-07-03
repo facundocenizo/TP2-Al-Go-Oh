@@ -21,6 +21,7 @@ public class ClickSobreEspacioCartaCampo implements EventHandler<MouseEvent> {
 			imagenCarta.setImage(imagen);
 			//aca agregarle un nuevo evento on mouse click
 		}
+		ContenedorPrincipal.cartaSeleccionada = null;
 		
 	}
 

@@ -10,12 +10,15 @@ import fiuba.algo3.tp2.vista.eventos.ClickSobreCarta;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioCartaCampo;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMagicaTrampa;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMonstruo;
+import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMonstruoJugadorInactivo;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -39,24 +42,27 @@ public class ContenedorPrincipal extends BorderPane {
     public static HBox zonaMonstruosJugadorActivo;
     public static HBox zonaMonstruosJugadorInactivo;
     public static HBox zonaMagicaYTrampaJugadorActivo;
+    public static HBox cartasEnManoJugadorActivo;
+    public static VBox mazoCementerioYCampoJugadorActivo;
     public static Carta cartaSeleccionada;
     
     public ContenedorPrincipal(Stage stage, Scene siguienteEscena, Juego juego, BarraDeMenu barraMenu) {
-      	
     	this.juego = juego;
         this.stage = stage;
         this.barraMenu = barraMenu;
         this.siguienteEscena = siguienteEscena;
         this.consola = new Consola();
-        this.cartaSeleccionada = null;
+        ContenedorPrincipal.cartaSeleccionada = null;
+        
+        ContenedorPrincipal.zonaMonstruosJugadorActivo = new HBox();
+        ContenedorPrincipal.zonaMonstruosJugadorInactivo = new HBox();
+        ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo = new HBox();
+        ContenedorPrincipal.cartasEnManoJugadorActivo = new HBox();
+        ContenedorPrincipal.mazoCementerioYCampoJugadorActivo = new VBox();
         
         Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
-        
-        ContenedorPrincipal.zonaMonstruosJugadorActivo = new HBox();   
-        ContenedorPrincipal.zonaMonstruosJugadorInactivo = new HBox();        
-    	ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo = new HBox();
     }
     
     public void setContenedorPrincipal() {
@@ -68,7 +74,6 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
 	private void setContenedorIzquierdo() {
-		
 		Button botonTerminarTurno = new Button("Terminar turno");
         BotonTerminarTurno terminarTurno =
             new BotonTerminarTurno(this);
@@ -78,7 +83,6 @@ public class ContenedorPrincipal extends BorderPane {
         contenedorIzquierdo.getChildren().addAll(botonTerminarTurno, this.consola);
         
 		this.setLeft(contenedorIzquierdo);
-		
 	}
 
 	private void setContenedorArriba() {
@@ -135,9 +139,10 @@ public class ContenedorPrincipal extends BorderPane {
     	}
     	
     	cartasEnManoJugadorActivo.setAlignment(Pos.TOP_LEFT);
+    	ContenedorPrincipal.cartasEnManoJugadorActivo = cartasEnManoJugadorActivo;
     	descripcionCarta.getChildren().addAll(texto1,textoDescripcion);
     	contenedorAbajo.setSpacing(70);
-    	contenedorAbajo.getChildren().addAll(cartasEnManoJugadorActivo, descripcionCarta, salud, juego.getJugadorActivo().darImagen());
+    	contenedorAbajo.getChildren().addAll(ContenedorPrincipal.cartasEnManoJugadorActivo, descripcionCarta, salud, juego.getJugadorActivo().darImagen());
     	contenedorAbajo.setAlignment(Pos.TOP_RIGHT);
 		this.setBottom(contenedorAbajo);
 	}
@@ -152,6 +157,8 @@ public class ContenedorPrincipal extends BorderPane {
     	mazoCementerioYCampoJugadorActivo.setSpacing(10);
     	mazoCementerioYCampoJugadorActivo.setPadding(new Insets(70));
     	mazoCementerioYCampoJugadorActivo.setAlignment(Pos.BOTTOM_CENTER);
+    	
+    	ContenedorPrincipal.mazoCementerioYCampoJugadorActivo = mazoCementerioYCampoJugadorActivo;
     	this.setRight(mazoCementerioYCampoJugadorActivo);
 	}
 	
@@ -172,15 +179,15 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
 	private void setContenedorCentral() {
-		ContenedorPrincipal.zonaMonstruosJugadorActivo = this.setZonaMonstruos(juego.getJugadorActivo());
+		ContenedorPrincipal.zonaMonstruosJugadorActivo = this.setZonaMonstruosJugadorActivo();
 		ContenedorPrincipal.zonaMonstruosJugadorActivo.setSpacing(100);
         ContenedorPrincipal.zonaMonstruosJugadorActivo.setAlignment(Pos.CENTER);
         
-		ContenedorPrincipal.zonaMonstruosJugadorInactivo = this.setZonaMonstruos(juego.getJugadorInactivo());
+		ContenedorPrincipal.zonaMonstruosJugadorInactivo = this.setZonaMonstruosJugadorInactivo();
         ContenedorPrincipal.zonaMonstruosJugadorInactivo.setSpacing(100);
         ContenedorPrincipal.zonaMonstruosJugadorInactivo.setAlignment(Pos.CENTER);
         
-		this.setZonaMagicaYTrampaJugadorActivo();
+		ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo = this.setZonaMagicaYTrampaJugadorActivo();
         ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo.setSpacing(100);
         ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo.setAlignment(Pos.CENTER);
 		
@@ -202,14 +209,15 @@ public class ContenedorPrincipal extends BorderPane {
     	this.setCenter(tablero);
 	}
 
-	private void setZonaMagicaYTrampaJugadorActivo() {
+	private HBox setZonaMagicaYTrampaJugadorActivo() {
+		HBox zonaMagicaYTrampaJugadorActivo = new HBox();
 		for (Magica unaMagica: juego.getJugadorActivo().getMagicas()) {
 			ImageView unaImagenMagica = new ImageView("file:" + 
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
 		            unaMagica.getNombre()
 		            + ".jpg");
 			unaImagenMagica.setOnMouseClicked(new ClickSobreCartaMagicaTrampa());
-			ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo.getChildren().add(unaImagenMagica);
+			zonaMagicaYTrampaJugadorActivo.getChildren().add(unaImagenMagica);
 		}
 		for (Trampa unaTrampa: juego.getJugadorActivo().getTrampas()) {
 			ImageView unaImagenTrampa = new ImageView("file:" + 
@@ -217,14 +225,15 @@ public class ContenedorPrincipal extends BorderPane {
 		            unaTrampa.getNombre()
 		            + ".jpg");
 			unaImagenTrampa.setOnMouseClicked(new ClickSobreCartaMagicaTrampa());
-			ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo.getChildren().add(unaImagenTrampa);
+			zonaMagicaYTrampaJugadorActivo.getChildren().add(unaImagenTrampa);
 		}
-		int cantidadDeMagicasYTrampas = ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo.getChildren().size();
+		int cantidadDeMagicasYTrampas = zonaMagicaYTrampaJugadorActivo.getChildren().size();
 		if (cantidadDeMagicasYTrampas < 5) {
 			for (int i = 0; i < 5 - cantidadDeMagicasYTrampas; i++) {
-				ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo.getChildren().add(this.espacioCartaMagicaTrampa());
+				zonaMagicaYTrampaJugadorActivo.getChildren().add(this.espacioCartaMagicaTrampa());
 			}
 		}
+		return zonaMagicaYTrampaJugadorActivo;
 	}
 	
 	private ImageView espacioCartaMagicaTrampa() {
@@ -233,30 +242,55 @@ public class ContenedorPrincipal extends BorderPane {
     	return imagenCarta;
     }
 
-	private HBox setZonaMonstruos(Jugador unJugador) {
-		HBox unaZonaMonstruos = new HBox();
-		for (Monstruo unMonstruo: unJugador.getMonstruos()) {
+	private ImageView espacioCartaMonstruoJugadorActivo() {
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMonstruo.jpg");
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(imagenCarta));
+    	return imagenCarta;
+    }
+	
+	private HBox setZonaMonstruosJugadorActivo() {
+		HBox zonaMonstruosJugadorActivo = new HBox(); 
+		for (Monstruo unMonstruo: this.juego.getJugadorActivo().getMonstruos()) {
 			ImageView unaImagenMonstruo = new ImageView("file:" + 
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
 					unMonstruo.getNombre()
 		            + ".jpg");
 			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruo());
-			unaZonaMonstruos.getChildren().add(unaImagenMonstruo);
+			zonaMonstruosJugadorActivo.getChildren().add(unaImagenMonstruo);
 		}
-		int cantidadDeMonstruos = unaZonaMonstruos.getChildren().size();
+		int cantidadDeMonstruos = zonaMonstruosJugadorActivo.getChildren().size();
 		if (cantidadDeMonstruos < 5) {
 			for (int i = 0; i < 5 - cantidadDeMonstruos; i++) {
-				unaZonaMonstruos.getChildren().add(this.espacioCartaMonstruo());
+				zonaMonstruosJugadorActivo.getChildren().add(this.espacioCartaMonstruoJugadorActivo());
 			}
 		}
-		return unaZonaMonstruos;
+		return zonaMonstruosJugadorActivo;
 	}
 	
-	private ImageView espacioCartaMonstruo() {
+	private ImageView espacioCartaMonstruoJugadorInactivo() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMonstruo.jpg");
-    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(imagenCarta));
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruoJugadorInactivo(imagenCarta));
     	return imagenCarta;
     }
+	
+	private HBox setZonaMonstruosJugadorInactivo() {
+		HBox zonaMonstruosJugadorInactivo = new HBox(); 
+		for (Monstruo unMonstruo: this.juego.getJugadorInactivo().getMonstruos()) {
+			ImageView unaImagenMonstruo = new ImageView("file:" + 
+		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
+					unMonstruo.getNombre()
+		            + ".jpg");
+			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruo());
+			zonaMonstruosJugadorInactivo.getChildren().add(unaImagenMonstruo);
+		}
+		int cantidadDeMonstruos = zonaMonstruosJugadorInactivo.getChildren().size();
+		if (cantidadDeMonstruos < 5) {
+			for (int i = 0; i < 5 - cantidadDeMonstruos; i++) {
+				zonaMonstruosJugadorInactivo.getChildren().add(this.espacioCartaMonstruoJugadorInactivo());
+			}
+		}
+		return zonaMonstruosJugadorInactivo;
+	}
 
 	public void terminarTurno() {
 		this.juego.terminarTurno();

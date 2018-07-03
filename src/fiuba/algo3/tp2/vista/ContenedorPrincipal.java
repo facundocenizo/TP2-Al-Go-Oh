@@ -1,24 +1,24 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.Juego;
-import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.cartas.Carta;
 import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
+import fiuba.algo3.tp2.vista.eventos.BotonTerminarTurno;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreCarta;
+import fiuba.algo3.tp2.vista.eventos.ClickSobreCartaMagicaTrampa;
+import fiuba.algo3.tp2.vista.eventos.ClickSobreCartaMonstruo;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioCartaCampo;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMagicaTrampa;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMonstruo;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMonstruoJugadorInactivo;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -38,7 +38,7 @@ public class ContenedorPrincipal extends BorderPane {
     private Juego juego;
     private Stage stage;
     private Scene siguienteEscena;
-    private Consola consola;
+    public static Consola consola;
     public static HBox zonaMonstruosJugadorActivo;
     public static HBox zonaMonstruosJugadorInactivo;
     public static HBox zonaMagicaYTrampaJugadorActivo;
@@ -51,7 +51,7 @@ public class ContenedorPrincipal extends BorderPane {
         this.stage = stage;
         this.barraMenu = barraMenu;
         this.siguienteEscena = siguienteEscena;
-        this.consola = new Consola();
+        ContenedorPrincipal.consola = new Consola();
         ContenedorPrincipal.cartaSeleccionada = null;
         
         ContenedorPrincipal.zonaMonstruosJugadorActivo = new HBox();
@@ -80,7 +80,7 @@ public class ContenedorPrincipal extends BorderPane {
         botonTerminarTurno.setOnAction(terminarTurno);
         
         VBox contenedorIzquierdo = new VBox();
-        contenedorIzquierdo.getChildren().addAll(botonTerminarTurno, this.consola);
+        contenedorIzquierdo.getChildren().addAll(botonTerminarTurno, ContenedorPrincipal.consola);
         
 		this.setLeft(contenedorIzquierdo);
 	}
@@ -244,7 +244,7 @@ public class ContenedorPrincipal extends BorderPane {
 
 	private ImageView espacioCartaMonstruoJugadorActivo() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMonstruo.jpg");
-    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(imagenCarta));
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(juego.getJugadorActivo(), imagenCarta));
     	return imagenCarta;
     }
 	

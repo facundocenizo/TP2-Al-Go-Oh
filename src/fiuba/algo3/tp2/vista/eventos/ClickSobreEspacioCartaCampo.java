@@ -19,10 +19,12 @@ public class ClickSobreEspacioCartaCampo implements EventHandler<MouseEvent> {
 		if(ContenedorPrincipal.cartaSeleccionada != null) {
 			Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/"+ContenedorPrincipal.cartaSeleccionada.getNombre()+".jpg");
 			imagenCarta.setImage(imagen);
+			
 			//aca agregarle un nuevo evento on mouse click
+			
+			ContenedorPrincipal.cartaSeleccionada = null;
+			ContenedorPrincipal.consola.limpiar();
 		}
-		ContenedorPrincipal.cartaSeleccionada = null;
-		
 	}
 
 }

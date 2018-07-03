@@ -1,5 +1,6 @@
-package fiuba.algo3.tp2.vista;
+package fiuba.algo3.tp2.vista.eventos;
 
+import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.vista;
+package fiuba.algo3.tp2.vista.eventos;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;

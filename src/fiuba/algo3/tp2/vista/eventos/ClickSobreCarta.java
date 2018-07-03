@@ -24,7 +24,7 @@ public class ClickSobreCarta
 	@Override
 	public void handle(MouseEvent arg0) {
 		this.texto.setText(this.carta.getDescripcion());
-		this.consola.setText("Seleccionaste: \n" + carta.getNombre() + "\nahora selecciona un lugar \nen el campo..");
+		this.consola.setText("Seleccionaste: \n" + carta.getNombre() + ".\nAhora selecciona un lugar \nen el campo \ndonde colocar la carta.");
 
 		ContenedorPrincipal.cartaSeleccionada = carta;
 	}

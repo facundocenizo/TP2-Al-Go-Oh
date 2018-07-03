@@ -41,4 +41,8 @@ public class Consola extends VBox{
 		this.texto.setFill(Color.WHITE);
 		this.texto.setText(unTexto);
 	}
+
+	public void limpiar() {
+		this.texto.setText("");		
+	}
 }

@@ -13,6 +13,7 @@ import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMonstruo;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -38,8 +39,6 @@ public class ContenedorPrincipal extends BorderPane {
     public static HBox zonaMonstruosJugadorActivo;
     public static HBox zonaMonstruosJugadorInactivo;
     public static HBox zonaMagicaYTrampaJugadorActivo;
-    public static HBox cartasEnManoJugadorActivo;
-    public static VBox mazoCementerioYCampoJugadorActivo;
     public static Carta cartaSeleccionada;
     
     public ContenedorPrincipal(Stage stage, Scene siguienteEscena, Juego juego, BarraDeMenu barraMenu) {
@@ -58,26 +57,32 @@ public class ContenedorPrincipal extends BorderPane {
         ContenedorPrincipal.zonaMonstruosJugadorActivo = new HBox();   
         ContenedorPrincipal.zonaMonstruosJugadorInactivo = new HBox();        
     	ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo = new HBox();
-    	ContenedorPrincipal.cartasEnManoJugadorActivo = new HBox();
-        ContenedorPrincipal.mazoCementerioYCampoJugadorActivo = new VBox();
     }
     
     public void setContenedorPrincipal() {
-    	this.setLeft(this.consola);
     	this.setContenedorCentral();
+    	this.setContenedorIzquierdo();
     	this.setContenedorDerecho();
     	this.setContenedorAbajo();
     	this.setContenedorArriba();
     }
 
+	private void setContenedorIzquierdo() {
+		
+		Button botonTerminarTurno = new Button("Terminar turno");
+        BotonTerminarTurno terminarTurno =
+            new BotonTerminarTurno(this);
+        botonTerminarTurno.setOnAction(terminarTurno);
+        
+        VBox contenedorIzquierdo = new VBox();
+        contenedorIzquierdo.getChildren().addAll(botonTerminarTurno, this.consola);
+        
+		this.setLeft(contenedorIzquierdo);
+		
+	}
+
 	private void setContenedorArriba() {
 		HBox contenedorHorizontalArriba = new HBox();
-		
-    	ImageView imagenJugador = new ImageView("file:" + 
-	            "src/fiuba/algo3/tp2/vista/imagenes/" +
-	            "imagenJugadorDos.jpg");
-    	imagenJugador.setFitHeight(50);
-    	imagenJugador.setFitWidth(170);
     	
     	VBox salud = new VBox();
     	Text vida = new Text("" + juego.getJugadorInactivo().darVida());
@@ -90,7 +95,7 @@ public class ContenedorPrincipal extends BorderPane {
     	salud.setSpacing(-10);
 		
     	contenedorHorizontalArriba.setSpacing(70);
-    	contenedorHorizontalArriba.getChildren().addAll(imagenJugador, salud);
+    	contenedorHorizontalArriba.getChildren().addAll(juego.getJugadorInactivo().darImagen(), salud);
 		
 		VBox contenedorVerticalArriba = new VBox();
 		contenedorVerticalArriba.getChildren().addAll(this.barraMenu, contenedorHorizontalArriba);
@@ -100,12 +105,6 @@ public class ContenedorPrincipal extends BorderPane {
 
 	private void setContenedorAbajo() {
 		HBox contenedorAbajo = new HBox();
-		
-    	ImageView imagenJugador = new ImageView("file:" + 
-	            "src/fiuba/algo3/tp2/vista/imagenes/" +
-	            "imagenJugadorUno.jpg");
-    	imagenJugador.setFitHeight(100);
-    	imagenJugador.setFitWidth(250);
     	
     	VBox salud = new VBox();
     	Text vida = new Text("" + juego.getJugadorActivo().darVida());
@@ -125,19 +124,20 @@ public class ContenedorPrincipal extends BorderPane {
     	textoDescripcion.setFill(Color.RED);
     	textoDescripcion.setFont(Font.font("Tahoma", FontWeight.BOLD, 12));
     	
+    	HBox cartasEnManoJugadorActivo = new HBox();    	
     	for (Carta carta: juego.getJugadorActivo().darCartasDeLaMano()) {
     		ImageView unaImagenCarta = new ImageView("file:" + 
     	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
     				carta.getNombre()
     	            + ".jpg");
     		unaImagenCarta.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta, consola));
-    		ContenedorPrincipal.cartasEnManoJugadorActivo.getChildren().add(unaImagenCarta);
+    		cartasEnManoJugadorActivo.getChildren().add(unaImagenCarta);
     	}
     	
-    	ContenedorPrincipal.cartasEnManoJugadorActivo.setAlignment(Pos.TOP_LEFT);
+    	cartasEnManoJugadorActivo.setAlignment(Pos.TOP_LEFT);
     	descripcionCarta.getChildren().addAll(texto1,textoDescripcion);
     	contenedorAbajo.setSpacing(70);
-    	contenedorAbajo.getChildren().addAll(ContenedorPrincipal.cartasEnManoJugadorActivo, descripcionCarta, salud, imagenJugador);
+    	contenedorAbajo.getChildren().addAll(cartasEnManoJugadorActivo, descripcionCarta, salud, juego.getJugadorActivo().darImagen());
     	contenedorAbajo.setAlignment(Pos.TOP_RIGHT);
 		this.setBottom(contenedorAbajo);
 	}
@@ -146,11 +146,13 @@ public class ContenedorPrincipal extends BorderPane {
 		ImageView mazo = espacioMazo();
     	ImageView cementerio = espacioCartaCementerio();
     	ImageView cartaCampo = espacioCartaCampo();
-    	ContenedorPrincipal.mazoCementerioYCampoJugadorActivo.getChildren().addAll(cartaCampo, cementerio, mazo);
-    	ContenedorPrincipal.mazoCementerioYCampoJugadorActivo.setSpacing(10);
-    	ContenedorPrincipal.mazoCementerioYCampoJugadorActivo.setPadding(new Insets(70));
-    	ContenedorPrincipal.mazoCementerioYCampoJugadorActivo.setAlignment(Pos.BOTTOM_CENTER);
-    	this.setRight(ContenedorPrincipal.mazoCementerioYCampoJugadorActivo);
+    	
+    	VBox mazoCementerioYCampoJugadorActivo = new VBox();	
+    	mazoCementerioYCampoJugadorActivo.getChildren().addAll(cartaCampo, cementerio, mazo);
+    	mazoCementerioYCampoJugadorActivo.setSpacing(10);
+    	mazoCementerioYCampoJugadorActivo.setPadding(new Insets(70));
+    	mazoCementerioYCampoJugadorActivo.setAlignment(Pos.BOTTOM_CENTER);
+    	this.setRight(mazoCementerioYCampoJugadorActivo);
 	}
 	
 	private ImageView espacioMazo() {
@@ -255,5 +257,10 @@ public class ContenedorPrincipal extends BorderPane {
     	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(imagenCarta));
     	return imagenCarta;
     }
+
+	public void terminarTurno() {
+		this.juego.terminarTurno();
+		this.juego.siguienteTurno();
+	}
 
 }

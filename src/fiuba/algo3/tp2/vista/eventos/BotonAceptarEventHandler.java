@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.vista.eventos;
 
 import java.util.List;
+import java.util.Random;
 
 import fiuba.algo3.tp2.vista.ContenedorJugadores;
 import fiuba.algo3.tp2.vista.ContenedorPrincipal;
@@ -12,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -75,8 +77,24 @@ public class BotonAceptarEventHandler implements EventHandler<ActionEvent>{
 			audioBoton.play();
         	if (nombresJugadores.size() == 2){
         		
-            	juego.getJugadorActivo().setNombre(nombresJugadores.get(0));
-        		juego.getJugadorInactivo().setNombre(nombresJugadores.get(1));
+        		ImageView imagenJugadorUno = new ImageView("file:" + 
+        	            "src/fiuba/algo3/tp2/vista/imagenes/" +
+        	            "imagenJugadorUno.jpg");
+            	imagenJugadorUno.setFitHeight(50);
+            	imagenJugadorUno.setFitWidth(170);
+        		
+        		ImageView imagenJugadorDos = new ImageView("file:" + 
+        	            "src/fiuba/algo3/tp2/vista/imagenes/" +
+        	            "imagenJugadorDos.jpg");
+            	imagenJugadorDos.setFitHeight(50);
+            	imagenJugadorDos.setFitWidth(170);
+            	
+        		int random = new Random().nextInt(2);
+            	juego.getJugadorActivo().setNombre(nombresJugadores.get(random));
+            	juego.getJugadorActivo().setImagen(imagenJugadorUno);
+        		juego.getJugadorInactivo().setNombre(nombresJugadores.get((random+1)%2));
+        		juego.getJugadorInactivo().setImagen(imagenJugadorDos);
+        		
         		contenedorPrincipal.setContenedorPrincipal();
         		stage.setScene(proximaEscena);
         		stage.setFullScreenExitHint("");

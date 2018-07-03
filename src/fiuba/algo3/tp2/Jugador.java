@@ -4,17 +4,20 @@ package fiuba.algo3.tp2;
 
 import java.util.ArrayList;
 
+
 import fiuba.algo3.tp2.atributosCarta.Observador;
 import fiuba.algo3.tp2.cartas.Carta;
 import fiuba.algo3.tp2.cartas.CartaCampo;
 import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
+import javafx.scene.image.ImageView;
 
 public class Jugador implements Observador, SujetoJugadorObservable {
 	
 	private int vida;
 	private String nombre;
+	private ImageView imagen;
 	private ArrayList<Carta> cartasEnMano;
 	private LadoDelCampo ladoDelCampo;
 	private boolean ganador;
@@ -133,6 +136,14 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 
 	public String darNombre() {
 		return this.nombre;
+	}
+	
+	public void setImagen(ImageView imagen) {
+		this.imagen = imagen;
+	}
+	
+	public ImageView darImagen() {
+		return this.imagen;
 	}
 	
 	public ArrayList<Carta> darCartasDeLaMano() {

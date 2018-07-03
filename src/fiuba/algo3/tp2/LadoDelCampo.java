@@ -236,5 +236,13 @@ public class LadoDelCampo {
 		this.jugador.hasGanado();
 	}
 
+	public ArrayList<Magica> getMagicas() {
+		return this.cartasMagicas;
+	}
+
+	public ArrayList<Trampa> getTrampas() {
+		return this.cartasTrampa;
+	}
+
 	
 }

@@ -22,20 +22,20 @@ import javafx.scene.media.AudioClip;
 	    	AudioClip audioIntro = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/musicaInicio.mp3");
 	        audioIntro.setCycleCount(2);
 	        //audioIntro.play();
+	        
 	        BarraDeMenu barraMenu = new BarraDeMenu(stage, audioIntro);
 	    	
 	        Juego juego = new Juego();
 	        stage.setTitle("Al-Go-Oh!");
 	       
-	        
+	      //ContenedorVictoria contenedorVictoria = new ContenedorVictoria(stage, audioIntro);
+	      //Scene escenaVictoria = new Scene(contenedorVictoria, 640, 480);
 	        
 	        ContenedorPrincipal contenedorPrincipal = 
 	        		new ContenedorPrincipal(stage, null, juego, barraMenu);
 	        
-
 	        ScrollPane scroll = new ScrollPane();
 	        scroll.setContent(contenedorPrincipal);
-	        
 	        Scene escenaJuego = 
 	        		new Scene(scroll, 640, 480);
 	        
@@ -43,10 +43,7 @@ import javafx.scene.media.AudioClip;
 	        		new ContenedorJugadores(stage, escenaJuego,juego, contenedorPrincipal);
 	        Scene escenaJugadores = 
 	        		new Scene(contenedorJugadores, 640, 480);
-	        
-      
 	   
-
 	        ContenedorBienvenida contenedorBienvenidos = 
 	        		new ContenedorBienvenida(stage, audioIntro, escenaJugadores);
     

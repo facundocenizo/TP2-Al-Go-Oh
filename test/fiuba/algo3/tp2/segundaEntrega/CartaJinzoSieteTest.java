@@ -3,7 +3,6 @@ package fiuba.algo3.tp2.segundaEntrega;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
@@ -44,7 +43,7 @@ public class CartaJinzoSieteTest {
 		
 		int vidaDelJugadorEsperada = 8000 - puntosDelEfectoGinzo - (puntosDeAtaqueDelGinzo - puntosDeAtaqueDelDragon);
 		
-		assertEquals(vidaDelJugadorEsperada,jugador1.vida());
+		assertEquals(vidaDelJugadorEsperada,jugador1.darVida());
 		
 	}	
 	
@@ -79,7 +78,7 @@ public class CartaJinzoSieteTest {
 		
 		int vidaDelJugadorEsperada = 8000 - (puntosDeAtaqueDelGinzo - puntosDeAtaqueDelDragon);
 		
-		assertEquals(vidaDelJugadorEsperada,jugador2.vida());
+		assertEquals(vidaDelJugadorEsperada,jugador2.darVida());
 	}
 	
 	
@@ -113,7 +112,7 @@ public class CartaJinzoSieteTest {
 		
 		int vidaDelJugadorEsperada = 8000 - puntosDelEfectoGinzo;
 		
-		assertEquals(vidaDelJugadorEsperada,jugador1.vida());
+		assertEquals(vidaDelJugadorEsperada,jugador1.darVida());
 		
 	}
 	

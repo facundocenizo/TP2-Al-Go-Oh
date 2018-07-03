@@ -23,7 +23,8 @@ public class AtacarAUnJugadorSinMonstruosEnElCampoRestaDirectamenteSusPuntosDeVi
 		jugador1.colocarCarta(huevo);
 		jugador1.atacar(huevo, null);
 		
-		Jugador jugador2 = juego.terminarTurno();
+		juego.terminarTurno();
+		Jugador jugador2 = juego.siguienteTurno();
 		
 		// El monstruo huevo resta 600 puntos de vida al oponente ya que este no tiene ningun monstruo en el campo
 		int vidaEsperada = 7400;

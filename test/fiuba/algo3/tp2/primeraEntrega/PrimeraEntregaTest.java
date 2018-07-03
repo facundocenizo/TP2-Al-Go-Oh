@@ -9,7 +9,6 @@ import org.junit.Test;
 
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
-import fiuba.algo3.tp2.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.tp2.Efectos.SinEfecto;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.BocaArriba;
@@ -18,8 +17,6 @@ import fiuba.algo3.tp2.atributosLadoDelCampo.Cementerio;
 import fiuba.algo3.tp2.atributosMonstruo.Debil;
 import fiuba.algo3.tp2.atributosMonstruo.ModoAtaque;
 import fiuba.algo3.tp2.atributosMonstruo.ModoDefensa;
-import fiuba.algo3.tp2.atributosMonstruo.Normal;
-import fiuba.algo3.tp2.atributosMonstruo.Poderoso;
 import fiuba.algo3.tp2.cartas.Carta;
 import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
@@ -86,8 +83,8 @@ public class PrimeraEntregaTest {
 		int puntosVidaJugador1 = 8000 - (500 - 400);
 		int puntosVidaJugador2 = 8000;
 		
-		assertEquals(puntosVidaJugador1, jugador1.vida());
-		assertEquals(puntosVidaJugador2, jugador2.vida());
+		assertEquals(puntosVidaJugador1, jugador1.darVida());
+		assertEquals(puntosVidaJugador2, jugador2.darVida());
 		
 		assertTrue(monstruoAtacado.estaMuerta());
 		assertFalse(monstruoAtacante.estaMuerta());
@@ -109,8 +106,8 @@ public class PrimeraEntregaTest {
 		int puntosVidaJugador1 = 8000;
 		int puntosVidaJugador2 = 8000 - (400 - 300);
 			
-		assertEquals(puntosVidaJugador1, jugador1.vida());
-		assertEquals(puntosVidaJugador2, jugador2.vida());
+		assertEquals(puntosVidaJugador1, jugador1.darVida());
+		assertEquals(puntosVidaJugador2, jugador2.darVida());
 		
 		assertTrue(monstruoAtacante.estaMuerta());
 		assertFalse(monstruoAtacado.estaMuerta());
@@ -198,8 +195,8 @@ public class PrimeraEntregaTest {
 		// Ningun jugador pierde vida
 		int vida = 8000;
 
-		assertEquals(vida, jugador1.vida());
-		assertEquals(vida, jugador2.vida());
+		assertEquals(vida, jugador1.darVida());
+		assertEquals(vida, jugador2.darVida());
 		
 		assertTrue(monstruoAtacante.estaMuerta());
 		assertTrue(monstruoAtacado.estaMuerta());
@@ -220,8 +217,8 @@ public class PrimeraEntregaTest {
 		// Ningun jugador pierde vida
 		int vida = 8000;
 		
-		assertEquals(vida, jugador1.vida());
-		assertEquals(vida, jugador2.vida());		
+		assertEquals(vida, jugador1.darVida());
+		assertEquals(vida, jugador2.darVida());		
 		
 		assertTrue(monstruoAtacado.estaMuerta());
 		assertFalse(monstruoAtacante.estaMuerta());
@@ -241,8 +238,8 @@ public class PrimeraEntregaTest {
 		// Ningun jugador pierde vida
 		int vida = 8000;
 	
-		assertEquals(vida, jugador1.vida());
-		assertEquals(vida, jugador2.vida());			
+		assertEquals(vida, jugador1.darVida());
+		assertEquals(vida, jugador2.darVida());			
 		
 		assertFalse(monstruoAtacado.estaMuerta());
 		assertFalse(monstruoAtacante.estaMuerta());

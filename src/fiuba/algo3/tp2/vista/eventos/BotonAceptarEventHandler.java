@@ -74,10 +74,10 @@ public class BotonAceptarEventHandler implements EventHandler<ActionEvent>{
         	AudioClip audioBoton = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/boton2.mp3");
 			audioBoton.play();
         	if (nombresJugadores.size() == 2){
-
-            	juego.getJugadorInferior().setNombre(nombresJugadores.get(0));
-        		juego.getJugadorSuperior().setNombre(nombresJugadores.get(1));
-        		contenedorPrincipal.inicializar();
+        		
+            	juego.getJugadorActivo().setNombre(nombresJugadores.get(0));
+        		juego.getJugadorInactivo().setNombre(nombresJugadores.get(1));
+        		contenedorPrincipal.setContenedorPrincipal();
         		stage.setScene(proximaEscena);
         		stage.setFullScreenExitHint("");
                 stage.setFullScreen(true);

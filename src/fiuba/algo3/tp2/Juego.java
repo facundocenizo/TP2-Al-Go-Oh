@@ -46,17 +46,17 @@ public class Juego implements ObservadorDeJugador {
     	return this.estado.siguienteTurno();
     }
     
-    public Jugador getJugadorInferior() {
-		return this.estado.getJugadorInferior();
+    public void terminarTurno() {
+		this.estado.terminarTurno();
 	}
     
-    public Jugador getJugadorSuperior() {
-		return this.estado.getJugadorSuperior();
-	}
+    public Jugador getJugadorActivo() {
+    	return estado.getJugadorActivo();
+    }
 
-	public Jugador terminarTurno() {
-		return this.estado.terminarTurno();
-	}
+    public Jugador getJugadorInactivo() {
+    	return estado.getJugadorInactivo();
+    }
 
 	@Override
 	public void actualizar(Jugador jugador) {

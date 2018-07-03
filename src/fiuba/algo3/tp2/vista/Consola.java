@@ -1,21 +1,31 @@
 package fiuba.algo3.tp2.vista;
 
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-public class Consola extends HBox{
+public class Consola extends VBox{
 
 	private Text texto;
 	public Consola() {
 
-        setMinSize(200, 200);
-        setMaxSize(200, 200);
+		setAlignment(Pos.CENTER);
 		
-        this.setStyle("-fx-background-color: black; ");
+		Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        this.setBackground(new Background(imagenDeFondo));
+	
         this.texto = new Text();
 
         texto.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));

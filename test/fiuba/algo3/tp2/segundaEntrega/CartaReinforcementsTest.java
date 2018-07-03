@@ -1,17 +1,13 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.LadoDelCampo;
-import fiuba.algo3.tp2.cartas.CartaCampo;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
-import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaTrampa;
 
@@ -47,6 +43,6 @@ public class CartaReinforcementsTest {
         // al jugador enemigo
         int vidaEsperada = 8000-100;
 
-        assertEquals(vidaEsperada, jugadorEnemigo.vida());
+        assertEquals(vidaEsperada, jugadorEnemigo.darVida());
 	}
 }

@@ -45,6 +45,6 @@ public class CartaCilindroMagicoTest {
         // Se resta los puntos de ataque del monstruo atacante al jugador enemigo
         int vidaEsperada = 8000-600;
         
-        assertEquals(vidaEsperada, jugadorEnemigo.vida());
+        assertEquals(vidaEsperada, jugadorEnemigo.darVida());
 	}	
 }

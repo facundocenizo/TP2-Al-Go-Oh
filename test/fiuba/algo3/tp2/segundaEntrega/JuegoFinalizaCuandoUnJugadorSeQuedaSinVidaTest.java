@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.segundaEntrega;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -30,7 +29,7 @@ public class JuegoFinalizaCuandoUnJugadorSeQuedaSinVidaTest {
 		jugador1.atacar(dragonBlanco, null);
 		jugador1.atacar(dragonBlanco, null);
 		
-		Jugador jugador2 = juego.terminarTurno();
+		juego.terminarTurno();
 		
 		assertTrue(juego.hayGanador());
 	}

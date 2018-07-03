@@ -18,7 +18,6 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	private ArrayList<Carta> cartasEnMano;
 	private LadoDelCampo ladoDelCampo;
 	private boolean ganador;
-	private Carta cartaActiva;
 	private ObservadorDeJugador observador;
 	
 	
@@ -26,7 +25,6 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 		this.vida = 8000;
 		this.cartasEnMano = new ArrayList<Carta>();
 		this.ganador = false;
-		Carta cartaActiva = null;
 	}
 	
 	public void agregarCartasALaMano() {
@@ -39,10 +37,6 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 
 	public void setLado(LadoDelCampo lado) {
 		this.ladoDelCampo = lado;
-	}
-	
-	public int vida() {
-		return vida;
 	}
 	
 	public void sufrirDanio(int danio) {
@@ -60,6 +54,10 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	
 	public void voltearCarta(Carta unaCarta) {
 		unaCarta.voltearCarta();
+	}
+	
+	public ArrayList<Monstruo> getMonstruos() {
+		return this.ladoDelCampo.verMonstruos();
 	}
 	
 	public ArrayList<Monstruo> verMonstruosRivales() {
@@ -144,12 +142,6 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	public int darVida() {
 		return this.vida;
 	}
-	public void setCartaActiva(Carta unaCarta) {
-		this.cartaActiva = unaCarta;
-	}
-	public Carta getCartaActiva() {
-		return this.cartaActiva;
-	}
 
 	public void agregarCartaALaMano(Monstruo monstruo) {
 		this.cartasEnMano.add(monstruo);
@@ -175,6 +167,14 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	public void notificar() {
 		this.observador.actualizar(this);
 		
+	}
+
+	public ArrayList<Magica> getMagicas() {
+		return this.ladoDelCampo.getMagicas();
+	}
+
+	public ArrayList<Trampa> getTrampas() {
+		return this.ladoDelCampo.getTrampas();
 	}
 
 }

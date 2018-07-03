@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.vista;
 import java.util.ArrayList;
 import java.util.List;
 
+import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.vista.eventos.BotonAceptarEventHandler;
 import javafx.geometry.Insets;

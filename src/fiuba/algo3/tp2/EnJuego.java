@@ -26,26 +26,25 @@ public class EnJuego implements EstadoDeJuego {
 	}
 
 	@Override
-	public Jugador terminarTurno() {
+	public void terminarTurno() {
 		for(Jugador jugador : jugadores)
 			jugador.terminarTurno();
-		return this.siguienteTurno();
+	}
+
+	@Override
+	public Jugador getJugadorActivo() {
+		return this.jugadores.get(this.posicion);
+	}
+
+	@Override
+	public Jugador getJugadorInactivo() {
+		return this.jugadores.get((this.posicion + 1) % this.jugadores.size());
 	}
 
 	@Override
 	public String darNombreGanador() {
-		// TODO Auto-generated method stub
+		// Deberia lanzar una excepcion de PartidaEnJuegoException
 		return null;
 	}
 	
-	@Override
-    public Jugador getJugadorInferior() {
-		return jugadores.get(0);
-	}
-	
-	@Override
-    public Jugador getJugadorSuperior() {
-		return jugadores.get(1);
-	}
-
 }

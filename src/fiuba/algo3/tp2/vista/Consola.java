@@ -20,6 +20,9 @@ public class Consola extends VBox{
 	private Text texto;
 	public Consola() {
 
+		setMaxSize(200,510);
+		setMinSize(200,510);
+		
 		setAlignment(Pos.CENTER);
 		
 		Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");

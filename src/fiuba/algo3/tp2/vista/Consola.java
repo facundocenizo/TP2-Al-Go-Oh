@@ -15,7 +15,7 @@ public class Consola extends HBox{
         setMinSize(200, 200);
         setMaxSize(200, 200);
 		
-        this.setStyle("-fx-background-color: grey; ");
+        this.setStyle("-fx-background-color: black; ");
         this.texto = new Text();
 
         texto.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
@@ -25,6 +25,7 @@ public class Consola extends HBox{
 	}
 	
 	public void setText(String unTexto) {
+		this.texto.setFill(Color.WHITE);
 		this.texto.setText(unTexto);
 	}
 }

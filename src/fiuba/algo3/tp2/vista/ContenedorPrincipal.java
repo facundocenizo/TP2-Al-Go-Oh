@@ -3,6 +3,9 @@ package fiuba.algo3.tp2.vista;
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.cartas.Carta;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreCarta;
+import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioCartaCampo;
+import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMagicaTrampa;
+import fiuba.algo3.tp2.vista.eventos.ClickSobreEspacioMonstruo;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -29,6 +32,8 @@ public class ContenedorPrincipal extends BorderPane
     Stage stage;
     Scene siguienteEscena;
     Consola consola;
+    public static Carta cartaSeleccionada;
+    
     public ContenedorPrincipal(Stage stage, Scene siguienteEscena, Juego juego, BarraDeMenu barraMenu)
     {
         this.juego = juego;
@@ -36,6 +41,7 @@ public class ContenedorPrincipal extends BorderPane
         this.barraMenu = barraMenu;
         this.siguienteEscena = siguienteEscena;
         this.consola = new Consola();
+        this.cartaSeleccionada = null;
         
         Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
@@ -156,20 +162,20 @@ public class ContenedorPrincipal extends BorderPane
 		
 		return zona;
 	}
-    public ImageView espacioCarta() {
-    	return new ImageView();
-    }
+   
     public ImageView espacioCartaMagicaTrampa() {
-    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/magica.png");
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMagicaTrampa.jpg");
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMagicaTrampa(imagenCarta));
     	return imagenCarta;
     }
     public ImageView espacioCartaCementerio() {
-    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cementerio.png");
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCementerio.jpg");
 		
     	return imagenCarta;
     }
     public ImageView espacioCartaMonstruo() {
-    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/monstruo.png");
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMonstruo.jpg");
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(imagenCarta));
     	
     	return imagenCarta;
     }
@@ -180,8 +186,8 @@ public class ContenedorPrincipal extends BorderPane
     }
     
     public ImageView espacioCartaCampo() {
-    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartaCampo.png");
-		
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCartaCampo.jpg");
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioCartaCampo(imagenCarta));
     	return imagenCarta;
     }
     
@@ -191,9 +197,9 @@ public class ContenedorPrincipal extends BorderPane
 		HBox hbox = new HBox();
 			
 		VBox vbox = new VBox();
-    	ImageView mazo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/mazo.jpg");
-    	ImageView cementerio = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cementerio.png");
-    	ImageView cartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cartaCampo.png");
+    	ImageView mazo = espacioMazo();
+    	ImageView cementerio = espacioCartaCementerio();
+    	ImageView cartaCampo = espacioCartaCampo();
     	
     	vbox.getChildren().addAll(cartaCampo, cementerio, mazo);//aca agregar mas cosas
     	vbox.setSpacing(10);
@@ -223,13 +229,6 @@ public class ContenedorPrincipal extends BorderPane
     	this.setLeft(vbox);
 	}
 
-	
-	
-	
-	
-	
-	
-	
 	
 	private void inicializarContenedorInferior() {
 		
@@ -286,20 +285,13 @@ public class ContenedorPrincipal extends BorderPane
 
     	descripcionCarta.getChildren().addAll(texto1,textoDescripcion);
     	hbox.setSpacing(70);
-//    	hbox.getChildren().addAll(imagenJugadorUno, vida, cartaSeleccionada, imagenCarta, descripcionCarta);//aca agregar mas cosas
     	hbox.getChildren().addAll(cartasDeLaManoInferior,descripcionCarta, salud, imagenJugadorUno);//aca agregar mas cosas
     	hbox.setAlignment(Pos.TOP_RIGHT);
 		this.setBottom(hbox);
 	}
 
 	private void inicializarContenedorSuperior() {
-		
-		
-		
-
-		
-		
-		
+				
 		HBox hbox = new HBox();
     	ImageView imagenJugadorDos = new ImageView("file:" + 
 	            "src/fiuba/algo3/tp2/vista/imagenes/" +

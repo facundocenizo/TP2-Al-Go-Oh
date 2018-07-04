@@ -19,6 +19,7 @@ public class ClickSobreCartaMagica implements EventHandler<MouseEvent> {
 	@Override
 	public void handle(MouseEvent event) {
 		contenedorPrincipal.setContenedorIzquierdo();
+		ContenedorPrincipal.consola.setText(carta.getDescripcion());
 		Button botonAplicarEfectoMagica = new Button("Aplicar efecto");
         BotonAplicarEfectoMagica aplicarEfectoMagica =
             new BotonAplicarEfectoMagica(carta, contenedorPrincipal);

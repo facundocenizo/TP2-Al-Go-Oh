@@ -16,14 +16,15 @@ public class EfectoFisura implements Efecto {
 		int puntosMasBajos = 9999999;
 		
 		if (listaMonstruos.size() == 0) return;
-		
+
 		for(Monstruo monstruo : listaMonstruos) {
-			if(puntosMasBajos > monstruo.darPuntosDeAtaque()) {
+			if(puntosMasBajos > monstruo.darPuntosDeAtaque() & !monstruo.estaBocaAbajo()) {
 				monstruoMasDebil = monstruo;			
 				puntosMasBajos = monstruo.darPuntosDeAtaque();
 			}
 		}
-		rival.sacarMonstruo(monstruoMasDebil);
+		
+		if (monstruoMasDebil != null) rival.sacarMonstruo(monstruoMasDebil);
 		
 	}
 

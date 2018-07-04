@@ -73,6 +73,7 @@ public class ContenedorPrincipal extends BorderPane {
     }
     
     public void setContenedorPrincipal() {
+    	this.consola.limpiar();
     	this.setContenedorCentral();
     	this.setContenedorIzquierdo();
     	this.setContenedorDerecho();
@@ -287,7 +288,7 @@ public class ContenedorPrincipal extends BorderPane {
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
 		            unaTrampa.getNombre()
 		            + ".jpg");
-			unaImagenTrampa.setOnMouseClicked(new ClickSobreCartaTrampa(this));
+			unaImagenTrampa.setOnMouseClicked(new ClickSobreCartaTrampa(unaTrampa, this));
 			zonaMagicaYTrampaJugadorActivo.getChildren().add(unaImagenTrampa);
 		}
 		int cantidadDeMagicasYTrampas = zonaMagicaYTrampaJugadorActivo.getChildren().size();

@@ -40,6 +40,7 @@ public class ClickSobreEspacioMagicaTrampa implements EventHandler<MouseEvent> {
 			else if(ContenedorPrincipal.cartaSeleccionada.esTrampa()) {
 				Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/"+ContenedorPrincipal.cartaSeleccionada.getNombre()+".jpg");
 				imagenCarta.setImage(imagen);
+				imagenCarta.setOnMouseClicked(new ClickSobreCartaTrampa((Trampa)ContenedorPrincipal.cartaSeleccionada, contenedorPrincipal));
 				//aca agregarle un nuevo evento on mouse click
 				this.jugador.colocarCarta((Trampa) ContenedorPrincipal.cartaSeleccionada);
 				

@@ -16,7 +16,11 @@ public class ClickSobreCartaMonstruoJugadorInactivo implements EventHandler<Mous
 	
 	@Override
 	public void handle(MouseEvent event) {
-		ContenedorPrincipal.consola.setText("ATK: " + monstruo.darPuntosDeAtaque() + "\nDEF: " + monstruo.darPuntosDeDefensa());
+		if (monstruo.estaBocaAbajo()) {
+			ContenedorPrincipal.consola.setText("No es posible ver \ndescripcion.");
+			return;
+		}
+		ContenedorPrincipal.consola.setText("Nombre de la carta:\n" + monstruo.nombre + "\nATK: " + monstruo.darPuntosDeAtaque() + "\nDEF: " + monstruo.darPuntosDeDefensa());
 	}
 
 }

@@ -23,7 +23,7 @@ public class ClickSobreCartaMonstruo implements EventHandler<MouseEvent> {
 	public void handle(MouseEvent event) {
 		contenedorPrincipal.setContenedorIzquierdo();
 		
-		ContenedorPrincipal.consola.setText("ATK: " + monstruo.darPuntosDeAtaque() + "\nDEF: " + monstruo.darPuntosDeDefensa());
+		ContenedorPrincipal.consola.setText("Nombre de la carta:\n" + monstruo.nombre + "\nATK: " + monstruo.darPuntosDeAtaque() + "\nDEF: " + monstruo.darPuntosDeDefensa());
 
 
 		Button botonVoltearCarta = new Button("Voltear carta");

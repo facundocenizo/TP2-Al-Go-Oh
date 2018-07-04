@@ -38,7 +38,7 @@ public class ClickSobreCartaMonstruo implements EventHandler<MouseEvent> {
         
         Button botonAtacar = new Button("Atacar");
         BotonAtacar atacar =
-            new BotonAtacar();
+            new BotonAtacar(monstruo, contenedorPrincipal);
         botonAtacar.setOnAction(atacar);
         
         ContenedorPrincipal.contenedorIzquierdo.getChildren().addAll(botonVoltearCarta, botonCambiarModo, botonAtacar);

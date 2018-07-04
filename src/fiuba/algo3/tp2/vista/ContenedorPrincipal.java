@@ -197,6 +197,28 @@ public class ContenedorPrincipal extends BorderPane {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCementerio.jpg");
 	   	return imagenCarta;
     }
+    
+    public void actualizarContenedorCentral(HBox zonaMonstruosJugadorInactivo) {
+        zonaMonstruosJugadorInactivo.setSpacing(100);
+        zonaMonstruosJugadorInactivo.setAlignment(Pos.CENTER);
+    	
+    	HBox contenedorSeparador = new HBox();
+    	ImageView imagenSeparador = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/logo.png");
+    	imagenSeparador.setFitHeight(80);
+    	imagenSeparador.setFitWidth(240);
+    	contenedorSeparador.getChildren().add(imagenSeparador);
+    	contenedorSeparador.setSpacing(200);
+    	contenedorSeparador.setAlignment(Pos.CENTER);
+        
+		VBox tablero = new VBox();
+    	tablero.setAlignment(Pos.CENTER);
+    	tablero.getChildren().addAll(zonaMonstruosJugadorInactivo, contenedorSeparador, ContenedorPrincipal.zonaMonstruosJugadorActivo, ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo);
+    	
+        Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        tablero.setBackground(new Background(imagenDeFondo));
+        this.setCenter(tablero);
+    }
 
 	public void setContenedorCentral() {
 		ContenedorPrincipal.zonaMonstruosJugadorActivo = this.setZonaMonstruosJugadorActivo();
@@ -287,7 +309,7 @@ public class ContenedorPrincipal extends BorderPane {
 		return zonaMonstruosJugadorActivo;
 	}
 	
-	private ImageView espacioCartaMonstruoJugadorInactivo() {
+	public static ImageView espacioCartaMonstruoJugadorInactivo() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMonstruo.jpg");
     	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruoJugadorInactivo(imagenCarta));
     	return imagenCarta;
@@ -313,6 +335,7 @@ public class ContenedorPrincipal extends BorderPane {
 	public void terminarTurno() {
 		this.juego.terminarTurno();
 		this.juego.siguienteTurno();
+		this.setContenedorPrincipal();
 	}
 
 }

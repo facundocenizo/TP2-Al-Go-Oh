@@ -14,6 +14,5 @@ public class BotonTerminarTurno implements EventHandler<ActionEvent>{
 	@Override
 	public void handle(ActionEvent event) {
 		this.contenedorPrincipal.terminarTurno();
-		this.contenedorPrincipal.setContenedorPrincipal();
 	}
 }

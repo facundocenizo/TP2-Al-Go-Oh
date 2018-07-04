@@ -3,7 +3,7 @@ package fiuba.algo3.tp2.atributosMonstruo;
 import java.util.ArrayList;
 
 import fiuba.algo3.tp2.cartas.Monstruo;
-import fiuba.algo3.tp2.excepciones.CartasMonstruosInsuficientesParaSacrificioException;
+import fiuba.algo3.tp2.excepciones.SeNecesitaUnMonstruoDeMenorNivelParaSacrificarException;
 
 public class Normal implements Nivel {
 
@@ -31,7 +31,7 @@ public class Normal implements Nivel {
 		}
 		
 		if (monstruosASacrificar.size() < 1) {
-			throw new CartasMonstruosInsuficientesParaSacrificioException();
+			throw new SeNecesitaUnMonstruoDeMenorNivelParaSacrificarException();
 		}
 		monstruosASacrificar.get(0).morir();
 	}

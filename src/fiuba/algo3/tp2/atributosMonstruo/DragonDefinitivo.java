@@ -3,7 +3,7 @@ package fiuba.algo3.tp2.atributosMonstruo;
 import java.util.ArrayList;
 
 import fiuba.algo3.tp2.cartas.Monstruo;
-import fiuba.algo3.tp2.excepciones.CartasMonstruosInsuficientesParaSacrificioException;
+import fiuba.algo3.tp2.excepciones.SeNecesitanDosMonstruosDeMenorNivelParaSacrificarException;
 import fiuba.algo3.tp2.excepciones.NoHayTresDragonesBlancosParaInvocarDragonDefinitivoException;
 
 public class DragonDefinitivo implements Nivel {

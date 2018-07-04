@@ -4,6 +4,7 @@ import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
@@ -32,6 +33,19 @@ public class BotonAtacar implements EventHandler<ActionEvent> {
 		for (Monstruo unMonstruo: ContenedorPrincipal.juego.getJugadorInactivo().getMonstruos()) {
 			ImageView unaImagenMonstruo = new ImageView("file:" + 
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
+			Image imagenCarta;
+			if(unMonstruo.estaBocaAbajo()) {
+				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/bocaAbajo.jpg");
+				unaImagenMonstruo.setImage(imagenCarta);
+			}
+			else {
+				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
+				unaImagenMonstruo.setImage(imagenCarta);
+			}
+			if (unMonstruo.estaEnModoAtaque()) {
+				unaImagenMonstruo.setRotate(0);
+			}
+			else unaImagenMonstruo.setRotate(90);
 			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruoASerAtacada(atacante, unMonstruo, contenedorPrincipal));
 			zonaMonstruosJugadorInactivo.getChildren().add(unaImagenMonstruo);
 		}

@@ -31,7 +31,7 @@ public class PrimeraEntregaTest {
 	public void testColocarUnaCartaDeMonstruoEnPosicionDeAtaque() {
 		int puntosDeAtaque = 1000;
 		int puntosDeDefensa = 500;
-		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), puntosDeAtaque, puntosDeDefensa, new SinEfecto(), new SinEfecto());
+		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoAtaque(puntosDeAtaque), new Debil(), puntosDeAtaque, puntosDeDefensa, new SinEfecto(), new SinEfecto());
 		
 		assertTrue(monstruo.estaEnModoAtaque());
 	}
@@ -40,7 +40,7 @@ public class PrimeraEntregaTest {
 	public void testColocarUnaCartaDeMonstruoEnPosicionDeDefensa() {
 		int puntosDeAtaque = 1000;
 		int puntosDeDefensa = 500;
-		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoDefensa(), new Debil(), puntosDeAtaque, puntosDeDefensa, new SinEfecto(), new SinEfecto());
+		Monstruo monstruo = new Monstruo(new BocaArriba(),new ModoDefensa(puntosDeDefensa), new Debil(), puntosDeAtaque, puntosDeDefensa, new SinEfecto(), new SinEfecto());
 		assertFalse(monstruo.estaEnModoAtaque());
 	}
 	
@@ -61,7 +61,7 @@ public class PrimeraEntregaTest {
 	
 	@Test
 	public void testMandarUnaCartaAlCementerio() {
-		Carta carta = new Monstruo(new BocaArriba(),new ModoDefensa(), new Debil(), 1500, 2000, new SinEfecto(), new SinEfecto());
+		Carta carta = new Monstruo(new BocaArriba(),new ModoDefensa(2000), new Debil(), 1500, 2000, new SinEfecto(), new SinEfecto());
 		Cementerio cementerio = new Cementerio();
 		cementerio.agregarCarta(carta);
 		
@@ -72,8 +72,8 @@ public class PrimeraEntregaTest {
 	public void AtacarDosMonstruosEnModoAtaqueElPrimeroMuerePorqueTieneMenosPuntosAtaque() {
 		Jugador jugador1 = new Jugador();	
 		Jugador jugador2 = new Jugador();	
-		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(400), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(500), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
 		
 		monstruoAtacado.aniadirObservador(jugador1);
 		monstruoAtacante.aniadirObservador(jugador2);
@@ -95,8 +95,8 @@ public class PrimeraEntregaTest {
 	public void AtacarDosMonstruosEnModoAtaqueElSegundoMuerePorqueTieneMenosPuntosAtaque() {
 		Jugador jugador1 = new Jugador();	
 		Jugador jugador2 = new Jugador();			
-		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 200, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(400), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(300), new Debil(), 300, 200, new SinEfecto(), new SinEfecto());
 		
 		monstruoAtacado.aniadirObservador(jugador1);
 		monstruoAtacante.aniadirObservador(jugador2);
@@ -185,8 +185,8 @@ public class PrimeraEntregaTest {
 	public void AtacarDosMonstruosEnModoAtaqueAmbosMuerenPorqueTienenIgualPuntosAtaqueNingunJugadorPierdeVida() {
 		Jugador jugador1 = new Jugador();	
 		Jugador jugador2 = new Jugador();	
-		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 400, 200, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoAtaque(400), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(400), new Debil(), 400, 200, new SinEfecto(), new SinEfecto());
 		
 		monstruoAtacado.aniadirObservador(jugador1);
 		monstruoAtacante.aniadirObservador(jugador2);
@@ -207,8 +207,8 @@ public class PrimeraEntregaTest {
 	public void AtacarDosMonstruosEnModoAtaqueYModoDefensaMuereElQueEstaEnDefensaPorqueTieneMenosPuntosDeDefensaQuePuntosDeAtaque() {
 		Jugador jugador1 = new Jugador();	
 		Jugador jugador2 = new Jugador();	
-		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(400), new Debil(), 400, 300, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(500), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
 		
 		monstruoAtacado.aniadirObservador(jugador1);
 		monstruoAtacante.aniadirObservador(jugador2);
@@ -228,8 +228,8 @@ public class PrimeraEntregaTest {
 	public void AtacarDosMonstruosEnModoAtaqueYModoDefensaMuereElAtacanteYaQueTieneMenosPuntosAtaqueQuePuntosDeDefensaDelAtacado() {
 		Jugador jugador1 = new Jugador();	
 		Jugador jugador2 = new Jugador();
-		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacado = new Monstruo(new BocaArriba(),new ModoDefensa(300), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtacante = new Monstruo(new BocaArriba(),new ModoAtaque(500), new Debil(), 500, 200, new SinEfecto(), new SinEfecto());
 		
 		monstruoAtacado.aniadirObservador(jugador1);
 		monstruoAtacante.aniadirObservador(jugador2);
@@ -311,8 +311,8 @@ public class PrimeraEntregaTest {
 	@Test
 	public void MonstruoEnModoDeDefensaNoPuedeAtacar() {
 		
-		Monstruo monstruoDefensa = new Monstruo(new BocaArriba(),new ModoDefensa(), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
-		Monstruo monstruoAtaque = new Monstruo(new BocaArriba(),new ModoAtaque(), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoDefensa = new Monstruo(new BocaArriba(),new ModoDefensa(300), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
+		Monstruo monstruoAtaque = new Monstruo(new BocaArriba(),new ModoAtaque(300), new Debil(), 300, 600, new SinEfecto(), new SinEfecto());
 		
 		assertThrows(MonstruoEnModoDefensaNoPuedeAtacarException.class,
                 ()->{
@@ -321,4 +321,19 @@ public class PrimeraEntregaTest {
 		
 	}
 	
+	@Test
+    public void AtacarAHuevoEnModoDefensaConMonstruoEnModoAtaqueConMenosPuntosNoMataAlHuevo() {
+
+       Monstruo huevo = FabricaCartaMonstruo.HUEVOMONSTRUOSO.crear();
+       Monstruo piernaDerecha = FabricaCartaMonstruo.PIERNADERECHA.crear();
+       
+       huevo.cambiarModo();
+       
+       piernaDerecha.atacar(huevo);
+       
+       assertFalse(piernaDerecha.estaMuerta());
+       assertFalse(huevo.estaMuerta());
+
+    }
+
 }

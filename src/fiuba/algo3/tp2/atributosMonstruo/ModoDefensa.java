@@ -8,6 +8,10 @@ public class ModoDefensa implements Modo {
 	private int puntosDeDefensa;
 	
 
+	public ModoDefensa(int puntosDeDefensa) {
+		this.puntosDeDefensa = puntosDeDefensa;
+	}
+
 	@Override
 	public boolean estaEnModoAtaque() {
 		return false;

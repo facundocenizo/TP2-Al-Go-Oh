@@ -136,9 +136,9 @@ public class Monstruo extends Carta{
 	
 	public void cambiarModo() {
 		if(this.modo.estaEnModoAtaque())
-			this.modo = new ModoDefensa();
+			this.modo = new ModoDefensa(this.puntosDeDefensa);
 		else
-			this.modo = new ModoAtaque();
+			this.modo = new ModoAtaque(this.puntosDeAtaque);
 	}
 
 

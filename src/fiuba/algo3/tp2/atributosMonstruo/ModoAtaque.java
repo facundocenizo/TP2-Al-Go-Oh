@@ -6,6 +6,10 @@ public class ModoAtaque implements Modo {
 	
 	private int puntosDeAtaque;
 
+	public ModoAtaque(int puntosDeAtaque) {
+		this.puntosDeAtaque = puntosDeAtaque;
+	}
+
 	@Override
 	public boolean estaEnModoAtaque() {
 		return true;

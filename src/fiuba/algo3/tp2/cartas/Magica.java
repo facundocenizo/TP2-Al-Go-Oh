@@ -21,5 +21,24 @@ public class Magica extends Carta{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public Boolean esMonstruo() {
+		return false;
+	}
+
+	@Override
+	public Boolean esMagica() {
+		return true;
+	}
+	@Override
+	public Boolean esTrampa() {
+		return false;
+	}
+
+	@Override
+	public Boolean esCartaCampo() {
+		return false;
+	}
 	
 }

@@ -21,4 +21,24 @@ public class Trampa extends Carta{
 		efecto.aplicarEfecto(atacante, atacado);		
 	}
 
+	@Override
+	public Boolean esMonstruo() {
+		return false;
+	}
+
+	@Override
+	public Boolean esMagica() {
+		return false;
+	}
+	
+	@Override
+	public Boolean esTrampa() {
+		return true;
+	}
+
+	@Override
+	public Boolean esCartaCampo() {
+		return false;
+	}
+
 }

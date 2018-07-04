@@ -103,6 +103,29 @@ public class Monstruo extends Carta{
 		this.nivel.manejarSacrificiosPorEsteMonstruo(zonaMonstruos);
 		
 	}
+
+
+	@Override
+	public Boolean esMonstruo() {
+		return true;
+	}
+
+
+	@Override
+	public Boolean esMagica() {
+		return false;
+	}
+	
+	@Override
+	public Boolean esTrampa() {
+		return false;
+	}
+
+
+	@Override
+	public Boolean esCartaCampo() {
+		return false;
+	}
 	
 
 

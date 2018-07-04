@@ -68,4 +68,10 @@ public abstract class Carta implements SujetoCartaObservable,Efecto{
 		return this.descripcion;
 	}
 	
+	public abstract Boolean esMonstruo();
+	public abstract Boolean esMagica();
+	public abstract Boolean esTrampa();
+	public abstract Boolean esCartaCampo();
+	
+	
 }

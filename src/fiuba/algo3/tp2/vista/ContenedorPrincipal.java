@@ -2,7 +2,6 @@ package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.cartas.Carta;
-import fiuba.algo3.tp2.cartas.CartaCampo;
 import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
@@ -108,7 +107,7 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setTop(contenedorVerticalArriba);
 	}
 
-	private void setContenedorAbajo() {
+	public void setContenedorAbajo() {
 		HBox contenedorAbajo = new HBox();
     	
     	VBox salud = new VBox();
@@ -135,7 +134,7 @@ public class ContenedorPrincipal extends BorderPane {
     	            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
     				carta.getNombre()
     	            + ".jpg");
-    		unaImagenCarta.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta, consola));
+    		unaImagenCarta.setOnMouseClicked(new ClickSobreCarta(textoDescripcion, carta));
     		cartasEnManoJugadorActivo.getChildren().add(unaImagenCarta);
     	}
     	
@@ -159,8 +158,8 @@ public class ContenedorPrincipal extends BorderPane {
     	mazoCementerioYCampoJugadorActivo.setPadding(new Insets(70));
     	mazoCementerioYCampoJugadorActivo.setAlignment(Pos.BOTTOM_CENTER);
     	
-    	this.setRight(mazoCementerioYCampoJugadorActivo);
     	ContenedorPrincipal.mazoCementerioYCampoJugadorActivo = mazoCementerioYCampoJugadorActivo;
+    	this.setRight(mazoCementerioYCampoJugadorActivo);
 	}
 	
 	private ImageView espacioMazo() {
@@ -169,16 +168,9 @@ public class ContenedorPrincipal extends BorderPane {
     }
     
     private ImageView espacioCartaCampo() {
-    	ImageView imagenCartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCartaCampo.jpg");
-    	imagenCartaCampo.setOnMouseClicked(new ClickSobreEspacioCartaCampo(this.juego.getJugadorActivo(), imagenCartaCampo));	
-    	for (CartaCampo unaCartaCampo: juego.getJugadorActivo().getCartaCampo()) {
-			imagenCartaCampo = new ImageView("file:" + 
-		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
-		            unaCartaCampo.getNombre()
-		            + ".jpg");
-			imagenCartaCampo.setOnMouseClicked(new ClickSobreCartaCampo());
-    	}
-		return imagenCartaCampo;
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCartaCampo.jpg");
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioCartaCampo(juego.getJugadorActivo(), imagenCarta));
+    	return imagenCarta;
     }
     
     private ImageView espacioCartaCementerio() {
@@ -246,13 +238,13 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	private ImageView espacioCartaMagicaTrampa() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMagicaTrampa.jpg");
-    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMagicaTrampa(juego.getJugadorActivo(), imagenCarta));
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMagicaTrampa(juego.getJugadorActivo(), imagenCarta, this));
     	return imagenCarta;
     }
 
 	private ImageView espacioCartaMonstruoJugadorActivo() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMonstruo.jpg");
-    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(juego.getJugadorActivo(), imagenCarta));
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(juego.getJugadorActivo(), imagenCarta, this));
     	return imagenCarta;
     }
 	

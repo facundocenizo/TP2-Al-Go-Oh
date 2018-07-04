@@ -115,8 +115,7 @@ public enum FabricaCartaMonstruo {
 					+ "Efecto: destruye un monstruo\r\n" + 
 					"en el campo. Unicamente puede\r\n" + 
 					"activarse cuando esta carta pasa\r\n" + 
-					"de estar boca abajo a boca arriba.\r\n" + 
-					"");
+					"de estar boca abajo a boca arriba.");
 			return cartaMonstruo;
 		}
 	},

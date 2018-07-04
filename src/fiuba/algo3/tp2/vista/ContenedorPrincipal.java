@@ -169,7 +169,7 @@ public class ContenedorPrincipal extends BorderPane {
     
     private ImageView espacioCartaCampo() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCartaCampo.jpg");
-    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioCartaCampo(juego.getJugadorActivo(), imagenCarta));
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioCartaCampo(juego.getJugadorActivo(), imagenCarta, this));
     	return imagenCarta;
     }
     

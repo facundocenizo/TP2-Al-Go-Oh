@@ -165,8 +165,10 @@ public class LadoDelCampo {
 	}
 
 	public void colocarTrampa(CartaCampo cartaCampo) {
-		if (this.cartaDeCampo.size() == 1) {
-			throw new ZonaDeCampoLlenaException();
+		if(this.cartaDeCampo.size()>0) {
+			CartaCampo carta = this.cartaDeCampo.get(0);
+			cementerio.agregarCarta(carta);
+		this.cartaDeCampo = new ArrayList<CartaCampo>();
 		}
 		this.cartaDeCampo.add(cartaCampo);
 	}

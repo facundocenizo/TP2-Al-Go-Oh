@@ -188,6 +188,28 @@ public class LadoDelCampo {
 		
 	}
 
+	public void limpiarZonaMagicaYTrampa() {
+		Iterator<Magica> iteradorMagicas = this.cartasMagicas.iterator();
+        while (iteradorMagicas.hasNext()) {
+            Magica magica = iteradorMagicas.next();
+            if (magica.estaMuerta()) {
+                this.cementerio.agregarCarta(magica);
+                iteradorMagicas.remove();
+                
+            }
+        }
+        
+        Iterator<Trampa> iteradorTrampa = this.cartasTrampa.iterator();
+        while (iteradorTrampa.hasNext()) {
+            Trampa trampa = iteradorTrampa.next();
+            if (trampa.estaMuerta()) {
+                this.cementerio.agregarCarta(trampa);
+                iteradorTrampa.remove();
+                
+            }
+        }
+	}
+	
 	public void terminarTurno() {
 		Iterator<Monstruo> iteradorMonstruo = this.zonaMonstruos.iterator();
         while (iteradorMonstruo.hasNext()) {

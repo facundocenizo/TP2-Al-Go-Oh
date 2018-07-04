@@ -39,7 +39,7 @@ import javafx.stage.Stage;
 
 public class ContenedorPrincipal extends BorderPane {
 	private BarraDeMenu barraMenu;
-    private Juego juego;
+    public static Juego juego;
     private Stage stage;
     private Scene siguienteEscena;
     public static Consola consola;
@@ -229,7 +229,7 @@ public class ContenedorPrincipal extends BorderPane {
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
 		            unaMagica.getNombre()
 		            + ".jpg");
-			unaImagenMagica.setOnMouseClicked(new ClickSobreCartaMagica(this));
+			unaImagenMagica.setOnMouseClicked(new ClickSobreCartaMagica(this, unaMagica));
 			zonaMagicaYTrampaJugadorActivo.getChildren().add(unaImagenMagica);
 		}
 		for (Trampa unaTrampa: juego.getJugadorActivo().getTrampas()) {

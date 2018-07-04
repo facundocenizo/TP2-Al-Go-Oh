@@ -198,4 +198,8 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 		this.ladoDelCampo.llevarMonstruosMuertosAlCementerio();
 	}
 
+	public LadoDelCampo getLadoDelCampo() {
+		return this.ladoDelCampo;
+	}
+
 }

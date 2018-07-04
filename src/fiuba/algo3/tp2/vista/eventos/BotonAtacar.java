@@ -19,6 +19,13 @@ public class BotonAtacar implements EventHandler<ActionEvent> {
 	
 	@Override
 	public void handle(ActionEvent event) {
+		
+		if (ContenedorPrincipal.juego.getJugadorInactivo().getMonstruos().size() == 0) {
+			ContenedorPrincipal.juego.getJugadorActivo().atacar(atacante, null);
+			contenedorPrincipal.terminarTurno();
+			return;
+		}
+		
 		ContenedorPrincipal.consola.setText("Selecciona el \nmonstruo a atacar");
 		
 		HBox zonaMonstruosJugadorInactivo = new HBox(); 

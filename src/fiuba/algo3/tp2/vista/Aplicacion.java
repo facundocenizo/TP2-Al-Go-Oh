@@ -28,11 +28,11 @@ import javafx.scene.media.AudioClip;
 	        Juego juego = new Juego();
 	        stage.setTitle("Al-Go-Oh!");
 	       
-	      //ContenedorVictoria contenedorVictoria = new ContenedorVictoria(stage, audioIntro);
-	      //Scene escenaVictoria = new Scene(contenedorVictoria, 640, 480);
+	        ContenedorVictoria contenedorVictoria = new ContenedorVictoria(stage, audioIntro);
+	        Scene escenaVictoria = new Scene(contenedorVictoria, 640, 480);
 	        
 	        ContenedorPrincipal contenedorPrincipal = 
-	        		new ContenedorPrincipal(stage, null, juego, barraMenu);
+	        		new ContenedorPrincipal(stage, escenaVictoria, juego, barraMenu);
 	        
 	        ScrollPane scroll = new ScrollPane();
 	        scroll.setContent(contenedorPrincipal);

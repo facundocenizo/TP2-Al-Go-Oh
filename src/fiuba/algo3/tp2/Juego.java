@@ -38,6 +38,10 @@ public class Juego implements ObservadorDeJugador {
 		return jugadores;
     }
     
+    public String darNombreGanador( ) {
+    	return this.estado.darNombreGanador();
+    }
+    
     public boolean hayGanador() {
     	return this.estado.hayGanador();
     }

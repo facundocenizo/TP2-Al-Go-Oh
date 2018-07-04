@@ -335,7 +335,12 @@ public class ContenedorPrincipal extends BorderPane {
 	public void terminarTurno() {
 		this.juego.terminarTurno();
 		this.juego.siguienteTurno();
-		this.setContenedorPrincipal();
+		if (this.juego.hayGanador()) {
+			stage.setScene(siguienteEscena);
+            stage.setFullScreenExitHint("");
+            stage.setFullScreen(true);
+		}
+		else this.setContenedorPrincipal();
 	}
 
 }

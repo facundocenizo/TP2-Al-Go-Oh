@@ -21,6 +21,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -149,7 +150,13 @@ public class ContenedorPrincipal extends BorderPane {
     	ContenedorPrincipal.cartasEnManoJugadorActivo = cartasEnManoJugadorActivo;
     	descripcionCarta.getChildren().addAll(texto1,textoDescripcion);
     	contenedorAbajo.setSpacing(70);
-    	contenedorAbajo.getChildren().addAll(ContenedorPrincipal.cartasEnManoJugadorActivo, descripcionCarta, salud, juego.getJugadorActivo().darImagen());
+    	ScrollPane scrollCartas = new ScrollPane();
+    	scrollCartas.setContent(ContenedorPrincipal.cartasEnManoJugadorActivo);
+    	scrollCartas.setMaxSize(440,135);
+    	scrollCartas.setMinSize(440,135);
+    	scrollCartas.setHvalue(1);
+    	
+    	contenedorAbajo.getChildren().addAll(scrollCartas, descripcionCarta, salud, juego.getJugadorActivo().darImagen());
     	contenedorAbajo.setAlignment(Pos.TOP_RIGHT);
 		this.setBottom(contenedorAbajo);
 	}

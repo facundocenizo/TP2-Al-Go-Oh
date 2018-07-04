@@ -27,11 +27,13 @@ public class ContenedorVictoria extends VBox{
 
             super();
             audioViejo = audio;
+            
+           
 
             this.setAlignment(Pos.CENTER);
-            this.setSpacing(20);
-            this.setPadding(new Insets(480, 50, 50, 50));
-           	Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/imagenesVictoria.jpg");
+            this.setSpacing(300);
+            this.setPadding(new Insets(150, 50, 50, 50));
+           	Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/ganaste.jpg");
             BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
             this.setBackground(new Background(imagenDeFondo));
 
@@ -41,8 +43,8 @@ public class ContenedorVictoria extends VBox{
             botonAceptar.setFont(Font.font("Courier New",FontWeight.BOLD, 72));
             botonAceptar.setStyle("-fx-base: #123400");
             
-            etiqueta.setFont(Font.font("Courier New",FontWeight.BOLD, 60));
-            etiqueta.setTextFill(Color.ORANGE);
+            etiqueta.setFont(Font.font("Courier New",FontWeight.BOLD, 100));
+            etiqueta.setTextFill(Color.GRAY);
             
             BotonSalirEventHandler botonVictoria = new BotonSalirEventHandler();
             botonAceptar.setOnAction(botonVictoria);
@@ -56,7 +58,7 @@ public class ContenedorVictoria extends VBox{
         public static void recibirGanador(String ganador){
         	etiqueta.setText("Ganador: " + ganador);
         	audioViejo.stop();
-        	AudioClip audioVictoria = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/musicaFondo.mp3");
+        	AudioClip audioVictoria = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/musicaFin.mp3");
     	    audioVictoria.play();
         }
 }

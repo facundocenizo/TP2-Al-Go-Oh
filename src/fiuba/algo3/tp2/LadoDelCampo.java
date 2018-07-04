@@ -158,7 +158,7 @@ public class LadoDelCampo {
 		if (monstruo.tieneEfectoDefensa()) {
 			this.atacable = new DefensaConEfecto(monstruo);
 		}
-		else this.atacable = new DefensaNormal();s
+		else this.atacable = new DefensaNormal();
 	}
 	
 	private void recibirAtaque(Monstruo atacante, Monstruo atacado) {

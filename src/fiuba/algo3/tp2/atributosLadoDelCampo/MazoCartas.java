@@ -82,10 +82,6 @@ public class MazoCartas {
 	}
 	
 	public Carta sacarCarta() {
-		
-		if (mazo.size()==0) {
-			throw new MazoVacioException();
-		}
 
 		Random rand = new Random();
 		int numeroCartasEnElMazo = mazo.size();

@@ -21,7 +21,7 @@ public class MazoTest {
 		Juego juego = new Juego();
 		Jugador jugador = juego.siguienteTurno();
 
-		for(int i= 0; i<35 ; i++) {
+		for(int i= 0; i<34 ; i++) {
 			jugador.tomarCartaDelMazo();
 			cartasDelJugador = jugador.darCartasDeLaMano();
 			

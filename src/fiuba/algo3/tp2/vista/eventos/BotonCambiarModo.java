@@ -23,7 +23,6 @@ public class BotonCambiarModo implements EventHandler<ActionEvent> {
 		
 	@Override
 	public void handle(ActionEvent event) {
-
 		this.monstruo.cambiarModo();
 		
 		HBox zonaMonstruosJugadorActivo = new HBox(); 

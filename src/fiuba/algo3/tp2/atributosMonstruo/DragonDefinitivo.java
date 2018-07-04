@@ -40,6 +40,11 @@ public class DragonDefinitivo implements Nivel {
 		monstruosASacrificar.get(1).morir();
 		monstruosASacrificar.get(2).morir();
 	}
+
+	@Override
+	public boolean esDragonDefinitivo() {
+		return true;
+	}
 	
 
 }

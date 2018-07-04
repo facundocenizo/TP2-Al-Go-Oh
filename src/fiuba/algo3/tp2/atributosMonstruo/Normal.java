@@ -36,4 +36,10 @@ public class Normal implements Nivel {
 		monstruosASacrificar.get(0).morir();
 	}
 
+	@Override
+	public boolean esDragonDefinitivo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

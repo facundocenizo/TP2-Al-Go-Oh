@@ -37,4 +37,10 @@ public class Poderoso implements Nivel {
 		monstruosASacrificar.get(1).morir();
 	}
 
+	@Override
+	public boolean esDragonDefinitivo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

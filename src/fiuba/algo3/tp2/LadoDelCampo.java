@@ -90,12 +90,14 @@ public class LadoDelCampo {
 	}
 	
 	public void llevarMonstruosMuertosAlCementerio() {
-		for (Monstruo monstruo: zonaMonstruos) {
-			if (monstruo.estaMuerta()) {
-				cementerio.agregarCarta(monstruo);
-				zonaMonstruos.remove(monstruo);
-			}
-		}
+		Iterator<Monstruo> iteradorMonstruo = this.zonaMonstruos.iterator();
+        while (iteradorMonstruo.hasNext()) {
+            Monstruo monstruo = iteradorMonstruo.next();
+            if (monstruo.estaMuerta()) {
+                this.cementerio.agregarCarta(monstruo);
+                iteradorMonstruo.remove();   
+            }
+        }
 	}
 
 	public ArrayList<Monstruo> verMonstruosRivales() {
@@ -164,11 +166,11 @@ public class LadoDelCampo {
 		this.atacable.recibirAtaque(atacante, atacado);
 	}
 
-	public void colocarTrampa(CartaCampo cartaCampo) {
+	public void colocarCartaCampo(CartaCampo cartaCampo) {
 		if(this.cartaDeCampo.size()>0) {
 			CartaCampo carta = this.cartaDeCampo.get(0);
 			cementerio.agregarCarta(carta);
-		this.cartaDeCampo = new ArrayList<CartaCampo>();
+			this.cartaDeCampo = new ArrayList<CartaCampo>();
 		}
 		this.cartaDeCampo.add(cartaCampo);
 	}

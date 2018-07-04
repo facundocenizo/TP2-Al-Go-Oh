@@ -22,7 +22,9 @@ public class EnJuego implements EstadoDeJuego {
 	@Override
 	public Jugador siguienteTurno() {
 		this.posicion = (this.posicion + 1) % this.jugadores.size();
-    	return jugadores.get(this.posicion);
+    	Jugador jugador = jugadores.get(this.posicion);
+    	jugador.tomarCartaDelMazo();
+    	return jugador;
 	}
 
 	@Override

@@ -126,6 +126,11 @@ public class Monstruo extends Carta{
 	public Boolean esCartaCampo() {
 		return false;
 	}
+
+
+	public boolean esDragonDefinitivo() {
+		return nivel.esDragonDefinitivo();
+	}
 	
 
 

@@ -20,8 +20,8 @@ public class Consola extends VBox{
 	private Text texto;
 	public Consola() {
 
-		setMaxSize(200,510);
-		setMinSize(200,510);
+		setMaxSize(200,300);
+		setMinSize(200,300);
 		
 		setAlignment(Pos.CENTER);
 		

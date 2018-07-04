@@ -28,13 +28,17 @@ public class ClickSobreEspacioMonstruo implements EventHandler<MouseEvent> {
 		if(ContenedorPrincipal.cartaSeleccionada != null) {
 			if(ContenedorPrincipal.cartaSeleccionada.esMonstruo()) {
 				Monstruo monstruo = (Monstruo) ContenedorPrincipal.cartaSeleccionada;		
-				
-				//aca agregarle un nuevo evento on mouse click
+			
 				try {
 					this.jugador.colocarCarta((Monstruo) ContenedorPrincipal.cartaSeleccionada);
 					Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/"+monstruo.getNombre()+".jpg");
 					imagenCarta.setImage(imagen);
+					imagenCarta.setOnMouseClicked(new ClickSobreCartaMonstruo(jugador, contenedorPrincipal, monstruo));
 					ContenedorPrincipal.cartasEnManoJugadorActivo.getChildren().remove(monstruo);
+					if (monstruo.esNormal() || monstruo.esPoderoso() || monstruo.esDragonDefinitivo()) {
+						jugador.llevarMonstruosMuertosAlCementerio();
+						contenedorPrincipal.setContenedorCentral();
+					}
 					ContenedorPrincipal.consola.limpiar();
 				}
 				catch (SeNecesitanDosMonstruosDeMenorNivelParaSacrificarException excepcion) {

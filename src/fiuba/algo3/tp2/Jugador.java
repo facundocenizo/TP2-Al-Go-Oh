@@ -11,6 +11,7 @@ import fiuba.algo3.tp2.cartas.CartaCampo;
 import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
+import fiuba.algo3.tp2.fabricas.FabricaCartaCampo;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 
@@ -86,7 +87,7 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	}
 	
 	public void colocarCarta(CartaCampo cartaCampo) {
-		this.ladoDelCampo.colocarTrampa(cartaCampo);
+		this.ladoDelCampo.colocarCartaCampo(cartaCampo);
 		this.cartasEnMano.remove(cartaCampo);
 	}
 	
@@ -191,6 +192,10 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 
 	public ArrayList<CartaCampo> getCartaCampo() {
 		return this.ladoDelCampo.getCartaCampo();
+	}
+	
+	public void llevarMonstruosMuertosAlCementerio() {
+		this.ladoDelCampo.llevarMonstruosMuertosAlCementerio();
 	}
 
 }

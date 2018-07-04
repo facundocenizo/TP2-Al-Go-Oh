@@ -14,7 +14,9 @@ public enum FabricaCartaCampo {
 			Efecto efecto = new EfectoWasteland();
 			CartaCampo cartaCampo = new CartaCampo(efecto);
 			cartaCampo.setNombre("wasteland");
-			cartaCampo.setDescripcion("Efecto: aumenta en 200\r\n" + 
+			cartaCampo.setDescripcion("Nombre: Wasteland\n"
+					+ "Tipo de carta: Campo\n"
+					+ "Efecto: aumenta en 200\r\n" + 
 					"puntos el ataque de tus monstruos, \r\n" + 
 					"y 300 puntos la defensa de los\r\n" + 
 					"monstruos de tu oponente.\r\n" + 
@@ -28,7 +30,9 @@ public enum FabricaCartaCampo {
 			Efecto efecto = new EfectoSogen();
 			CartaCampo cartaCampo = new CartaCampo(efecto);
 			cartaCampo.setNombre("sogen");
-			cartaCampo.setDescripcion("Efecto: aumenta en 500\r\n" + 
+			cartaCampo.setDescripcion("Nombre: Sogen\n"
+					+ "Tipo de carta: Campo\n"
+					+ "Efecto: aumenta en 500\r\n" + 
 					"los puntos de defensa de tus\r\n" + 
 					"monstruos, y 200 los puntos de \r\n" + 
 					"ataque de los monstruos de \r\n" + 

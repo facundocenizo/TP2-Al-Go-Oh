@@ -320,15 +320,17 @@ public class ContenedorPrincipal extends BorderPane {
 		            + ".jpg");
 			Image imagenCarta;
 			if(unMonstruo.estaBocaAbajo()) {
-				//unaImagenMonstruo.setRotate(90);
 				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/bocaAbajo.jpg");
 				unaImagenMonstruo.setImage(imagenCarta);
 			}
 			else {
-				//unaImagenMonstruo.setRotate(0);
 				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
 				unaImagenMonstruo.setImage(imagenCarta);		
 			}
+			if (unMonstruo.estaEnModoAtaque()) {
+				unaImagenMonstruo.setRotate(0);
+			}
+			else unaImagenMonstruo.setRotate(90);
 			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruo(this.juego.getJugadorActivo(), this, unMonstruo));
 			zonaMonstruosJugadorActivo.getChildren().add(unaImagenMonstruo);
 		}
@@ -354,17 +356,17 @@ public class ContenedorPrincipal extends BorderPane {
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
 			Image imagenCarta;
 			if(unMonstruo.estaBocaAbajo()) {
-				//unaImagenMonstruo.setRotate(90);
 				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/bocaAbajo.jpg");
 				unaImagenMonstruo.setImage(imagenCarta);
 			}
 			else {
-				//unaImagenMonstruo.setRotate(0);
 				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
 				unaImagenMonstruo.setImage(imagenCarta);
 			}
-			
-			
+			if (unMonstruo.estaEnModoAtaque()) {
+				unaImagenMonstruo.setRotate(0);
+			}
+			else unaImagenMonstruo.setRotate(90);
 			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruoJugadorInactivo(unMonstruo));
 			zonaMonstruosJugadorInactivo.getChildren().add(unaImagenMonstruo);
 		}

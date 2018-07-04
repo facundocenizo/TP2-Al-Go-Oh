@@ -29,21 +29,22 @@ public class BotonVoltearCarta implements EventHandler<ActionEvent> {
 		
 		HBox zonaMonstruosJugadorActivo = new HBox(); 
 		for (Monstruo unMonstruo: ContenedorPrincipal.juego.getJugadorActivo().getMonstruos()) {
-			ImageView unaImagenMonstruo = new ImageView("file:" + 
-		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
+			ImageView unaImagenMonstruo = new ImageView();
 			Image imagenCarta;
 			if(unMonstruo.estaBocaAbajo()) {
-				//unaImagenMonstruo.setRotate(90);
 				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/bocaAbajo.jpg");
 				unaImagenMonstruo.setImage(imagenCarta);
 				ContenedorPrincipal.consola.setText(monstruo.getNombre()+"\nCambio a boca Abajo");
 			}
 			else{
-				//unaImagenMonstruo.setRotate(0);
 				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
 				unaImagenMonstruo.setImage(imagenCarta);
 				ContenedorPrincipal.consola.setText(monstruo.getNombre()+"\nCambio a boca Arriba");
 			}
+			if (unMonstruo.estaEnModoAtaque()) {
+				unaImagenMonstruo.setRotate(0);
+			}
+			else unaImagenMonstruo.setRotate(90);
 			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruo(jugador, contenedorPrincipal, unMonstruo));
 			zonaMonstruosJugadorActivo.getChildren().add(unaImagenMonstruo);
 		}

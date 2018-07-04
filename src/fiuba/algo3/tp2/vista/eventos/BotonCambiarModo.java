@@ -27,8 +27,16 @@ public class BotonCambiarModo implements EventHandler<ActionEvent> {
 		
 		HBox zonaMonstruosJugadorActivo = new HBox(); 
 		for (Monstruo unMonstruo: ContenedorPrincipal.juego.getJugadorActivo().getMonstruos()) {
-			ImageView unaImagenMonstruo = new ImageView("file:" + 
-		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
+			ImageView unaImagenMonstruo = new ImageView();
+			Image imagenCarta;
+			if(unMonstruo.estaBocaAbajo()) {
+				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/bocaAbajo.jpg");
+				unaImagenMonstruo.setImage(imagenCarta);
+			}
+			else{
+				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
+				unaImagenMonstruo.setImage(imagenCarta);
+			}
 			if(unMonstruo.estaEnModoAtaque()) {
 				unaImagenMonstruo.setRotate(0);
 				ContenedorPrincipal.consola.setText(monstruo.getNombre()+"\nCambio a modo Ataque");

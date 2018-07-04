@@ -43,8 +43,8 @@ public class ContenedorVictoria extends VBox{
             botonAceptar.setFont(Font.font("Courier New",FontWeight.BOLD, 72));
             botonAceptar.setStyle("-fx-base: #123400");
             
-            etiqueta.setFont(Font.font("Courier New",FontWeight.BOLD, 40));
-            etiqueta.setFill(Color.GRAY);
+            etiqueta.setFont(Font.font("Courier New",FontWeight.BOLD, 50));
+            etiqueta.setFill(Color.WHITE);
             
             BotonSalirEventHandler botonVictoria = new BotonSalirEventHandler();
             botonAceptar.setOnAction(botonVictoria);

@@ -24,7 +24,10 @@ public class EfectoInsectoComeHombres implements Efecto, EfectoDefensa {
 
 	@Override
 	public boolean tieneEfectoDefensa() {
-		return true;
+		if (!aplicado) {
+			return true;
+		}
+		return false;
 	}
 
 

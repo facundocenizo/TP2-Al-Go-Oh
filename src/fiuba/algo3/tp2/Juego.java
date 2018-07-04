@@ -42,6 +42,10 @@ public class Juego implements ObservadorDeJugador {
     	return this.estado.darNombreGanador();
     }
     
+    public String darMotivoGanador() {
+    	return this.estado.darMotivoGanador();
+    }
+    
     public boolean hayGanador() {
     	return this.estado.hayGanador();
     }
@@ -63,9 +67,7 @@ public class Juego implements ObservadorDeJugador {
     }
 
 	@Override
-	public void actualizar(Jugador jugador) {
-		this.estado = new PartidaTerminada(jugador);
-	}
-    
-	
+	public void actualizar(Jugador jugador, String motivo) {
+		this.estado = new PartidaTerminada(jugador, motivo);
+	}    
 }

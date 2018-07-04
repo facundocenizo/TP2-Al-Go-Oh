@@ -4,7 +4,6 @@ import fiuba.algo3.tp2.vista.eventos.BotonSalirEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -16,11 +15,12 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ContenedorVictoria extends VBox{
 	
-        private static Label etiqueta = new Label("");
+        private static Text etiqueta = new Text("");
         private static AudioClip audioViejo;
 
         public ContenedorVictoria(Stage stage, AudioClip audio) {
@@ -43,8 +43,8 @@ public class ContenedorVictoria extends VBox{
             botonAceptar.setFont(Font.font("Courier New",FontWeight.BOLD, 72));
             botonAceptar.setStyle("-fx-base: #123400");
             
-            etiqueta.setFont(Font.font("Courier New",FontWeight.BOLD, 100));
-            etiqueta.setTextFill(Color.GRAY);
+            etiqueta.setFont(Font.font("Courier New",FontWeight.BOLD, 40));
+            etiqueta.setFill(Color.GRAY);
             
             BotonSalirEventHandler botonVictoria = new BotonSalirEventHandler();
             botonAceptar.setOnAction(botonVictoria);
@@ -55,10 +55,10 @@ public class ContenedorVictoria extends VBox{
             stage.show();
         }
         
-        public static void recibirGanador(String ganador){
-        	etiqueta.setText("Ganador: " + ganador);
+        public static void recibirGanador(String ganador, String motivo){
+        	etiqueta.setText("Ganador: " + ganador + "\nMotivo: " + motivo);
         	audioViejo.stop();
         	AudioClip audioVictoria = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/musicaFin.mp3");
-    	    audioVictoria.play();
+    	   // audioVictoria.play();
         }
 }

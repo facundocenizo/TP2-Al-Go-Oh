@@ -48,5 +48,11 @@ public class EnJuego implements EstadoDeJuego {
 		// Deberia lanzar una excepcion de PartidaEnJuegoException
 		return null;
 	}
+
+	@Override
+	public String darMotivoGanador() {
+		// Deberia lanzar una excepcion de PartidaEnJuegoException
+		return null;
+	}
 	
 }

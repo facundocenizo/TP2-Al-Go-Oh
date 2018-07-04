@@ -7,4 +7,5 @@ public interface EstadoDeJuego {
 	public Jugador getJugadorActivo();
 	public Jugador getJugadorInactivo();
 	public String darNombreGanador();
+	public String darMotivoGanador();
 }

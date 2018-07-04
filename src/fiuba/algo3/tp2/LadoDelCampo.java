@@ -251,15 +251,17 @@ public class LadoDelCampo {
             }
         }
         
-		if (this.mazoCartas.estaVacio() || this.jugador.darVida() <= 0) {
+		if (this.mazoCartas.estaVacio())
 			
-			this.otroLado.hasGanado();
+			this.otroLado.hasGanado("Tu oponente se quedo \nsin cartas en el mazo");
+		else if (this.jugador.darVida() <= 0) {
+			this.otroLado.hasGanado("Tu oponente se quedo \nsin vida");
 		}
 		
 	}
 
-	public void hasGanado() {
-		this.jugador.hasGanado();
+	public void hasGanado(String motivo) {
+		this.jugador.hasGanado(motivo);
 	}
 
 	public ArrayList<Magica> getMagicas() {

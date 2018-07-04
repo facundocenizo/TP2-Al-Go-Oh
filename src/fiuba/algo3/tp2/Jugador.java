@@ -24,6 +24,7 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	private LadoDelCampo ladoDelCampo;
 	private boolean ganador;
 	private ObservadorDeJugador observador;
+	private String motivo;
 	
 	
 	public Jugador() {
@@ -115,6 +116,7 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 		}
 		if (partesExodia==5) {
 			this.ganador = true;
+			this.motivo = "Conseguiste las 5 partes \nde Exodia en tu mano";
 			this.notificar();
 		}
 	}
@@ -165,8 +167,9 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 		this.ladoDelCampo.terminarTurno();
 	}
 
-	public void hasGanado() {
+	public void hasGanado(String motivo) {
 		this.ganador = true;
+		this.motivo = motivo;
 		this.notificar();
 		
 	}
@@ -178,8 +181,7 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 
 	@Override
 	public void notificar() {
-		this.observador.actualizar(this);
-		
+		this.observador.actualizar(this, this.motivo);
 	}
 
 	public ArrayList<Magica> getMagicas() {

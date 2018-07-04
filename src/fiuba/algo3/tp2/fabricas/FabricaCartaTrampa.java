@@ -14,7 +14,9 @@ public enum FabricaCartaTrampa {
 			Efecto efecto = new EfectoCilindroMagico();
 			Trampa cartaTrampa = new Trampa(efecto);
 			cartaTrampa.setNombre("cilindroMagico");
-			cartaTrampa.setDescripcion("Efecto: niega el ataque del\r\n" + 
+			cartaTrampa.setDescripcion("Nombre: Cilindro Magico\n"
+					+ "Tipo de carta: Trampa\n"
+					+ "Efecto: niega el ataque del\r\n" + 
 					"monstruo atacante, e\r\n" + 
 					"inflige el mismo danio\r\n" + 
 					"directamente a los puntos\r\n" + 
@@ -28,7 +30,9 @@ public enum FabricaCartaTrampa {
 			Efecto efecto = new EfectoReinforcements();
 			Trampa cartaTrampa = new Trampa(efecto);
 			cartaTrampa.setNombre("reinforcements");
-			cartaTrampa.setDescripcion("Efecto: tu monstruo\r\n" + 
+			cartaTrampa.setDescripcion("Nombre: Reinforcements\n"
+					+ "Tipo de carta: Trampa\n"
+					+ "Efecto: tu monstruo\r\n" + 
 					"atacado, gana 500 puntos\r\n" + 
 					"de ataque hasta el final\r\n" + 
 					"del turno.");

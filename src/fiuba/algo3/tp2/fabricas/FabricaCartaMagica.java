@@ -4,6 +4,7 @@ import fiuba.algo3.tp2.Efectos.EfectoAgujeroNegro;
 import fiuba.algo3.tp2.Efectos.EfectoOllaDeLaCodicia;
 import fiuba.algo3.tp2.Efectos.EfectoFisura;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
+import fiuba.algo3.tp2.atributosCarta.BocaArriba;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
 import fiuba.algo3.tp2.cartas.Magica;
@@ -12,7 +13,7 @@ public enum FabricaCartaMagica {
 
 	AGUJERONEGRO{
 		public Magica crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Efecto efecto = new EfectoAgujeroNegro();
 			Magica cartaMagica = new Magica(posicion, efecto);
 			cartaMagica.setNombre("agujero");
@@ -26,7 +27,7 @@ public enum FabricaCartaMagica {
 	
 	FISURA{
 		public Magica crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Efecto efecto = new EfectoFisura();
 			Magica cartaMagica = new Magica(posicion, efecto);
 			cartaMagica.setNombre("fisura");

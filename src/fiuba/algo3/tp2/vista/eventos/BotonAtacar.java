@@ -41,7 +41,7 @@ public class BotonAtacar implements EventHandler<ActionEvent> {
 				zonaMonstruosJugadorInactivo.getChildren().add(ContenedorPrincipal.espacioCartaMonstruoJugadorInactivo());
 			}
 		}
-		contenedorPrincipal.actualizarContenedorCentral(zonaMonstruosJugadorInactivo);
+		contenedorPrincipal.actualizarContenedorCentralZonaMonstruosJugadorInactivo(zonaMonstruosJugadorInactivo);
 	}
 
 }

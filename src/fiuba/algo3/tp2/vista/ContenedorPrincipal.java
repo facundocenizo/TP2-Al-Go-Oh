@@ -198,7 +198,7 @@ public class ContenedorPrincipal extends BorderPane {
 	   	return imagenCarta;
     }
     
-    public void actualizarContenedorCentral(HBox zonaMonstruosJugadorInactivo) {
+    public void actualizarContenedorCentralZonaMonstruosJugadorInactivo(HBox zonaMonstruosJugadorInactivo) {
         zonaMonstruosJugadorInactivo.setSpacing(100);
         zonaMonstruosJugadorInactivo.setAlignment(Pos.CENTER);
     	
@@ -213,6 +213,27 @@ public class ContenedorPrincipal extends BorderPane {
 		VBox tablero = new VBox();
     	tablero.setAlignment(Pos.CENTER);
     	tablero.getChildren().addAll(zonaMonstruosJugadorInactivo, contenedorSeparador, ContenedorPrincipal.zonaMonstruosJugadorActivo, ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo);
+    	
+        Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        tablero.setBackground(new Background(imagenDeFondo));
+        this.setCenter(tablero);
+    }
+    public void actualizarContenedorCentralZonaMonstruosJugadorActivo(HBox zonaMonstruosJugadorActivo) {
+        zonaMonstruosJugadorActivo.setSpacing(100);
+        zonaMonstruosJugadorActivo.setAlignment(Pos.CENTER);
+    	
+    	HBox contenedorSeparador = new HBox();
+    	ImageView imagenSeparador = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/logo.png");
+    	imagenSeparador.setFitHeight(80);
+    	imagenSeparador.setFitWidth(240);
+    	contenedorSeparador.getChildren().add(imagenSeparador);
+    	contenedorSeparador.setSpacing(200);
+    	contenedorSeparador.setAlignment(Pos.CENTER);
+        
+		VBox tablero = new VBox();
+    	tablero.setAlignment(Pos.CENTER);
+    	tablero.getChildren().addAll(ContenedorPrincipal.zonaMonstruosJugadorInactivo, contenedorSeparador,zonaMonstruosJugadorActivo, ContenedorPrincipal.zonaMagicaYTrampaJugadorActivo);
     	
         Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/fondoNegro3.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
@@ -284,7 +305,7 @@ public class ContenedorPrincipal extends BorderPane {
     	return imagenCarta;
     }
 
-	private ImageView espacioCartaMonstruoJugadorActivo() {
+	public ImageView espacioCartaMonstruoJugadorActivo() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMonstruo.jpg");
     	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruo(juego.getJugadorActivo(), imagenCarta, this));
     	return imagenCarta;
@@ -297,6 +318,17 @@ public class ContenedorPrincipal extends BorderPane {
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
 					unMonstruo.getNombre()
 		            + ".jpg");
+			Image imagenCarta;
+			if(unMonstruo.estaBocaAbajo()) {
+				//unaImagenMonstruo.setRotate(90);
+				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/bocaAbajo.jpg");
+				unaImagenMonstruo.setImage(imagenCarta);
+			}
+			else {
+				//unaImagenMonstruo.setRotate(0);
+				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
+				unaImagenMonstruo.setImage(imagenCarta);		
+			}
 			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruo(this.juego.getJugadorActivo(), this, unMonstruo));
 			zonaMonstruosJugadorActivo.getChildren().add(unaImagenMonstruo);
 		}
@@ -320,6 +352,19 @@ public class ContenedorPrincipal extends BorderPane {
 		for (Monstruo unMonstruo: this.juego.getJugadorInactivo().getMonstruos()) {
 			ImageView unaImagenMonstruo = new ImageView("file:" + 
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
+			Image imagenCarta;
+			if(unMonstruo.estaBocaAbajo()) {
+				//unaImagenMonstruo.setRotate(90);
+				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/bocaAbajo.jpg");
+				unaImagenMonstruo.setImage(imagenCarta);
+			}
+			else {
+				//unaImagenMonstruo.setRotate(0);
+				imagenCarta = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
+				unaImagenMonstruo.setImage(imagenCarta);
+			}
+			
+			
 			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruoJugadorInactivo(unMonstruo));
 			zonaMonstruosJugadorInactivo.getChildren().add(unaImagenMonstruo);
 		}

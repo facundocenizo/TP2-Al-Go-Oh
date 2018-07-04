@@ -16,7 +16,7 @@ public class FabricaMonstruoTest {
 		Monstruo Dragon = FabricaCartaMonstruo.DRAGON.crear();
 
 		assertTrue(Dragon.estaEnModoAtaque());
-		assertTrue(Dragon.estaBocaAbajo());
+		assertFalse(Dragon.estaBocaAbajo());
 		
 		assertTrue(Dragon.esDebil());
 		assertFalse(Dragon.esNormal());
@@ -27,7 +27,7 @@ public class FabricaMonstruoTest {
 		Monstruo magoOscuro = FabricaCartaMonstruo.MAGOOSCURO.crear();
 
 		assertTrue(magoOscuro.estaEnModoAtaque());
-		assertTrue(magoOscuro.estaBocaAbajo());
+		assertFalse(magoOscuro.estaBocaAbajo());
 		
 
 		assertFalse(magoOscuro.esDebil());
@@ -41,7 +41,7 @@ public class FabricaMonstruoTest {
 		Monstruo dragonDefinitivo = FabricaCartaMonstruo.DRAGONDEFINITIVO.crear();
 
 		assertTrue(dragonDefinitivo.estaEnModoAtaque());
-		assertTrue(dragonDefinitivo.estaBocaAbajo());
+		assertFalse(dragonDefinitivo.estaBocaAbajo());
 		
 		assertFalse(dragonDefinitivo.esDebil());
 		assertFalse(dragonDefinitivo.esNormal());

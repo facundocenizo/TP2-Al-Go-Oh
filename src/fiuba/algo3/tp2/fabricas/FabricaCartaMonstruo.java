@@ -6,6 +6,7 @@ import fiuba.algo3.tp2.Efectos.EfectoInsectoComeHombres;
 import fiuba.algo3.tp2.Efectos.EfectoJinzoSiete;
 import fiuba.algo3.tp2.Efectos.SinEfecto;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
+import fiuba.algo3.tp2.atributosCarta.BocaArriba;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
 import fiuba.algo3.tp2.atributosMonstruo.Debil;
@@ -22,7 +23,7 @@ public enum FabricaCartaMonstruo {
 
 	DRAGON{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 400;
@@ -41,7 +42,7 @@ public enum FabricaCartaMonstruo {
 	},
 	MAGOOSCURO{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Normal();
 			int puntosDeAtaque = 2500;
@@ -60,7 +61,7 @@ public enum FabricaCartaMonstruo {
 	},
 	DRAGONDEFINITIVO{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new DragonDefinitivo();
 			int puntosDeAtaque = 4500;
@@ -80,7 +81,7 @@ public enum FabricaCartaMonstruo {
 
 	HUEVOMONSTRUOSO{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 600;
@@ -99,7 +100,7 @@ public enum FabricaCartaMonstruo {
 	},
 	INSECTOCOMEHOMBRES{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 450;
@@ -121,7 +122,7 @@ public enum FabricaCartaMonstruo {
 	},
 	DRAGONBLANCO{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Poderoso();
 			int puntosDeAtaque = 3000;
@@ -140,7 +141,7 @@ public enum FabricaCartaMonstruo {
 	},
 	JINZOSIETE{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 500;
@@ -162,7 +163,7 @@ public enum FabricaCartaMonstruo {
 	},
 	CABEZAEXODIA{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 1000;
@@ -184,7 +185,7 @@ public enum FabricaCartaMonstruo {
 	},
 	BRAZODERECHO{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 200;
@@ -206,7 +207,7 @@ public enum FabricaCartaMonstruo {
 	},
 	BRAZOIZQUIERDO{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 200;
@@ -228,7 +229,7 @@ public enum FabricaCartaMonstruo {
 	},
 	PIERNADERECHA{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 200;
@@ -250,7 +251,7 @@ public enum FabricaCartaMonstruo {
 	},
 	PIERNAIZQUIERDA{
 		public Monstruo crear(){
-			Posicion posicion = new BocaAbajo();
+			Posicion posicion = new BocaArriba();
 			Modo modo = new ModoAtaque();
 			Nivel nivel = new Debil();
 			int puntosDeAtaque = 200;

@@ -28,7 +28,7 @@ public class ClickSobreCartaMonstruo implements EventHandler<MouseEvent> {
 
 		Button botonVoltearCarta = new Button("Voltear carta");
         BotonVoltearCarta voltearCarta =
-            new BotonVoltearCarta();
+            new BotonVoltearCarta(monstruo, contenedorPrincipal, jugador);
         botonVoltearCarta.setOnAction(voltearCarta);
  
         Button botonCambiarModo = new Button("Cambiar modo");

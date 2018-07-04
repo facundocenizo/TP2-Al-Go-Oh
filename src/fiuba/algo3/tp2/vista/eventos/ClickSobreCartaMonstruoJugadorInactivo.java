@@ -1,14 +1,22 @@
 package fiuba.algo3.tp2.vista.eventos;
 
+import fiuba.algo3.tp2.cartas.Monstruo;
+import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
 public class ClickSobreCartaMonstruoJugadorInactivo implements EventHandler<MouseEvent> {
+	
+	private Monstruo monstruo;
+	
+	public ClickSobreCartaMonstruoJugadorInactivo(Monstruo monstruo) {
+		this.monstruo = monstruo;
+	}
 
+	
 	@Override
 	public void handle(MouseEvent event) {
-		// TODO Auto-generated method stub
-		
+		ContenedorPrincipal.consola.setText("ATK: " + monstruo.darPuntosDeAtaque() + "\nDEF: " + monstruo.darPuntosDeDefensa());
 	}
 
 }

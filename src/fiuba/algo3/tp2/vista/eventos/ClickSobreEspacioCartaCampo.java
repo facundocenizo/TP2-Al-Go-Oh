@@ -26,7 +26,7 @@ public class ClickSobreEspacioCartaCampo implements EventHandler<MouseEvent> {
 			if(ContenedorPrincipal.cartaSeleccionada.esCartaCampo()) {
 				Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/"+ContenedorPrincipal.cartaSeleccionada.getNombre()+".jpg");
 				imagenCarta.setImage(imagen);
-				imagenCarta.setOnMouseClicked(new ClickSobreCartaCampo(jugador, imagenCarta, contenedorPrincipal));
+				imagenCarta.setOnMouseClicked(new ClickSobreCartaCampo(jugador, imagenCarta, contenedorPrincipal, (CartaCampo)ContenedorPrincipal.cartaSeleccionada));
 				//aca agregarle un nuevo evento on mouse click ??
 				
 				this.jugador.colocarCarta((CartaCampo) ContenedorPrincipal.cartaSeleccionada);

@@ -274,5 +274,9 @@ public class LadoDelCampo {
 		return this.cartaDeCampo;
 	}
 
+	public void limpiarZonaDeCampo() {
+		this.cartaDeCampo.clear();		
+	}
+
 	
 }

@@ -161,7 +161,7 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setBottom(contenedorAbajo);
 	}
 
-	private void setContenedorDerecho() {
+	public void setContenedorDerecho() {
 		ImageView mazo = espacioMazo();
     	ImageView cementerio = espacioCartaCementerio();
     	ImageView cartaCampo = espacioCartaCampo();
@@ -188,7 +188,7 @@ public class ContenedorPrincipal extends BorderPane {
     		imagenCartaCampo = new ImageView("file:" + "src/fiuba/algo3/tp2/vista/imagenes/cartas/" 
     						+ unaCartaCampo.getNombre()
     						+ ".jpg");
-    		imagenCartaCampo.setOnMouseClicked(new ClickSobreCartaCampo(this.juego.getJugadorActivo(), imagenCartaCampo, this));
+    		imagenCartaCampo.setOnMouseClicked(new ClickSobreCartaCampo(this.juego.getJugadorActivo(), imagenCartaCampo, this, unaCartaCampo));
     	}
     	return imagenCartaCampo;
     }
@@ -298,7 +298,7 @@ public class ContenedorPrincipal extends BorderPane {
 		for (Monstruo unMonstruo: this.juego.getJugadorInactivo().getMonstruos()) {
 			ImageView unaImagenMonstruo = new ImageView("file:" + 
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
-			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruoJugadorInactivo());
+			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruoJugadorInactivo(unMonstruo));
 			zonaMonstruosJugadorInactivo.getChildren().add(unaImagenMonstruo);
 		}
 		int cantidadDeMonstruos = zonaMonstruosJugadorInactivo.getChildren().size();

@@ -33,7 +33,7 @@ public class ClickSobreCartaMonstruo implements EventHandler<MouseEvent> {
  
         Button botonCambiarModo = new Button("Cambiar modo");
         BotonCambiarModo cambiarModo =
-            new BotonCambiarModo();
+            new BotonCambiarModo(monstruo, contenedorPrincipal, jugador);
         botonCambiarModo.setOnAction(cambiarModo);
         
         Button botonAtacar = new Button("Atacar");

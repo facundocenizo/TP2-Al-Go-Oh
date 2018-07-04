@@ -8,6 +8,8 @@ import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;
 import fiuba.algo3.tp2.atributosMonstruo.Modo;
+import fiuba.algo3.tp2.atributosMonstruo.ModoAtaque;
+import fiuba.algo3.tp2.atributosMonstruo.ModoDefensa;
 import fiuba.algo3.tp2.atributosMonstruo.Nivel;
 public class Monstruo extends Carta{
 	
@@ -132,7 +134,12 @@ public class Monstruo extends Carta{
 		return nivel.esDragonDefinitivo();
 	}
 	
-
+	public void cambiarModo() {
+		if(this.modo.estaEnModoAtaque())
+			this.modo = new ModoDefensa();
+		else
+			this.modo = new ModoAtaque();
+	}
 
 
 	

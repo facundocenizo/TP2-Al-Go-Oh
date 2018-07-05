@@ -21,6 +21,11 @@ public class BotonAtacar implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event) {
 		
+		if(!atacante.estaEnModoAtaque()) {
+			ContenedorPrincipal.consola.setText("No se puede atacar con un\nmonstruo en modo de Defensa");
+			return;
+		}
+		
 		if (ContenedorPrincipal.juego.getJugadorInactivo().getMonstruos().size() == 0) {
 			ContenedorPrincipal.juego.getJugadorActivo().atacar(atacante, null);
 			contenedorPrincipal.terminarTurno();

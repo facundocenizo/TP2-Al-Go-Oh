@@ -7,4 +7,7 @@ public class MonstruoEnModoDefensaNoPuedeAtacarException extends RuntimeExceptio
 	 */
 	private static final long serialVersionUID = 1L;
 
+	public String getMessage() {
+		return ("No se puede atacar con \nun monstruo en modo\nde Defensa");
+	}
 }

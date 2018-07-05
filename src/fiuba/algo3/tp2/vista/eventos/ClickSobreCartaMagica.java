@@ -5,6 +5,8 @@ import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 public class ClickSobreCartaMagica implements EventHandler<MouseEvent> {
 
@@ -24,6 +26,9 @@ public class ClickSobreCartaMagica implements EventHandler<MouseEvent> {
         BotonAplicarEfectoMagica aplicarEfectoMagica =
             new BotonAplicarEfectoMagica(carta, contenedorPrincipal);
         botonAplicarEfectoMagica.setOnAction(aplicarEfectoMagica);
+        botonAplicarEfectoMagica.setMinSize(200, 7);
+        botonAplicarEfectoMagica.setFont(Font.font("Courier New",FontWeight.BOLD, 15));
+        
         ContenedorPrincipal.contenedorIzquierdo.getChildren().add(botonAplicarEfectoMagica);
         ContenedorPrincipal.cartaSeleccionada = null;
 	}

@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 public class ClickSobreCartaCampo implements EventHandler<MouseEvent> {
 	
@@ -48,6 +50,9 @@ public class ClickSobreCartaCampo implements EventHandler<MouseEvent> {
 	        BotonAplicarEfectoCartaCampo aplicarEfectoCartaCampo =
 	            new BotonAplicarEfectoCartaCampo(carta, contenedorPrincipal);
 	        botonAplicarEfectoCartaCampo.setOnAction(aplicarEfectoCartaCampo);
+	        botonAplicarEfectoCartaCampo.setMinSize(200, 7);
+	        botonAplicarEfectoCartaCampo.setFont(Font.font("Courier New",FontWeight.BOLD, 15));
+	        
 	        ContenedorPrincipal.contenedorIzquierdo.getChildren().add(botonAplicarEfectoCartaCampo);
 		}
 	}

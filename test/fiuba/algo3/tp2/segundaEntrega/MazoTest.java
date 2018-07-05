@@ -28,19 +28,16 @@ public class MazoTest {
 			for(Carta carta : cartasDelJugador) {
 				if(carta.esParteExodia()) {
 					jugador.colocarCarta((Monstruo) carta);
-					//cuando encuentra una carta del tipo exodia deja de buscar cartas en la mano.
 					break;
 				}
 			}
 		}
 	
 		
-		//chequeamos que este jugador No gano, por lo tanto perdio
 		assertFalse(jugador.haGanado());
 		
-		juego.terminarTurno(); //cambia el jugador
+		juego.terminarTurno();
 		
-		// el juego tiene un ganador.
 		assertTrue(juego.hayGanador());	
 	}	
 	

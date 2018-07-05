@@ -85,7 +85,6 @@ public class MazoCartas {
 		Random rand = new Random();
 		int numeroCartasEnElMazo = mazo.size();
 		int numeroRandom = rand.nextInt(numeroCartasEnElMazo);
-		//numeroCartasEnElMazo es el maximo y 0 es el minimo
 		
 		Carta cartaADevolverCarta = mazo.get(numeroRandom);
 		mazo.remove(numeroRandom);

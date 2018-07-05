@@ -10,8 +10,6 @@ public class EfectoInsectoComeHombres implements Efecto, EfectoDefensa {
 
 	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
-		// TODO Apéndice de método generado automáticamente
-		
 	}
 
 	@Override

@@ -23,13 +23,10 @@ public class Debil implements Nivel {
 
 	@Override
 	public void manejarSacrificiosPorEsteMonstruo(ArrayList<Monstruo> zonaMonstruos) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public boolean esDragonDefinitivo() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

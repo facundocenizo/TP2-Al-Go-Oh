@@ -8,7 +8,6 @@ public class CartaCampo extends Carta {
 
 	public CartaCampo(Efecto efecto) {
 		super(new BocaArriba(), efecto);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -19,9 +18,7 @@ public class CartaCampo extends Carta {
 	}
 
 	@Override
-	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
+	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {		
 	}
 
 	@Override

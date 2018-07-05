@@ -39,8 +39,6 @@ public class CartaReinforcementsTest {
         jugadorEnemigo.colocarCarta(atacante);
         jugadorEnemigo.atacar(atacante, atacado);
  
-        // El monstruo atacado gana 500 puntos de ataque por lo que se le resta 100 puntos de vida
-        // al jugador enemigo
         int vidaEsperada = 8000-100;
 
         assertEquals(vidaEsperada, jugadorEnemigo.darVida());

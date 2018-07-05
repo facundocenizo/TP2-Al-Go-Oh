@@ -45,13 +45,11 @@ public class EnJuego implements EstadoDeJuego {
 
 	@Override
 	public String darNombreGanador() {
-		// Deberia lanzar una excepcion de PartidaEnJuegoException
 		return null;
 	}
 
 	@Override
 	public String darMotivoGanador() {
-		// Deberia lanzar una excepcion de PartidaEnJuegoException
 		return null;
 	}
 	

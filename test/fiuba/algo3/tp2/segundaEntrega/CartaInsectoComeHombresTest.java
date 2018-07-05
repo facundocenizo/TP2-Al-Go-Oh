@@ -37,8 +37,7 @@ public class CartaInsectoComeHombresTest {
 		jugador2.colocarCarta(dragonComun);
 		
 		jugador2.atacar(dragonComun,insectoComeHombres);
-		
-		// No se hace danio a ningun jugador, por lo tanto ambos tienen 8000 de vida
+
 
 		assertTrue(jugador1.verMonstruosRivales().get(0).estaMuerta());
 		assertEquals(8000, jugador1.darVida());

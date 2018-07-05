@@ -21,9 +21,7 @@ public class EfectoSogen implements Efecto {
 		}
 
 	@Override
-	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
+	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {		
 	}
 
 	

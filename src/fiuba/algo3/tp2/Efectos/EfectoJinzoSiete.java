@@ -16,8 +16,6 @@ public class EfectoJinzoSiete implements Efecto {
 
 	@Override
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		//implementar
-		
 	}
 	
 

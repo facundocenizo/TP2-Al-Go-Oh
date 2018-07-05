@@ -8,14 +8,10 @@ public class EfectoExodia implements Efecto {
 
 	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
-		// TODO Apéndice de método generado automáticamente
-		
 	}
 
 	@Override
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	

@@ -18,8 +18,6 @@ public class Magica extends Carta{
 
 	@Override
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

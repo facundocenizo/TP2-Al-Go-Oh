@@ -39,7 +39,6 @@ public class Poderoso implements Nivel {
 
 	@Override
 	public boolean esDragonDefinitivo() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

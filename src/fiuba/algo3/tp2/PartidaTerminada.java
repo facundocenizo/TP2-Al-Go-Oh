@@ -17,14 +17,12 @@ public class PartidaTerminada implements EstadoDeJuego {
 
 	@Override
 	public Jugador siguienteTurno() {
-		// Deberia tirar excepcion de PartidaTerminadaException
 		return null;
 	}
 
 	@Override
 	public void terminarTurno() {
-		// Deberia tirar excepcion de PartidaTerminadaException
-		System.out.println("El juego termino Scooby Doo Papa");
+		System.out.println("Juego terminado");
 	}
 
 	@Override
@@ -39,13 +37,11 @@ public class PartidaTerminada implements EstadoDeJuego {
 
 	@Override
 	public Jugador getJugadorActivo() {
-		// Deberia tirar excepcion de PartidaTerminadaException
 		return null;
 	}
 
 	@Override
 	public Jugador getJugadorInactivo() {
-		// Deberia tirar excepcion de PartidaTerminadaException
 		return null;
 	}
 }

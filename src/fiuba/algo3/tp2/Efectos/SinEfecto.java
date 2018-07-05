@@ -8,13 +8,10 @@ public class SinEfecto implements Efecto, EfectoDefensa {
 
 	@Override
 	public void aplicarEfecto(LadoDelCampo propio, LadoDelCampo rival) {
-		// No hay efecto que aplicar
 	}
 
 	@Override
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

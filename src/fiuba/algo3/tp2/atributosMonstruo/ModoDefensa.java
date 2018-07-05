@@ -30,7 +30,7 @@ public class ModoDefensa implements Modo {
 			monstruo.morir();
 			return diferencia;
 		}
-		return diferencia*-1; // Se le multiplica por -1 para que siempre devuelva algo negativo
+		return diferencia*-1;
 	}
 
 
@@ -42,7 +42,5 @@ public class ModoDefensa implements Modo {
 
 	@Override
 	public void aumentarPuntosDeAtaque(int aumentoDePruebas) {
-		// TODO Auto-generated method stub
-		
 	}
 }

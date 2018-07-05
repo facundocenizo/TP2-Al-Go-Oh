@@ -187,7 +187,7 @@ public class ContenedorPrincipal extends BorderPane {
 	}
 	
 	private ImageView espacioMazo() {
-    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/bocaAbajo.jpg");
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/mazo.jpg");
     	return imagenCarta;
     }
     
@@ -204,7 +204,7 @@ public class ContenedorPrincipal extends BorderPane {
     }
     
     private ImageView espacioCartaCementerio() {
-    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCementerio.jpg");
+    	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/cementerio.jpg");
 	   	return imagenCarta;
     }
     

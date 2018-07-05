@@ -16,6 +16,7 @@ public class ClickSobreCartaMonstruoJugadorInactivo implements EventHandler<Mous
 	
 	@Override
 	public void handle(MouseEvent event) {
+		ContenedorPrincipal.cartaSeleccionada = null;
 		if (monstruo.estaBocaAbajo()) {
 			ContenedorPrincipal.consola.setText("No es posible ver \ndescripcion.");
 			return;

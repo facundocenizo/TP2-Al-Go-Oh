@@ -19,7 +19,7 @@ public class ClickSobreCartaTrampa implements EventHandler<MouseEvent> {
 	public void handle(MouseEvent event) {
 		contenedorPrincipal.setContenedorIzquierdo();
 		ContenedorPrincipal.consola.setText(carta.getDescripcion());
-	    ContenedorPrincipal.cartaSeleccionada = null;
+		ContenedorPrincipal.cartaSeleccionada = null;
 	}
 
 }

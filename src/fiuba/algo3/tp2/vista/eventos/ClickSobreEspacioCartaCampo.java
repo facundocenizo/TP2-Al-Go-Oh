@@ -29,15 +29,14 @@ public class ClickSobreEspacioCartaCampo implements EventHandler<MouseEvent> {
 				imagenCarta.setOnMouseClicked(new ClickSobreCartaCampo(jugador, imagenCarta, contenedorPrincipal, (CartaCampo)ContenedorPrincipal.cartaSeleccionada));
 				
 				this.jugador.colocarCarta((CartaCampo) ContenedorPrincipal.cartaSeleccionada);
-				ContenedorPrincipal.cartaSeleccionada = null;
 				ContenedorPrincipal.consola.limpiar();
 				
 				ContenedorPrincipal.cartasEnManoJugadorActivo.getChildren().remove(ContenedorPrincipal.cartaSeleccionada);
 				contenedorPrincipal.setContenedorAbajo();
 			 }else
 				ContenedorPrincipal.consola.setText("La carta debe ser del\ntipo Carta Campo para\ncolocarla en ese lugar..");
-			
 		}
+		ContenedorPrincipal.cartaSeleccionada = null;
 	}
 
 }

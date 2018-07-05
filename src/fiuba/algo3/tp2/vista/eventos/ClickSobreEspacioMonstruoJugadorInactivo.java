@@ -11,7 +11,8 @@ public class ClickSobreEspacioMonstruoJugadorInactivo implements EventHandler<Mo
 	
 	@Override
 	public void handle(MouseEvent event) {
-		ContenedorPrincipal.consola.setText(" No se puede colocar\n aqui, es zona del oponente. \n Selecciona otro lugar.");
+		ContenedorPrincipal.consola.setText(" No se puede colocar\n aqui, es zona del oponente.");
+		ContenedorPrincipal.cartaSeleccionada = null;
 	}
 
 }

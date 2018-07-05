@@ -2,9 +2,9 @@ package fiuba.algo3.tp2.Efectos;
 
 import java.util.ArrayList;
 
-import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.cartas.Monstruo;
+import fiuba.algo3.tp2.juego.LadoDelCampo;
 
 public class EfectoFisura implements Efecto {
 

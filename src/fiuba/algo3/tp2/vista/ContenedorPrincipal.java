@@ -1,11 +1,11 @@
 package fiuba.algo3.tp2.vista;
 
-import fiuba.algo3.tp2.Juego;
 import fiuba.algo3.tp2.cartas.Carta;
 import fiuba.algo3.tp2.cartas.CartaCampo;
 import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.cartas.Trampa;
+import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.vista.eventos.BotonTerminarTurno;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreCartaDeLaMano;
 import fiuba.algo3.tp2.vista.eventos.ClickSobreCartaCampo;

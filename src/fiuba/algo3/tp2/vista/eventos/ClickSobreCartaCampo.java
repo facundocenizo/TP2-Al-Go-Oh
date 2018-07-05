@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2.vista.eventos;
 
-import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.cartas.CartaCampo;
+import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;

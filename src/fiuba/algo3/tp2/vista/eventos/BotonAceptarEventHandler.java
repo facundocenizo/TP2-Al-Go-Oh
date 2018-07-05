@@ -3,9 +3,9 @@ package fiuba.algo3.tp2.vista.eventos;
 import java.util.List;
 import java.util.Random;
 
+import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.vista.ContenedorJugadores;
 import fiuba.algo3.tp2.vista.ContenedorPrincipal;
-import fiuba.algo3.tp2.Juego;
 //import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

@@ -1,8 +1,8 @@
 package fiuba.algo3.tp2.cartas;
 
-import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
+import fiuba.algo3.tp2.juego.LadoDelCampo;
 
 public class Trampa extends Carta{
 	

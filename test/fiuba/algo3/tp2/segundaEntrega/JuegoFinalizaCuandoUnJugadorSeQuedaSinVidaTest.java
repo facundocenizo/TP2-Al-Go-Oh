@@ -4,10 +4,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.Juego;
-import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
+import fiuba.algo3.tp2.juego.Juego;
+import fiuba.algo3.tp2.juego.Jugador;
 
 public class JuegoFinalizaCuandoUnJugadorSeQuedaSinVidaTest {
 	

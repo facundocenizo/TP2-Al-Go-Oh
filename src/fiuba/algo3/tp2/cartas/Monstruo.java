@@ -2,7 +2,6 @@ package fiuba.algo3.tp2.cartas;
 
 import java.util.ArrayList;
 
-import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Efectos.EfectoDefensa;
 import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.atributosCarta.BocaArriba;
@@ -12,6 +11,7 @@ import fiuba.algo3.tp2.atributosMonstruo.Modo;
 import fiuba.algo3.tp2.atributosMonstruo.ModoAtaque;
 import fiuba.algo3.tp2.atributosMonstruo.ModoDefensa;
 import fiuba.algo3.tp2.atributosMonstruo.Nivel;
+import fiuba.algo3.tp2.juego.LadoDelCampo;
 public class Monstruo extends Carta{
 	
 	private Modo modo;

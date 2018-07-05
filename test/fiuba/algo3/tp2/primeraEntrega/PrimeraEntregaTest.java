@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
-import fiuba.algo3.tp2.Jugador;
-import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.Efectos.SinEfecto;
 import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.BocaArriba;
@@ -24,6 +22,8 @@ import fiuba.algo3.tp2.cartas.Trampa;
 import fiuba.algo3.tp2.excepciones.MonstruoEnModoDefensaNoPuedeAtacarException;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMagica;
 import fiuba.algo3.tp2.fabricas.FabricaCartaMonstruo;
+import fiuba.algo3.tp2.juego.Jugador;
+import fiuba.algo3.tp2.juego.LadoDelCampo;
 
 public class PrimeraEntregaTest {
 

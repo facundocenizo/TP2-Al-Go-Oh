@@ -1,10 +1,10 @@
 package fiuba.algo3.tp2.vista.eventos;
 
-import fiuba.algo3.tp2.Jugador;
 import fiuba.algo3.tp2.cartas.Monstruo;
 import fiuba.algo3.tp2.excepciones.NoHayTresDragonesBlancosParaInvocarDragonDefinitivoException;
 import fiuba.algo3.tp2.excepciones.SeNecesitaUnMonstruoDeMenorNivelParaSacrificarException;
 import fiuba.algo3.tp2.excepciones.SeNecesitanDosMonstruosDeMenorNivelParaSacrificarException;
+import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;

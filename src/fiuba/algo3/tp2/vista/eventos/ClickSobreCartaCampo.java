@@ -40,8 +40,10 @@ public class ClickSobreCartaCampo implements EventHandler<MouseEvent> {
 			 }
 			else
 				ContenedorPrincipal.consola.setText("La carta debe ser del\ntipo Carta Campo para\ncolocarla en ese lugar..");
+				ContenedorPrincipal.cartaSeleccionada = null;
 		}
 		else {
+			ContenedorPrincipal.consola.setText(carta.getDescripcion());
 			Button botonAplicarEfectoCartaCampo = new Button("Aplicar efecto");
 	        BotonAplicarEfectoCartaCampo aplicarEfectoCartaCampo =
 	            new BotonAplicarEfectoCartaCampo(carta, contenedorPrincipal);

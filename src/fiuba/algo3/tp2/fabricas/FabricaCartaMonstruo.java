@@ -5,7 +5,6 @@ import fiuba.algo3.tp2.Efectos.EfectoExodia;
 import fiuba.algo3.tp2.Efectos.EfectoInsectoComeHombres;
 import fiuba.algo3.tp2.Efectos.EfectoJinzoSiete;
 import fiuba.algo3.tp2.Efectos.SinEfecto;
-import fiuba.algo3.tp2.atributosCarta.BocaAbajo;
 import fiuba.algo3.tp2.atributosCarta.BocaArriba;
 import fiuba.algo3.tp2.atributosCarta.Efecto;
 import fiuba.algo3.tp2.atributosCarta.Posicion;

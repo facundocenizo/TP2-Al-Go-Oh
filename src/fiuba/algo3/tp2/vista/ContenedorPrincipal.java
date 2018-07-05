@@ -53,7 +53,7 @@ public class ContenedorPrincipal extends BorderPane {
     public static VBox contenedorIzquierdo;
     
     public ContenedorPrincipal(Stage stage, Scene siguienteEscena, Juego juego, BarraDeMenu barraMenu) {
-    	this.juego = juego;
+    	ContenedorPrincipal.juego = juego;
         this.stage = stage;
         this.barraMenu = barraMenu;
         this.siguienteEscena = siguienteEscena;
@@ -73,7 +73,7 @@ public class ContenedorPrincipal extends BorderPane {
     }
     
     public void setContenedorPrincipal() {
-    	this.consola.limpiar();
+    	ContenedorPrincipal.consola.limpiar();
     	this.setContenedorCentral();
     	this.setContenedorIzquierdo();
     	this.setContenedorDerecho();
@@ -184,12 +184,12 @@ public class ContenedorPrincipal extends BorderPane {
     
     private ImageView espacioCartaCampo() {
     	ImageView imagenCartaCampo = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioCartaCampo.jpg");
-    	imagenCartaCampo.setOnMouseClicked(new ClickSobreEspacioCartaCampo(this.juego.getJugadorActivo(), imagenCartaCampo, this));	
+    	imagenCartaCampo.setOnMouseClicked(new ClickSobreEspacioCartaCampo(ContenedorPrincipal.juego.getJugadorActivo(), imagenCartaCampo, this));	
     	for (CartaCampo unaCartaCampo: juego.getJugadorActivo().getCartaCampo()) {
     		imagenCartaCampo = new ImageView("file:" + "src/fiuba/algo3/tp2/vista/imagenes/cartas/" 
     						+ unaCartaCampo.getNombre()
     						+ ".jpg");
-    		imagenCartaCampo.setOnMouseClicked(new ClickSobreCartaCampo(this.juego.getJugadorActivo(), imagenCartaCampo, this, unaCartaCampo));
+    		imagenCartaCampo.setOnMouseClicked(new ClickSobreCartaCampo(ContenedorPrincipal.juego.getJugadorActivo(), imagenCartaCampo, this, unaCartaCampo));
     	}
     	return imagenCartaCampo;
     }
@@ -314,7 +314,7 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	private HBox setZonaMonstruosJugadorActivo() {
 		HBox zonaMonstruosJugadorActivo = new HBox(); 
-		for (Monstruo unMonstruo: this.juego.getJugadorActivo().getMonstruos()) {
+		for (Monstruo unMonstruo: ContenedorPrincipal.juego.getJugadorActivo().getMonstruos()) {
 			ImageView unaImagenMonstruo = new ImageView("file:" + 
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" +
 					unMonstruo.getNombre()
@@ -332,7 +332,7 @@ public class ContenedorPrincipal extends BorderPane {
 				unaImagenMonstruo.setRotate(0);
 			}
 			else unaImagenMonstruo.setRotate(90);
-			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruo(this.juego.getJugadorActivo(), this, unMonstruo));
+			unaImagenMonstruo.setOnMouseClicked(new ClickSobreCartaMonstruo(ContenedorPrincipal.juego.getJugadorActivo(), this, unMonstruo));
 			zonaMonstruosJugadorActivo.getChildren().add(unaImagenMonstruo);
 		}
 		int cantidadDeMonstruos = zonaMonstruosJugadorActivo.getChildren().size();
@@ -346,13 +346,13 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	public static ImageView espacioCartaMonstruoJugadorInactivo() {
     	ImageView imagenCarta = new ImageView("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/espacioMonstruo.jpg");
-    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruoJugadorInactivo(imagenCarta));
+    	imagenCarta.setOnMouseClicked(new ClickSobreEspacioMonstruoJugadorInactivo());
     	return imagenCarta;
     }
 	
 	private HBox setZonaMonstruosJugadorInactivo() {
 		HBox zonaMonstruosJugadorInactivo = new HBox(); 
-		for (Monstruo unMonstruo: this.juego.getJugadorInactivo().getMonstruos()) {
+		for (Monstruo unMonstruo: ContenedorPrincipal.juego.getJugadorInactivo().getMonstruos()) {
 			ImageView unaImagenMonstruo = new ImageView("file:" + 
 		            "src/fiuba/algo3/tp2/vista/imagenes/cartas/" + unMonstruo.getNombre() + ".jpg");
 			Image imagenCarta;
@@ -374,16 +374,16 @@ public class ContenedorPrincipal extends BorderPane {
 		int cantidadDeMonstruos = zonaMonstruosJugadorInactivo.getChildren().size();
 		if (cantidadDeMonstruos < 5) {
 			for (int i = 0; i < 5 - cantidadDeMonstruos; i++) {
-				zonaMonstruosJugadorInactivo.getChildren().add(this.espacioCartaMonstruoJugadorInactivo());
+				zonaMonstruosJugadorInactivo.getChildren().add(ContenedorPrincipal.espacioCartaMonstruoJugadorInactivo());
 			}
 		}
 		return zonaMonstruosJugadorInactivo;
 	}
 
 	public void terminarTurno() {
-		this.juego.terminarTurno();
-		this.juego.siguienteTurno();
-		if (this.juego.hayGanador()) {
+		ContenedorPrincipal.juego.terminarTurno();
+		ContenedorPrincipal.juego.siguienteTurno();
+		if (ContenedorPrincipal.juego.hayGanador()) {
 			ContenedorVictoria.recibirGanador(juego.darNombreGanador(), juego.darMotivoGanador());
 			stage.setScene(siguienteEscena);
             stage.setFullScreenExitHint("");

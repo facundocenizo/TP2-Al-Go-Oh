@@ -22,13 +22,11 @@ public class ClickSobreEspacioMagicaTrampa implements EventHandler<MouseEvent> {
 	}
 	@Override
 	public void handle(MouseEvent arg0) {
-		
 		if(ContenedorPrincipal.cartaSeleccionada != null) {
 			if(ContenedorPrincipal.cartaSeleccionada.esMagica()) {
 			Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/"+ContenedorPrincipal.cartaSeleccionada.getNombre()+".jpg");
 			imagenCarta.setImage(imagen);
 			imagenCarta.setOnMouseClicked(new ClickSobreCartaMagica(contenedorPrincipal, (Magica)ContenedorPrincipal.cartaSeleccionada));
-			//aca agregarle un nuevo evento on mouse click
 			this.jugador.colocarCarta((Magica) ContenedorPrincipal.cartaSeleccionada);
 			
 			ContenedorPrincipal.cartaSeleccionada = null;
@@ -41,7 +39,6 @@ public class ClickSobreEspacioMagicaTrampa implements EventHandler<MouseEvent> {
 				Image imagen = new Image("file:src/fiuba/algo3/tp2/vista/imagenes/cartas/"+ContenedorPrincipal.cartaSeleccionada.getNombre()+".jpg");
 				imagenCarta.setImage(imagen);
 				imagenCarta.setOnMouseClicked(new ClickSobreCartaTrampa((Trampa)ContenedorPrincipal.cartaSeleccionada, contenedorPrincipal));
-				//aca agregarle un nuevo evento on mouse click
 				this.jugador.colocarCarta((Trampa) ContenedorPrincipal.cartaSeleccionada);
 				
 				ContenedorPrincipal.cartaSeleccionada = null;
@@ -53,7 +50,6 @@ public class ClickSobreEspacioMagicaTrampa implements EventHandler<MouseEvent> {
 				ContenedorPrincipal.consola.setText("La carta debe ser del\ntipo Magica o Trampa para\ncolocarla en ese lugar..");
 		}	
 		ContenedorPrincipal.cartaSeleccionada = null;
-		ContenedorPrincipal.consola.limpiar();
 	}
 
 }

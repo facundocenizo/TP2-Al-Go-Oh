@@ -2,7 +2,6 @@ package fiuba.algo3.tp2.vista.eventos;
 
 import fiuba.algo3.tp2.LadoDelCampo;
 import fiuba.algo3.tp2.cartas.CartaCampo;
-import fiuba.algo3.tp2.cartas.Magica;
 import fiuba.algo3.tp2.vista.ContenedorPrincipal;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

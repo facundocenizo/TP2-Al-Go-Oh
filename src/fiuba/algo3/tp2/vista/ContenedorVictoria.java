@@ -59,6 +59,6 @@ public class ContenedorVictoria extends VBox{
         	etiqueta.setText("Ganador: " + ganador + "\nMotivo: " + motivo);
         	audioViejo.stop();
         	AudioClip audioVictoria = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/musicaFin.mp3");
-    	   // audioVictoria.play();
+        	//audioVictoria.play();
         }
 }

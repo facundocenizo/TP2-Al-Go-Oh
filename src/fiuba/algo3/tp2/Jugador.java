@@ -52,7 +52,9 @@ public class Jugador implements Observador, SujetoJugadorObservable {
 	
 	public void atacar(Monstruo atacante, Monstruo atacado) {
 		atacante.ponerBocaArriba();
-		atacado.ponerBocaArriba();
+		if (atacado!=null) {
+			atacado.ponerBocaArriba();
+		}
 		this.ladoDelCampo.atacar(atacante, atacado);
 	}
 	

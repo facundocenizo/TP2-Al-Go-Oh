@@ -160,7 +160,7 @@ public class ContenedorPrincipal extends BorderPane {
     	ScrollPane scrollCartas = new ScrollPane();
     	scrollCartas.setContent(ContenedorPrincipal.cartasEnManoJugadorActivo);
     	scrollCartas.setMaxSize(440,135);
-    	scrollCartas.setMinSize(440,135);
+    	scrollCartas.setMinSize(0,135);
     	scrollCartas.setHvalue(1);
     	
     	ImageView imagenJugadorActivo = juego.getJugadorActivo().darImagen();

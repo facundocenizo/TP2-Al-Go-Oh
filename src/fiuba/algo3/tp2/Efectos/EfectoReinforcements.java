@@ -16,6 +16,7 @@ public class EfectoReinforcements implements Efecto {
 	public void aplicarEfecto(Monstruo atacante, Monstruo atacado) {
 		atacado.aumentarPuntosDeAtaque(500);		
 		atacante.atacar(atacado);
+		atacado.aumentarPuntosDeAtaque(-500);
 	}
 
 	

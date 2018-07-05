@@ -82,13 +82,16 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
 	public void setContenedorIzquierdo() {
-		Button botonTerminarTurno = new Button("Terminar turno");
+		Button botonTerminarTurno = new Button("TERMINAR TURNO");
         BotonTerminarTurno terminarTurno =
             new BotonTerminarTurno(this);
         botonTerminarTurno.setOnAction(terminarTurno);
+        botonTerminarTurno.setMinSize(200, 60);
+        botonTerminarTurno.setFont(Font.font("Courier New",FontWeight.BOLD, 20));
         
         VBox contenedorIzquierdo = new VBox();
         contenedorIzquierdo.getChildren().addAll(ContenedorPrincipal.consola, botonTerminarTurno);
+        contenedorIzquierdo.setSpacing(10);
         
         ContenedorPrincipal.contenedorIzquierdo = contenedorIzquierdo;
         this.setLeft(ContenedorPrincipal.contenedorIzquierdo);
@@ -108,7 +111,10 @@ public class ContenedorPrincipal extends BorderPane {
     	salud.setSpacing(-10);
 		
     	contenedorHorizontalArriba.setSpacing(70);
-    	contenedorHorizontalArriba.getChildren().addAll(juego.getJugadorInactivo().darImagen(), salud);
+    	ImageView imagenJugadorInactivo = juego.getJugadorInactivo().darImagen();
+    	imagenJugadorInactivo.setFitHeight(50);
+    	imagenJugadorInactivo.setFitWidth(170);
+    	contenedorHorizontalArriba.getChildren().addAll(imagenJugadorInactivo, salud);
 		
 		VBox contenedorVerticalArriba = new VBox();
 		contenedorVerticalArriba.getChildren().addAll(this.barraMenu, contenedorHorizontalArriba);
@@ -157,7 +163,10 @@ public class ContenedorPrincipal extends BorderPane {
     	scrollCartas.setMinSize(440,135);
     	scrollCartas.setHvalue(1);
     	
-    	contenedorAbajo.getChildren().addAll(scrollCartas, descripcionCarta, salud, juego.getJugadorActivo().darImagen());
+    	ImageView imagenJugadorActivo = juego.getJugadorActivo().darImagen();
+    	imagenJugadorActivo.setFitHeight(120);
+    	imagenJugadorActivo.setFitWidth(170);
+    	contenedorAbajo.getChildren().addAll(scrollCartas, descripcionCarta, salud, imagenJugadorActivo);
     	contenedorAbajo.setAlignment(Pos.TOP_RIGHT);
 		this.setBottom(contenedorAbajo);
 	}

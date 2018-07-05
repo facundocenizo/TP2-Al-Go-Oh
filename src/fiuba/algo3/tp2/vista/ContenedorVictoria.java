@@ -38,7 +38,7 @@ public class ContenedorVictoria extends VBox{
             this.setBackground(new Background(imagenDeFondo));
 
             Button botonAceptar = new Button();
-            botonAceptar.setText("Aceptar Victoria!");
+            botonAceptar.setText("Fin Del Juego");
             botonAceptar.setMinSize(300, 170);
             botonAceptar.setFont(Font.font("Courier New",FontWeight.BOLD, 72));
             botonAceptar.setStyle("-fx-base: #123400");
@@ -59,6 +59,6 @@ public class ContenedorVictoria extends VBox{
         	etiqueta.setText("Ganador: " + ganador + "\nMotivo: " + motivo);
         	audioViejo.stop();
         	AudioClip audioVictoria = new AudioClip("file:src/fiuba/algo3/tp2/vista/sonidos/musicaFin.mp3");
-        	//audioVictoria.play();
+        	audioVictoria.play();
         }
 }

@@ -80,14 +80,10 @@ public class BotonAceptarEventHandler implements EventHandler<ActionEvent>{
         		ImageView imagenJugadorUno = new ImageView("file:" + 
         	            "src/fiuba/algo3/tp2/vista/imagenes/" +
         	            "imagenJugadorUno.jpg");
-            	imagenJugadorUno.setFitHeight(50);
-            	imagenJugadorUno.setFitWidth(170);
         		
         		ImageView imagenJugadorDos = new ImageView("file:" + 
         	            "src/fiuba/algo3/tp2/vista/imagenes/" +
         	            "imagenJugadorDos.jpg");
-            	imagenJugadorDos.setFitHeight(50);
-            	imagenJugadorDos.setFitWidth(170);
             	
         		int random = new Random().nextInt(2);
             	juego.getJugadorActivo().setNombre(nombresJugadores.get(random));

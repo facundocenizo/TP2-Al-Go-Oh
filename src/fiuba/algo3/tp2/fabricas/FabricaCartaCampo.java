@@ -17,10 +17,10 @@ public enum FabricaCartaCampo {
 			cartaCampo.setDescripcion("Nombre: Wasteland\n"
 					+ "Tipo de carta: Campo\n"
 					+ "Efecto: aumenta en 200\r\n" + 
-					"puntos el ataque de tus monstruos, \r\n" + 
-					"y 300 puntos la defensa de los\r\n" + 
-					"monstruos de tu oponente.\r\n" + 
-					"");
+					"puntos el ataque de tus\r\n"
+					+ "monstruos y 300 puntos la\n"
+					+ "defensa de los monstruos\r\n"
+					+ "de tu oponente.");
 			return cartaCampo;
 		}
 	},
@@ -33,11 +33,10 @@ public enum FabricaCartaCampo {
 			cartaCampo.setDescripcion("Nombre: Sogen\n"
 					+ "Tipo de carta: Campo\n"
 					+ "Efecto: aumenta en 500\r\n" + 
-					"los puntos de defensa de tus\r\n" + 
-					"monstruos, y 200 los puntos de \r\n" + 
-					"ataque de los monstruos de \r\n" + 
-					"tu oponente.\r\n" + 
-					"");
+					"los puntos de defensa de\r\n" + 
+					"tus monstruos, y 200 los\r\n" + 
+					"puntos de ataque de los\r\n" + 
+					"monstruos de tu oponente.");
 			return cartaCampo;
 		}
 	};
